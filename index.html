@@ -396,6 +396,139 @@ nav a:hover{
 
 
 /* =========================
+   DROPDOWN MENU
+========================= */
+
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-trigger {
+    color: var(--dark);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: .3s;
+    cursor: pointer;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dropdown-trigger i {
+    font-size: 11px;
+    transition: .3s;
+}
+
+.nav-dropdown:hover .dropdown-trigger i {
+    transform: rotate(180deg);
+}
+
+.dropdown-trigger:hover {
+    color: var(--blue);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background: white;
+    padding: 8px 0;
+    border-radius: 12px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+    z-index: 999;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--dark);
+    text-decoration: none;
+    transition: .3s;
+    white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+    background: #f5f0ff;
+    color: var(--blue);
+    padding-left: 26px;
+}
+
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid white;
+    filter: drop-shadow(0 -2px 5px rgba(0, 0, 0, 0.04));
+}
+
+@media (max-width: 950px) {
+    .nav-dropdown {
+        width: 100%;
+    }
+    
+    .dropdown-trigger {
+        padding: 13px 20px;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
+        background: #f8f6fc;
+        opacity: 1;
+        transform: none;
+        display: none;
+        border: none;
+        pointer-events: auto;
+    }
+    
+    .dropdown-menu::before {
+        display: none;
+    }
+    
+    .dropdown-menu a {
+        padding: 10px 20px 10px 40px;
+        font-size: 13px;
+    }
+    
+    .dropdown-menu a:hover {
+        padding-left: 46px;
+    }
+    
+    .nav-dropdown.active .dropdown-menu {
+        display: block;
+    }
+}
+
+
+/* =========================
    HERO - with gentle animations
 ========================= */
 
@@ -525,6 +658,8 @@ nav a:hover{
     font-size:14px;
     font-weight:bold;
     transition:.3s;
+    border:none;
+    cursor:pointer;
 }
 
 .btn:hover{
@@ -743,7 +878,7 @@ nav a:hover{
 
 
 /* =========================
-   PROGRAMS - with hover effects and arrow
+   PROGRAMS - with Learn More buttons
 ========================= */
 
 .programs{
@@ -753,12 +888,12 @@ nav a:hover{
 .program-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:18px;
+    gap:22px;
 }
 
 .program-card{
     background:white;
-    padding:24px;
+    padding:28px 24px 24px;
     border-radius:19px;
     border:1px solid #e5edf0;
     box-shadow:0 5px 18px rgba(0,0,0,.04);
@@ -766,7 +901,8 @@ nav a:hover{
     cursor:pointer;
     text-decoration:none;
     color:inherit;
-    display:block;
+    display:flex;
+    flex-direction:column;
     position:relative;
 }
 
@@ -787,21 +923,6 @@ nav a:hover{
     opacity:1;
 }
 
-.program-card .arrow{
-    position:absolute;
-    bottom:20px;
-    right:20px;
-    color:var(--pink);
-    opacity:0;
-    transition:.4s;
-    font-size:18px;
-}
-
-.program-card:hover .arrow{
-    opacity:1;
-    transform:translateX(6px);
-}
-
 .program-card:hover{
     transform:translateY(-8px);
     box-shadow:0 15px 35px rgba(0,0,0,.12);
@@ -819,6 +940,8 @@ nav a:hover{
     font-size:24px;
     margin-bottom:14px;
     transition:.3s;
+    position:relative;
+    z-index:1;
 }
 
 .program-card:hover .program-icon{
@@ -840,12 +963,50 @@ nav a:hover{
     color:var(--dark-blue);
     font-size:18px;
     margin-bottom:7px;
+    position:relative;
+    z-index:1;
 }
 
 .program-card p{
     color:var(--muted);
     font-size:13px;
-    padding-right:20px;
+    line-height:1.6;
+    flex:1;
+    position:relative;
+    z-index:1;
+    margin-bottom:14px;
+}
+
+/* Learn More Button - New */
+.program-card .learn-more-btn {
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:var(--blue);
+    font-weight:600;
+    font-size:13px;
+    transition:.4s;
+    position:relative;
+    z-index:1;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:0;
+    width:fit-content;
+}
+
+.program-card .learn-more-btn i {
+    transition:.4s;
+    font-size:12px;
+}
+
+.program-card:hover .learn-more-btn {
+    color:var(--pink);
+    gap:14px;
+}
+
+.program-card:hover .learn-more-btn i {
+    transform:translateX(6px) scale(1.2);
 }
 
 
@@ -1244,6 +1405,7 @@ nav a:hover{
 
 .action-card .btn{
     margin-top:auto;
+    align-self:flex-start;
 }
 
 .volunteer-card{
@@ -1726,7 +1888,7 @@ At a Glance
 
 
 <!-- =================================
-     PROGRAMS
+     PROGRAMS - with Learn More buttons
 ================================= -->
 
 <section class="section programs" id="programs">
@@ -1756,69 +1918,76 @@ skills, livelihoods and stronger communities.
 
 <div class="program-grid">
 
-<!-- All program cards now link to individual program pages -->
-
+<!-- Program 1: Mission Education -->
 <a href="program-education.html" class="program-card">
 <div class="program-icon">📚</div>
 <h3>Mission Education</h3>
 <p>Supporting children's education for children aged 6–13 years in Kalepadal, Hadapsar, Pune.</p>
-<span class="arrow">→</span>
+<span class="learn-more-btn">Learn More <i class="fas fa-arrow-right"></i></span>
 </a>
 
+<!-- Program 2: Motor Driving School -->
 <a href="program-driving.html" class="program-card">
 <div class="program-icon">🚗</div>
 <h3>Motor Driving School</h3>
 <p>Driving training and licence support for people aged 18 years and above.</p>
-<span class="arrow">→</span>
+<span class="learn-more-btn">Learn More <i class="fas fa-arrow-right"></i></span>
 </a>
 
+<!-- Program 3: Skill Development -->
 <a href="program-skill.html" class="program-card">
 <div class="program-icon">💼</div>
 <h3>Skill Development</h3>
 <p>Livelihood-oriented training to strengthen employment and self-employment opportunities.</p>
-<span class="arrow">→</span>
+<span class="learn-more-btn">Learn More <i class="fas fa-arrow-right"></i></span>
 </a>
 
+<!-- Program 4: Women SHGs -->
 <a href="program-women.html" class="program-card">
 <div class="program-icon">👩</div>
 <h3>Women SHGs</h3>
 <p>Supporting women through Self Help Groups, bank linkage, self-employment and livelihoods.</p>
-<span class="arrow">→</span>
+<span class="learn-more-btn">Learn More <i class="fas fa-arrow-right"></i></span>
 </a>
 
+<!-- Program 5: Organic Farming -->
 <a href="program-organic.html" class="program-card">
 <div class="program-icon">🌾</div>
 <h3>Organic Farming</h3>
 <p>Supporting farmers through organic farming, scheme awareness and manure-making demonstrations.</p>
-<span class="arrow">→</span>
+<span class="learn-more-btn">Learn More <i class="fas fa-arrow-right"></i></span>
 </a>
 
+<!-- Program 6: Clean Drinking Water -->
 <a href="program-water.html" class="program-card">
 <div class="program-icon">💧</div>
 <h3>Clean Drinking Water</h3>
 <p>Working to improve access to clean drinking water for households in villages of Beed district.</p>
-<span class="arrow">→</span>
+<span class="learn-more-btn">Learn More <i class="fas fa-arrow-right"></i></span>
 </a>
 
+<!-- Program 7: Tree Plantation -->
 <a href="program-tree.html" class="program-card">
 <div class="program-icon">🌳</div>
 <h3>Tree Plantation</h3>
 <p>Promoting tree plantation and environmental awareness as part of climate action.</p>
-<span class="arrow">→</span>
+<span class="learn-more-btn">Learn More <i class="fas fa-arrow-right"></i></span>
 </a>
 
+<!-- Program 8: Watershed Development -->
 <a href="program-watershed.html" class="program-card">
 <div class="program-icon">🏞️</div>
 <h3>Watershed Development</h3>
 <p>Farm ponds, bunding, loose boulders, soil conservation and tree plantation activities.</p>
-<span class="arrow">→</span>
+<span class="learn-more-btn">Learn More <i class="fas fa-arrow-right"></i></span>
 </a>
 
+<!-- Program 9: Disaster Relief -->
 <a href="program-disaster.html" class="program-card">
 <div class="program-icon">🚑</div>
 <h3>Disaster Relief</h3>
 <p>Undertaken major disaster relief initiatives during the 2015–16 drought and the COVID-19 pandemic (2020–2022).</p>
-<span class="arrow">→</span>
+<span class="learn-more-btn">Learn More <i class="fas fa-arrow-right"></i></span>
 </a>
 
 </div>
@@ -2876,6 +3045,18 @@ window.addEventListener('scroll', function() {
     } else {
         scrollBtn.classList.remove('visible');
     }
+});
+
+// Close mobile menu when clicking a link (for better UX)
+document.querySelectorAll('.navbar nav a').forEach(link => {
+    link.addEventListener('click', function() {
+        const navbar = document.querySelector(".navbar");
+        if (navbar && navbar.classList.contains('mobile-open')) {
+            navbar.classList.remove('mobile-open');
+            const button = document.querySelector(".mobile-menu-btn");
+            if (button) button.setAttribute("aria-expanded", "false");
+        }
+    });
 });
 </script>
 

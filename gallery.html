@@ -618,7 +618,7 @@
       height: 32px;
       border-radius: 50%;
       border: none;
-      display: none; /* HIDDEN by default */
+      display: none;
       align-items: center;
       justify-content: center;
       font-size: 13px;
@@ -627,7 +627,7 @@
       cursor: pointer;
     }
     .gallery-item .delete-btn.visible {
-      display: flex; /* Shown only in admin mode */
+      display: flex;
     }
     .gallery-item:hover .delete-btn.visible {
       opacity: 1;
@@ -1170,6 +1170,7 @@
 <script>
   // =========================================
   // GALLERY DATA - Edit this to manage photos
+  // All images should be in /gallery-images/ folder
   // =========================================
   const galleryData = {
     photos: [
@@ -1227,8 +1228,7 @@
       { file: "health1.jpeg", category: "Health & Nutrition", caption: "Health awareness camp" },
       { file: "health2.jpeg", category: "Health & Nutrition", caption: "Nutrition program" },
       { file: "health3.jpeg", category: "Health & Nutrition", caption: "Nutrition program" },
-      { file: "health4.jpeg", category: "Health & Nutrition", caption: "Nutrition program" },
-
+      { file: "health4.jpeg", category: "Health & Nutrition", caption: "Nutrition program" }
     ]
   };
 
@@ -1249,13 +1249,11 @@
 
   function toggleAdminMode() {
     if (!adminMode) {
-      // Ask for password
       const password = prompt('🔐 Enter admin password:');
       if (password === ADMIN_PASSWORD) {
         adminMode = true;
         document.getElementById('adminPanel').classList.add('visible');
         document.getElementById('adminBadge').classList.add('show');
-        // Show delete buttons
         document.querySelectorAll('.delete-btn').forEach(el => el.classList.add('visible'));
         showToast('🔐 Admin mode activated');
       } else if (password !== null) {
@@ -1265,13 +1263,11 @@
       adminMode = false;
       document.getElementById('adminPanel').classList.remove('visible');
       document.getElementById('adminBadge').classList.remove('show');
-      // Hide delete buttons
       document.querySelectorAll('.delete-btn').forEach(el => el.classList.remove('visible'));
       showToast('🔒 Admin mode deactivated');
     }
   }
 
-  // Make toggleAdminMode globally available
   window.toggleAdminMode = toggleAdminMode;
 
   // =========================================
@@ -1299,19 +1295,15 @@
     const noPhotos = document.getElementById('noPhotos');
     const filterTabs = document.getElementById('filterTabs');
 
-    // Filter photos
     let filtered = galleryData.photos;
     if (category !== 'all') {
       filtered = filtered.filter(p => p.category === category);
     }
 
-    // Update counts
     const allCount = galleryData.photos.length;
     document.getElementById('countAll').textContent = allCount;
 
-    // Update category tabs with counts
     const categories = [...new Set(galleryData.photos.map(p => p.category))];
-    // Remove existing category tabs (keep "All")
     const allTab = filterTabs.querySelector('.filter-tab');
     filterTabs.innerHTML = '';
     filterTabs.appendChild(allTab);
@@ -1325,12 +1317,10 @@
       filterTabs.appendChild(btn);
     });
 
-    // Update all tab count
     allTab.innerHTML = `All Photos <span class="count">${allCount}</span>`;
     allTab.className = `filter-tab${category === 'all' ? ' active' : ''}`;
     allTab.onclick = () => renderGallery('all');
 
-    // Show/hide no photos
     if (filtered.length === 0) {
       grid.innerHTML = '';
       noPhotos.style.display = 'block';
@@ -1338,16 +1328,14 @@
     }
     noPhotos.style.display = 'none';
 
-    // Render photos
     grid.innerHTML = '';
     filtered.forEach((photo, index) => {
       const item = document.createElement('div');
       item.className = 'gallery-item';
       item.style.animationDelay = `${(index % 10) * 0.02}s`;
-      // Determine if delete button should be visible based on admin mode
       const deleteVisible = adminMode ? 'visible' : '';
       item.innerHTML = `
-        <img src="gallery-images/${photo.file}" alt="${photo.caption || photo.category}" loading="lazy" onerror="this.src='https://placehold.co/400x300/075b9a/ffffff?text=${encodeURIComponent(photo.category)}'">
+        <img src="gallery-images/${photo.file}" alt="${photo.caption || photo.category}" loading="lazy" onerror="this.style.display='none'">
         <div class="expand-icon"><i class="fas fa-expand"></i></div>
         <div class="delete-btn ${deleteVisible}" onclick="deletePhoto('${photo.file}')" title="Delete this photo"><i class="fas fa-trash"></i></div>
         <div class="overlay">
@@ -1355,10 +1343,10 @@
           <span class="category-tag">${photo.category}</span>
         </div>
       `;
-      // Lightbox click
       item.addEventListener('click', function(e) {
         if (e.target.closest('.delete-btn')) return;
         const img = this.querySelector('img');
+        if (!img || !img.src) return;
         const caption = this.querySelector('.caption')?.textContent || photo.category;
         openLightbox(img.src, caption, photo.category);
       });
@@ -1387,7 +1375,6 @@
     }
   }
 
-  // Close lightbox with Escape
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
       const lb = document.getElementById('lightbox');
@@ -1406,7 +1393,6 @@
     }
     if (!confirm(`Delete "${filename}"? This will remove it from the gallery.`)) return;
 
-    // Find and remove from data
     const index = galleryData.photos.findIndex(p => p.file === filename);
     if (index > -1) {
       galleryData.photos.splice(index, 1);
@@ -1435,19 +1421,16 @@
       return;
     }
 
-    // Check if file already exists
     if (galleryData.photos.some(p => p.file === file)) {
       showToast(`⚠️ "${file}" already exists in the gallery`, 'error');
       return;
     }
 
-    // Add to data
     galleryData.photos.push({ file, category, caption });
     renderGallery(currentCategory);
     this.reset();
     showToast(`✅ "${file}" added successfully!`);
 
-    // Scroll to the new photo
     const grid = document.getElementById('galleryGrid');
     const lastItem = grid.lastElementChild;
     if (lastItem) {
@@ -1480,7 +1463,6 @@
     button.setAttribute("aria-expanded", isOpen ? "true" : "false");
   }
 
-  // Close mobile menu on link click
   document.querySelectorAll('.navbar nav a, .navbar .dropdown-menu a').forEach(link => {
     link.addEventListener('click', function() {
       const navbar = document.querySelector(".navbar");
@@ -1515,7 +1497,6 @@
 
   renderGallery('all');
 
-  // Make functions globally available
   window.deletePhoto = deletePhoto;
   window.openLightbox = openLightbox;
   window.closeLightbox = closeLightbox;

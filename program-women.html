@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Women SHG | Wadmavli Lok Vikas Manch</title>
+  <meta name="description" content="Women Self Help Group program by Wadmavli Lok Vikas Manch - Empowering 3000+ women across 20 villages in Beed district through SHG formation, entrepreneur support, training, and government schemes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <style>
+    /* =========================================
+       WOMEN SHG - PINK + LIGHT BLUE THEME
+       Empowering, Feminine, Warm
+       ========================================= */
+
+    :root {
+      --pink: #E85B88;
+      --pink-light: #F8B4C8;
+      --pink-lighter: #FCE4EC;
+      --pink-dark: #C44A6E;
+      --blue: #8ECAE6;
+      --blue-light: #B8DDF0;
+      --blue-lighter: #E3F0F9;
+      --navy: #1A3A5C;
+      --ivory: #FFF5F7;
+      --white: #ffffff;
+      --text-dark: #2C3E4E;
+      --text-soft: #5A6F7A;
+      --shadow-soft: 0 8px 30px rgba(232, 91, 136, 0.15);
+      --shadow-hover: 0 15px 45px rgba(232, 91, 136, 0.25);
+      --border-radius: 24px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: var(--ivory);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+
+    /* =========================================
+       HEADER - SAME AS OTHER PAGES
+       ========================================= */
+    header {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    }
+    .navbar {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-image {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+    .logo-text h2 {
+      font-size: 18px;
+      color: #063b67;
+      line-height: 1.2;
+    }
+    .logo-text span {
+      display: block;
+      color: #e85b88;
+      font-size: 9px;
+      letter-spacing: 2px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+    nav a {
+      color: #063b67;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: .3s;
+    }
+    nav a:hover {
+      color: #075b9a;
+    }
+    .nav-donate {
+      background: #075b9a;
+      color: white !important;
+      padding: 10px 18px;
+      border-radius: 25px;
+    }
+    .mobile-menu-btn {
+      display: none;
+      border: 0;
+      background: none;
+      color: #063b67;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 8px;
+    }
+    @media (max-width:950px) {
+      nav { display: none; }
+      .mobile-menu-btn { display: flex; flex-shrink: 0; }
+      .navbar { position: relative; }
+      .navbar.mobile-open nav {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 220px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: white;
+        padding: 10px 0;
+        border-radius: 0 0 16px 16px;
+        box-shadow: 0 12px 30px rgba(0,0,0,.15);
+        z-index: 2000;
+      }
+      .navbar.mobile-open nav a {
+        display: block;
+        width: 100%;
+        padding: 13px 20px;
+        text-align: left;
+        box-sizing: border-box;
+      }
+      .navbar.mobile-open nav a:hover {
+        background: #f1f7fb;
+      }
+      .navbar.mobile-open .nav-donate {
+        margin: 8px 12px;
+        width: auto;
+        text-align: center;
+      }
+    }
+
+    /* DROPDOWN */
+    .nav-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-trigger {
+      color: #063b67;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: .3s;
+      cursor: pointer;
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dropdown-trigger i {
+      font-size: 11px;
+      transition: .3s;
+    }
+    .nav-dropdown:hover .dropdown-trigger i {
+      transform: rotate(180deg);
+    }
+    .dropdown-trigger:hover {
+      color: #075b9a;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 220px;
+      background: white;
+      padding: 8px 0;
+      border-radius: 12px;
+      box-shadow: 0 12px 35px rgba(0,0,0,.12);
+      z-index: 999;
+      border: 1px solid rgba(0,0,0,.06);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+    .nav-dropdown:hover .dropdown-menu {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #063b67;
+      text-decoration: none;
+      transition: .3s;
+      white-space: nowrap;
+    }
+    .dropdown-menu a:hover {
+      background: #f5f0ff;
+      color: #075b9a;
+      padding-left: 26px;
+    }
+    .dropdown-menu::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 20px;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid white;
+      filter: drop-shadow(0 -2px 5px rgba(0,0,0,.04));
+    }
+    @media (max-width: 950px) {
+      .nav-dropdown { width: 100%; }
+      .dropdown-trigger { padding: 13px 20px; justify-content: space-between; width: 100%; }
+      .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
+        background: #f8f6fc;
+        opacity: 1;
+        transform: none;
+        display: none;
+        border: none;
+        pointer-events: auto;
+      }
+      .dropdown-menu::before { display: none; }
+      .dropdown-menu a { padding: 10px 20px 10px 40px; font-size: 13px; }
+      .dropdown-menu a:hover { padding-left: 46px; }
+      .nav-dropdown.active .dropdown-menu { display: block; }
+    }
+
+    /* =========================================
+       SECTION HEADING
+       ========================================= */
+    .section-heading-women {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .section-heading-women .tag {
+      display: inline-block;
+      background: var(--pink-lighter);
+      color: var(--pink-dark);
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .section-heading-women h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .section-heading-women h2 .highlight-pink {
+      color: var(--pink);
+    }
+
+    .section-heading-women h2 .highlight-blue {
+      color: var(--blue);
+    }
+
+    .section-heading-women p {
+      color: var(--text-soft);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* =========================================
+       HERO - WOMEN STANDING TOGETHER
+       ========================================= */
+    .hero-women {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 20px;
+      background: linear-gradient(160deg, #FFF5F7 0%, #FCE4EC 30%, #F8B4C8 60%, #E85B88 100%);
+    }
+
+    /* Women Silhouette Background - Animated */
+    .women-illustration {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 15px;
+      opacity: 0.08;
+      z-index: 1;
+      flex-wrap: wrap;
+    }
+
+    .women-illustration .woman {
+      font-size: 120px;
+      animation: swayWomen 4s ease-in-out infinite;
+      display: inline-block;
+    }
+
+    .women-illustration .woman:nth-child(1) { animation-delay: 0s; font-size: 100px; }
+    .women-illustration .woman:nth-child(2) { animation-delay: 0.5s; font-size: 130px; }
+    .women-illustration .woman:nth-child(3) { animation-delay: 1s; font-size: 110px; }
+    .women-illustration .woman:nth-child(4) { animation-delay: 1.5s; font-size: 140px; }
+    .women-illustration .woman:nth-child(5) { animation-delay: 2s; font-size: 120px; }
+    .women-illustration .woman:nth-child(6) { animation-delay: 2.5s; font-size: 100px; }
+    .women-illustration .woman:nth-child(7) { animation-delay: 3s; font-size: 130px; }
+    .women-illustration .woman:nth-child(8) { animation-delay: 3.5s; font-size: 110px; }
+    .women-illustration .woman:nth-child(9) { animation-delay: 0.3s; font-size: 120px; }
+    .women-illustration .woman:nth-child(10) { animation-delay: 0.8s; font-size: 100px; }
+    .women-illustration .woman:nth-child(11) { animation-delay: 1.3s; font-size: 130px; }
+    .women-illustration .woman:nth-child(12) { animation-delay: 1.8s; font-size: 110px; }
+
+    @keyframes swayWomen {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(1deg); }
+    }
+
+    /* Floating Elements */
+    .float-elements-women {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .float-elements-women .float-item {
+      position: absolute;
+      font-size: 30px;
+      opacity: 0.15;
+      animation: floatWomen 20s infinite linear;
+    }
+
+    .float-elements-women .float-item:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; font-size: 45px; }
+    .float-elements-women .float-item:nth-child(2) { top: 20%; left: 88%; animation-delay: 5s; font-size: 35px; }
+    .float-elements-women .float-item:nth-child(3) { top: 55%; left: 8%; animation-delay: 10s; font-size: 40px; }
+    .float-elements-women .float-item:nth-child(4) { top: 70%; right: 5%; animation-delay: 15s; font-size: 50px; }
+    .float-elements-women .float-item:nth-child(5) { top: 40%; left: 45%; animation-delay: 7s; font-size: 30px; }
+    .float-elements-women .float-item:nth-child(6) { top: 15%; left: 45%; animation-delay: 3s; font-size: 25px; }
+
+    @keyframes floatWomen {
+      0% { transform: translate(0,0) rotate(0deg) scale(1); }
+      25% { transform: translate(30px,-40px) rotate(10deg) scale(1.1); }
+      50% { transform: translate(-20px,-70px) rotate(-5deg) scale(0.9); }
+      75% { transform: translate(25px,-50px) rotate(15deg) scale(1.05); }
+      100% { transform: translate(0,0) rotate(0deg) scale(1); }
+    }
+
+    .hero-grid-women {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero-content-women {
+      color: var(--navy);
+    }
+
+    .hero-content-women .badge-women {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(10px);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--pink-dark);
+      margin-bottom: 20px;
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .hero-content-women h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 1.08;
+      margin-bottom: 15px;
+      color: var(--navy);
+    }
+
+    .hero-content-women h1 .highlight-pink {
+      color: var(--pink);
+    }
+
+    .hero-content-women h1 .highlight-blue {
+      color: var(--blue);
+    }
+
+    .hero-content-women .subtitle {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--pink-dark);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-content-women .subtitle .shg-badge {
+      background: var(--pink);
+      color: white;
+      padding: 4px 16px;
+      border-radius: 50px;
+      font-size: 14px;
+    }
+
+    .hero-content-women p {
+      font-size: 17px;
+      line-height: 1.9;
+      color: var(--text-soft);
+      max-width: 520px;
+      margin-bottom: 25px;
+    }
+
+    .hero-stats-women {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 2px solid rgba(232, 91, 136, 0.15);
+    }
+
+    .hero-stats-women .stat-item .number {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--pink);
+      display: block;
+      line-height: 1.2;
+    }
+
+    .hero-stats-women .stat-item .label {
+      font-size: 12px;
+      color: var(--text-soft);
+      font-weight: 500;
+    }
+
+    .hero-image-women {
+      position: relative;
+    }
+
+    .hero-image-women .image-frame {
+      background: rgba(255,255,255,0.3);
+      backdrop-filter: blur(10px);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: 0 30px 60px rgba(232, 91, 136, 0.15);
+      border: 4px solid rgba(255,255,255,0.4);
+    }
+
+    .hero-image-women .image-frame img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .hero-image-women .sticker {
+      position: absolute;
+      bottom: -15px;
+      right: -15px;
+      background: var(--pink);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 8px 25px rgba(232, 91, 136, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: bounceSticker 3s infinite;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    @keyframes bounceSticker {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .hero-image-women .sticker i {
+      font-size: 20px;
+    }
+
+    @media(max-width: 992px) {
+      .hero-grid-women {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .hero-content-women h1 {
+        font-size: 40px;
+      }
+      .hero-image-women .image-frame img {
+        height: 280px;
+      }
+      .women-illustration .woman {
+        font-size: 60px !important;
+      }
+    }
+
+    @media(max-width: 600px) {
+      .hero-content-women h1 {
+        font-size: 32px;
+      }
+      .hero-content-women .subtitle {
+        font-size: 17px;
+      }
+      .hero-stats-women {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+      }
+      .hero-stats-women .stat-item .number {
+        font-size: 22px;
+      }
+      .women-illustration .woman {
+        font-size: 40px !important;
+      }
+    }
+
+    /* =========================================
+       ABOUT SECTION
+       ========================================= */
+    .about-women {
+      padding: 80px 0;
+      background: var(--white);
+    }
+
+    .about-grid-women {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-content-women h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .about-content-women h3 .highlight-pink {
+      color: var(--pink);
+    }
+
+    .about-content-women p {
+      color: var(--text-soft);
+      line-height: 1.9;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .about-image-women img {
+      width: 100%;
+      border-radius: var(--border-radius);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+      border: 2px solid var(--pink-lighter);
+    }
+
+    .about-image-women {
+      position: relative;
+    }
+
+    .about-image-women .about-sticker {
+      position: absolute;
+      bottom: -15px;
+      left: -15px;
+      background: var(--blue);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 8px 25px rgba(142, 202, 230, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: bounceSticker 3s infinite 1s;
+    }
+
+    @media(max-width: 768px) {
+      .about-grid-women {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .about-content-women h3 {
+        font-size: 26px;
+      }
+      .about-image-women .about-sticker {
+        position: static;
+        margin-top: 15px;
+        display: inline-flex;
+      }
+    }
+
+    /* =========================================
+       KEY INITIATIVES WITH ANIMATED CARTOONS
+       ========================================= */
+    .initiatives-women {
+      padding: 80px 0;
+      background: var(--blue-lighter);
+    }
+
+    .initiatives-grid-women {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .initiative-card-women {
+      background: white;
+      padding: 30px 25px;
+      border-radius: var(--border-radius);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: .4s;
+      border: 2px solid transparent;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .initiative-card-women:hover {
+      transform: translateY(-6px);
+      border-color: var(--pink);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .initiative-card-women .initiative-emoji {
+      font-size: 60px;
+      flex-shrink: 0;
+      animation: bounceEmoji 3s infinite;
+      display: block;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--pink-lighter);
+      border-radius: 20px;
+      transition: .3s;
+    }
+
+    .initiative-card-women:hover .initiative-emoji {
+      background: var(--pink);
+      transform: scale(1.05) rotate(-5deg);
+    }
+
+    @keyframes bounceEmoji {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .initiative-card-women .initiative-content h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .initiative-card-women .initiative-content p {
+      font-size: 14px;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    @media(max-width: 768px) {
+      .initiatives-grid-women {
+        grid-template-columns: 1fr;
+      }
+      .initiative-card-women {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 20px;
+      }
+      .initiative-card-women .initiative-emoji {
+        width: 70px;
+        height: 70px;
+        font-size: 40px;
+      }
+    }
+
+    /* =========================================
+       GALLERY - 18 IMAGES
+       ========================================= */
+    .gallery-women {
+      padding: 80px 0;
+      background: var(--ivory);
+    }
+
+    .gallery-grid-women {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .gallery-item-women {
+      background: white;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      transition: .4s;
+      border: 3px solid rgba(255,255,255,0.5);
+      cursor: pointer;
+      position: relative;
+      aspect-ratio: 1 / 1;
+    }
+
+    .gallery-item-women:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--pink-light);
+    }
+
+    .gallery-item-women img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item-women:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-item-women .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(232, 91, 136, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .gallery-item-women:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-item-women .gallery-overlay i {
+      color: white;
+      font-size: 32px;
+      background: rgba(0,0,0,0.2);
+      backdrop-filter: blur(4px);
+      padding: 14px;
+      border-radius: 50%;
+      transform: scale(0.8);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item-women:hover .gallery-overlay i {
+      transform: scale(1);
+    }
+
+    .gallery-item-women .gallery-emoji {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      font-size: 24px;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(4px);
+      padding: 4px 12px;
+      border-radius: 12px;
+      line-height: 1.4;
+    }
+
+    @media(max-width: 992px) {
+      .gallery-grid-women {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media(max-width: 600px) {
+      .gallery-grid-women {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* =========================================
+       TESTIMONIALS
+       ========================================= */
+    .testimonials-women {
+      padding: 80px 0;
+      background: var(--pink-lighter);
+    }
+
+    .testimonials-grid-women {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .testimonial-card-women {
+      background: white;
+      padding: 30px 25px;
+      border-radius: var(--border-radius);
+      text-align: center;
+      transition: .4s;
+      border: 2px solid transparent;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .testimonial-card-women:hover {
+      transform: translateY(-6px);
+      border-color: var(--pink);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .testimonial-card-women .quote-icon {
+      font-size: 36px;
+      color: var(--pink);
+      opacity: 0.2;
+      margin-bottom: 8px;
+    }
+
+    .testimonial-card-women p {
+      font-style: italic;
+      color: var(--text-dark);
+      line-height: 1.8;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .testimonial-card-women .author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      justify-content: center;
+      padding-top: 14px;
+      border-top: 1px solid rgba(232, 91, 136, 0.08);
+    }
+
+    .testimonial-card-women .author .avatar {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: var(--pink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .testimonial-card-women .author .name {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 14px;
+    }
+
+    .testimonial-card-women .author .role {
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    @media(max-width: 992px) {
+      .testimonials-grid-women {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media(max-width: 600px) {
+      .testimonials-grid-women {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* =========================================
+       PARTNERS
+       ========================================= */
+    .partners-women {
+      padding: 60px 0;
+      background: var(--white);
+    }
+
+    .partners-grid-women {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 800px;
+      margin: 30px auto 0;
+    }
+
+    .partner-card-women {
+      background: var(--ivory);
+      padding: 25px 15px;
+      border-radius: var(--border-radius);
+      text-align: center;
+      transition: .4s;
+      border: 2px solid transparent;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 120px;
+    }
+
+    .partner-card-women:hover {
+      transform: translateY(-6px);
+      border-color: var(--pink);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .partner-card-women img {
+      max-width: 100px;
+      max-height: 50px;
+      object-fit: contain;
+      margin-bottom: 8px;
+    }
+
+    .partner-card-women p {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .partner-card-women .partner-role {
+      font-size: 10px;
+      color: var(--text-soft);
+      font-weight: 400;
+    }
+
+    @media(max-width: 768px) {
+      .partners-grid-women {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media(max-width: 480px) {
+      .partners-grid-women {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* =========================================
+       LIGHTBOX
+       ========================================= */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.92);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      padding: 20px;
+      backdrop-filter: blur(8px);
+    }
+    #lightbox.active {
+      display: flex;
+    }
+    #lightbox img {
+      max-width: 92%;
+      max-height: 85vh;
+      border-radius: 20px;
+      box-shadow: 0 30px 60px rgba(0,0,0,.6);
+      animation: zoomIn 0.4s cubic-bezier(0.23,1,0.32,1);
+    }
+    @keyframes zoomIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    #lightbox .close-lightbox {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      color: white;
+      font-size: 36px;
+      cursor: pointer;
+      transition: .3s;
+      background: rgba(0,0,0,0.3);
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+      border: 2px solid rgba(255,255,255,.1);
+    }
+    #lightbox .close-lightbox:hover {
+      background: var(--pink);
+      transform: rotate(90deg) scale(1.05);
+      border-color: var(--pink);
+    }
+    #lightbox .lightbox-info {
+      position: absolute;
+      bottom: 40px;
+      color: rgba(255,255,255,.6);
+      font-size: 14px;
+      text-align: center;
+      max-width: 80%;
+    }
+    @media(max-width:600px) {
+      #lightbox .close-lightbox { top: 20px; right: 20px; font-size: 28px; width: 44px; height: 44px; }
+      #lightbox .lightbox-info { font-size: 12px; bottom: 20px; }
+    }
+
+    /* =========================================
+       FOOTER
+       ========================================= */
+    .site-footer {
+      background: #eef7fc;
+      color: #063b67;
+      padding: 65px 20px 0;
+    }
+    .footer-content {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 45px;
+    }
+    .footer-brand h3 { font-size: 18px; margin-bottom: 5px; color: #063b67; }
+    .footer-brand img { width: 58px; height: 58px; object-fit: contain; }
+    .footer-brand p { color: #e85b88; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; }
+    .footer-links { display: flex; flex-direction: column; gap: 9px; }
+    .footer-links h4 { color: #063b67; font-size: 16px; margin-bottom: 8px; }
+    .footer-links a { color: #526b7a; text-decoration: none; font-size: 13px; transition: .3s; }
+    .footer-links a:hover { color: #e85b88; transform: translateX(3px); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.15); padding: 20px 10px; text-align: center; }
+    .footer-bottom p { color: #667985; font-size: 12px; }
+    @media(max-width:768px) {
+      .site-footer { padding: 50px 20px 0; }
+      .footer-content { width: 100%; grid-template-columns: 1fr; gap: 35px; padding-bottom: 35px; }
+      .footer-brand { align-items: center; }
+      .footer-brand img { width: 52px; height: 52px; }
+      .footer-links h4 { font-size: 15px; }
+    }
+
+    /* Scroll to top */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--pink);
+      color: white;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(232, 91, 136, 0.35);
+      transition: .4s cubic-bezier(0.23,1,0.32,1);
+      opacity: 0;
+      transform: translateY(20px);
+      z-index: 999;
+    }
+    .scroll-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .scroll-top:hover {
+      background: var(--blue);
+      color: var(--navy);
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 12px 35px rgba(142, 202, 230, 0.35);
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container navbar">
+    <div class="logo-area">
+      <img src="logo.png" alt="Wadmavli Lok Vikas Manch Logo" class="logo-image">
+      <div class="logo-text">
+        <h2>Wadmavli Lok Vikas Manch</h2>
+        <span>TOWARDS EMPOWERMENT</span>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <div class="nav-dropdown">
+        <a href="programs.html" class="dropdown-trigger">Programs <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-menu">
+          <a href="program-education.html">📚 Mission Education</a>
+          <a href="program-driving.html">🚗 Motor Driving School</a>
+          <a href="program-skill.html">💼 Skill Development</a>
+          <a href="program-women.html">👩 Women SHGs</a>
+          <a href="program-organic.html">🌾 Organic Farming</a>
+          <a href="program-water.html">💧 Clean Drinking Water</a>
+          <a href="program-tree.html">🌳 Tree Plantation</a>
+          <a href="program-watershed.html">🏞️ Watershed Development</a>
+          <a href="program-disaster.html">🚑 Disaster Relief</a>
+        </div>
+      </div>
+      <a href="gallery.html">Gallery</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="partner.html">Partner</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html" class="nav-donate">Donate</a>
+    </nav>
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open navigation menu" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<!-- =========================================
+     HERO SECTION - WOMEN STANDING TOGETHER
+========================================= -->
+<section class="hero-women">
+  <!-- Women Silhouette Background -->
+  <div class="women-illustration">
+    <span class="woman">👩</span>
+    <span class="woman">👩‍🦰</span>
+    <span class="woman">👩</span>
+    <span class="woman">👩‍🦱</span>
+    <span class="woman">👩</span>
+    <span class="woman">👩‍🦰</span>
+    <span class="woman">👩</span>
+    <span class="woman">👩‍🦱</span>
+    <span class="woman">👩</span>
+    <span class="woman">👩‍🦰</span>
+    <span class="woman">👩</span>
+    <span class="woman">👩‍🦱</span>
+  </div>
+
+  <div class="float-elements-women">
+    <span class="float-item">🌸</span>
+    <span class="float-item">💪</span>
+    <span class="float-item">🌺</span>
+    <span class="float-item">🌷</span>
+    <span class="float-item">💖</span>
+    <span class="float-item">🌹</span>
+  </div>
+
+  <div class="container hero-grid-women">
+    <div class="hero-content-women" data-aos="fade-up">
+      <div class="badge-women">
+        <i class="fas fa-female" style="color:#E85B88;"></i>
+        Women Self Help Group
+      </div>
+
+      <h1>
+        Empowering <span class="highlight-pink">Women</span>,<br>
+        Strengthening <span class="highlight-blue">Communities</span>
+      </h1>
+
+      <div class="subtitle">
+        Together We Rise
+        <span class="shg-badge">👩‍🤝‍👩 3000+ Women</span>
+      </div>
+
+      <p>
+        Wadmavli Lok Vikas Manch has been empowering women through Self Help Groups 
+        since 2000. With 3000+ beneficiaries across 20 villages in Beed district, 
+        we support women through SHG formation, entrepreneur support, training, 
+        and government schemes.
+      </p>
+
+      <div class="hero-stats-women">
+        <div class="stat-item">
+          <span class="number">3000+</span>
+          <span class="label">Total Beneficiaries</span>
+        </div>
+        <div class="stat-item">
+          <span class="number">500+</span>
+          <span class="label">Active SHG Members</span>
+        </div>
+        <div class="stat-item">
+          <span class="number">20</span>
+          <span class="label">Villages Covered</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-image-women" data-aos="fade-left">
+      <div class="image-frame">
+        <img src="women-hero.png" alt="Women SHG Empowerment" onerror="this.src='https://placehold.co/600x400/E85B88/ffffff?text=Women+Empowerment'">
+      </div>
+      <div class="sticker">
+        <i class="fas fa-hand-holding-heart"></i> 26+ Years of Empowerment
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     ABOUT SECTION
+========================================= -->
+<section class="about-women">
+  <div class="container">
+    <div class="section-heading-women" data-aos="fade-up">
+      <span class="tag">🌸 Our Mission</span>
+      <h2>Empowering Women Through <span class="highlight-pink">Self Help</span> <span class="highlight-blue">Groups</span></h2>
+      <p>Since 2000, we have been creating opportunities for women to become self-reliant and confident.</p>
+    </div>
+
+    <div class="about-grid-women">
+      <div class="about-content-women" data-aos="fade-right">
+        <h3>Building <span class="highlight-pink">Confidence</span> & <span class="highlight-blue">Independence</span></h3>
+        <p>
+          Our Women Self Help Group program is designed to empower women from rural 
+          communities through collective action, financial literacy, and skill development.
+        </p>
+        <p>
+          With monthly meetings, CLFs (Cluster Level Federations), and CFS (Community 
+          Federation Structures), we ensure that every woman has a voice and access 
+          to opportunities for growth and self-reliance.
+        </p>
+        <p>
+          From SHG formation to entrepreneur support, we walk with women every step 
+          of the way — helping them build businesses, access government schemes, 
+          and create a better future for themselves and their families.
+        </p>
+      </div>
+
+      <div class="about-image-women" data-aos="fade-left">
+        <img src="women-hero.png" alt="Women SHG Meeting" onerror="this.src='https://placehold.co/500x400/E85B88/ffffff?text=Women+Empowerment'">
+        <div class="about-sticker">
+          <i class="fas fa-users"></i> 500+ Active Members
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     KEY INITIATIVES WITH ANIMATED CARTOONS
+========================================= -->
+<section class="initiatives-women">
+  <div class="container">
+    <div class="section-heading-women" data-aos="fade-up">
+      <span class="tag">💪 What We Do</span>
+      <h2>Our <span class="highlight-pink">Key</span> <span class="highlight-blue">Initiatives</span></h2>
+      <p>We support women through every step of their journey towards empowerment.</p>
+    </div>
+
+    <div class="initiatives-grid-women">
+      <div class="initiative-card-women" data-aos="fade-up" data-aos-delay="50">
+        <div class="initiative-emoji">👩‍🤝‍👩</div>
+        <div class="initiative-content">
+          <h4>SHG Formation</h4>
+          <p>Helping women form Self Help Groups for collective savings, credit, and empowerment.</p>
+        </div>
+      </div>
+
+      <div class="initiative-card-women" data-aos="fade-up" data-aos-delay="100">
+        <div class="initiative-emoji">💼</div>
+        <div class="initiative-content">
+          <h4>Entrepreneur Support</h4>
+          <p>Supporting women entrepreneurs to start and grow their own businesses and enterprises.</p>
+        </div>
+      </div>
+
+      <div class="initiative-card-women" data-aos="fade-up" data-aos-delay="150">
+        <div class="initiative-emoji">📚</div>
+        <div class="initiative-content">
+          <h4>Training & Skill Development</h4>
+          <p>Providing vocational training, financial literacy, and leadership skills to women.</p>
+        </div>
+      </div>
+
+      <div class="initiative-card-women" data-aos="fade-up" data-aos-delay="200">
+        <div class="initiative-emoji">🏛️</div>
+        <div class="initiative-content">
+          <h4>Government Schemes Awareness</h4>
+          <p>Helping women access government schemes, benefits, and financial support programs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     GALLERY - 18 IMAGES
+========================================= -->
+<section class="gallery-women">
+  <div class="container">
+    <div class="section-heading-women" data-aos="fade-up">
+      <span class="tag">📸 Moments of Empowerment</span>
+      <h2>Women in <span class="highlight-pink">Action</span></h2>
+      <p>Glimpses from our SHG meetings, training sessions, and community activities.</p>
+    </div>
+
+    <div class="gallery-grid-women">
+      <!-- 18 images with emojis -->
+      <div class="gallery-item-women" onclick="openLightbox('women1.jpeg', '👩‍🤝‍👩')">
+        <img src="women1.jpeg" alt="SHG Meeting" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">👩‍🤝‍👩</span>
+      </div>
+      <div class="gallery-item-women" onclick="openLightbox('women2.jpeg', '💪')">
+        <img src="women2.jpeg" alt="Women Empowerment" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">💪</span>
+      </div>
+      <div class="gallery-item-women" onclick="openLightbox('women3.jpeg', '🌺')">
+        <img src="women3.jpeg" alt="SHG Activity" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌺</span>
+      </div>
+      <div class="gallery-item-women" onclick="openLightbox('women4.jpeg', '🤝')">
+        <img src="women4.jpeg" alt="Community Meeting" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🤝</span>
+      </div>
+      <div class="gallery-item-women" onclick="openLightbox('women5.jpeg', '📚')">
+        <img src="women5.jpeg" alt="Training Session" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">📚</span>
+      </div>
+      <div class="gallery-item-women" onclick="openLightbox('women6.jpeg', '💼')">
+        <img src="women6.jpeg" alt="Entrepreneur Support" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">💼</span>
+      </div>
+      <div class="gallery-item-women" onclick="openLightbox('women7.jpeg', '🌷')">
+        <img src="women7.jpeg" alt="SHG Celebration" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌷</span>
+      </div>
+      <div class="gallery-item-women" onclick="openLightbox('women8.jpeg', '💖')">
+        <img src="women8.jpeg" alt="Women Together" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">💖</span>
+      </div>
+      <div class="gallery-item-women" onclick="openLightbox('women9.jpeg', '👩')">
+        <img src="women9.jpeg" alt="Women Leaders" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">👩</span>
+      </div>
+      <div class="gallery-item-women" onclick="openLightbox('women10.jpeg', '🌹')">
+        <img src="women10.jpeg" alt="SHG Success" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌹</span>
+      </div>
+      <div class="gallery-item-women" onclick="openLightbox('women11.jpeg', '🏛️')">
+        <img src="women11.jpeg" alt="Government Scheme" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🏛️</span>
+      </div>
+      <div class="gallery-item-women" onclick="openLightbox('women12.jpeg', '🌸')">
+        <img src="women12.jpeg" alt="Women Gatherings" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌸</span>
+      </div>
+      <div class="gallery-item-women" onclick="openLightbox('women13.jpeg', '💕')">
+        <img src="women13.jpeg" alt="Community Support" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">💕</span>
+      </div>
+      <div class="gallery-item-women" onclick="openLightbox('women14.jpeg', '🌟')">
+        <img src="women14.jpeg" alt="Women Achievements" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌟</span>
+      </div>
+      <div class="gallery-item-women" onclick="openLightbox('women15.jpeg', '🤗')">
+        <img src="women15.jpeg" alt="SHG Meeting" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🤗</span>
+      </div>
+      <div class="gallery-item-women" onclick="openLightbox('women16.jpeg', '🙌')">
+        <img src="women16.jpeg" alt="Women Celebration" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🙌</span>
+      </div>
+      <div class="gallery-item-women" onclick="openLightbox('women17.jpeg', '❤️')">
+        <img src="women17.jpeg" alt="Women Empowerment" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">❤️</span>
+      </div>
+      <div class="gallery-item-women" onclick="openLightbox('women18.jpeg', '🌺')">
+        <img src="women18.jpeg" alt="SHG Success Story" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌺</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     TESTIMONIALS
+========================================= -->
+<section class="testimonials-women">
+  <div class="container">
+    <div class="section-heading-women" data-aos="fade-up">
+      <span class="tag">🌟 Success Stories</span>
+      <h2>Voices of <span class="highlight-pink">Change</span></h2>
+      <p>Real stories from women whose lives have been transformed through our SHG program.</p>
+    </div>
+
+    <div class="testimonials-grid-women">
+      <div class="testimonial-card-women" data-aos="fade-up" data-aos-delay="50">
+        <div class="quote-icon">"</div>
+        <p>The support I received through our Self-Help Group gave my family a new beginning. Today, our dairy farming provides a steady income and hope for a better future. I am grateful to Wadmavli Lok Vikas Manch.</p>
+        <div class="author">
+          <div class="avatar">AG</div>
+          <div>
+            <div class="name">Mrs. Ashabai Navnath Giri</div>
+            <div class="role">SHG Member</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card-women" data-aos="fade-up" data-aos-delay="100">
+        <div class="quote-icon">"</div>
+        <p>With the support of Wadmavli Lok Vikas Manch and our Self-Help Group, I started goat farming and transformed my family's livelihood. I now have financial independence and confidence.</p>
+        <div class="author">
+          <div class="avatar">LH</div>
+          <div>
+            <div class="name">Mrs. Lankabai Sonaji Humbe</div>
+            <div class="role">Beneficiary</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card-women" data-aos="fade-up" data-aos-delay="150">
+        <div class="quote-icon">"</div>
+        <p>Being part of an SHG has given me the confidence to dream big. I now run my own small business and support my family. This program has truly transformed my life.</p>
+        <div class="author">
+          <div class="avatar">SD</div>
+          <div>
+            <div class="name">Mrs. Sunita Devidas</div>
+            <div class="role">SHG Entrepreneur</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     PARTNERS
+========================================= -->
+<section class="partners-women">
+  <div class="container">
+    <div class="section-heading-women" data-aos="fade-up">
+      <span class="tag">🤝 Our Partners</span>
+      <h2>Collaborating for <span class="highlight-pink">Women's</span> <span class="highlight-blue">Empowerment</span></h2>
+      <p>Together with our partners, we create opportunities for women across rural communities.</p>
+    </div>
+
+    <div class="partners-grid-women">
+      <div class="partner-card-women" data-aos="fade-up" data-aos-delay="50">
+        <img src="tdss.jpeg" alt="TDSS" onerror="this.style.display='none'">
+        <p>TDSS</p>
+        <span class="partner-role">SHG Program Partner</span>
+      </div>
+
+      <div class="partner-card-women" data-aos="fade-up" data-aos-delay="100">
+        <img src="lokmanch.png" alt="Lokmanch" onerror="this.style.display='none'">
+        <p>Lokmanch</p>
+        <span class="partner-role">SHG Program Partner</span>
+      </div>
+
+      <div class="partner-card-women" data-aos="fade-up" data-aos-delay="150">
+        <img src="sampada-trust.jpeg" alt="Sampada Trust" onerror="this.style.display='none'">
+        <p>Sampada Trust</p>
+        <span class="partner-role">SHG Program Partner</span>
+      </div>
+
+      <div class="partner-card-women" data-aos="fade-up" data-aos-delay="200">
+        <img src="wotr.jpeg" alt="WOTR" onerror="this.style.display='none'">
+        <p>WOTR</p>
+        <span class="partner-role">SHG Program Partner</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     LIGHTBOX
+========================================= -->
+<div id="lightbox" onclick="closeLightbox(event)">
+  <span class="close-lightbox" onclick="closeLightbox(event)"><i class="fas fa-times"></i></span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+  <div class="lightbox-info" id="lightboxInfo"></div>
+</div>
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Wadmavli Lok Vikas Manch Logo">
+      <div>
+        <h3>Wadmavli Lok Vikas Manch</h3>
+        <p>Towards Empowerment</p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="gallery.html">Gallery</a>
+    </div>
+    <div class="footer-links">
+      <h4>Get Involved</h4>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="partner.html">Partner With Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="donate.html">Donate</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Wadmavli Lok Vikas Manch. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  // AOS Animation
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 50
+  });
+
+  // Mobile Menu
+  function toggleMobileMenu() {
+    const navbar = document.querySelector(".navbar");
+    const button = document.querySelector(".mobile-menu-btn");
+    if (!navbar || !button) return;
+    navbar.classList.toggle("mobile-open");
+    const isOpen = navbar.classList.contains("mobile-open");
+    button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  }
+
+  // Close mobile menu on link click
+  document.querySelectorAll('.navbar nav a, .navbar .dropdown-menu a').forEach(link => {
+    link.addEventListener('click', function() {
+      const navbar = document.querySelector(".navbar");
+      if (navbar && navbar.classList.contains('mobile-open')) {
+        navbar.classList.remove('mobile-open');
+        const button = document.querySelector(".mobile-menu-btn");
+        if (button) button.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+
+  // =========================================
+  // LIGHTBOX
+  // =========================================
+  function openLightbox(src, caption) {
+    const lb = document.getElementById('lightbox');
+    const img = document.getElementById('lightboxImg');
+    const info = document.getElementById('lightboxInfo');
+    img.src = src;
+    info.innerHTML = caption;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(e) {
+    const lb = document.getElementById('lightbox');
+    if (e.target === lb || e.target.closest('.close-lightbox')) {
+      lb.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const lb = document.getElementById('lightbox');
+      lb.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  });
+
+  window.openLightbox = openLightbox;
+  window.closeLightbox = closeLightbox;
+
+  // =========================================
+  // SCROLL TO TOP
+  // =========================================
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 400) {
+      scrollBtn.classList.add('visible');
+    } else {
+      scrollBtn.classList.remove('visible');
+    }
+  });
+</script>
+</body>
+</html>

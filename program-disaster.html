@@ -972,9 +972,8 @@
       }
     }
 
-    
     /* =========================================
-       BEED MAP - SVG WITH ALL 22 VILLAGES
+       BEED MAP - ALL 22 VILLAGES
        ========================================= */
     .map-disaster {
       padding: 80px 0;
@@ -1500,96 +1499,6 @@
       transform: translateY(-4px) scale(1.05);
       box-shadow: 0 12px 35px rgba(139,168,136,0.35);
     }
-        /* =========================================
-       PARTNERS SECTION
-       ========================================= */
-    .partners-disaster {
-      padding: 60px 0;
-      background: var(--cream);
-    }
-
-    .partners-grid-disaster {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .partner-card-disaster {
-      background: white;
-      padding: 25px 15px;
-      border-radius: var(--border-radius);
-      text-align: center;
-      transition: .4s;
-      border: 2px solid transparent;
-      box-shadow: var(--shadow-soft);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 130px;
-    }
-
-    .partner-card-disaster:hover {
-      transform: translateY(-6px);
-      border-color: var(--gold);
-      box-shadow: var(--shadow-hover);
-    }
-
-    .partner-card-disaster img {
-      max-width: 100px;
-      max-height: 50px;
-      object-fit: contain;
-      margin-bottom: 8px;
-    }
-
-    .partner-card-disaster .partner-emoji {
-      font-size: 36px;
-      display: block;
-      margin-bottom: 6px;
-    }
-
-    .partner-card-disaster p {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-dark);
-    }
-
-    .partner-card-disaster .partner-role {
-      font-size: 10px;
-      color: var(--text-soft);
-      font-weight: 400;
-    }
-
-    .partner-section-title {
-      font-family: 'Patrick Hand', cursive;
-      font-size: 22px;
-      color: var(--navy);
-      text-align: center;
-      margin-bottom: 15px;
-    }
-
-    @media(max-width: 600px) {
-      .partners-grid-disaster {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-      }
-      .partner-card-disaster {
-        min-height: 100px;
-        padding: 18px 10px;
-      }
-      .partner-card-disaster img {
-        max-width: 70px;
-        max-height: 35px;
-      }
-      .partner-card-disaster .partner-emoji {
-        font-size: 28px;
-      }
-      .partner-card-disaster p {
-        font-size: 11px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -1634,7 +1543,7 @@
 </header>
 
 <!-- =========================================
-     HERO SECTION
+     HERO SECTION - DISASTER MANAGEMENT SUPPORT
 ========================================= -->
 <section class="hero-disaster">
   <div class="sketch-elements">
@@ -1656,12 +1565,11 @@
     <div class="hero-content-disaster" data-aos="fade-up">
       <div class="badge-disaster">
         <i class="fas fa-heart" style="color:#D4A853;"></i>
-        Disaster Relief Initiatives
+        Disaster Management Support
       </div>
 
       <h1>
-        Serving in Times of <span class="highlight-gold">Crisis</span><br>
-        <span class="highlight-sage">Together We Stand</span>
+        Standing with Communities in <span class="highlight-gold">Times of Crisis</span>
       </h1>
 
       <div class="subtitle">
@@ -1670,48 +1578,22 @@
       </div>
 
       <p>
-        When the pandemic struck and during the severe drought, we stood with our communities. 
-        From awareness programs to ration kits, masks, sanitizers, oxygen machines, and water 
-        conservation — we supported families across Beed district with compassion and dedication.
+        When disaster strikes, we stand with our communities. From COVID-19 relief 
+        to drought support, we have been there — providing essential supplies, 
+        medical support, water conservation, and hope to thousands of families 
+        across Beed district.
       </p>
 
       <div class="hero-buttons-disaster">
         <a href="#covid-section" class="btn-disaster-primary">
-          <i class="fas fa-heart"></i> Our COVID Response
+          <i class="fas fa-heart"></i> COVID-19 Response
         </a>
         <a href="#drought-section" class="btn-disaster-secondary">
           <i class="fas fa-water"></i> Drought Relief
         </a>
       </div>
 
- 
-
-    <div class="hero-image-disaster" data-aos="fade-left">
-      <div class="sketch-frame">
-        <img src="covid-hero.jpeg" alt="COVID-19 Relief Efforts" onerror="this.src='https://placehold.co/600x420/1E3A4B/D4A853?text=COVID-19+Relief'">
-      </div>
-      <div class="sketch-sticker">
-        <i class="fas fa-hand-holding-heart"></i> Serving with Love
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- =========================================
-     COVID-19 SECTION HEADER
-========================================= -->
-<section class="section-hero-disaster covid-hero" id="covid-section">
-  <div class="container">
-    <span class="section-icon">🛡️</span>
-    <h2>COVID-19 <span class="highlight-gold">Relief</span> Efforts</h2>
-    <p>When the pandemic hit, we mobilized quickly to support families with essential supplies, awareness, and medical support across Beed district.</p>
-    <span class="year-badge-large">📅 2020 - 2022</span>
-  </div>
-</section>
-
-       <div class="hero-stats-disaster">
+      <div class="hero-stats-disaster">
         <div class="stat-item">
           <span class="number">17,000+</span>
           <span class="label">Families Supported</span>
@@ -1726,6 +1608,18 @@
         </div>
       </div>
     </div>
+
+    <div class="hero-image-disaster" data-aos="fade-left">
+      <div class="sketch-frame">
+        <img src="covid-hero.jpeg" alt="Disaster Relief Efforts" onerror="this.src='https://placehold.co/600x420/1E3A4B/D4A853?text=Disaster+Relief'">
+      </div>
+      <div class="sketch-sticker">
+        <i class="fas fa-hand-holding-heart"></i> Serving with Love
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- =========================================
      IMPACT BAR
 ========================================= -->
@@ -1759,7 +1653,19 @@
     </div>
   </div>
 </section>
-  
+
+<!-- =========================================
+     COVID-19 SECTION HEADER
+========================================= -->
+<section class="section-hero-disaster covid-hero" id="covid-section">
+  <div class="container">
+    <span class="section-icon">🛡️</span>
+    <h2>COVID-19 <span class="highlight-gold">Relief</span> Efforts</h2>
+    <p>When the pandemic hit, we mobilized quickly to support families with essential supplies, awareness, and medical support across Beed district.</p>
+    <span class="year-badge-large">📅 2020 - 2022</span>
+  </div>
+</section>
+
 <!-- =========================================
      COVID-19 INITIATIVES
 ========================================= -->
@@ -1939,7 +1845,7 @@
 </section>
 
 <!-- =========================================
-     HOSPITAL SUPPORT & CERTIFICATE
+     HOSPITAL SUPPORT & COVID PARTNERS
 ========================================= -->
 <section class="hospital-disaster">
   <div class="container">
@@ -1963,82 +1869,23 @@
             from the District Collector and Beed District Hospital for our COVID-19 relief efforts.
           </p>
         </div>
-
-        <div class="certificate-box" style="border-left-color: var(--sage); margin-top:10px;">
-          <p>
-            <i class="fas fa-handshake"></i> 
-            <strong>Partners:</strong> Smile Foundation • Think Sharp Foundation • TDSS
-          </p>
-        </div>
       </div>
 
       <div class="hospital-image-disaster" data-aos="fade-left">
         <img src="covid-o2machine1.jpeg" alt="Oxygen Machine Handover" onerror="this.src='https://placehold.co/500x350/1E3A4B/D4A853?text=Oxygen+Machine+Handover'">
       </div>
     </div>
-  </div>
-</section>
-  
-  <!-- =========================================
-     PARTNERS SECTION - COVID & DROUGHT
-========================================= -->
-<section class="partners-disaster">
-  <div class="container">
-    <div class="section-heading-disaster" data-aos="fade-up">
-      <span class="tag">🤝 Our Partners</span>
-      <h2>Together We <span class="highlight-gold">Served</span></h2>
-      <p>We are deeply grateful to our partners who made our relief work possible.</p>
-    </div>
 
-    <!-- COVID-19 Partners -->
-    <div style="margin-bottom:40px;">
-      <h4 style="font-family:'Patrick Hand',cursive;font-size:22px;color:var(--navy);text-align:center;margin-bottom:15px;">
-        🛡️ COVID-19 Relief Partners
-      </h4>
-      <div class="partners-grid-disaster">
-        <div class="partner-card-disaster" data-aos="fade-up" data-aos-delay="50">
-          <img src="smile-foundation.png" alt="Smile Foundation" onerror="this.style.display='none'">
-          <p>Smile Foundation</p>
-          <span class="partner-role">COVID-19 Relief Partner</span>
-        </div>
-
-        <div class="partner-card-disaster" data-aos="fade-up" data-aos-delay="100">
-          <img src="thinksharp.jpeg" alt="Think Sharp Foundation" onerror="this.style.display='none'">
-          <p>Think Sharp Foundation</p>
-          <span class="partner-role">COVID-19 Relief Partner</span>
-        </div>
-
-        <div class="partner-card-disaster" data-aos="fade-up" data-aos-delay="150">
-          <img src="tdss.jpeg" alt="TDSS" onerror="this.style.display='none'">
-          <p>TDSS</p>
-          <span class="partner-role">COVID-19 Relief Partner</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Drought Relief Partners -->
-    <div>
-      <h4 style="font-family:'Patrick Hand',cursive;font-size:22px;color:var(--navy);text-align:center;margin-bottom:15px;">
-        💧 Drought Relief Partners
-      </h4>
-      <div class="partners-grid-disaster">
-        <div class="partner-card-disaster" data-aos="fade-up" data-aos-delay="200">
-          <img src="dogoodnow.png" alt="Do Good Now Foundation" onerror="this.style.display='none'">
-          <p>Do Good Now Foundation</p>
-          <span class="partner-role">Drought Relief Partner</span>
-        </div>
-
-        <div class="partner-card-disaster" data-aos="fade-up" data-aos-delay="250">
-          <span class="partner-emoji">🌸</span>
-          <p>Chandni Foundation</p>
-          <span class="partner-role">Drought Relief Partner</span>
-        </div>
-
-        <div class="partner-card-disaster" data-aos="fade-up" data-aos-delay="300">
-          <span class="partner-emoji">🌾</span>
-          <p>Dilasa Sanstha</p>
-          <span class="partner-role">Drought Relief Partner</span>
-        </div>
+    <!-- COVID Partners -->
+    <div style="margin-top:40px;text-align:center;background:var(--cream);padding:25px;border-radius:var(--border-radius);">
+      <p style="font-size:14px;color:var(--text-soft);margin-bottom:15px;">
+        <i class="fas fa-handshake" style="color:var(--gold);"></i> 
+        <strong>COVID-19 Relief Partners:</strong>
+      </p>
+      <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;">
+        <span style="background:white;padding:8px 20px;border-radius:30px;font-size:13px;font-weight:600;color:var(--text-dark);box-shadow:var(--shadow-soft);">🤝 Smile Foundation</span>
+        <span style="background:white;padding:8px 20px;border-radius:30px;font-size:13px;font-weight:600;color:var(--text-dark);box-shadow:var(--shadow-soft);">💡 Think Sharp Foundation</span>
+        <span style="background:white;padding:8px 20px;border-radius:30px;font-size:13px;font-weight:600;color:var(--text-dark);box-shadow:var(--shadow-soft);">🌾 TDSS</span>
       </div>
     </div>
   </div>
@@ -2062,7 +1909,7 @@
       <div class="map-svg-container">
         <span class="map-label">📍 Beed District</span>
         <svg viewBox="0 0 550 460" xmlns="http://www.w3.org/2000/svg">
-          <!-- Beed District Outline - More accurate organic shape -->
+          <!-- Beed District Outline -->
           <path d="M350,30 L410,45 L460,75 L490,130 L505,190 L485,250 L450,300 L400,345 L340,375 L270,395 L200,400 L140,385 L80,350 L40,300 L20,240 L15,180 L30,120 L70,70 L120,40 L190,25 L260,20 L310,22 Z" 
                 fill="#E8DDD0" stroke="#8BA888" stroke-width="3" stroke-linejoin="round"/>
           
@@ -2074,7 +1921,7 @@
           <text x="260" y="225" font-family="Patrick Hand, cursive" font-size="30" fill="#1E3A4B" text-anchor="middle" font-weight="700">Beed</text>
           <text x="260" y="258" font-family="Patrick Hand, cursive" font-size="15" fill="#5A6F7A" text-anchor="middle">District</text>
 
-          <!-- === ALL 22 VILLAGE MARKERS === -->
+          <!-- ALL 22 VILLAGE MARKERS -->
           
           <!-- Row 1: North -->
           <circle cx="150" cy="80" r="6" fill="#D4A853"/><text x="165" y="85" font-size="9" fill="#1E3A4B">Chausala</text>

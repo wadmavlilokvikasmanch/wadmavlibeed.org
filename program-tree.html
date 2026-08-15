@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tree Plantation | Wadmavli Lok Vikas Manch</title>
+  <meta name="description" content="Tree Plantation program by Wadmavli Lok Vikas Manch - 10,000 trees planted across 20 villages in Beed district with support from TDSS, Lokmanch, and Dilasa." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <style>
+    /* =========================================
+       TREE PLANTATION - GREEN + EARTHY THEME
+       Natural, Fresh, Warm
+       ========================================= */
+
+    :root {
+      --forest: #2D5A27;
+      --forest-light: #4A7C43;
+      --leaf: #6B8F5A;
+      --mint: #A8C99E;
+      --earth: #8B7355;
+      --earth-light: #C4A882;
+      --warm: #E8C9A0;
+      --cream: #FFF8F0;
+      --white: #ffffff;
+      --text-dark: #2C3E2A;
+      --text-soft: #5A6F5A;
+      --shadow-soft: 0 8px 30px rgba(45, 90, 39, 0.15);
+      --shadow-hover: 0 15px 45px rgba(45, 90, 39, 0.25);
+      --border-radius: 24px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+
+    /* =========================================
+       HEADER - SAME AS OTHER PAGES
+       ========================================= */
+    header {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    }
+    .navbar {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-image {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+    .logo-text h2 {
+      font-size: 18px;
+      color: #063b67;
+      line-height: 1.2;
+    }
+    .logo-text span {
+      display: block;
+      color: #e85b88;
+      font-size: 9px;
+      letter-spacing: 2px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+    nav a {
+      color: #063b67;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: .3s;
+    }
+    nav a:hover {
+      color: #075b9a;
+    }
+    .nav-donate {
+      background: #075b9a;
+      color: white !important;
+      padding: 10px 18px;
+      border-radius: 25px;
+    }
+    .mobile-menu-btn {
+      display: none;
+      border: 0;
+      background: none;
+      color: #063b67;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 8px;
+    }
+    @media (max-width:950px) {
+      nav { display: none; }
+      .mobile-menu-btn { display: flex; flex-shrink: 0; }
+      .navbar { position: relative; }
+      .navbar.mobile-open nav {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 220px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: white;
+        padding: 10px 0;
+        border-radius: 0 0 16px 16px;
+        box-shadow: 0 12px 30px rgba(0,0,0,.15);
+        z-index: 2000;
+      }
+      .navbar.mobile-open nav a {
+        display: block;
+        width: 100%;
+        padding: 13px 20px;
+        text-align: left;
+        box-sizing: border-box;
+      }
+      .navbar.mobile-open nav a:hover {
+        background: #f1f7fb;
+      }
+      .navbar.mobile-open .nav-donate {
+        margin: 8px 12px;
+        width: auto;
+        text-align: center;
+      }
+    }
+
+    /* DROPDOWN */
+    .nav-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-trigger {
+      color: #063b67;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: .3s;
+      cursor: pointer;
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dropdown-trigger i {
+      font-size: 11px;
+      transition: .3s;
+    }
+    .nav-dropdown:hover .dropdown-trigger i {
+      transform: rotate(180deg);
+    }
+    .dropdown-trigger:hover {
+      color: #075b9a;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 220px;
+      background: white;
+      padding: 8px 0;
+      border-radius: 12px;
+      box-shadow: 0 12px 35px rgba(0,0,0,.12);
+      z-index: 999;
+      border: 1px solid rgba(0,0,0,.06);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+    .nav-dropdown:hover .dropdown-menu {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #063b67;
+      text-decoration: none;
+      transition: .3s;
+      white-space: nowrap;
+    }
+    .dropdown-menu a:hover {
+      background: #f5f0ff;
+      color: #075b9a;
+      padding-left: 26px;
+    }
+    .dropdown-menu::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 20px;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid white;
+      filter: drop-shadow(0 -2px 5px rgba(0,0,0,.04));
+    }
+    @media (max-width: 950px) {
+      .nav-dropdown { width: 100%; }
+      .dropdown-trigger { padding: 13px 20px; justify-content: space-between; width: 100%; }
+      .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
+        background: #f8f6fc;
+        opacity: 1;
+        transform: none;
+        display: none;
+        border: none;
+        pointer-events: auto;
+      }
+      .dropdown-menu::before { display: none; }
+      .dropdown-menu a { padding: 10px 20px 10px 40px; font-size: 13px; }
+      .dropdown-menu a:hover { padding-left: 46px; }
+      .nav-dropdown.active .dropdown-menu { display: block; }
+    }
+
+    /* =========================================
+       SECTION HEADING
+       ========================================= */
+    .section-heading-tree {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .section-heading-tree .tag {
+      display: inline-block;
+      background: var(--mint);
+      color: var(--forest);
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .section-heading-tree h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--forest);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .section-heading-tree h2 .highlight-earth {
+      color: var(--earth);
+    }
+
+    .section-heading-tree h2 .highlight-mint {
+      color: var(--mint);
+    }
+
+    .section-heading-tree p {
+      color: var(--text-soft);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* =========================================
+       HERO - WAVING TREES WITH ANIMATION
+       ========================================= */
+    .hero-tree {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 20px 60px;
+      background: linear-gradient(180deg, #87CEEB 0%, #B5D8A8 30%, #8BAA7A 50%, #4A7C43 70%, #2D5A27 90%, #1A3D15 100%);
+    }
+
+    /* Sky */
+    .sky-tree {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      background: linear-gradient(180deg, #87CEEB 0%, #B5D8A8 60%, #8BAA7A 100%);
+      opacity: 0.3;
+      z-index: 0;
+    }
+
+    /* Sun */
+    .sun-tree {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      font-size: 70px;
+      animation: pulseSunTree 4s ease-in-out infinite;
+      opacity: 0.8;
+      z-index: 2;
+      filter: drop-shadow(0 0 30px rgba(255, 200, 0, 0.3));
+    }
+
+    @keyframes pulseSunTree {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.05); opacity: 1; }
+    }
+
+    /* Clouds */
+    .cloud-tree {
+      position: absolute;
+      font-size: 50px;
+      opacity: 0.15;
+      animation: floatCloudTree 40s infinite linear;
+      z-index: 2;
+    }
+    .cloud-tree:nth-child(1) { top: 5%; left: 5%; animation-delay: 0s; font-size: 60px; }
+    .cloud-tree:nth-child(2) { top: 10%; left: 60%; animation-delay: 15s; font-size: 45px; }
+    .cloud-tree:nth-child(3) { top: 3%; left: 35%; animation-delay: 25s; font-size: 55px; }
+
+    @keyframes floatCloudTree {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(150px); }
+      100% { transform: translateX(0); }
+    }
+
+    /* Trees Background - Waving */
+    .trees-bg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 70%;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+      padding: 0 10px;
+      z-index: 1;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .tree-bg {
+      font-size: 100px;
+      animation: waveTree 4s ease-in-out infinite;
+      display: inline-block;
+      transform-origin: bottom;
+      filter: drop-shadow(0 4px 15px rgba(0,0,0,0.05));
+    }
+
+    .tree-bg:nth-child(1) { font-size: 120px; animation-delay: 0s; }
+    .tree-bg:nth-child(2) { font-size: 90px; animation-delay: 0.5s; }
+    .tree-bg:nth-child(3) { font-size: 140px; animation-delay: 1s; }
+    .tree-bg:nth-child(4) { font-size: 80px; animation-delay: 1.5s; }
+    .tree-bg:nth-child(5) { font-size: 110px; animation-delay: 2s; }
+    .tree-bg:nth-child(6) { font-size: 130px; animation-delay: 2.5s; }
+    .tree-bg:nth-child(7) { font-size: 95px; animation-delay: 3s; }
+    .tree-bg:nth-child(8) { font-size: 115px; animation-delay: 3.5s; }
+    .tree-bg:nth-child(9) { font-size: 85px; animation-delay: 0.8s; }
+    .tree-bg:nth-child(10) { font-size: 125px; animation-delay: 1.8s; }
+    .tree-bg:nth-child(11) { font-size: 100px; animation-delay: 2.8s; }
+    .tree-bg:nth-child(12) { font-size: 135px; animation-delay: 0.3s; }
+    .tree-bg:nth-child(13) { font-size: 88px; animation-delay: 1.3s; }
+    .tree-bg:nth-child(14) { font-size: 118px; animation-delay: 2.3s; }
+    .tree-bg:nth-child(15) { font-size: 105px; animation-delay: 3.3s; }
+
+    @keyframes waveTree {
+      0%, 100% { transform: rotate(0deg) scaleX(1); }
+      25% { transform: rotate(2deg) scaleX(1.01); }
+      75% { transform: rotate(-2deg) scaleX(0.99); }
+    }
+
+    /* Flying Leaves */
+    .leaves {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 3;
+    }
+
+    .leaves .leaf {
+      position: absolute;
+      font-size: 30px;
+      opacity: 0.25;
+      animation: leafFloat 12s infinite linear;
+    }
+
+    .leaves .leaf:nth-child(1) { left: 5%; animation-delay: 0s; font-size: 35px; }
+    .leaves .leaf:nth-child(2) { left: 15%; animation-delay: 2s; font-size: 25px; }
+    .leaves .leaf:nth-child(3) { left: 28%; animation-delay: 4s; font-size: 40px; }
+    .leaves .leaf:nth-child(4) { left: 40%; animation-delay: 1s; font-size: 28px; }
+    .leaves .leaf:nth-child(5) { left: 52%; animation-delay: 3s; font-size: 35px; }
+    .leaves .leaf:nth-child(6) { left: 65%; animation-delay: 5s; font-size: 25px; }
+    .leaves .leaf:nth-child(7) { left: 78%; animation-delay: 2.5s; font-size: 38px; }
+    .leaves .leaf:nth-child(8) { left: 88%; animation-delay: 4.5s; font-size: 30px; }
+    .leaves .leaf:nth-child(9) { left: 48%; animation-delay: 6s; font-size: 32px; }
+    .leaves .leaf:nth-child(10) { left: 22%; animation-delay: 7s; font-size: 28px; }
+
+    @keyframes leafFloat {
+      0% { transform: translateY(-100px) rotate(0deg) scale(0.5); opacity: 0.2; }
+      25% { opacity: 0.4; }
+      50% { transform: translateY(calc(100vh + 100px)) rotate(180deg) scale(1.2); opacity: 0.3; }
+      75% { opacity: 0.4; }
+      100% { transform: translateY(calc(100vh + 200px)) rotate(360deg) scale(0.8); opacity: 0; }
+    }
+
+    /* Earth Ground */
+    .ground-tree {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 25px;
+      background: var(--earth);
+      z-index: 3;
+      border-radius: 0 0 50% 50% / 0 0 100% 100%;
+      opacity: 0.6;
+    }
+
+    .hero-grid-tree {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+      position: relative;
+      z-index: 5;
+    }
+
+    .hero-content-tree {
+      color: white;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+
+    .hero-content-tree .badge-tree {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .hero-content-tree h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 1.08;
+      margin-bottom: 15px;
+      color: #fff;
+      text-shadow: 0 2px 30px rgba(0,0,0,0.15);
+    }
+
+    .hero-content-tree h1 .highlight-mint {
+      color: #C8E6C9;
+    }
+
+    .hero-content-tree h1 .highlight-earth {
+      color: var(--earth-light);
+    }
+
+    .hero-content-tree .subtitle {
+      font-size: 20px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      text-shadow: 0 1px 15px rgba(0,0,0,0.1);
+    }
+
+    .hero-content-tree .subtitle .tree-badge {
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      padding: 4px 16px;
+      border-radius: 50px;
+      font-size: 14px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .hero-content-tree p {
+      font-size: 17px;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.9);
+      max-width: 520px;
+      margin-bottom: 25px;
+      text-shadow: 0 1px 15px rgba(0,0,0,0.08);
+    }
+
+    /* Quote Box */
+    .quote-box-tree {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      padding: 20px 25px;
+      border-radius: var(--border-radius);
+      border-left: 4px solid var(--mint);
+      margin-top: 20px;
+      max-width: 500px;
+    }
+
+    .quote-box-tree .quote-text {
+      font-style: italic;
+      font-size: 16px;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.8;
+    }
+
+    .quote-box-tree .quote-author {
+      font-weight: 600;
+      color: var(--mint);
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    .quote-box-tree .quote-emoji {
+      font-size: 24px;
+      margin-right: 8px;
+      display: inline-block;
+      animation: floatEmoji 3s ease-in-out infinite;
+    }
+
+    @keyframes floatEmoji {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .hero-stats-tree {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 2px solid rgba(255,255,255,0.1);
+    }
+
+    .hero-stats-tree .stat-item .number {
+      font-size: 28px;
+      font-weight: 800;
+      color: #C8E6C9;
+      display: block;
+      line-height: 1.2;
+      text-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+
+    .hero-stats-tree .stat-item .label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.7);
+      font-weight: 500;
+    }
+
+    .hero-image-tree {
+      position: relative;
+    }
+
+    .hero-image-tree .image-frame {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(10px);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+      border: 3px solid rgba(255,255,255,0.08);
+    }
+
+    .hero-image-tree .image-frame img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .hero-image-tree .sticker {
+      position: absolute;
+      bottom: -15px;
+      right: -15px;
+      background: var(--mint);
+      color: var(--forest);
+      padding: 12px 20px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 8px 25px rgba(168, 201, 158, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: bounceSticker 3s infinite;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    @keyframes bounceSticker {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .hero-image-tree .sticker i {
+      font-size: 20px;
+    }
+
+    @media(max-width: 992px) {
+      .hero-grid-tree {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .hero-content-tree h1 {
+        font-size: 40px;
+      }
+      .hero-image-tree .image-frame img {
+        height: 280px;
+      }
+      .trees-bg .tree-bg { font-size: 60px !important; }
+      .leaves .leaf { display: none; }
+      .sun-tree { font-size: 50px; right: 20px; }
+      .cloud-tree { display: none; }
+    }
+
+    @media(max-width: 600px) {
+      .hero-content-tree h1 {
+        font-size: 32px;
+      }
+      .hero-content-tree .subtitle {
+        font-size: 17px;
+      }
+      .hero-stats-tree {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .hero-stats-tree .stat-item .number {
+        font-size: 22px;
+      }
+      .trees-bg .tree-bg { font-size: 40px !important; }
+      .quote-box-tree {
+        padding: 15px 18px;
+      }
+      .quote-box-tree .quote-text {
+        font-size: 14px;
+      }
+    }
+
+    /* =========================================
+       ABOUT SECTION
+       ========================================= */
+    .about-tree {
+      padding: 80px 0;
+      background: var(--cream);
+    }
+
+    .about-grid-tree {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-content-tree h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: var(--forest);
+      margin-bottom: 12px;
+    }
+
+    .about-content-tree h3 .highlight-earth {
+      color: var(--earth);
+    }
+
+    .about-content-tree p {
+      color: var(--text-soft);
+      line-height: 1.9;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .about-image-tree img {
+      width: 100%;
+      border-radius: var(--border-radius);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+      border: 2px solid var(--mint);
+    }
+
+    .about-image-tree {
+      position: relative;
+    }
+
+    .about-image-tree .about-sticker {
+      position: absolute;
+      bottom: -15px;
+      left: -15px;
+      background: var(--forest);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 8px 25px rgba(45, 90, 39, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: bounceSticker 3s infinite 1s;
+    }
+
+    @media(max-width: 768px) {
+      .about-grid-tree {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .about-content-tree h3 {
+        font-size: 26px;
+      }
+      .about-image-tree .about-sticker {
+        position: static;
+        margin-top: 15px;
+        display: inline-flex;
+      }
+    }
+
+    /* =========================================
+       GALLERY - 4 IMAGES
+       ========================================= */
+    .gallery-tree {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .gallery-grid-tree {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .gallery-item-tree {
+      background: white;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      transition: .4s;
+      border: 3px solid rgba(255,255,255,0.5);
+      cursor: pointer;
+      position: relative;
+      aspect-ratio: 1 / 1;
+    }
+
+    .gallery-item-tree:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--mint);
+    }
+
+    .gallery-item-tree img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item-tree:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-item-tree .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(45, 90, 39, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .gallery-item-tree:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-item-tree .gallery-overlay i {
+      color: white;
+      font-size: 30px;
+      background: rgba(0,0,0,0.2);
+      backdrop-filter: blur(4px);
+      padding: 14px;
+      border-radius: 50%;
+      transform: scale(0.8);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item-tree:hover .gallery-overlay i {
+      transform: scale(1);
+    }
+
+    .gallery-item-tree .gallery-emoji {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      font-size: 28px;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(4px);
+      padding: 4px 12px;
+      border-radius: 12px;
+      line-height: 1.4;
+    }
+
+    @media(max-width: 600px) {
+      .gallery-grid-tree {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+      }
+    }
+
+    /* =========================================
+       PARTNERS
+       ========================================= */
+    .partners-tree {
+      padding: 60px 0;
+      background: var(--cream);
+    }
+
+    .partners-grid-tree {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      max-width: 700px;
+      margin: 30px auto 0;
+    }
+
+    .partner-card-tree {
+      background: white;
+      padding: 25px 15px;
+      border-radius: var(--border-radius);
+      text-align: center;
+      transition: .4s;
+      border: 2px solid transparent;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 120px;
+    }
+
+    .partner-card-tree:hover {
+      transform: translateY(-6px);
+      border-color: var(--forest);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .partner-card-tree img {
+      max-width: 100px;
+      max-height: 50px;
+      object-fit: contain;
+      margin-bottom: 8px;
+    }
+
+    .partner-card-tree p {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .partner-card-tree .partner-role {
+      font-size: 10px;
+      color: var(--text-soft);
+      font-weight: 400;
+    }
+
+    @media(max-width: 600px) {
+      .partners-grid-tree {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 15px;
+      }
+      .partner-card-tree {
+        min-height: 100px;
+        padding: 18px 10px;
+      }
+      .partner-card-tree img {
+        max-width: 70px;
+        max-height: 35px;
+      }
+      .partner-card-tree p {
+        font-size: 11px;
+      }
+    }
+
+    /* =========================================
+       LIGHTBOX
+       ========================================= */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.92);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      padding: 20px;
+      backdrop-filter: blur(8px);
+    }
+    #lightbox.active {
+      display: flex;
+    }
+    #lightbox img {
+      max-width: 92%;
+      max-height: 85vh;
+      border-radius: 20px;
+      box-shadow: 0 30px 60px rgba(0,0,0,.6);
+      animation: zoomIn 0.4s cubic-bezier(0.23,1,0.32,1);
+    }
+    @keyframes zoomIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    #lightbox .close-lightbox {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      color: white;
+      font-size: 36px;
+      cursor: pointer;
+      transition: .3s;
+      background: rgba(0,0,0,0.3);
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+      border: 2px solid rgba(255,255,255,.1);
+    }
+    #lightbox .close-lightbox:hover {
+      background: var(--forest);
+      transform: rotate(90deg) scale(1.05);
+      border-color: var(--forest);
+    }
+    #lightbox .lightbox-info {
+      position: absolute;
+      bottom: 40px;
+      color: rgba(255,255,255,.6);
+      font-size: 14px;
+      text-align: center;
+      max-width: 80%;
+    }
+    @media(max-width:600px) {
+      #lightbox .close-lightbox { top: 20px; right: 20px; font-size: 28px; width: 44px; height: 44px; }
+      #lightbox .lightbox-info { font-size: 12px; bottom: 20px; }
+    }
+
+    /* =========================================
+       FOOTER
+       ========================================= */
+    .site-footer {
+      background: #eef7fc;
+      color: #063b67;
+      padding: 65px 20px 0;
+    }
+    .footer-content {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 45px;
+    }
+    .footer-brand h3 { font-size: 18px; margin-bottom: 5px; color: #063b67; }
+    .footer-brand img { width: 58px; height: 58px; object-fit: contain; }
+    .footer-brand p { color: #e85b88; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; }
+    .footer-links { display: flex; flex-direction: column; gap: 9px; }
+    .footer-links h4 { color: #063b67; font-size: 16px; margin-bottom: 8px; }
+    .footer-links a { color: #526b7a; text-decoration: none; font-size: 13px; transition: .3s; }
+    .footer-links a:hover { color: #e85b88; transform: translateX(3px); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.15); padding: 20px 10px; text-align: center; }
+    .footer-bottom p { color: #667985; font-size: 12px; }
+    @media(max-width:768px) {
+      .site-footer { padding: 50px 20px 0; }
+      .footer-content { width: 100%; grid-template-columns: 1fr; gap: 35px; padding-bottom: 35px; }
+      .footer-brand { align-items: center; }
+      .footer-brand img { width: 52px; height: 52px; }
+      .footer-links h4 { font-size: 15px; }
+    }
+
+    /* Scroll to top */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--forest);
+      color: white;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(45, 90, 39, 0.35);
+      transition: .4s cubic-bezier(0.23,1,0.32,1);
+      opacity: 0;
+      transform: translateY(20px);
+      z-index: 999;
+    }
+    .scroll-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .scroll-top:hover {
+      background: var(--mint);
+      color: var(--forest);
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 12px 35px rgba(168, 201, 158, 0.35);
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container navbar">
+    <div class="logo-area">
+      <img src="logo.png" alt="Wadmavli Lok Vikas Manch Logo" class="logo-image">
+      <div class="logo-text">
+        <h2>Wadmavli Lok Vikas Manch</h2>
+        <span>TOWARDS EMPOWERMENT</span>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <div class="nav-dropdown">
+        <a href="programs.html" class="dropdown-trigger">Programs <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-menu">
+          <a href="program-education.html">📚 Mission Education</a>
+          <a href="program-driving.html">🚗 Motor Driving School</a>
+          <a href="program-skill.html">💼 Skill Development</a>
+          <a href="program-women.html">👩 Women SHGs</a>
+          <a href="program-organic.html">🌾 Organic Farming</a>
+          <a href="program-water.html">💧 Clean Drinking Water</a>
+          <a href="program-tree.html">🌳 Tree Plantation</a>
+          <a href="program-watershed.html">🏞️ Watershed Development</a>
+          <a href="program-disaster.html">🚑 Disaster Relief</a>
+        </div>
+      </div>
+      <a href="gallery.html">Gallery</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="partner.html">Partner</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html" class="nav-donate">Donate</a>
+    </nav>
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open navigation menu" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<!-- =========================================
+     HERO - WAVING TREES WITH ANIMATION
+========================================= -->
+<section class="hero-tree">
+  <div class="sky-tree"></div>
+  <div class="sun-tree">☀️</div>
+  <div class="cloud-tree">☁️</div>
+  <div class="cloud-tree">☁️</div>
+  <div class="cloud-tree">☁️</div>
+
+  <!-- Flying Leaves -->
+  <div class="leaves">
+    <span class="leaf">🍃</span>
+    <span class="leaf">🌿</span>
+    <span class="leaf">🍃</span>
+    <span class="leaf">🌱</span>
+    <span class="leaf">🍃</span>
+    <span class="leaf">🌿</span>
+    <span class="leaf">🍃</span>
+    <span class="leaf">🌱</span>
+    <span class="leaf">🍃</span>
+    <span class="leaf">🌿</span>
+  </div>
+
+  <!-- Waving Trees Background -->
+  <div class="trees-bg">
+    <span class="tree-bg">🌳</span>
+    <span class="tree-bg">🌲</span>
+    <span class="tree-bg">🌳</span>
+    <span class="tree-bg">🌲</span>
+    <span class="tree-bg">🌳</span>
+    <span class="tree-bg">🌲</span>
+    <span class="tree-bg">🌳</span>
+    <span class="tree-bg">🌲</span>
+    <span class="tree-bg">🌳</span>
+    <span class="tree-bg">🌲</span>
+    <span class="tree-bg">🌳</span>
+    <span class="tree-bg">🌲</span>
+    <span class="tree-bg">🌳</span>
+    <span class="tree-bg">🌲</span>
+    <span class="tree-bg">🌳</span>
+  </div>
+
+  <div class="ground-tree"></div>
+
+  <div class="container hero-grid-tree">
+    <div class="hero-content-tree" data-aos="fade-up">
+      <div class="badge-tree">
+        <i class="fas fa-tree" style="color:#C8E6C9;"></i>
+        Tree Plantation Program
+      </div>
+
+      <h1>
+        Planting <span class="highlight-mint">Trees</span>,<br>
+        Growing <span class="highlight-earth">Hope</span>
+      </h1>
+
+      <div class="subtitle">
+        Greening Communities for a Better Future
+        <span class="tree-badge">🌳 10,000+ Trees</span>
+      </div>
+
+      <p>
+        Wadmavli Lok Vikas Manch has planted 10,000+ trees across 20 villages in Beed district. 
+        Through our tree plantation program, we are creating a greener, healthier environment 
+        for communities to thrive.
+      </p>
+
+      <!-- Quote Box -->
+      <div class="quote-box-tree">
+        <div class="quote-text">
+          <span class="quote-emoji">🌿</span>
+          "The true meaning of life is to plant trees, under whose shade you do not expect to sit."
+        </div>
+        <div class="quote-author">— Nelson Henderson</div>
+      </div>
+
+      <div class="hero-stats-tree">
+        <div class="stat-item">
+          <span class="number">10,000+</span>
+          <span class="label">Trees Planted</span>
+        </div>
+        <div class="stat-item">
+          <span class="number">20</span>
+          <span class="label">Villages Covered</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-image-tree" data-aos="fade-left">
+      <div class="image-frame">
+        <img src="tree-hero.png" alt="Tree Plantation" onerror="this.src='https://placehold.co/600x400/2D5A27/C8E6C9?text=Tree+Plantation'">
+      </div>
+      <div class="sticker">
+        <i class="fas fa-leaf"></i> 10,000+ Trees
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     ABOUT SECTION
+========================================= -->
+<section class="about-tree">
+  <div class="container">
+    <div class="section-heading-tree" data-aos="fade-up">
+      <span class="tag">🌳 Our Mission</span>
+      <h2>Greening <span class="highlight-earth">Beed</span>, One Tree at a <span class="highlight-mint">Time</span></h2>
+      <p>We are committed to environmental conservation through large-scale tree plantation and awareness.</p>
+    </div>
+
+    <div class="about-grid-tree">
+      <div class="about-content-tree" data-aos="fade-right">
+        <h3>Creating a <span class="highlight-earth">Greener</span> Tomorrow</h3>
+        <p>
+          Our tree plantation program has successfully planted 10,000+ trees across 
+          20 villages in Beed district. We work with communities to plant native 
+          species that support local biodiversity and combat climate change.
+        </p>
+        <p>
+          With the support of our partners, we continue to expand our plantation 
+          efforts, creating green spaces, improving air quality, and building a 
+          sustainable environment for future generations.
+        </p>
+      </div>
+
+      <div class="about-image-tree" data-aos="fade-left">
+        <img src="tree-hero.png" alt="Tree Plantation" onerror="this.src='https://placehold.co/500x400/2D5A27/C8E6C9?text=Tree+Plantation'">
+        <div class="about-sticker">
+          <i class="fas fa-tree"></i> 20 Villages
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     GALLERY - 4 IMAGES
+========================================= -->
+<section class="gallery-tree">
+  <div class="container">
+    <div class="section-heading-tree" data-aos="fade-up">
+      <span class="tag">📸 In Action</span>
+      <h2>Planting <span class="highlight-earth">Moments</span></h2>
+      <p>Glimpses from our tree plantation drives across Beed district.</p>
+    </div>
+
+    <div class="gallery-grid-tree">
+      <div class="gallery-item-tree" onclick="openLightbox('tree1.jpeg', '🌳')">
+        <img src="tree1.jpeg" alt="Tree Plantation" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌳</span>
+      </div>
+
+      <div class="gallery-item-tree" onclick="openLightbox('tree2.jpeg', '🌱')">
+        <img src="tree2.jpeg" alt="Tree Plantation" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌱</span>
+      </div>
+
+      <div class="gallery-item-tree" onclick="openLightbox('tree3.jpeg', '🍃')">
+        <img src="tree3.jpeg" alt="Tree Plantation" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🍃</span>
+      </div>
+
+      <div class="gallery-item-tree" onclick="openLightbox('tree4.jpeg', '🌿')">
+        <img src="tree4.jpeg" alt="Tree Plantation" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌿</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     PARTNERS
+========================================= -->
+<section class="partners-tree">
+  <div class="container">
+    <div class="section-heading-tree" data-aos="fade-up">
+      <span class="tag">🤝 Our Partners</span>
+      <h2>Collaborating for a <span class="highlight-earth">Greener</span> Future</h2>
+      <p>Together with our partners, we are making Beed greener, one tree at a time.</p>
+    </div>
+
+    <div class="partners-grid-tree">
+      <div class="partner-card-tree" data-aos="fade-up" data-aos-delay="50">
+        <img src="tdss.jpeg" alt="TDSS" onerror="this.style.display='none'">
+        <p>TDSS</p>
+        <span class="partner-role">Tree Plantation Partner</span>
+      </div>
+
+      <div class="partner-card-tree" data-aos="fade-up" data-aos-delay="100">
+        <img src="lokmanch.png" alt="Lokmanch" onerror="this.style.display='none'">
+        <p>Lokmanch</p>
+        <span class="partner-role">Tree Plantation Partner</span>
+      </div>
+
+      <div class="partner-card-tree" data-aos="fade-up" data-aos-delay="150">
+        <img src="dilasa.jpeg" alt="Dilasa Sanstha" onerror="this.style.display='none'">
+        <p>Dilasa Sanstha</p>
+        <span class="partner-role">Tree Plantation Partner</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     LIGHTBOX
+========================================= -->
+<div id="lightbox" onclick="closeLightbox(event)">
+  <span class="close-lightbox" onclick="closeLightbox(event)"><i class="fas fa-times"></i></span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+  <div class="lightbox-info" id="lightboxInfo"></div>
+</div>
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Wadmavli Lok Vikas Manch Logo">
+      <div>
+        <h3>Wadmavli Lok Vikas Manch</h3>
+        <p>Towards Empowerment</p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="gallery.html">Gallery</a>
+    </div>
+    <div class="footer-links">
+      <h4>Get Involved</h4>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="partner.html">Partner With Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="donate.html">Donate</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Wadmavli Lok Vikas Manch. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  // AOS Animation
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 50
+  });
+
+  // Mobile Menu
+  function toggleMobileMenu() {
+    const navbar = document.querySelector(".navbar");
+    const button = document.querySelector(".mobile-menu-btn");
+    if (!navbar || !button) return;
+    navbar.classList.toggle("mobile-open");
+    const isOpen = navbar.classList.contains("mobile-open");
+    button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  }
+
+  // Close mobile menu on link click
+  document.querySelectorAll('.navbar nav a, .navbar .dropdown-menu a').forEach(link => {
+    link.addEventListener('click', function() {
+      const navbar = document.querySelector(".navbar");
+      if (navbar && navbar.classList.contains('mobile-open')) {
+        navbar.classList.remove('mobile-open');
+        const button = document.querySelector(".mobile-menu-btn");
+        if (button) button.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+
+  // =========================================
+  // LIGHTBOX
+  // =========================================
+  function openLightbox(src, caption) {
+    const lb = document.getElementById('lightbox');
+    const img = document.getElementById('lightboxImg');
+    const info = document.getElementById('lightboxInfo');
+    img.src = src;
+    info.innerHTML = caption;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(e) {
+    const lb = document.getElementById('lightbox');
+    if (e.target === lb || e.target.closest('.close-lightbox')) {
+      lb.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const lb = document.getElementById('lightbox');
+      lb.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  });
+
+  window.openLightbox = openLightbox;
+  window.closeLightbox = closeLightbox;
+
+  // =========================================
+  // SCROLL TO TOP
+  // =========================================
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 400) {
+      scrollBtn.classList.add('visible');
+    } else {
+      scrollBtn.classList.remove('visible');
+    }
+  });
+</script>
+</body>
+</html>

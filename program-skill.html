@@ -165,6 +165,104 @@
       }
     }
 
+    /* DROPDOWN */
+    .nav-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-trigger {
+      color: #063b67;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: .3s;
+      cursor: pointer;
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dropdown-trigger i {
+      font-size: 11px;
+      transition: .3s;
+    }
+    .nav-dropdown:hover .dropdown-trigger i {
+      transform: rotate(180deg);
+    }
+    .dropdown-trigger:hover {
+      color: #075b9a;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 220px;
+      background: white;
+      padding: 8px 0;
+      border-radius: 12px;
+      box-shadow: 0 12px 35px rgba(0,0,0,.12);
+      z-index: 999;
+      border: 1px solid rgba(0,0,0,.06);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+    .nav-dropdown:hover .dropdown-menu {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #063b67;
+      text-decoration: none;
+      transition: .3s;
+      white-space: nowrap;
+    }
+    .dropdown-menu a:hover {
+      background: #f5f0ff;
+      color: #075b9a;
+      padding-left: 26px;
+    }
+    .dropdown-menu::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 20px;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid white;
+      filter: drop-shadow(0 -2px 5px rgba(0,0,0,.04));
+    }
+    @media (max-width: 950px) {
+      .nav-dropdown { width: 100%; }
+      .dropdown-trigger { padding: 13px 20px; justify-content: space-between; width: 100%; }
+      .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
+        background: #f8f6fc;
+        opacity: 1;
+        transform: none;
+        display: none;
+        border: none;
+        pointer-events: auto;
+      }
+      .dropdown-menu::before { display: none; }
+      .dropdown-menu a { padding: 10px 20px 10px 40px; font-size: 13px; }
+      .dropdown-menu a:hover { padding-left: 46px; }
+      .nav-dropdown.active .dropdown-menu { display: block; }
+    }
+
     /* =========================================
        HERO - PURPLE/PINK WITH FLOATING ELEMENTS
        ========================================= */
@@ -1189,72 +1287,182 @@
     }
 
     /* =========================================
-   GALLERY - POLAROID STYLE (9 Photos)
-   ========================================= */
-.gallery-livelihood {
-  padding: 80px 0;
-  background: var(--light-bg);
-}
+       GALLERY - POLAROID STYLE (9 Photos)
+       ========================================= */
+    .gallery-livelihood {
+      padding: 80px 0;
+      background: var(--light-bg);
+    }
 
-.gallery-grid-livelihood {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  margin-top: 30px;
-}
+    .gallery-grid-livelihood {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 30px;
+    }
 
-.gallery-item-livelihood {
-  background: white;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  transition: .4s;
-  padding: 10px 10px 18px;
-  border: 1px solid rgba(108, 59, 158, 0.06);
-}
+    .gallery-item-livelihood {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: .4s;
+      padding: 10px 10px 18px;
+      border: 1px solid rgba(108, 59, 158, 0.06);
+      cursor: pointer;
+    }
 
-/* Random rotation for Polaroid effect */
-.gallery-item-livelihood:nth-child(1) { transform: rotate(-1.5deg); }
-.gallery-item-livelihood:nth-child(2) { transform: rotate(2deg); }
-.gallery-item-livelihood:nth-child(3) { transform: rotate(-0.5deg); }
-.gallery-item-livelihood:nth-child(4) { transform: rotate(1.5deg); }
-.gallery-item-livelihood:nth-child(5) { transform: rotate(-2deg); }
-.gallery-item-livelihood:nth-child(6) { transform: rotate(0.5deg); }
-.gallery-item-livelihood:nth-child(7) { transform: rotate(-1deg); }
-.gallery-item-livelihood:nth-child(8) { transform: rotate(1.8deg); }
-.gallery-item-livelihood:nth-child(9) { transform: rotate(-0.8deg); }
+    /* Random rotation for Polaroid effect */
+    .gallery-item-livelihood:nth-child(1) { transform: rotate(-1.5deg); }
+    .gallery-item-livelihood:nth-child(2) { transform: rotate(2deg); }
+    .gallery-item-livelihood:nth-child(3) { transform: rotate(-0.5deg); }
+    .gallery-item-livelihood:nth-child(4) { transform: rotate(1.5deg); }
+    .gallery-item-livelihood:nth-child(5) { transform: rotate(-2deg); }
+    .gallery-item-livelihood:nth-child(6) { transform: rotate(0.5deg); }
+    .gallery-item-livelihood:nth-child(7) { transform: rotate(-1deg); }
+    .gallery-item-livelihood:nth-child(8) { transform: rotate(1.8deg); }
+    .gallery-item-livelihood:nth-child(9) { transform: rotate(-0.8deg); }
 
-.gallery-item-livelihood:hover {
-  transform: rotate(0deg) scale(1.02);
-  box-shadow: var(--shadow-hover);
-}
+    .gallery-item-livelihood:hover {
+      transform: rotate(0deg) scale(1.02);
+      box-shadow: var(--shadow-hover);
+    }
 
-.gallery-item-livelihood img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 10px;
-}
+    .gallery-item-livelihood img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
 
-.gallery-item-livelihood .caption {
-  text-align: center;
-  padding: 8px 10px 0;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--dark-text);
-}
+    .gallery-item-livelihood .caption {
+      text-align: center;
+      padding: 8px 10px 0;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--dark-text);
+    }
 
-@media(max-width: 992px) {
-  .gallery-grid-livelihood {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+    /* Preview overlay for lightbox */
+    .gallery-item-livelihood .preview-overlay {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 58px;
+      background: rgba(108, 59, 158, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      border-radius: 10px;
+    }
 
-@media(max-width: 600px) {
-  .gallery-grid-livelihood {
-    grid-template-columns: 1fr;
-  }
-}
+    .gallery-item-livelihood {
+      position: relative;
+    }
+
+    .gallery-item-livelihood:hover .preview-overlay {
+      opacity: 1;
+    }
+
+    .gallery-item-livelihood .preview-overlay i {
+      color: white;
+      font-size: 36px;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(4px);
+      padding: 14px;
+      border-radius: 50%;
+      transform: scale(0.8);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item-livelihood:hover .preview-overlay i {
+      transform: scale(1);
+    }
+
+    @media(max-width: 992px) {
+      .gallery-grid-livelihood {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width: 600px) {
+      .gallery-grid-livelihood {
+        grid-template-columns: 1fr;
+      }
+      .gallery-item-livelihood img {
+        height: 200px;
+      }
+    }
+
+    /* =========================================
+       LIGHTBOX
+       ========================================= */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.92);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      padding: 20px;
+      backdrop-filter: blur(8px);
+    }
+    #lightbox.active {
+      display: flex;
+    }
+    #lightbox img {
+      max-width: 92%;
+      max-height: 85vh;
+      border-radius: 14px;
+      box-shadow: 0 30px 60px rgba(0,0,0,.6);
+      animation: zoomIn 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    @keyframes zoomIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    #lightbox .close-lightbox {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      color: white;
+      font-size: 36px;
+      cursor: pointer;
+      transition: .3s;
+      background: rgba(0,0,0,0.3);
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+      border: 2px solid rgba(255,255,255,.1);
+    }
+    #lightbox .close-lightbox:hover {
+      background: var(--pink);
+      transform: rotate(90deg) scale(1.05);
+      border-color: var(--pink);
+    }
+    #lightbox .lightbox-info {
+      position: absolute;
+      bottom: 40px;
+      color: rgba(255,255,255,.6);
+      font-size: 14px;
+      text-align: center;
+      max-width: 80%;
+    }
+    #lightbox .lightbox-info .lb-category {
+      color: var(--pink);
+    }
+    @media(max-width:600px) {
+      #lightbox .close-lightbox { top: 20px; right: 20px; font-size: 28px; width: 44px; height: 44px; }
+      #lightbox .lightbox-info { font-size: 12px; bottom: 20px; }
+    }
 
     /* =========================================
        CTA
@@ -1447,6 +1655,35 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* Scroll to top */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--pink);
+      color: white;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(232,91,136,.35);
+      transition: .4s cubic-bezier(0.23, 1, 0.32, 1);
+      opacity: 0;
+      transform: translateY(20px);
+      z-index: 999;
+    }
+    .scroll-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .scroll-top:hover {
+      background: var(--blue);
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 12px 35px rgba(7,91,154,.35);
+    }
   </style>
 </head>
 <body>
@@ -1464,7 +1701,20 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="programs.html">Programs</a>
+      <div class="nav-dropdown">
+        <a href="programs.html" class="dropdown-trigger">Programs <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-menu">
+          <a href="program-education.html">📚 Mission Education</a>
+          <a href="program-driving.html">🚗 Motor Driving School</a>
+          <a href="program-skill.html">💼 Skill Development</a>
+          <a href="program-women.html">👩 Women SHGs</a>
+          <a href="program-organic.html">🌾 Organic Farming</a>
+          <a href="program-water.html">💧 Clean Drinking Water</a>
+          <a href="program-tree.html">🌳 Tree Plantation</a>
+          <a href="program-watershed.html">🏞️ Watershed Development</a>
+          <a href="program-disaster.html">🚑 Disaster Relief</a>
+        </div>
+      </div>
       <a href="gallery.html">Gallery</a>
       <a href="volunteer.html">Volunteer</a>
       <a href="partner.html">Partner</a>
@@ -1879,48 +2129,74 @@
     <div class="section-heading-livelihood" data-aos="fade-up">
       <span class="tag">📸 Moments</span>
       <h2>Training in <span class="highlight-purple">Action</span></h2>
-      <p>Glimpses from our training sessions, workshops, and community activities.</p>
+      <p>Glimpses from our training sessions, workshops, and community activities. Click on any image to enlarge.</p>
     </div>
     <div class="gallery-grid-livelihood">
-      <div class="gallery-item-livelihood" data-aos="zoom-in" data-aos-delay="50">
-        <img src="gallery-livelihood1.jpeg" alt="Classroom training" onerror="this.src='https://placehold.co/300x200/8B5CF6/ffffff?text=Classroom+Training'">
+      <div class="gallery-item-livelihood" data-aos="zoom-in" data-aos-delay="50" onclick="openLightbox('gallery-livelihood1.jpeg', '📚 Classroom Training')">
+        <img src="gallery-livelihood1.jpeg" alt="Classroom training" onerror="this.src='https://placehold.co/400x300/8B5CF6/ffffff?text=Classroom+Training'">
+        <div class="preview-overlay"><i class="fas fa-expand"></i></div>
         <div class="caption">📚 Classroom Training</div>
       </div>
-      <div class="gallery-item-livelihood" data-aos="zoom-in" data-aos-delay="80">
-        <img src="gallery-livelihood2.jpeg" alt="Practical training" onerror="this.src='https://placehold.co/300x200/E85B88/ffffff?text=Practical+Session'">
+
+      <div class="gallery-item-livelihood" data-aos="zoom-in" data-aos-delay="80" onclick="openLightbox('gallery-livelihood2.jpeg', '🛠️ Practical Session')">
+        <img src="gallery-livelihood2.jpeg" alt="Practical training" onerror="this.src='https://placehold.co/400x300/E85B88/ffffff?text=Practical+Session'">
+        <div class="preview-overlay"><i class="fas fa-expand"></i></div>
         <div class="caption">🛠️ Practical Session</div>
       </div>
-      <div class="gallery-item-livelihood" data-aos="zoom-in" data-aos-delay="110">
-        <img src="gallery-livelihood3.jpeg" alt="Students learning" onerror="this.src='https://placehold.co/300x200/6C3B9E/ffffff?text=Students+Learning'">
+
+      <div class="gallery-item-livelihood" data-aos="zoom-in" data-aos-delay="110" onclick="openLightbox('gallery-livelihood3.jpeg', '👩‍🎓 Students Learning')">
+        <img src="gallery-livelihood3.jpeg" alt="Students learning" onerror="this.src='https://placehold.co/400x300/6C3B9E/ffffff?text=Students+Learning'">
+        <div class="preview-overlay"><i class="fas fa-expand"></i></div>
         <div class="caption">👩‍🎓 Students Learning</div>
       </div>
-      <div class="gallery-item-livelihood" data-aos="zoom-in" data-aos-delay="140">
-        <img src="gallery-livelihood4.jpeg" alt="Mobilization" onerror="this.src='https://placehold.co/300x200/8B5CF6/ffffff?text=Mobilization'">
+
+      <div class="gallery-item-livelihood" data-aos="zoom-in" data-aos-delay="140" onclick="openLightbox('gallery-livelihood4.jpeg', '📢 Community Mobilization')">
+        <img src="gallery-livelihood4.jpeg" alt="Mobilization" onerror="this.src='https://placehold.co/400x300/8B5CF6/ffffff?text=Mobilization'">
+        <div class="preview-overlay"><i class="fas fa-expand"></i></div>
         <div class="caption">📢 Community Mobilization</div>
       </div>
-      <div class="gallery-item-livelihood" data-aos="zoom-in" data-aos-delay="170">
-        <img src="gallery-livelihood5.jpeg" alt="Training activity" onerror="this.src='https://placehold.co/300x200/E85B88/ffffff?text=Training+Activity'">
+
+      <div class="gallery-item-livelihood" data-aos="zoom-in" data-aos-delay="170" onclick="openLightbox('gallery-livelihood5.jpeg', '💡 Training Activity')">
+        <img src="gallery-livelihood5.jpeg" alt="Training activity" onerror="this.src='https://placehold.co/400x300/E85B88/ffffff?text=Training+Activity'">
+        <div class="preview-overlay"><i class="fas fa-expand"></i></div>
         <div class="caption">💡 Training Activity</div>
       </div>
-      <div class="gallery-item-livelihood" data-aos="zoom-in" data-aos-delay="200">
-        <img src="gallery-livelihood6.jpeg" alt="Group photo" onerror="this.src='https://placehold.co/300x200/6C3B9E/ffffff?text=Group+Photo'">
+
+      <div class="gallery-item-livelihood" data-aos="zoom-in" data-aos-delay="200" onclick="openLightbox('gallery-livelihood6.jpeg', '📸 Group Photo')">
+        <img src="gallery-livelihood6.jpeg" alt="Group photo" onerror="this.src='https://placehold.co/400x300/6C3B9E/ffffff?text=Group+Photo'">
+        <div class="preview-overlay"><i class="fas fa-expand"></i></div>
         <div class="caption">📸 Group Photo</div>
       </div>
-      <div class="gallery-item-livelihood" data-aos="zoom-in" data-aos-delay="230">
-        <img src="gallery-livelihood7.jpeg" alt="Office training" onerror="this.src='https://placehold.co/300x200/8B5CF6/ffffff?text=Office+Training'">
+
+      <div class="gallery-item-livelihood" data-aos="zoom-in" data-aos-delay="230" onclick="openLightbox('gallery-livelihood7.jpeg', '💼 Office Training')">
+        <img src="gallery-livelihood7.jpeg" alt="Office training" onerror="this.src='https://placehold.co/400x300/8B5CF6/ffffff?text=Office+Training'">
+        <div class="preview-overlay"><i class="fas fa-expand"></i></div>
         <div class="caption">💼 Office Training</div>
       </div>
-      <div class="gallery-item-livelihood" data-aos="zoom-in" data-aos-delay="260">
-        <img src="gallery-livelihood8.jpeg" alt="Banking training" onerror="this.src='https://placehold.co/300x200/E85B88/ffffff?text=Banking+Training'">
+
+      <div class="gallery-item-livelihood" data-aos="zoom-in" data-aos-delay="260" onclick="openLightbox('gallery-livelihood8.jpeg', '🏦 Banking Training')">
+        <img src="gallery-livelihood8.jpeg" alt="Banking training" onerror="this.src='https://placehold.co/400x300/E85B88/ffffff?text=Banking+Training'">
+        <div class="preview-overlay"><i class="fas fa-expand"></i></div>
         <div class="caption">🏦 Banking Training</div>
       </div>
-      <div class="gallery-item-livelihood" data-aos="zoom-in" data-aos-delay="290">
-        <img src="gallery-livelihood9.jpeg" alt="Celebration" onerror="this.src='https://placehold.co/300x200/6C3B9E/ffffff?text=Success+Celebration'">
+
+      <div class="gallery-item-livelihood" data-aos="zoom-in" data-aos-delay="290" onclick="openLightbox('gallery-livelihood9.jpeg', '🎉 Success Celebration')">
+        <img src="gallery-livelihood9.jpeg" alt="Celebration" onerror="this.src='https://placehold.co/400x300/6C3B9E/ffffff?text=Success+Celebration'">
+        <div class="preview-overlay"><i class="fas fa-expand"></i></div>
         <div class="caption">🎉 Success Celebration</div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- =========================================
+     LIGHTBOX
+========================================= -->
+<div id="lightbox" onclick="closeLightbox(event)">
+  <span class="close-lightbox" onclick="closeLightbox(event)"><i class="fas fa-times"></i></span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+  <div class="lightbox-info" id="lightboxInfo"></div>
+</div>
 
 <!-- =========================================
      APPLY NOW SECTION
@@ -1988,21 +2264,21 @@
               <option value="Banking & Finance - Dighi">Banking & Finance (Dighi)</option>
             </select>
           </div>
-              <div class="form-group" style="margin: 20px 0;">
-        <div class="g-recaptcha" data-sitekey="6LdeaHctAAAAAFrLgHf4jPTfnSrdJB6fjyLQoOk6"></div>
-        <p style="font-size: 12px; color: var(--muted-text); margin-top: 8px; text-align: center;">
-            <i class="fas fa-shield-alt" style="color: var(--purple);"></i> Protected by reCAPTCHA
-        </p>
-    </div>
+          <div class="form-group" style="margin: 20px 0;">
+            <div class="g-recaptcha" data-sitekey="6LdeaHctAAAAAFrLgHf4jPTfnSrdJB6fjyLQoOk6"></div>
+            <p style="font-size: 12px; color: var(--muted-text); margin-top: 8px; text-align: center;">
+              <i class="fas fa-shield-alt" style="color: var(--purple);"></i> Protected by reCAPTCHA
+            </p>
+          </div>
           <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Submit Application</button>
         </form>
         <div id="formSuccess" style="display:none; background:#d4edda; border:1px solid #c3e6cb; color:#155724; padding:15px; border-radius:12px; margin-top:15px;">
           <i class="fas fa-check-circle"></i> ✅ Thank you! Your application has been submitted successfully. Our team will contact you soon.
         </div>
-       <div id="formError" style="display:none; background:#f8d7da; border:1px solid #f5c6cb; color:#721c24; padding:15px; border-radius:12px; margin-top:15px;">
-    <i class="fas fa-exclamation-circle"></i> 
-    <span id="errorMessage">❌ Something went wrong. Please try again or contact us directly.</span>
-</div>
+        <div id="formError" style="display:none; background:#f8d7da; border:1px solid #f5c6cb; color:#721c24; padding:15px; border-radius:12px; margin-top:15px;">
+          <i class="fas fa-exclamation-circle"></i> 
+          <span id="errorMessage">❌ Something went wrong. Please try again or contact us directly.</span>
+        </div>
       </div>
     </div>
   </div>
@@ -2019,7 +2295,7 @@
       <a href="#apply" class="btn-cta-livelihood-white">
         <i class="fas fa-arrow-right"></i> Apply Now
       </a>
-      <a href="#faq" class="btn-cta-livelihood-outline">
+      <a href="#" class="btn-cta-livelihood-outline" onclick="document.querySelector('.faq-livelihood').scrollIntoView({behavior:'smooth'}); return false;">
         <i class="fas fa-question-circle"></i> Learn More
       </a>
     </div>
@@ -2058,6 +2334,11 @@
   </div>
 </footer>
 
+<!-- Scroll to Top Button -->
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
@@ -2077,6 +2358,18 @@
     const isOpen = navbar.classList.contains("mobile-open");
     button.setAttribute("aria-expanded", isOpen ? "true" : "false");
   }
+
+  // Close mobile menu when clicking a link
+  document.querySelectorAll('.navbar nav a, .navbar .dropdown-menu a').forEach(link => {
+    link.addEventListener('click', function() {
+      const navbar = document.querySelector(".navbar");
+      if (navbar && navbar.classList.contains('mobile-open')) {
+        navbar.classList.remove('mobile-open');
+        const button = document.querySelector(".mobile-menu-btn");
+        if (button) button.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
 
   // FAQ Toggle
   function toggleFAQ(element) {
@@ -2124,27 +2417,74 @@
   });
   counters.forEach(counter => observer.observe(counter));
 
- // EmailJS - Livelihood Application Form
-emailjs.init({ publicKey: "N8B-uOw-emAzOCu1f" });
+  // =========================================
+  // LIGHTBOX
+  // =========================================
+  function openLightbox(src, caption) {
+    const lb = document.getElementById('lightbox');
+    const img = document.getElementById('lightboxImg');
+    const info = document.getElementById('lightboxInfo');
+    img.src = src;
+    info.innerHTML = caption;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
 
-const form = document.getElementById("livelihoodForm");
-const successDiv = document.getElementById('formSuccess');
-const errorDiv = document.getElementById('formError');
+  function closeLightbox(e) {
+    const lb = document.getElementById('lightbox');
+    if (e.target === lb || e.target.closest('.close-lightbox')) {
+      lb.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  }
 
-form.addEventListener("submit", function(e) {
+  // Close lightbox with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const lb = document.getElementById('lightbox');
+      lb.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  });
+
+  // Make lightbox functions globally available
+  window.openLightbox = openLightbox;
+  window.closeLightbox = closeLightbox;
+
+  // =========================================
+  // SCROLL TO TOP
+  // =========================================
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 400) {
+      scrollBtn.classList.add('visible');
+    } else {
+      scrollBtn.classList.remove('visible');
+    }
+  });
+
+  // =========================================
+  // EMAILJS - Livelihood Application Form
+  // =========================================
+  emailjs.init({ publicKey: "N8B-uOw-emAzOCu1f" });
+
+  const form = document.getElementById("livelihoodForm");
+  const successDiv = document.getElementById('formSuccess');
+  const errorDiv = document.getElementById('formError');
+
+  form.addEventListener("submit", function(e) {
     e.preventDefault();
 
     successDiv.style.display = 'none';
     errorDiv.style.display = 'none';
 
-    // ✅ ADD reCAPTCHA CHECK ✅
+    // reCAPTCHA check
     const recaptchaResponse = document.querySelector('.g-recaptcha-response');
     if (!recaptchaResponse || recaptchaResponse.value === '') {
-        errorDiv.style.display = 'block';
-        document.getElementById('errorMessage').textContent = 'Please complete the reCAPTCHA verification.';
-        return;
+      errorDiv.style.display = 'block';
+      document.getElementById('errorMessage').textContent = 'Please complete the reCAPTCHA verification.';
+      return;
     }
-    // ✅ END OF ADDED CODE ✅
 
     const btn = form.querySelector('button[type="submit"]');
     const original = btn.innerHTML;
@@ -2152,30 +2492,26 @@ form.addEventListener("submit", function(e) {
     btn.disabled = true;
 
     emailjs.sendForm("service_4c85wrw", "template_qchpu2v", this)
-        .then(function() {
-            successDiv.style.display = 'block';
-            form.reset();
-            // ✅ Reset reCAPTCHA ✅
-            if (typeof grecaptcha !== 'undefined') {
-                grecaptcha.reset();
-            }
-            // ✅ END OF ADDED CODE ✅
-            btn.innerHTML = original;
-            btn.disabled = false;
-            setTimeout(() => { successDiv.style.display = 'none'; }, 6000);
-        })
-        .catch(function() {
-            errorDiv.style.display = 'block';
-            btn.innerHTML = original;
-            btn.disabled = false;
-            // ✅ Reset reCAPTCHA on error ✅
-            if (typeof grecaptcha !== 'undefined') {
-                grecaptcha.reset();
-            }
-            // ✅ END OF ADDED CODE ✅
-            setTimeout(() => { errorDiv.style.display = 'none'; }, 6000);
-        });
-});
+      .then(function() {
+        successDiv.style.display = 'block';
+        form.reset();
+        if (typeof grecaptcha !== 'undefined') {
+          grecaptcha.reset();
+        }
+        btn.innerHTML = original;
+        btn.disabled = false;
+        setTimeout(() => { successDiv.style.display = 'none'; }, 6000);
+      })
+      .catch(function() {
+        errorDiv.style.display = 'block';
+        btn.innerHTML = original;
+        btn.disabled = false;
+        if (typeof grecaptcha !== 'undefined') {
+          grecaptcha.reset();
+        }
+        setTimeout(() => { errorDiv.style.display = 'none'; }, 6000);
+      });
+  });
 </script>
 </body>
 </html>

@@ -1,1 +1,1878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Organic Farming | Wadmavli Lok Vikas Manch</title>
+  <meta name="description" content="Organic Farming program by Wadmavli Lok Vikas Manch - Empowering 520+ farmers across 10 villages in Beed district through training, demos, group formation, and exposure visits." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <style>
+    /* =========================================
+       ORGANIC FARMING - WARM EARTHY THEME
+       Terracotta + Olive + Golden + Cream
+       ========================================= */
 
+    :root {
+      --terracotta: #A65D3B;
+      --terracotta-light: #F3E2D5;
+      --cream: #F7F3E8;
+      --olive-light: #A8B87A;
+      --golden: #D4A24C;
+      --golden-light: #F0D48A;
+      --cream: #FFF8F0;
+      --warm-white: #FDF8F3;
+      --dark-brown: #3D2C1E;
+      --text-soft: #6D5C4A;
+      --white: #ffffff;
+      --shadow-soft: 0 8px 30px rgba(194, 101, 74, 0.15);
+      --shadow-hover: 0 15px 45px rgba(194, 101, 74, 0.25);
+      --border-radius: 24px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: var(--cream);
+      color: var(--dark-brown);
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+
+    /* =========================================
+       HEADER - SAME AS OTHER PAGES
+       ========================================= */
+    header {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    }
+    .navbar {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-image {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+    .logo-text h2 {
+      font-size: 18px;
+      color: #063b67;
+      line-height: 1.2;
+    }
+    .logo-text span {
+      display: block;
+      color: #e85b88;
+      font-size: 9px;
+      letter-spacing: 2px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+    nav a {
+      color: #063b67;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: .3s;
+    }
+    nav a:hover {
+      color: #075b9a;
+    }
+    .nav-donate {
+      background: #075b9a;
+      color: white !important;
+      padding: 10px 18px;
+      border-radius: 25px;
+    }
+    .mobile-menu-btn {
+      display: none;
+      border: 0;
+      background: none;
+      color: #063b67;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 8px;
+    }
+    @media (max-width:950px) {
+      nav { display: none; }
+      .mobile-menu-btn { display: flex; flex-shrink: 0; }
+      .navbar { position: relative; }
+      .navbar.mobile-open nav {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 220px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: white;
+        padding: 10px 0;
+        border-radius: 0 0 16px 16px;
+        box-shadow: 0 12px 30px rgba(0,0,0,.15);
+        z-index: 2000;
+      }
+      .navbar.mobile-open nav a {
+        display: block;
+        width: 100%;
+        padding: 13px 20px;
+        text-align: left;
+        box-sizing: border-box;
+      }
+      .navbar.mobile-open nav a:hover {
+        background: #f1f7fb;
+      }
+      .navbar.mobile-open .nav-donate {
+        margin: 8px 12px;
+        width: auto;
+        text-align: center;
+      }
+    }
+
+    /* DROPDOWN */
+    .nav-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-trigger {
+      color: #063b67;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: .3s;
+      cursor: pointer;
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dropdown-trigger i {
+      font-size: 11px;
+      transition: .3s;
+    }
+    .nav-dropdown:hover .dropdown-trigger i {
+      transform: rotate(180deg);
+    }
+    .dropdown-trigger:hover {
+      color: #075b9a;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 220px;
+      background: white;
+      padding: 8px 0;
+      border-radius: 12px;
+      box-shadow: 0 12px 35px rgba(0,0,0,.12);
+      z-index: 999;
+      border: 1px solid rgba(0,0,0,.06);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+    .nav-dropdown:hover .dropdown-menu {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #063b67;
+      text-decoration: none;
+      transition: .3s;
+      white-space: nowrap;
+    }
+    .dropdown-menu a:hover {
+      background: #f5f0ff;
+      color: #075b9a;
+      padding-left: 26px;
+    }
+    .dropdown-menu::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 20px;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid white;
+      filter: drop-shadow(0 -2px 5px rgba(0,0,0,.04));
+    }
+    @media (max-width: 950px) {
+      .nav-dropdown { width: 100%; }
+      .dropdown-trigger { padding: 13px 20px; justify-content: space-between; width: 100%; }
+      .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
+        background: #f8f6fc;
+        opacity: 1;
+        transform: none;
+        display: none;
+        border: none;
+        pointer-events: auto;
+      }
+      .dropdown-menu::before { display: none; }
+      .dropdown-menu a { padding: 10px 20px 10px 40px; font-size: 13px; }
+      .dropdown-menu a:hover { padding-left: 46px; }
+      .nav-dropdown.active .dropdown-menu { display: block; }
+    }
+
+    /* =========================================
+       SECTION HEADING
+       ========================================= */
+    .section-heading-organic {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .section-heading-organic .tag {
+      display: inline-block;
+      background: var(--terracotta-light);
+      color: var(--terracotta);
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .section-heading-organic h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--dark-brown);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .section-heading-organic h2 .highlight-terracotta {
+      color: var(--terracotta);
+    }
+
+    .section-heading-organic h2 .highlight-golden {
+      color: var(--golden);
+    }
+
+    .section-heading-organic p {
+      color: var(--text-soft);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* =========================================
+       HERO - WARM FARM THEME
+       ========================================= */
+    .hero-organic {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 20px;
+      background: linear-gradient(180deg, #FDE8D0 0%, #F5D4B8 20%, #D4A24C 40%, #C2654A 60%, #8B6B4A 80%, #5C3D2E 100%);
+    }
+
+    /* Warm Glow Overlay */
+    .hero-organic::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse at 30% 20%, rgba(255,200,100,0.15), transparent 60%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Sky with warm gradient */
+    .sky-warm {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 55%;
+      background: linear-gradient(180deg, #FDE8D0 0%, #F5D4B8 40%, #E8C9A0 100%);
+      opacity: 0.6;
+      z-index: 0;
+    }
+
+    /* Sun - Warm Glowing */
+    .sun-warm {
+      position: absolute;
+      top: 25px;
+      right: 60px;
+      font-size: 85px;
+      animation: pulseSunWarm 5s ease-in-out infinite;
+      opacity: 0.9;
+      z-index: 2;
+      filter: drop-shadow(0 0 40px rgba(212, 162, 76, 0.4));
+    }
+
+    @keyframes pulseSunWarm {
+      0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.9; }
+      50% { transform: scale(1.08) rotate(8deg); opacity: 1; }
+    }
+
+    /* Clouds - Warm tones */
+    .cloud-warm {
+      position: absolute;
+      font-size: 55px;
+      opacity: 0.2;
+      animation: floatCloudWarm 35s infinite linear;
+      z-index: 2;
+    }
+    .cloud-warm:nth-child(1) { top: 5%; left: 5%; animation-delay: 0s; font-size: 65px; }
+    .cloud-warm:nth-child(2) { top: 10%; left: 60%; animation-delay: 12s; font-size: 50px; }
+    .cloud-warm:nth-child(3) { top: 3%; left: 35%; animation-delay: 22s; font-size: 55px; }
+
+    @keyframes floatCloudWarm {
+      0% { transform: translateX(0) scaleX(1); }
+      49% { transform: translateX(calc(100vw - 200px)) scaleX(1); }
+      50% { transform: translateX(calc(100vw - 200px)) scaleX(-1); }
+      99% { transform: translateX(0) scaleX(-1); }
+      100% { transform: translateX(0) scaleX(1); }
+    }
+
+    /* Farm Ground with Rolling Hills */
+    .farm-ground-warm {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 55%;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .hill-warm {
+      position: absolute;
+      bottom: 0;
+      border-radius: 50% 50% 0 0;
+      opacity: 0.25;
+    }
+    .hill-warm-1 {
+      left: -5%;
+      width: 35%;
+      height: 75%;
+      background: #8B6B4A;
+      animation: swayHillWarm 9s ease-in-out infinite;
+    }
+    .hill-warm-2 {
+      right: -5%;
+      width: 40%;
+      height: 55%;
+      background: #A87B5A;
+      animation: swayHillWarm 11s ease-in-out infinite 1s;
+    }
+    .hill-warm-3 {
+      left: 25%;
+      width: 30%;
+      height: 35%;
+      background: #C4906A;
+      animation: swayHillWarm 13s ease-in-out infinite 2s;
+    }
+
+    @keyframes swayHillWarm {
+      0%, 100% { transform: scaleX(1); }
+      50% { transform: scaleX(1.03); }
+    }
+
+    /* Waving Crops - Golden Wheat */
+    .crops-warm {
+      position: absolute;
+      bottom: 20%;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-around;
+      font-size: 42px;
+      opacity: 0.3;
+      z-index: 2;
+      flex-wrap: wrap;
+      padding: 0 20px;
+    }
+
+    .crops-warm .crop {
+      animation: waveCropWarm 3.5s ease-in-out infinite;
+      display: inline-block;
+      transform-origin: bottom;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.08));
+    }
+
+    .crops-warm .crop:nth-child(1) { animation-delay: 0s; }
+    .crops-warm .crop:nth-child(2) { animation-delay: 0.18s; }
+    .crops-warm .crop:nth-child(3) { animation-delay: 0.36s; }
+    .crops-warm .crop:nth-child(4) { animation-delay: 0.54s; }
+    .crops-warm .crop:nth-child(5) { animation-delay: 0.72s; }
+    .crops-warm .crop:nth-child(6) { animation-delay: 0.90s; }
+    .crops-warm .crop:nth-child(7) { animation-delay: 1.08s; }
+    .crops-warm .crop:nth-child(8) { animation-delay: 1.26s; }
+    .crops-warm .crop:nth-child(9) { animation-delay: 1.44s; }
+    .crops-warm .crop:nth-child(10) { animation-delay: 1.62s; }
+    .crops-warm .crop:nth-child(11) { animation-delay: 1.80s; }
+    .crops-warm .crop:nth-child(12) { animation-delay: 1.98s; }
+    .crops-warm .crop:nth-child(13) { animation-delay: 2.16s; }
+    .crops-warm .crop:nth-child(14) { animation-delay: 2.34s; }
+    .crops-warm .crop:nth-child(15) { animation-delay: 2.52s; }
+    .crops-warm .crop:nth-child(16) { animation-delay: 2.70s; }
+    .crops-warm .crop:nth-child(17) { animation-delay: 2.88s; }
+    .crops-warm .crop:nth-child(18) { animation-delay: 3.06s; }
+    .crops-warm .crop:nth-child(19) { animation-delay: 3.24s; }
+    .crops-warm .crop:nth-child(20) { animation-delay: 3.42s; }
+
+    @keyframes waveCropWarm {
+      0%, 100% { transform: rotate(0deg) translateY(0); }
+      30% { transform: rotate(8deg) translateY(-8px); }
+      70% { transform: rotate(-8deg) translateY(-12px); }
+    }
+
+    /* Animated Animals - Warm Farm */
+    .animals-warm {
+      position: absolute;
+      bottom: 22%;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .animal-warm {
+      position: absolute;
+      font-size: 38px;
+      animation: moveAnimalWarm 28s infinite linear;
+      filter: drop-shadow(0 2px 10px rgba(0,0,0,0.12));
+    }
+
+    .animal-warm-1 { bottom: 5%; left: 2%; animation-duration: 30s; font-size: 48px; }
+    .animal-warm-2 { bottom: 15%; left: 18%; animation-duration: 34s; animation-delay: 7s; font-size: 32px; }
+    .animal-warm-3 { bottom: 8%; left: 42%; animation-duration: 26s; animation-delay: 14s; font-size: 42px; }
+    .animal-warm-4 { bottom: 20%; left: 62%; animation-duration: 32s; animation-delay: 4s; font-size: 36px; }
+    .animal-warm-5 { bottom: 10%; left: 78%; animation-duration: 28s; animation-delay: 10s; font-size: 40px; }
+    .animal-warm-6 { bottom: 25%; left: 52%; animation-duration: 24s; animation-delay: 18s; font-size: 28px; }
+
+    @keyframes moveAnimalWarm {
+      0% { transform: translateX(0) scaleX(1); }
+      49% { transform: translateX(calc(100vw - 200px)) scaleX(1); }
+      50% { transform: translateX(calc(100vw - 200px)) scaleX(-1); }
+      99% { transform: translateX(0) scaleX(-1); }
+      100% { transform: translateX(0) scaleX(1); }
+    }
+
+    /* Farmers Working - Warm Theme */
+    .farmers-warm {
+      position: absolute;
+      bottom: 24%;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .farmer-warm {
+      position: absolute;
+      font-size: 48px;
+      animation: workFarmerWarm 6s ease-in-out infinite;
+      filter: drop-shadow(0 2px 10px rgba(0,0,0,0.08));
+    }
+
+    .farmer-warm-1 { bottom: 5%; left: 10%; animation-delay: 0s; font-size: 52px; }
+    .farmer-warm-2 { bottom: 12%; left: 72%; animation-delay: 2.5s; font-size: 46px; }
+    .farmer-warm-3 { bottom: 8%; left: 48%; animation-delay: 4s; font-size: 42px; }
+
+    @keyframes workFarmerWarm {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      30% { transform: translateY(-10px) rotate(3deg); }
+      70% { transform: translateY(-5px) rotate(-3deg); }
+    }
+
+    /* Floating Elements - Warm */
+    .float-elements-warm {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 2;
+    }
+
+    .float-elements-warm .float-item {
+      position: absolute;
+      font-size: 28px;
+      opacity: 0.15;
+      animation: floatWarm 28s infinite linear;
+    }
+
+    .float-elements-warm .float-item:nth-child(1) { top: 8%; left: 5%; animation-delay: 0s; font-size: 42px; }
+    .float-elements-warm .float-item:nth-child(2) { top: 18%; left: 88%; animation-delay: 5s; font-size: 32px; }
+    .float-elements-warm .float-item:nth-child(3) { top: 45%; left: 3%; animation-delay: 10s; font-size: 38px; }
+    .float-elements-warm .float-item:nth-child(4) { top: 60%; right: 5%; animation-delay: 15s; font-size: 48px; }
+    .float-elements-warm .float-item:nth-child(5) { top: 30%; left: 40%; animation-delay: 7s; font-size: 25px; }
+    .float-elements-warm .float-item:nth-child(6) { top: 12%; left: 30%; animation-delay: 12s; font-size: 30px; }
+    .float-elements-warm .float-item:nth-child(7) { top: 40%; left: 70%; animation-delay: 17s; font-size: 35px; }
+
+    @keyframes floatWarm {
+      0% { transform: translate(0,0) rotate(0deg) scale(1); }
+      25% { transform: translate(35px,-45px) rotate(12deg) scale(1.08); }
+      50% { transform: translate(-25px,-75px) rotate(-8deg) scale(0.92); }
+      75% { transform: translate(30px,-55px) rotate(18deg) scale(1.04); }
+      100% { transform: translate(0,0) rotate(0deg) scale(1); }
+    }
+
+    .hero-grid-organic {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+      position: relative;
+      z-index: 5;
+    }
+
+    .hero-content-organic {
+      color: var(--warm-white);
+    }
+
+    .hero-content-organic .badge-organic {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--golden-light);
+      margin-bottom: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .hero-content-organic h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 1.08;
+      margin-bottom: 15px;
+      color: var(--warm-white);
+      text-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    }
+
+    .hero-content-organic h1 .highlight-golden {
+      color: var(--golden-light);
+    }
+
+    .hero-content-organic h1 .highlight-terracotta {
+      color: var(--terracotta-light);
+    }
+
+    .hero-content-organic .subtitle {
+      font-size: 20px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-content-organic .subtitle .organic-badge {
+      background: var(--golden);
+      color: var(--dark-brown);
+      padding: 4px 16px;
+      border-radius: 50px;
+      font-size: 14px;
+    }
+
+    .hero-content-organic p {
+      font-size: 17px;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.85);
+      max-width: 520px;
+      margin-bottom: 25px;
+      text-shadow: 0 1px 10px rgba(0,0,0,0.05);
+    }
+
+    .hero-stats-organic {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 2px solid rgba(255,255,255,0.08);
+    }
+
+    .hero-stats-organic .stat-item .number {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--golden-light);
+      display: block;
+      line-height: 1.2;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .hero-stats-organic .stat-item .label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+      font-weight: 500;
+    }
+
+    .hero-image-organic {
+      position: relative;
+    }
+
+    .hero-image-organic .image-frame {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(10px);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+      border: 3px solid rgba(255,255,255,0.08);
+    }
+
+    .hero-image-organic .image-frame img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .hero-image-organic .sticker {
+      position: absolute;
+      bottom: -15px;
+      right: -15px;
+      background: var(--golden);
+      color: var(--dark-brown);
+      padding: 12px 20px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 8px 25px rgba(212, 162, 76, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: bounceSticker 3s infinite;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    @keyframes bounceSticker {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .hero-image-organic .sticker i {
+      font-size: 20px;
+    }
+
+    @media(max-width: 992px) {
+      .hero-grid-organic {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .hero-content-organic h1 {
+        font-size: 40px;
+      }
+      .hero-image-organic .image-frame img {
+        height: 280px;
+      }
+      .crops-warm .crop { font-size: 28px; }
+      .animal-warm, .farmer-warm { display: none; }
+      .sun-warm { font-size: 50px; right: 20px; }
+      .cloud-warm { display: none; }
+      .hill-warm { display: none; }
+    }
+
+    @media(max-width: 600px) {
+      .hero-content-organic h1 {
+        font-size: 32px;
+      }
+      .hero-content-organic .subtitle {
+        font-size: 17px;
+      }
+      .hero-stats-organic {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .hero-stats-organic .stat-item .number {
+        font-size: 22px;
+      }
+      .crops-warm .crop { font-size: 20px; }
+    }
+
+    /* =========================================
+       ABOUT SECTION
+       ========================================= */
+    .about-organic {
+      padding: 80px 0;
+      background: var(--warm-white);
+    }
+
+    .about-grid-organic {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-content-organic h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: var(--dark-brown);
+      margin-bottom: 12px;
+    }
+
+    .about-content-organic h3 .highlight-terracotta {
+      color: var(--terracotta);
+    }
+
+    .about-content-organic p {
+      color: var(--text-soft);
+      line-height: 1.9;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .about-image-organic img {
+      width: 100%;
+      border-radius: var(--border-radius);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+      border: 2px solid var(--terracotta-light);
+    }
+
+    .about-image-organic {
+      position: relative;
+    }
+
+    .about-image-organic .about-sticker {
+      position: absolute;
+      bottom: -15px;
+      left: -15px;
+      background: var(--olive);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 8px 25px rgba(107, 122, 63, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: bounceSticker 3s infinite 1s;
+    }
+
+    @media(max-width: 768px) {
+      .about-grid-organic {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .about-content-organic h3 {
+        font-size: 26px;
+      }
+      .about-image-organic .about-sticker {
+        position: static;
+        margin-top: 15px;
+        display: inline-flex;
+      }
+    }
+
+    /* =========================================
+       KEY INITIATIVES
+       ========================================= */
+    .initiatives-organic {
+      padding: 80px 0;
+      background: var(--cream);
+    }
+
+    .initiatives-grid-organic {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .initiative-card-organic {
+      background: white;
+      padding: 30px 25px;
+      border-radius: var(--border-radius);
+      text-align: center;
+      transition: .4s;
+      border: 2px solid transparent;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .initiative-card-organic:hover {
+      transform: translateY(-6px);
+      border-color: var(--golden);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .initiative-card-organic .initiative-emoji {
+      font-size: 55px;
+      display: block;
+      margin-bottom: 12px;
+      animation: bounceEmoji 3s infinite;
+    }
+
+    .initiative-card-organic:nth-child(2) .initiative-emoji { animation-delay: 0.5s; }
+    .initiative-card-organic:nth-child(3) .initiative-emoji { animation-delay: 1s; }
+    .initiative-card-organic:nth-child(4) .initiative-emoji { animation-delay: 1.5s; }
+    .initiative-card-organic:nth-child(5) .initiative-emoji { animation-delay: 2s; }
+
+    @keyframes bounceEmoji {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .initiative-card-organic h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--dark-brown);
+      margin-bottom: 6px;
+    }
+
+    .initiative-card-organic p {
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    @media(max-width: 992px) {
+      .initiatives-grid-organic {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media(max-width: 600px) {
+      .initiatives-grid-organic {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* =========================================
+       EXPOSURE VISIT GALLERY - 15 IMAGES
+       ========================================= */
+    .exposure-gallery {
+      padding: 80px 0;
+      background: var(--warm-white);
+    }
+
+    .gallery-grid-organic {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .gallery-item-organic {
+      background: white;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      transition: .4s;
+      border: 3px solid rgba(255,255,255,0.5);
+      cursor: pointer;
+      position: relative;
+      aspect-ratio: 1 / 1;
+    }
+
+    .gallery-item-organic:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--golden);
+    }
+
+    .gallery-item-organic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item-organic:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-item-organic .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(194, 101, 74, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .gallery-item-organic:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-item-organic .gallery-overlay i {
+      color: white;
+      font-size: 30px;
+      background: rgba(0,0,0,0.2);
+      backdrop-filter: blur(4px);
+      padding: 14px;
+      border-radius: 50%;
+      transform: scale(0.8);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item-organic:hover .gallery-overlay i {
+      transform: scale(1);
+    }
+
+    .gallery-item-organic .gallery-emoji {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      font-size: 22px;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(4px);
+      padding: 4px 10px;
+      border-radius: 12px;
+      line-height: 1.4;
+    }
+
+    @media(max-width: 992px) {
+      .gallery-grid-organic {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    @media(max-width: 768px) {
+      .gallery-grid-organic {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media(max-width: 480px) {
+      .gallery-grid-organic {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* =========================================
+       PROGRAM GALLERY - 14 IMAGES
+       ========================================= */
+    .program-gallery {
+      padding: 80px 0;
+      background: var(--cream);
+    }
+
+    .program-gallery .gallery-grid-organic {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media(max-width: 992px) {
+      .program-gallery .gallery-grid-organic {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media(max-width: 600px) {
+      .program-gallery .gallery-grid-organic {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* =========================================
+       PARTNERS
+       ========================================= */
+    .partners-organic {
+      padding: 60px 0;
+      background: var(--warm-white);
+    }
+
+    .partners-grid-organic {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      max-width: 500px;
+      margin: 30px auto 0;
+    }
+
+    .partner-card-organic {
+      background: var(--cream);
+      padding: 30px 20px;
+      border-radius: var(--border-radius);
+      text-align: center;
+      transition: .4s;
+      border: 2px solid transparent;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 140px;
+    }
+
+    .partner-card-organic:hover {
+      transform: translateY(-6px);
+      border-color: var(--golden);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .partner-card-organic img {
+      max-width: 120px;
+      max-height: 60px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .partner-card-organic p {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--dark-brown);
+    }
+
+    .partner-card-organic .partner-role {
+      font-size: 11px;
+      color: var(--text-soft);
+      font-weight: 400;
+    }
+
+    @media(max-width: 600px) {
+      .partners-grid-organic {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+      }
+    }
+
+    /* =========================================
+       CTA
+       ========================================= */
+    .cta-organic {
+      padding: 60px 20px;
+      background: linear-gradient(160deg, #5C3D2E, #8B6B4A, #C2654A);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-organic::before {
+      content: '🌾🌱🌿🌾🌱🌿';
+      position: absolute;
+      font-size: 50px;
+      opacity: 0.06;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      letter-spacing: 25px;
+      white-space: nowrap;
+    }
+
+    .cta-organic .cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .cta-organic h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      color: var(--warm-white);
+      margin-bottom: 12px;
+    }
+
+    .cta-organic h2 .highlight-golden {
+      color: var(--golden-light);
+    }
+
+    .cta-organic p {
+      color: rgba(255,255,255,0.8);
+      font-size: 17px;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .btn-cta-organic {
+      background: var(--golden);
+      color: var(--dark-brown);
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: .4s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: none;
+      cursor: pointer;
+      font-family: 'Quicksand', sans-serif;
+      box-shadow: 0 8px 25px rgba(212, 162, 76, 0.35);
+    }
+
+    .btn-cta-organic:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 40px rgba(212, 162, 76, 0.45);
+    }
+
+    @media(max-width: 600px) {
+      .cta-organic h2 {
+        font-size: 28px;
+      }
+      .cta-organic::before {
+        font-size: 30px;
+        letter-spacing: 15px;
+      }
+    }
+
+    /* =========================================
+       LIGHTBOX
+       ========================================= */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.92);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      padding: 20px;
+      backdrop-filter: blur(8px);
+    }
+    #lightbox.active {
+      display: flex;
+    }
+    #lightbox img {
+      max-width: 92%;
+      max-height: 85vh;
+      border-radius: 20px;
+      box-shadow: 0 30px 60px rgba(0,0,0,.6);
+      animation: zoomIn 0.4s cubic-bezier(0.23,1,0.32,1);
+    }
+    @keyframes zoomIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    #lightbox .close-lightbox {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      color: white;
+      font-size: 36px;
+      cursor: pointer;
+      transition: .3s;
+      background: rgba(0,0,0,0.3);
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+      border: 2px solid rgba(255,255,255,.1);
+    }
+    #lightbox .close-lightbox:hover {
+      background: var(--golden);
+      transform: rotate(90deg) scale(1.05);
+      border-color: var(--golden);
+      color: var(--dark-brown);
+    }
+    #lightbox .lightbox-info {
+      position: absolute;
+      bottom: 40px;
+      color: rgba(255,255,255,.6);
+      font-size: 14px;
+      text-align: center;
+      max-width: 80%;
+    }
+    @media(max-width:600px) {
+      #lightbox .close-lightbox { top: 20px; right: 20px; font-size: 28px; width: 44px; height: 44px; }
+      #lightbox .lightbox-info { font-size: 12px; bottom: 20px; }
+    }
+
+    /* =========================================
+       FOOTER
+       ========================================= */
+    .site-footer {
+      background: #eef7fc;
+      color: #063b67;
+      padding: 65px 20px 0;
+    }
+    .footer-content {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 45px;
+    }
+    .footer-brand h3 { font-size: 18px; margin-bottom: 5px; color: #063b67; }
+    .footer-brand img { width: 58px; height: 58px; object-fit: contain; }
+    .footer-brand p { color: #e85b88; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; }
+    .footer-links { display: flex; flex-direction: column; gap: 9px; }
+    .footer-links h4 { color: #063b67; font-size: 16px; margin-bottom: 8px; }
+    .footer-links a { color: #526b7a; text-decoration: none; font-size: 13px; transition: .3s; }
+    .footer-links a:hover { color: #e85b88; transform: translateX(3px); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.15); padding: 20px 10px; text-align: center; }
+    .footer-bottom p { color: #667985; font-size: 12px; }
+    @media(max-width:768px) {
+      .site-footer { padding: 50px 20px 0; }
+      .footer-content { width: 100%; grid-template-columns: 1fr; gap: 35px; padding-bottom: 35px; }
+      .footer-brand { align-items: center; }
+      .footer-brand img { width: 52px; height: 52px; }
+      .footer-links h4 { font-size: 15px; }
+    }
+
+    /* Scroll to top */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--terracotta);
+      color: white;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(194, 101, 74, 0.35);
+      transition: .4s cubic-bezier(0.23,1,0.32,1);
+      opacity: 0;
+      transform: translateY(20px);
+      z-index: 999;
+    }
+    .scroll-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .scroll-top:hover {
+      background: var(--golden);
+      color: var(--dark-brown);
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 12px 35px rgba(212, 162, 76, 0.35);
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container navbar">
+    <div class="logo-area">
+      <img src="logo.png" alt="Wadmavli Lok Vikas Manch Logo" class="logo-image">
+      <div class="logo-text">
+        <h2>Wadmavli Lok Vikas Manch</h2>
+        <span>TOWARDS EMPOWERMENT</span>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <div class="nav-dropdown">
+        <a href="programs.html" class="dropdown-trigger">Programs <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-menu">
+          <a href="program-education.html">📚 Mission Education</a>
+          <a href="program-driving.html">🚗 Motor Driving School</a>
+          <a href="program-skill.html">💼 Skill Development</a>
+          <a href="program-women.html">👩 Women SHGs</a>
+          <a href="program-organic.html">🌾 Organic Farming</a>
+          <a href="program-water.html">💧 Clean Drinking Water</a>
+          <a href="program-tree.html">🌳 Tree Plantation</a>
+          <a href="program-watershed.html">🏞️ Watershed Development</a>
+          <a href="program-disaster.html">🚑 Disaster Relief</a>
+        </div>
+      </div>
+      <a href="gallery.html">Gallery</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="partner.html">Partner</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html" class="nav-donate">Donate</a>
+    </nav>
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open navigation menu" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<!-- =========================================
+     HERO SECTION - WARM FARM THEME
+========================================= -->
+<section class="hero-organic">
+  <div class="sky-warm"></div>
+  <div class="sun-warm">☀️</div>
+  <div class="cloud-warm">☁️</div>
+  <div class="cloud-warm">☁️</div>
+  <div class="cloud-warm">☁️</div>
+  <div class="farm-ground-warm">
+    <div class="hill-warm hill-warm-1"></div>
+    <div class="hill-warm hill-warm-2"></div>
+    <div class="hill-warm hill-warm-3"></div>
+  </div>
+
+  <div class="crops-warm">
+    <span class="crop">🌾</span>
+    <span class="crop">🌱</span>
+    <span class="crop">🌿</span>
+    <span class="crop">🌾</span>
+    <span class="crop">🌱</span>
+    <span class="crop">🌿</span>
+    <span class="crop">🌾</span>
+    <span class="crop">🌱</span>
+    <span class="crop">🌿</span>
+    <span class="crop">🌾</span>
+    <span class="crop">🌱</span>
+    <span class="crop">🌿</span>
+    <span class="crop">🌾</span>
+    <span class="crop">🌱</span>
+    <span class="crop">🌿</span>
+    <span class="crop">🌾</span>
+    <span class="crop">🌱</span>
+    <span class="crop">🌿</span>
+    <span class="crop">🌾</span>
+    <span class="crop">🌱</span>
+  </div>
+
+  <div class="animals-warm">
+    <span class="animal-warm animal-warm-1">🐄</span>
+    <span class="animal-warm animal-warm-2">🐔</span>
+    <span class="animal-warm animal-warm-3">🐑</span>
+    <span class="animal-warm animal-warm-4">🐐</span>
+    <span class="animal-warm animal-warm-5">🐓</span>
+    <span class="animal-warm animal-warm-6">🐕</span>
+  </div>
+
+  <div class="farmers-warm">
+    <span class="farmer-warm farmer-warm-1">👨‍🌾</span>
+    <span class="farmer-warm farmer-warm-2">👩‍🌾</span>
+    <span class="farmer-warm farmer-warm-3">🧑‍🌾</span>
+  </div>
+
+  <div class="float-elements-warm">
+    <span class="float-item">🌻</span>
+    <span class="float-item">🍃</span>
+    <span class="float-item">🌿</span>
+    <span class="float-item">🌸</span>
+    <span class="float-item">🌺</span>
+    <span class="float-item">🍀</span>
+    <span class="float-item">🌷</span>
+  </div>
+
+  <div class="container hero-grid-organic">
+    <div class="hero-content-organic" data-aos="fade-up">
+      <div class="badge-organic">
+        <i class="fas fa-seedling" style="color:#F0D48A;"></i>
+        Organic Farming Program
+      </div>
+
+      <h1>
+        Growing <span class="highlight-golden">Organic</span>,<br>
+        Nurturing <span class="highlight-terracotta">Communities</span>
+      </h1>
+
+      <div class="subtitle">
+        Sustainable Agriculture for a Better Future
+        <span class="organic-badge">🌾 520+ Farmers</span>
+      </div>
+
+      <p>
+        Wadmavli Lok Vikas Manch supports farmers in adopting organic farming practices 
+        through training, demos, group formation, government scheme awareness, and 
+        exposure visits. We are working with 520+ farmers across 10 villages in Beed district.
+      </p>
+
+      <div class="hero-stats-organic">
+        <div class="stat-item">
+          <span class="number">520+</span>
+          <span class="label">Farmers Supported</span>
+        </div>
+        <div class="stat-item">
+          <span class="number">10</span>
+          <span class="label">Villages Covered</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-image-organic" data-aos="fade-left">
+      <div class="image-frame">
+        <img src="organic-hero.jpeg" alt="Organic Farming" onerror="this.src='https://placehold.co/600x400/C2654A/F0D48A?text=Organic+Farming'">
+      </div>
+      <div class="sticker">
+        <i class="fas fa-leaf"></i> Chemical-Free Farming
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     ABOUT SECTION
+========================================= -->
+<section class="about-organic">
+  <div class="container">
+    <div class="section-heading-organic" data-aos="fade-up">
+      <span class="tag">🌱 Our Mission</span>
+      <h2>Supporting <span class="highlight-terracotta">Farmers</span> Through <span class="highlight-golden">Organic</span> Farming</h2>
+      <p>We work with farmers to adopt sustainable, chemical-free farming practices that improve soil health and livelihoods.</p>
+    </div>
+
+    <div class="about-grid-organic">
+      <div class="about-content-organic" data-aos="fade-right">
+        <h3>Building a <span class="highlight-golden">Sustainable</span> Future</h3>
+        <p>
+          Our Organic Farming program is designed to help farmers transition from 
+          chemical-intensive farming to natural, sustainable practices. We provide 
+          training, demonstrations, and ongoing support to ensure successful adoption.
+        </p>
+        <p>
+          With 520+ farmers across 10 villages, we are creating a network of organic 
+          farmers who share knowledge, resources, and best practices. Through exposure 
+          visits and group formation, we help farmers learn from each other and build 
+          a stronger organic farming community.
+        </p>
+      </div>
+
+      <div class="about-image-organic" data-aos="fade-left">
+        <img src="organic-hero.jpeg" alt="Organic Farming" onerror="this.src='https://placehold.co/500x400/C2654A/F0D48A?text=Organic+Farming'">
+        <div class="about-sticker">
+          <i class="fas fa-leaf"></i> 10 Villages
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     KEY INITIATIVES
+========================================= -->
+<section class="initiatives-organic">
+  <div class="container">
+    <div class="section-heading-organic" data-aos="fade-up">
+      <span class="tag">🌿 What We Do</span>
+      <h2>Our <span class="highlight-terracotta">Key</span> <span class="highlight-golden">Initiatives</span></h2>
+      <p>We support farmers through every step of their organic farming journey.</p>
+    </div>
+
+    <div class="initiatives-grid-organic">
+      <div class="initiative-card-organic" data-aos="fade-up" data-aos-delay="50">
+        <span class="initiative-emoji">🧑‍🌾</span>
+        <h4>Training & Demos</h4>
+        <p>Providing hands-on training and live demonstrations on organic farming techniques.</p>
+      </div>
+
+      <div class="initiative-card-organic" data-aos="fade-up" data-aos-delay="100">
+        <span class="initiative-emoji">🤝</span>
+        <h4>Group Formation</h4>
+        <p>Helping farmers form groups for collective learning, resource sharing, and support.</p>
+      </div>
+
+      <div class="initiative-card-organic" data-aos="fade-up" data-aos-delay="150">
+        <span class="initiative-emoji">🏛️</span>
+        <h4>Government Scheme Awareness</h4>
+        <p>Helping farmers access government schemes, subsidies, and support programs.</p>
+      </div>
+
+      <div class="initiative-card-organic" data-aos="fade-up" data-aos-delay="200">
+        <span class="initiative-emoji">✈️</span>
+        <h4>Exposure Visits</h4>
+        <p>Organizing visits to successful organic farms for learning and inspiration.</p>
+      </div>
+
+      <div class="initiative-card-organic" data-aos="fade-up" data-aos-delay="250">
+        <span class="initiative-emoji">🥬</span>
+        <h4>Kitchen Garden</h4>
+        <p>Promoting kitchen gardens for household food security and nutrition.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     EXPOSURE VISIT GALLERY - 15 IMAGES
+========================================= -->
+<section class="exposure-gallery">
+  <div class="container">
+    <div class="section-heading-organic" data-aos="fade-up">
+      <span class="tag">✈️ Learning Beyond</span>
+      <h2>Exposure <span class="highlight-golden">Visits</span></h2>
+      <p>Farmers learning from successful organic farms across the region.</p>
+    </div>
+
+    <div class="gallery-grid-organic">
+      <div class="gallery-item-organic" onclick="openLightbox('ee1.jpeg', '✈️')">
+        <img src="ee1.jpeg" alt="Exposure Visit" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">✈️</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('ee2.jpeg', '🌾')">
+        <img src="ee2.jpeg" alt="Exposure Visit" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌾</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('ee3.jpeg', '🌱')">
+        <img src="ee3.jpeg" alt="Exposure Visit" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌱</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('ee4.jpeg', '🌿')">
+        <img src="ee4.jpeg" alt="Exposure Visit" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌿</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('ee5.jpeg', '🌻')">
+        <img src="ee5.jpeg" alt="Exposure Visit" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌻</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('ee6.jpeg', '🍃')">
+        <img src="ee6.jpeg" alt="Exposure Visit" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🍃</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('ee7.jpeg', '🧑‍🌾')">
+        <img src="ee7.jpeg" alt="Exposure Visit" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🧑‍🌾</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('ee8.jpeg', '🌾')">
+        <img src="ee8.jpeg" alt="Exposure Visit" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌾</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('ee9.jpeg', '🌱')">
+        <img src="ee9.jpeg" alt="Exposure Visit" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌱</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('ee10.jpeg', '🌿')">
+        <img src="ee10.jpeg" alt="Exposure Visit" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌿</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('ee11.jpeg', '🌻')">
+        <img src="ee11.jpeg" alt="Exposure Visit" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌻</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('ee12.jpeg', '🍃')">
+        <img src="ee12.jpeg" alt="Exposure Visit" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🍃</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('ee13.jpeg', '🧑‍🌾')">
+        <img src="ee13.jpeg" alt="Exposure Visit" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🧑‍🌾</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('ee14.jpeg', '🌾')">
+        <img src="ee14.jpeg" alt="Exposure Visit" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌾</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('ee15.jpeg', '🌱')">
+        <img src="ee15.jpeg" alt="Exposure Visit" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌱</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     PROGRAM GALLERY - 14 IMAGES
+========================================= -->
+<section class="program-gallery">
+  <div class="container">
+    <div class="section-heading-organic" data-aos="fade-up">
+      <span class="tag">📸 In Action</span>
+      <h2>Organic Farming <span class="highlight-golden">Moments</span></h2>
+      <p>Glimpses from our training sessions, farm visits, and community activities.</p>
+    </div>
+
+    <div class="gallery-grid-organic">
+      <div class="gallery-item-organic" onclick="openLightbox('organic1.jpeg', '🌾')">
+        <img src="organic1.jpeg" alt="Organic Farming" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌾</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('organic2.jpeg', '🌱')">
+        <img src="organic2.jpeg" alt="Organic Farming" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌱</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('organic3.jpeg', '🌿')">
+        <img src="organic3.jpeg" alt="Organic Farming" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌿</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('organic4.jpeg', '🧑‍🌾')">
+        <img src="organic4.jpeg" alt="Organic Farming" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🧑‍🌾</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('organic5.jpeg', '🌻')">
+        <img src="organic5.jpeg" alt="Organic Farming" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌻</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('organic6.jpeg', '🌾')">
+        <img src="organic6.jpeg" alt="Organic Farming" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌾</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('organic7.jpeg', '🌱')">
+        <img src="organic7.jpeg" alt="Organic Farming" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌱</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('organic8.jpeg', '🌿')">
+        <img src="organic8.jpeg" alt="Organic Farming" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌿</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('organic9.jpeg', '🍃')">
+        <img src="organic9.jpeg" alt="Organic Farming" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🍃</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('organic10.jpeg', '🌾')">
+        <img src="organic10.jpeg" alt="Organic Farming" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌾</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('organic11.jpeg', '🌱')">
+        <img src="organic11.jpeg" alt="Organic Farming" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌱</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('organic12.jpeg', '🌿')">
+        <img src="organic12.jpeg" alt="Organic Farming" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌿</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('organic13.jpeg', '🧑‍🌾')">
+        <img src="organic13.jpeg" alt="Organic Farming" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🧑‍🌾</span>
+      </div>
+      <div class="gallery-item-organic" onclick="openLightbox('organic14.jpeg', '🌻')">
+        <img src="organic14.jpeg" alt="Organic Farming" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌻</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     PARTNERS
+========================================= -->
+<section class="partners-organic">
+  <div class="container">
+    <div class="section-heading-organic" data-aos="fade-up">
+      <span class="tag">🤝 Our Partners</span>
+      <h2>Collaborating for <span class="highlight-terracotta">Sustainable</span> <span class="highlight-golden">Agriculture</span></h2>
+      <p>Together with our partners, we support farmers in their organic farming journey.</p>
+    </div>
+
+    <div class="partners-grid-organic">
+      <div class="partner-card-organic" data-aos="fade-up" data-aos-delay="50">
+        <img src="tdss.jpeg" alt="TDSS" onerror="this.style.display='none'">
+        <p>TDSS</p>
+        <span class="partner-role">Organic Farming Partner</span>
+      </div>
+
+      <div class="partner-card-organic" data-aos="fade-up" data-aos-delay="100">
+        <img src="lokmanch.png" alt="Lokmanch" onerror="this.style.display='none'">
+        <p>Lokmanch</p>
+        <span class="partner-role">Organic Farming Partner</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     CTA
+========================================= -->
+<section class="cta-organic">
+  <div class="container">
+    <div class="cta-content" data-aos="fade-up">
+      <h2>Support <span class="highlight-golden">Organic</span> Farming</h2>
+      <p>
+        Help us support more farmers in adopting sustainable, chemical-free 
+        farming practices. Together, we can build a healthier future.
+      </p>
+      <a href="contact.html" class="btn-cta-organic">
+        <i class="fas fa-hand-holding-heart"></i> Support Our Work
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     LIGHTBOX
+========================================= -->
+<div id="lightbox" onclick="closeLightbox(event)">
+  <span class="close-lightbox" onclick="closeLightbox(event)"><i class="fas fa-times"></i></span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+  <div class="lightbox-info" id="lightboxInfo"></div>
+</div>
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Wadmavli Lok Vikas Manch Logo">
+      <div>
+        <h3>Wadmavli Lok Vikas Manch</h3>
+        <p>Towards Empowerment</p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="gallery.html">Gallery</a>
+    </div>
+    <div class="footer-links">
+      <h4>Get Involved</h4>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="partner.html">Partner With Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="donate.html">Donate</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Wadmavli Lok Vikas Manch. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  // AOS Animation
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 50
+  });
+
+  // Mobile Menu
+  function toggleMobileMenu() {
+    const navbar = document.querySelector(".navbar");
+    const button = document.querySelector(".mobile-menu-btn");
+    if (!navbar || !button) return;
+    navbar.classList.toggle("mobile-open");
+    const isOpen = navbar.classList.contains("mobile-open");
+    button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  }
+
+  // Close mobile menu on link click
+  document.querySelectorAll('.navbar nav a, .navbar .dropdown-menu a').forEach(link => {
+    link.addEventListener('click', function() {
+      const navbar = document.querySelector(".navbar");
+      if (navbar && navbar.classList.contains('mobile-open')) {
+        navbar.classList.remove('mobile-open');
+        const button = document.querySelector(".mobile-menu-btn");
+        if (button) button.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+
+  // =========================================
+  // LIGHTBOX
+  // =========================================
+  function openLightbox(src, caption) {
+    const lb = document.getElementById('lightbox');
+    const img = document.getElementById('lightboxImg');
+    const info = document.getElementById('lightboxInfo');
+    img.src = src;
+    info.innerHTML = caption;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(e) {
+    const lb = document.getElementById('lightbox');
+    if (e.target === lb || e.target.closest('.close-lightbox')) {
+      lb.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const lb = document.getElementById('lightbox');
+      lb.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  });
+
+  window.openLightbox = openLightbox;
+  window.closeLightbox = closeLightbox;
+
+  // =========================================
+  // SCROLL TO TOP
+  // =========================================
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 400) {
+      scrollBtn.classList.add('visible');
+    } else {
+      scrollBtn.classList.remove('visible');
+    }
+  });
+</script>
+</body>
+</html>

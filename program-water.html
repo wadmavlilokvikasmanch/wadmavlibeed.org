@@ -1,0 +1,1790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clean Drinking Water | Wadmavli Lok Vikas Manch</title>
+  <meta name="description" content="Clean Drinking Water program by Wadmavli Lok Vikas Manch - Providing safe drinking water through wells, borewells, handpumps, water tanks, and tanker support across Beed district." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <style>
+    /* =========================================
+       CLEAN DRINKING WATER - OCEAN BLUE + SAND THEME
+       Fresh, Clean, Refreshing
+       ========================================= */
+
+    :root {
+      --ocean-dark: #0A3D5C;
+      --ocean: #1A6A8A;
+      --ocean-light: #4A9BB5;
+      --sky-blue: #87CEEB;
+      --aqua: #7EC8E3;
+      --sand: #F5E6D3;
+      --sand-light: #FDF8F0;
+      --white: #ffffff;
+      --text-dark: #1A3A4A;
+      --text-soft: #4A6A7A;
+      --shadow-soft: 0 8px 30px rgba(10, 61, 92, 0.15);
+      --shadow-hover: 0 15px 45px rgba(10, 61, 92, 0.25);
+      --border-radius: 24px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: var(--sand-light);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+
+    /* =========================================
+       HEADER - SAME AS OTHER PAGES
+       ========================================= */
+    header {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    }
+    .navbar {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-image {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+    .logo-text h2 {
+      font-size: 18px;
+      color: #063b67;
+      line-height: 1.2;
+    }
+    .logo-text span {
+      display: block;
+      color: #e85b88;
+      font-size: 9px;
+      letter-spacing: 2px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+    nav a {
+      color: #063b67;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: .3s;
+    }
+    nav a:hover {
+      color: #075b9a;
+    }
+    .nav-donate {
+      background: #075b9a;
+      color: white !important;
+      padding: 10px 18px;
+      border-radius: 25px;
+    }
+    .mobile-menu-btn {
+      display: none;
+      border: 0;
+      background: none;
+      color: #063b67;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 8px;
+    }
+    @media (max-width:950px) {
+      nav { display: none; }
+      .mobile-menu-btn { display: flex; flex-shrink: 0; }
+      .navbar { position: relative; }
+      .navbar.mobile-open nav {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 220px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: white;
+        padding: 10px 0;
+        border-radius: 0 0 16px 16px;
+        box-shadow: 0 12px 30px rgba(0,0,0,.15);
+        z-index: 2000;
+      }
+      .navbar.mobile-open nav a {
+        display: block;
+        width: 100%;
+        padding: 13px 20px;
+        text-align: left;
+        box-sizing: border-box;
+      }
+      .navbar.mobile-open nav a:hover {
+        background: #f1f7fb;
+      }
+      .navbar.mobile-open .nav-donate {
+        margin: 8px 12px;
+        width: auto;
+        text-align: center;
+      }
+    }
+
+    /* DROPDOWN */
+    .nav-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-trigger {
+      color: #063b67;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: .3s;
+      cursor: pointer;
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dropdown-trigger i {
+      font-size: 11px;
+      transition: .3s;
+    }
+    .nav-dropdown:hover .dropdown-trigger i {
+      transform: rotate(180deg);
+    }
+    .dropdown-trigger:hover {
+      color: #075b9a;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 220px;
+      background: white;
+      padding: 8px 0;
+      border-radius: 12px;
+      box-shadow: 0 12px 35px rgba(0,0,0,.12);
+      z-index: 999;
+      border: 1px solid rgba(0,0,0,.06);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+    .nav-dropdown:hover .dropdown-menu {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #063b67;
+      text-decoration: none;
+      transition: .3s;
+      white-space: nowrap;
+    }
+    .dropdown-menu a:hover {
+      background: #f5f0ff;
+      color: #075b9a;
+      padding-left: 26px;
+    }
+    .dropdown-menu::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 20px;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid white;
+      filter: drop-shadow(0 -2px 5px rgba(0,0,0,.04));
+    }
+    @media (max-width: 950px) {
+      .nav-dropdown { width: 100%; }
+      .dropdown-trigger { padding: 13px 20px; justify-content: space-between; width: 100%; }
+      .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
+        background: #f8f6fc;
+        opacity: 1;
+        transform: none;
+        display: none;
+        border: none;
+        pointer-events: auto;
+      }
+      .dropdown-menu::before { display: none; }
+      .dropdown-menu a { padding: 10px 20px 10px 40px; font-size: 13px; }
+      .dropdown-menu a:hover { padding-left: 46px; }
+      .nav-dropdown.active .dropdown-menu { display: block; }
+    }
+
+    /* =========================================
+       SECTION HEADING
+       ========================================= */
+    .section-heading-water {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .section-heading-water .tag {
+      display: inline-block;
+      background: var(--aqua);
+      color: var(--ocean-dark);
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .section-heading-water h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--ocean-dark);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .section-heading-water h2 .highlight-ocean {
+      color: var(--ocean);
+    }
+
+    .section-heading-water h2 .highlight-sand {
+      color: var(--sand);
+    }
+
+    .section-heading-water p {
+      color: var(--text-soft);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* =========================================
+       HERO - WATER THEME WITH ANIMATED WAVES
+       ========================================= */
+    .hero-water {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 20px 120px;
+      background: linear-gradient(180deg, #0A3D5C 0%, #1A6A8A 30%, #4A9BB5 55%, #7EC8E3 75%, #87CEEB 100%);
+    }
+
+    /* Floating Water Drops */
+    .water-drops {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 2;
+    }
+
+    .water-drops .drop {
+      position: absolute;
+      font-size: 30px;
+      opacity: 0.15;
+      animation: dropFall 8s infinite linear;
+    }
+
+    .water-drops .drop:nth-child(1) { left: 5%; animation-delay: 0s; font-size: 35px; }
+    .water-drops .drop:nth-child(2) { left: 15%; animation-delay: 2s; font-size: 25px; }
+    .water-drops .drop:nth-child(3) { left: 30%; animation-delay: 4s; font-size: 40px; }
+    .water-drops .drop:nth-child(4) { left: 45%; animation-delay: 1s; font-size: 28px; }
+    .water-drops .drop:nth-child(5) { left: 55%; animation-delay: 3s; font-size: 35px; }
+    .water-drops .drop:nth-child(6) { left: 70%; animation-delay: 5s; font-size: 25px; }
+    .water-drops .drop:nth-child(7) { left: 82%; animation-delay: 2.5s; font-size: 38px; }
+    .water-drops .drop:nth-child(8) { left: 92%; animation-delay: 4.5s; font-size: 30px; }
+
+    @keyframes dropFall {
+      0% { transform: translateY(-100px) scale(0.5); opacity: 0.2; }
+      50% { opacity: 0.4; }
+      100% { transform: translateY(calc(100vh + 100px)) scale(1.2); opacity: 0; }
+    }
+
+    /* Ripples - Animated Circles */
+    .ripples {
+      position: absolute;
+      bottom: 30%;
+      left: 0;
+      right: 0;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .ripple {
+      position: absolute;
+      border: 2px solid rgba(255,255,255,0.15);
+      border-radius: 50%;
+      animation: rippleExpand 6s infinite ease-out;
+    }
+
+    .ripple:nth-child(1) { width: 80px; height: 80px; left: 10%; bottom: 20%; animation-delay: 0s; }
+    .ripple:nth-child(2) { width: 120px; height: 120px; left: 30%; bottom: 30%; animation-delay: 2s; }
+    .ripple:nth-child(3) { width: 60px; height: 60px; left: 55%; bottom: 25%; animation-delay: 4s; }
+    .ripple:nth-child(4) { width: 100px; height: 100px; left: 75%; bottom: 35%; animation-delay: 1s; }
+    .ripple:nth-child(5) { width: 140px; height: 140px; left: 88%; bottom: 20%; animation-delay: 3s; }
+
+    @keyframes rippleExpand {
+      0% { transform: scale(0.5); opacity: 0.6; }
+      100% { transform: scale(3); opacity: 0; }
+    }
+
+    /* Animated Waves at Bottom */
+    .waves {
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 120px;
+      z-index: 3;
+      overflow: hidden;
+    }
+
+    .waves svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .waves .wave-path {
+      animation: waveMove 8s ease-in-out infinite;
+    }
+
+    .waves .wave-path:nth-child(2) {
+      animation-duration: 10s;
+      animation-delay: -2s;
+    }
+
+    .waves .wave-path:nth-child(3) {
+      animation-duration: 12s;
+      animation-delay: -4s;
+    }
+
+    @keyframes waveMove {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(-50px); }
+    }
+
+    /* Sand bottom */
+    .sand-bottom {
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      right: 0;
+      height: 20px;
+      background: var(--sand);
+      z-index: 3;
+      border-radius: 0 0 50% 50% / 0 0 100% 100%;
+    }
+
+    .hero-grid-water {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+      position: relative;
+      z-index: 5;
+    }
+
+    .hero-content-water {
+      color: white;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+
+    .hero-content-water .badge-water {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .hero-content-water h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 1.08;
+      margin-bottom: 15px;
+      color: #fff;
+      text-shadow: 0 2px 30px rgba(0,0,0,0.15);
+    }
+
+    .hero-content-water h1 .highlight-aqua {
+      color: #B3E5FC;
+    }
+
+    .hero-content-water h1 .highlight-sand {
+      color: var(--sand);
+    }
+
+    .hero-content-water .subtitle {
+      font-size: 20px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      text-shadow: 0 1px 15px rgba(0,0,0,0.1);
+    }
+
+    .hero-content-water .subtitle .water-badge {
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      padding: 4px 16px;
+      border-radius: 50px;
+      font-size: 14px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .hero-content-water p {
+      font-size: 17px;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.9);
+      max-width: 520px;
+      margin-bottom: 25px;
+      text-shadow: 0 1px 15px rgba(0,0,0,0.08);
+    }
+
+    .hero-stats-water {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 2px solid rgba(255,255,255,0.1);
+    }
+
+    .hero-stats-water .stat-item .number {
+      font-size: 26px;
+      font-weight: 800;
+      color: #B3E5FC;
+      display: block;
+      line-height: 1.2;
+      text-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+
+    .hero-stats-water .stat-item .label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.7);
+      font-weight: 500;
+    }
+
+    .hero-image-water {
+      position: relative;
+    }
+
+    .hero-image-water .image-frame {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(10px);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+      border: 3px solid rgba(255,255,255,0.08);
+    }
+
+    .hero-image-water .image-frame img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .hero-image-water .sticker {
+      position: absolute;
+      bottom: -15px;
+      right: -15px;
+      background: var(--sand);
+      color: var(--ocean-dark);
+      padding: 12px 20px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 8px 25px rgba(245, 230, 211, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: bounceSticker 3s infinite;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    @keyframes bounceSticker {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .hero-image-water .sticker i {
+      font-size: 20px;
+    }
+
+    @media(max-width: 992px) {
+      .hero-grid-water {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .hero-content-water h1 {
+        font-size: 40px;
+      }
+      .hero-image-water .image-frame img {
+        height: 280px;
+      }
+      .hero-stats-water {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .ripples { display: none; }
+      .water-drops .drop { font-size: 20px !important; }
+    }
+
+    @media(max-width: 600px) {
+      .hero-content-water h1 {
+        font-size: 32px;
+      }
+      .hero-content-water .subtitle {
+        font-size: 17px;
+      }
+      .hero-stats-water {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .hero-stats-water .stat-item .number {
+        font-size: 22px;
+      }
+      .waves { height: 60px; }
+    }
+
+    /* =========================================
+       ABOUT SECTION
+       ========================================= */
+    .about-water {
+      padding: 80px 0;
+      background: var(--sand-light);
+    }
+
+    .about-grid-water {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-content-water h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: var(--ocean-dark);
+      margin-bottom: 12px;
+    }
+
+    .about-content-water h3 .highlight-ocean {
+      color: var(--ocean);
+    }
+
+    .about-content-water p {
+      color: var(--text-soft);
+      line-height: 1.9;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .about-image-water img {
+      width: 100%;
+      border-radius: var(--border-radius);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+      border: 2px solid var(--aqua);
+    }
+
+    .about-image-water {
+      position: relative;
+    }
+
+    .about-image-water .about-sticker {
+      position: absolute;
+      bottom: -15px;
+      left: -15px;
+      background: var(--ocean);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 8px 25px rgba(26, 106, 138, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: bounceSticker 3s infinite 1s;
+    }
+
+    @media(max-width: 768px) {
+      .about-grid-water {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .about-content-water h3 {
+        font-size: 26px;
+      }
+      .about-image-water .about-sticker {
+        position: static;
+        margin-top: 15px;
+        display: inline-flex;
+      }
+    }
+
+    /* =========================================
+       KEY INITIATIVES
+       ========================================= */
+    .initiatives-water {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .initiatives-grid-water {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .initiative-card-water {
+      background: var(--sand-light);
+      padding: 30px 25px;
+      border-radius: var(--border-radius);
+      text-align: center;
+      transition: .4s;
+      border: 2px solid transparent;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .initiative-card-water:hover {
+      transform: translateY(-6px);
+      border-color: var(--ocean);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .initiative-card-water .initiative-emoji {
+      font-size: 55px;
+      display: block;
+      margin-bottom: 12px;
+      animation: bounceEmoji 3s infinite;
+    }
+
+    .initiative-card-water:nth-child(2) .initiative-emoji { animation-delay: 0.5s; }
+    .initiative-card-water:nth-child(3) .initiative-emoji { animation-delay: 1s; }
+
+    @keyframes bounceEmoji {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .initiative-card-water h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--ocean-dark);
+      margin-bottom: 6px;
+    }
+
+    .initiative-card-water p {
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    @media(max-width: 992px) {
+      .initiatives-grid-water {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media(max-width: 600px) {
+      .initiatives-grid-water {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* =========================================
+       GALLERY SECTIONS
+       ========================================= */
+    .gallery-water {
+      padding: 80px 0;
+      background: var(--sand-light);
+    }
+
+    .gallery-grid-water {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .gallery-item-water {
+      background: white;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      transition: .4s;
+      border: 3px solid rgba(255,255,255,0.5);
+      cursor: pointer;
+      position: relative;
+      aspect-ratio: 1 / 1;
+    }
+
+    .gallery-item-water:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--ocean-light);
+    }
+
+    .gallery-item-water img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item-water:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-item-water .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(10, 61, 92, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .gallery-item-water:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-item-water .gallery-overlay i {
+      color: white;
+      font-size: 30px;
+      background: rgba(0,0,0,0.2);
+      backdrop-filter: blur(4px);
+      padding: 14px;
+      border-radius: 50%;
+      transform: scale(0.8);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item-water:hover .gallery-overlay i {
+      transform: scale(1);
+    }
+
+    .gallery-item-water .gallery-emoji {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      font-size: 22px;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(4px);
+      padding: 4px 10px;
+      border-radius: 12px;
+      line-height: 1.4;
+    }
+
+    @media(max-width: 992px) {
+      .gallery-grid-water {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media(max-width: 768px) {
+      .gallery-grid-water {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media(max-width: 480px) {
+      .gallery-grid-water {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Section title for gallery groups */
+    .gallery-group-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: var(--ocean-dark);
+      margin: 40px 0 15px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .gallery-group-title:first-of-type {
+      margin-top: 0;
+    }
+
+    .gallery-group-title .title-icon {
+      font-size: 32px;
+    }
+
+    /* =========================================
+       FUTURE PLAN SECTION
+       ========================================= */
+    .future-plan-water {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .future-grid-water {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .future-content-water h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: var(--ocean-dark);
+      margin-bottom: 12px;
+    }
+
+    .future-content-water h3 .highlight-ocean {
+      color: var(--ocean);
+    }
+
+    .future-content-water p {
+      color: var(--text-soft);
+      line-height: 1.9;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .future-content-water .future-badge {
+      display: inline-block;
+      background: var(--ocean);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    .future-image-water img {
+      width: 100%;
+      border-radius: var(--border-radius);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+      border: 2px solid var(--aqua);
+    }
+
+    @media(max-width: 768px) {
+      .future-grid-water {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .future-content-water h3 {
+        font-size: 26px;
+      }
+    }
+
+    /* =========================================
+       PARTNERS
+       ========================================= */
+    .partners-water {
+      padding: 60px 0;
+      background: var(--sand-light);
+    }
+
+    .partners-grid-water {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 800px;
+      margin: 30px auto 0;
+    }
+
+    .partner-card-water {
+      background: white;
+      padding: 25px 15px;
+      border-radius: var(--border-radius);
+      text-align: center;
+      transition: .4s;
+      border: 2px solid transparent;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 130px;
+    }
+
+    .partner-card-water:hover {
+      transform: translateY(-6px);
+      border-color: var(--ocean);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .partner-card-water img {
+      max-width: 100px;
+      max-height: 50px;
+      object-fit: contain;
+      margin-bottom: 8px;
+    }
+
+    .partner-card-water p {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .partner-card-water .partner-role {
+      font-size: 10px;
+      color: var(--text-soft);
+      font-weight: 400;
+    }
+
+    @media(max-width: 768px) {
+      .partners-grid-water {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media(max-width: 480px) {
+      .partners-grid-water {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* =========================================
+       CTA
+       ========================================= */
+    .cta-water {
+      padding: 60px 20px;
+      background: linear-gradient(160deg, #0A3D5C, #1A6A8A, #4A9BB5);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-water::before {
+      content: '💧🌊💧🌊💧';
+      position: absolute;
+      font-size: 50px;
+      opacity: 0.06;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      letter-spacing: 25px;
+      white-space: nowrap;
+    }
+
+    .cta-water .cta-content {
+      position: relative;
+      z-index: 2;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .cta-water h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .cta-water h2 .highlight-sand {
+      color: var(--sand);
+    }
+
+    .cta-water p {
+      color: rgba(255,255,255,0.8);
+      font-size: 17px;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .btn-cta-water {
+      background: var(--sand);
+      color: var(--ocean-dark);
+      padding: 16px 36px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: .4s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: none;
+      cursor: pointer;
+      font-family: 'Quicksand', sans-serif;
+      box-shadow: 0 8px 25px rgba(245, 230, 211, 0.35);
+    }
+
+    .btn-cta-water:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 40px rgba(245, 230, 211, 0.45);
+    }
+
+    @media(max-width: 600px) {
+      .cta-water h2 {
+        font-size: 28px;
+      }
+      .cta-water::before {
+        font-size: 30px;
+        letter-spacing: 15px;
+      }
+    }
+
+    /* =========================================
+       LIGHTBOX
+       ========================================= */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.92);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      padding: 20px;
+      backdrop-filter: blur(8px);
+    }
+    #lightbox.active {
+      display: flex;
+    }
+    #lightbox img {
+      max-width: 92%;
+      max-height: 85vh;
+      border-radius: 20px;
+      box-shadow: 0 30px 60px rgba(0,0,0,.6);
+      animation: zoomIn 0.4s cubic-bezier(0.23,1,0.32,1);
+    }
+    @keyframes zoomIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    #lightbox .close-lightbox {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      color: white;
+      font-size: 36px;
+      cursor: pointer;
+      transition: .3s;
+      background: rgba(0,0,0,0.3);
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+      border: 2px solid rgba(255,255,255,.1);
+    }
+    #lightbox .close-lightbox:hover {
+      background: var(--ocean);
+      transform: rotate(90deg) scale(1.05);
+      border-color: var(--ocean);
+    }
+    #lightbox .lightbox-info {
+      position: absolute;
+      bottom: 40px;
+      color: rgba(255,255,255,.6);
+      font-size: 14px;
+      text-align: center;
+      max-width: 80%;
+    }
+    @media(max-width:600px) {
+      #lightbox .close-lightbox { top: 20px; right: 20px; font-size: 28px; width: 44px; height: 44px; }
+      #lightbox .lightbox-info { font-size: 12px; bottom: 20px; }
+    }
+
+    /* =========================================
+       FOOTER
+       ========================================= */
+    .site-footer {
+      background: #eef7fc;
+      color: #063b67;
+      padding: 65px 20px 0;
+    }
+    .footer-content {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 45px;
+    }
+    .footer-brand h3 { font-size: 18px; margin-bottom: 5px; color: #063b67; }
+    .footer-brand img { width: 58px; height: 58px; object-fit: contain; }
+    .footer-brand p { color: #e85b88; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; }
+    .footer-links { display: flex; flex-direction: column; gap: 9px; }
+    .footer-links h4 { color: #063b67; font-size: 16px; margin-bottom: 8px; }
+    .footer-links a { color: #526b7a; text-decoration: none; font-size: 13px; transition: .3s; }
+    .footer-links a:hover { color: #e85b88; transform: translateX(3px); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.15); padding: 20px 10px; text-align: center; }
+    .footer-bottom p { color: #667985; font-size: 12px; }
+    @media(max-width:768px) {
+      .site-footer { padding: 50px 20px 0; }
+      .footer-content { width: 100%; grid-template-columns: 1fr; gap: 35px; padding-bottom: 35px; }
+      .footer-brand { align-items: center; }
+      .footer-brand img { width: 52px; height: 52px; }
+      .footer-links h4 { font-size: 15px; }
+    }
+
+    /* Scroll to top */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--ocean);
+      color: white;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(26, 106, 138, 0.35);
+      transition: .4s cubic-bezier(0.23,1,0.32,1);
+      opacity: 0;
+      transform: translateY(20px);
+      z-index: 999;
+    }
+    .scroll-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .scroll-top:hover {
+      background: var(--sand);
+      color: var(--ocean-dark);
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 12px 35px rgba(245, 230, 211, 0.35);
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container navbar">
+    <div class="logo-area">
+      <img src="logo.png" alt="Wadmavli Lok Vikas Manch Logo" class="logo-image">
+      <div class="logo-text">
+        <h2>Wadmavli Lok Vikas Manch</h2>
+        <span>TOWARDS EMPOWERMENT</span>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <div class="nav-dropdown">
+        <a href="programs.html" class="dropdown-trigger">Programs <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-menu">
+          <a href="program-education.html">📚 Mission Education</a>
+          <a href="program-driving.html">🚗 Motor Driving School</a>
+          <a href="program-skill.html">💼 Skill Development</a>
+          <a href="program-women.html">👩 Women SHGs</a>
+          <a href="program-organic.html">🌾 Organic Farming</a>
+          <a href="program-water.html">💧 Clean Drinking Water</a>
+          <a href="program-tree.html">🌳 Tree Plantation</a>
+          <a href="program-watershed.html">🏞️ Watershed Development</a>
+          <a href="program-disaster.html">🚑 Disaster Relief</a>
+        </div>
+      </div>
+      <a href="gallery.html">Gallery</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="partner.html">Partner</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html" class="nav-donate">Donate</a>
+    </nav>
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open navigation menu" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<!-- =========================================
+     HERO SECTION - WATER THEME WITH WAVES
+========================================= -->
+<section class="hero-water">
+  <!-- Water Drops -->
+  <div class="water-drops">
+    <span class="drop">💧</span>
+    <span class="drop">💧</span>
+    <span class="drop">💧</span>
+    <span class="drop">💧</span>
+    <span class="drop">💧</span>
+    <span class="drop">💧</span>
+    <span class="drop">💧</span>
+    <span class="drop">💧</span>
+  </div>
+
+  <!-- Ripples -->
+  <div class="ripples">
+    <div class="ripple"></div>
+    <div class="ripple"></div>
+    <div class="ripple"></div>
+    <div class="ripple"></div>
+    <div class="ripple"></div>
+  </div>
+
+  <!-- Animated Waves -->
+  <div class="waves">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path class="wave-path" d="M0,60 C300,120 600,0 900,60 C1050,90 1150,70 1200,60 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.15)"/>
+      <path class="wave-path" d="M0,80 C300,40 600,120 900,80 C1050,60 1150,90 1200,80 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.08)"/>
+      <path class="wave-path" d="M0,100 C200,70 400,130 600,100 C800,70 1000,130 1200,100 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.04)"/>
+    </svg>
+  </div>
+  <div class="sand-bottom"></div>
+
+  <div class="container hero-grid-water">
+    <div class="hero-content-water" data-aos="fade-up">
+      <div class="badge-water">
+        <i class="fas fa-tint" style="color:#B3E5FC;"></i>
+        Clean Drinking Water Program
+      </div>
+
+      <h1>
+        Every Drop <span class="highlight-aqua">Counts</span>,<br>
+        Every Life <span class="highlight-sand">Matters</span>
+      </h1>
+
+      <div class="subtitle">
+        Safe Water for Every Community
+        <span class="water-badge">💧 5 Villages</span>
+      </div>
+
+      <p>
+        Wadmavli Lok Vikas Manch is committed to providing clean drinking water 
+        to communities across Beed district. Through wells, borewells, handpumps, 
+        water tanks, and tanker support, we have brought safe water to thousands 
+        of families.
+      </p>
+
+      <div class="hero-stats-water">
+        <div class="stat-item">
+          <span class="number">5</span>
+          <span class="label">Villages with Water Sources</span>
+        </div>
+        <div class="stat-item">
+          <span class="number">30</span>
+          <span class="label">Sintax Tanks</span>
+        </div>
+        <div class="stat-item">
+          <span class="number">10</span>
+          <span class="label">Villages - Tanker Support</span>
+        </div>
+        <div class="stat-item">
+          <span class="number">3</span>
+          <span class="label">Future Villages</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-image-water" data-aos="fade-left">
+      <div class="image-frame">
+        <img src="water-hero.png" alt="Clean Drinking Water" onerror="this.src='https://placehold.co/600x400/1A6A8A/F5E6D3?text=Clean+Water'">
+      </div>
+      <div class="sticker">
+        <i class="fas fa-hand-holding-heart"></i> Safe Water for All
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     ABOUT SECTION
+========================================= -->
+<section class="about-water">
+  <div class="container">
+    <div class="section-heading-water" data-aos="fade-up">
+      <span class="tag">💧 Our Mission</span>
+      <h2>Providing <span class="highlight-ocean">Clean Water</span> to Every <span class="highlight-sand">Community</span></h2>
+      <p>We work tirelessly to ensure that every family has access to safe, clean drinking water.</p>
+    </div>
+
+    <div class="about-grid-water">
+      <div class="about-content-water" data-aos="fade-right">
+        <h3>Water is <span class="highlight-ocean">Life</span></h3>
+        <p>
+          Access to clean drinking water is a basic human right. Through our program, 
+          we have provided sustainable water solutions to communities in Beed district 
+          through wells, borewells, handpumps, and water storage tanks.
+        </p>
+        <p>
+          We have also supported communities during drought through tanker services 
+          and are now working with the Azim Premji Foundation to bring clean water 
+          to 3 more villages in the coming years.
+        </p>
+      </div>
+
+      <div class="about-image-water" data-aos="fade-left">
+        <img src="tanker3.jpeg" alt="Clean Water" onerror="this.src='https://placehold.co/500x400/1A6A8A/F5E6D3?text=Clean+Water'">
+        <div class="about-sticker">
+          <i class="fas fa-water"></i> 30+ Water Sources
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     KEY INITIATIVES
+========================================= -->
+<section class="initiatives-water">
+  <div class="container">
+    <div class="section-heading-water" data-aos="fade-up">
+      <span class="tag">🌊 What We Do</span>
+      <h2>Our <span class="highlight-ocean">Key</span> <span class="highlight-sand">Initiatives</span></h2>
+      <p>We provide sustainable water solutions through multiple approaches.</p>
+    </div>
+
+    <div class="initiatives-grid-water">
+      <div class="initiative-card-water" data-aos="fade-up" data-aos-delay="50">
+        <span class="initiative-emoji">⛲</span>
+        <h4>Water Sources</h4>
+        <p>Providing wells, borewells, and handpumps to communities in 5 villages.</p>
+      </div>
+
+      <div class="initiative-card-water" data-aos="fade-up" data-aos-delay="100">
+        <span class="initiative-emoji">🛢️</span>
+        <h4>Water Storage</h4>
+        <p>Distributing Sintax water tanks to SC/ST families for water storage.</p>
+      </div>
+
+      <div class="initiative-card-water" data-aos="fade-up" data-aos-delay="150">
+        <span class="initiative-emoji">🚛</span>
+        <h4>Tanker Support</h4>
+        <p>Providing clean drinking water through tankers during drought in 10 villages.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     GALLERY - WELLS & BOREWELLS (4 images)
+========================================= -->
+<section class="gallery-water">
+  <div class="container">
+    <div class="section-heading-water" data-aos="fade-up">
+      <span class="tag">⛲ Water Sources</span>
+      <h2>Wells, Borewells & <span class="highlight-ocean">Handpumps</span></h2>
+      <p>Providing sustainable water sources to 5 villages.</p>
+    </div>
+
+    <div class="gallery-grid-water">
+      <div class="gallery-item-water" onclick="openLightbox('well1.jpeg', '⛲')">
+        <img src="well1.jpeg" alt="Water Well" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">⛲</span>
+      </div>
+      <div class="gallery-item-water" onclick="openLightbox('well2.jpeg', '⛲')">
+        <img src="well2.jpeg" alt="Water Well" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">⛲</span>
+      </div>
+      <div class="gallery-item-water" onclick="openLightbox('well3.jpeg', '⛲')">
+        <img src="well3.jpeg" alt="Water Well" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">⛲</span>
+      </div>
+      <div class="gallery-item-water" onclick="openLightbox('well4.jpeg', '⛲')">
+        <img src="well4.jpeg" alt="Water Well" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">⛲</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     GALLERY - SINTAX TANKS (6 images)
+========================================= -->
+<section class="gallery-water" style="padding-top:0;">
+  <div class="container">
+    <div class="section-heading-water" data-aos="fade-up">
+      <span class="tag">🛢️ Water Storage</span>
+      <h2>Sintax <span class="highlight-ocean">Water</span> Tanks</h2>
+      <p>30 Sintax tanks provided to SC/ST families for water storage.</p>
+    </div>
+
+    <div class="gallery-grid-water">
+      <div class="gallery-item-water" onclick="openLightbox('tank1.jpeg', '🛢️')">
+        <img src="tank1.jpeg" alt="Water Tank" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🛢️</span>
+      </div>
+      <div class="gallery-item-water" onclick="openLightbox('tank2.jpeg', '🛢️')">
+        <img src="tank2.jpeg" alt="Water Tank" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🛢️</span>
+      </div>
+      <div class="gallery-item-water" onclick="openLightbox('tank3.jpeg', '🛢️')">
+        <img src="tank3.jpeg" alt="Water Tank" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🛢️</span>
+      </div>
+      <div class="gallery-item-water" onclick="openLightbox('tank4.jpeg', '🛢️')">
+        <img src="tank4.jpeg" alt="Water Tank" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🛢️</span>
+      </div>
+      <div class="gallery-item-water" onclick="openLightbox('tank5.jpeg', '🛢️')">
+        <img src="tank5.jpeg" alt="Water Tank" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🛢️</span>
+      </div>
+      <div class="gallery-item-water" onclick="openLightbox('tank6.jpeg', '🛢️')">
+        <img src="tank6.jpeg" alt="Water Tank" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🛢️</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     GALLERY - TANKER SUPPORT (4 images)
+========================================= -->
+<section class="gallery-water" style="padding-top:0;">
+  <div class="container">
+    <div class="section-heading-water" data-aos="fade-up">
+      <span class="tag">🚛 Drought Support</span>
+      <h2>Water <span class="highlight-ocean">Tanker</span> Services</h2>
+      <p>Providing clean drinking water through tankers during drought in 10 villages.</p>
+    </div>
+
+    <div class="gallery-grid-water">
+      <div class="gallery-item-water" onclick="openLightbox('tanker1.jpeg', '🚛')">
+        <img src="tanker1.jpeg" alt="Water Tanker" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🚛</span>
+      </div>
+      <div class="gallery-item-water" onclick="openLightbox('tanker2.jpeg', '🚛')">
+        <img src="tanker2.jpeg" alt="Water Tanker" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🚛</span>
+      </div>
+      <div class="gallery-item-water" onclick="openLightbox('tanker3.jpeg', '🚛')">
+        <img src="tanker3.jpeg" alt="Water Tanker" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🚛</span>
+      </div>
+      <div class="gallery-item-water" onclick="openLightbox('tanker4.jpeg', '🚛')">
+        <img src="tanker4.jpeg" alt="Water Tanker" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🚛</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     FUTURE PLAN - AZIM PREMJI FOUNDATION
+========================================= -->
+<section class="future-plan-water">
+  <div class="container">
+    <div class="section-heading-water" data-aos="fade-up">
+      <span class="tag">🔮 Future Plan</span>
+      <h2>Expanding <span class="highlight-ocean">Water</span> Access with <span class="highlight-sand">Azim Premji</span> Foundation</h2>
+      <p>3 vastis in 3 villages of Beed taluka will be provided with clean drinking water sources.</p>
+    </div>
+
+    <div class="future-grid-water">
+      <div class="future-content-water" data-aos="fade-right">
+        <h3>Bringing <span class="highlight-ocean">Clean Water</span> to Every <span class="highlight-sand">Home</span></h3>
+        <p>
+          With the support of the <strong>Azim Premji Foundation</strong>, we are planning 
+          to provide clean drinking water sources to <strong>3 vastis in 3 villages</strong> 
+          of Beed taluka over the next 3 years.
+        </p>
+        <p>
+          This initiative will include the construction of wells, borewells, and the 
+          installation of pipelines in the middle of the vastis with water storage tanks, 
+          ensuring that every family has access to safe drinking water.
+        </p>
+        <div class="future-badge">📅 Next 3 Years</div>
+      </div>
+
+      <div class="future-image-water" data-aos="fade-left">
+        <img src="azim1.jpeg" alt="Azim Premji Foundation Meeting" onerror="this.src='https://placehold.co/500x400/1A6A8A/F5E6D3?text=Azim+Premji+Foundation'">
+      </div>
+    </div>
+
+    <!-- Azim Premji Meeting Gallery -->
+    <div class="gallery-grid-water" style="margin-top:40px;">
+      <div class="gallery-item-water" onclick="openLightbox('azim1.jpeg', '🤝')">
+        <img src="azim1.jpeg" alt="Azim Premji Meeting" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🤝</span>
+      </div>
+      <div class="gallery-item-water" onclick="openLightbox('azim2.jpeg', '🤝')">
+        <img src="azim2.jpeg" alt="Azim Premji Meeting" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🤝</span>
+      </div>
+      <div class="gallery-item-water" onclick="openLightbox('azim3.jpeg', '🤝')">
+        <img src="azim3.jpeg" alt="Azim Premji Meeting" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🤝</span>
+      </div>
+      <div class="gallery-item-water" onclick="openLightbox('azim4.jpeg', '🤝')">
+        <img src="azim4.jpeg" alt="Azim Premji Meeting" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🤝</span>
+      </div>
+      <div class="gallery-item-water" onclick="openLightbox('azim5.jpeg', '🤝')">
+        <img src="azim5.jpeg" alt="Azim Premji Meeting" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🤝</span>
+      </div>
+      <div class="gallery-item-water" onclick="openLightbox('azim6.jpeg', '🤝')">
+        <img src="azim6.jpeg" alt="Azim Premji Meeting" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🤝</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     PARTNERS
+========================================= -->
+<section class="partners-water">
+  <div class="container">
+    <div class="section-heading-water" data-aos="fade-up">
+      <span class="tag">🤝 Our Partners</span>
+      <h2>Collaborating for <span class="highlight-ocean">Clean</span> <span class="highlight-sand">Water</span></h2>
+      <p>Together with our partners, we are bringing clean water to communities in need.</p>
+    </div>
+
+    <div class="partners-grid-water">
+      <div class="partner-card-water" data-aos="fade-up" data-aos-delay="50">
+        <img src="wotr.jpeg" alt="WOTR" onerror="this.style.display='none'">
+        <p>WOTR</p>
+        <span class="partner-role">Water Program Partner</span>
+      </div>
+
+      <div class="partner-card-water" data-aos="fade-up" data-aos-delay="100">
+        <img src="dilasa.jpeg" alt="Dilasa Sanstha" onerror="this.style.display='none'">
+        <p>Dilasa Sanstha</p>
+        <span class="partner-role">Water Program Partner</span>
+      </div>
+
+      <div class="partner-card-water" data-aos="fade-up" data-aos-delay="150">
+        <img src="azim-premji.png" alt="Azim Premji Foundation" onerror="this.style.display='none'">
+        <p>Azim Premji Foundation</p>
+        <span class="partner-role">Future Plan Partner</span>
+      </div>
+
+      <div class="partner-card-water" data-aos="fade-up" data-aos-delay="200">
+        <img src="dogoodnow.png" alt="Do Good Now Foundation" onerror="this.style.display='none'">
+        <p>Do Good Now Foundation</p>
+        <span class="partner-role">Water Program Partner</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     CTA
+========================================= -->
+<section class="cta-water">
+  <div class="container">
+    <div class="cta-content" data-aos="fade-up">
+      <h2>Support <span class="highlight-sand">Clean Water</span> Access</h2>
+      <p>
+        Help us bring clean drinking water to more communities. Every contribution 
+        helps us build wells, borewells, and water storage systems.
+      </p>
+      <a href="contact.html" class="btn-cta-water">
+        <i class="fas fa-hand-holding-heart"></i> Support Our Work
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     LIGHTBOX
+========================================= -->
+<div id="lightbox" onclick="closeLightbox(event)">
+  <span class="close-lightbox" onclick="closeLightbox(event)"><i class="fas fa-times"></i></span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+  <div class="lightbox-info" id="lightboxInfo"></div>
+</div>
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Wadmavli Lok Vikas Manch Logo">
+      <div>
+        <h3>Wadmavli Lok Vikas Manch</h3>
+        <p>Towards Empowerment</p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="gallery.html">Gallery</a>
+    </div>
+    <div class="footer-links">
+      <h4>Get Involved</h4>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="partner.html">Partner With Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="donate.html">Donate</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Wadmavli Lok Vikas Manch. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  // AOS Animation
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 50
+  });
+
+  // Mobile Menu
+  function toggleMobileMenu() {
+    const navbar = document.querySelector(".navbar");
+    const button = document.querySelector(".mobile-menu-btn");
+    if (!navbar || !button) return;
+    navbar.classList.toggle("mobile-open");
+    const isOpen = navbar.classList.contains("mobile-open");
+    button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  }
+
+  // Close mobile menu on link click
+  document.querySelectorAll('.navbar nav a, .navbar .dropdown-menu a').forEach(link => {
+    link.addEventListener('click', function() {
+      const navbar = document.querySelector(".navbar");
+      if (navbar && navbar.classList.contains('mobile-open')) {
+        navbar.classList.remove('mobile-open');
+        const button = document.querySelector(".mobile-menu-btn");
+        if (button) button.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+
+  // =========================================
+  // LIGHTBOX
+  // =========================================
+  function openLightbox(src, caption) {
+    const lb = document.getElementById('lightbox');
+    const img = document.getElementById('lightboxImg');
+    const info = document.getElementById('lightboxInfo');
+    img.src = src;
+    info.innerHTML = caption;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(e) {
+    const lb = document.getElementById('lightbox');
+    if (e.target === lb || e.target.closest('.close-lightbox')) {
+      lb.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const lb = document.getElementById('lightbox');
+      lb.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  });
+
+  window.openLightbox = openLightbox;
+  window.closeLightbox = closeLightbox;
+
+  // =========================================
+  // SCROLL TO TOP
+  // =========================================
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 400) {
+      scrollBtn.classList.add('visible');
+    } else {
+      scrollBtn.classList.remove('visible');
+    }
+  });
+</script>
+</body>
+</html>

@@ -484,12 +484,48 @@
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(0,0,0,.08);
       transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-      background: white;
+      background: #f0f4f8;
       cursor: pointer;
       opacity: 0;
       transform: translateY(30px);
       animation: cardFadeIn 0.6s ease forwards;
       aspect-ratio: 4 / 3;
+      min-height: 200px;
+    }
+
+    /* Show a loading/placeholder state */
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+      background: #f0f4f8;
+    }
+
+    /* If image fails to load, show category name as fallback */
+    .gallery-item img:not([src]), 
+    .gallery-item img[src=""],
+    .gallery-item img.error {
+      display: none;
+    }
+
+    .gallery-item .fallback-text {
+      display: none;
+      position: absolute;
+      inset: 0;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--muted);
+      background: #f0f4f8;
+      text-align: center;
+      padding: 20px;
+      z-index: 0;
+    }
+
+    .gallery-item img.error + .fallback-text {
+      display: flex;
     }
 
     .gallery-item:nth-child(1) { animation-delay: 0.02s; }
@@ -525,13 +561,6 @@
     }
     .gallery-item:hover::before {
       opacity: 1;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
     }
 
     .gallery-item:hover {
@@ -1081,7 +1110,7 @@
           <div class="form-row">
             <div class="form-group">
               <label>Image Filename</label>
-              <input type="text" id="photoFile" placeholder="e.g. education-1.jpg" required>
+              <input type="text" id="photoFile" placeholder="e.g. mission1.jpeg" required>
             </div>
             <div class="form-group">
               <label>Category</label>
@@ -1107,7 +1136,7 @@
           </div>
         </form>
         <div class="helper-text">
-          💡 <strong>How to add photos:</strong> First upload your image to the server (via FTP or cPanel) into the <code>/gallery-images/</code> folder. Then enter the filename above.
+          💡 <strong>How to add photos:</strong> Upload your image to the root directory (same folder as this page). Then enter the filename above.
           <span style="display:block;margin-top:6px;color:var(--muted);">
             <i class="fas fa-info-circle"></i> Photos are stored in the <code>galleryData.photos</code> array in JavaScript.
           </span>
@@ -1170,7 +1199,7 @@
 <script>
   // =========================================
   // GALLERY DATA - Edit this to manage photos
-  // All images should be in /gallery-images/ folder
+  // Images are in the ROOT directory (same folder as this page)
   // =========================================
   const galleryData = {
     photos: [
@@ -1334,8 +1363,23 @@
       item.className = 'gallery-item';
       item.style.animationDelay = `${(index % 10) * 0.02}s`;
       const deleteVisible = adminMode ? 'visible' : '';
+      
+      // Create image element with error handling
+      const img = document.createElement('img');
+      img.src = photo.file;
+      img.alt = photo.caption || photo.category;
+      img.loading = 'lazy';
+      
+      // Handle image load error - show fallback text
+      img.onerror = function() {
+        this.style.display = 'none';
+        const fallback = document.createElement('div');
+        fallback.className = 'fallback-text';
+        fallback.innerHTML = `<span>${photo.category}<br><small style="font-weight:400;font-size:12px;">${photo.file}</small></span>`;
+        this.parentNode.appendChild(fallback);
+      };
+      
       item.innerHTML = `
-        <img src="gallery-images/${photo.file}" alt="${photo.caption || photo.category}" loading="lazy" onerror="this.style.display='none'">
         <div class="expand-icon"><i class="fas fa-expand"></i></div>
         <div class="delete-btn ${deleteVisible}" onclick="deletePhoto('${photo.file}')" title="Delete this photo"><i class="fas fa-trash"></i></div>
         <div class="overlay">
@@ -1343,13 +1387,19 @@
           <span class="category-tag">${photo.category}</span>
         </div>
       `;
+      
+      // Insert image at the beginning
+      item.prepend(img);
+      
+      // Lightbox click
       item.addEventListener('click', function(e) {
         if (e.target.closest('.delete-btn')) return;
-        const img = this.querySelector('img');
-        if (!img || !img.src) return;
+        const imgEl = this.querySelector('img');
+        if (!imgEl || !imgEl.src || imgEl.style.display === 'none') return;
         const caption = this.querySelector('.caption')?.textContent || photo.category;
-        openLightbox(img.src, caption, photo.category);
+        openLightbox(imgEl.src, caption, photo.category);
       });
+      
       grid.appendChild(item);
     });
   }

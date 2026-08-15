@@ -1,1 +1,1606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Watershed Development | Wadmavli Lok Vikas Manch</title>
+  <meta name="description" content="Watershed Development program by Wadmavli Lok Vikas Manch - Water conservation through band bandasti, farm ponds, chaur khodne, and dagdi band in Beed district." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <style>
+    /* =========================================
+       WATERSHED DEVELOPMENT - EARTHY + WATER THEME
+       Natural, Sustainable, Fresh
+       ========================================= */
 
+    :root {
+      --earth-brown: #8B7355;
+      --earth-light: #C4A882;
+      --water-blue: #4A90B5;
+      --water-light: #7EC8E3;
+      --mint-green: #8FBC8F;
+      --forest: #2D5A27;
+      --cream: #FFF8F0;
+      --white: #ffffff;
+      --text-dark: #2C3E2A;
+      --text-soft: #5A6F5A;
+      --shadow-soft: 0 8px 30px rgba(45, 90, 39, 0.12);
+      --shadow-hover: 0 15px 45px rgba(45, 90, 39, 0.2);
+      --border-radius: 24px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    .container {
+      width: min(1200px, 92%);
+      margin: auto;
+    }
+
+    /* =========================================
+       HEADER - SAME AS OTHER PAGES
+       ========================================= */
+    header {
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    }
+    .navbar {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-image {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+    .logo-text h2 {
+      font-size: 18px;
+      color: #063b67;
+      line-height: 1.2;
+    }
+    .logo-text span {
+      display: block;
+      color: #e85b88;
+      font-size: 9px;
+      letter-spacing: 2px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+    nav a {
+      color: #063b67;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: .3s;
+    }
+    nav a:hover {
+      color: #075b9a;
+    }
+    .nav-donate {
+      background: #075b9a;
+      color: white !important;
+      padding: 10px 18px;
+      border-radius: 25px;
+    }
+    .mobile-menu-btn {
+      display: none;
+      border: 0;
+      background: none;
+      color: #063b67;
+      font-size: 24px;
+      cursor: pointer;
+      padding: 8px;
+    }
+    @media (max-width:950px) {
+      nav { display: none; }
+      .mobile-menu-btn { display: flex; flex-shrink: 0; }
+      .navbar { position: relative; }
+      .navbar.mobile-open nav {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 220px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: white;
+        padding: 10px 0;
+        border-radius: 0 0 16px 16px;
+        box-shadow: 0 12px 30px rgba(0,0,0,.15);
+        z-index: 2000;
+      }
+      .navbar.mobile-open nav a {
+        display: block;
+        width: 100%;
+        padding: 13px 20px;
+        text-align: left;
+        box-sizing: border-box;
+      }
+      .navbar.mobile-open nav a:hover {
+        background: #f1f7fb;
+      }
+      .navbar.mobile-open .nav-donate {
+        margin: 8px 12px;
+        width: auto;
+        text-align: center;
+      }
+    }
+
+    /* DROPDOWN */
+    .nav-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-trigger {
+      color: #063b67;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: .3s;
+      cursor: pointer;
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dropdown-trigger i {
+      font-size: 11px;
+      transition: .3s;
+    }
+    .nav-dropdown:hover .dropdown-trigger i {
+      transform: rotate(180deg);
+    }
+    .dropdown-trigger:hover {
+      color: #075b9a;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 220px;
+      background: white;
+      padding: 8px 0;
+      border-radius: 12px;
+      box-shadow: 0 12px 35px rgba(0,0,0,.12);
+      z-index: 999;
+      border: 1px solid rgba(0,0,0,.06);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+    .nav-dropdown:hover .dropdown-menu {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #063b67;
+      text-decoration: none;
+      transition: .3s;
+      white-space: nowrap;
+    }
+    .dropdown-menu a:hover {
+      background: #f5f0ff;
+      color: #075b9a;
+      padding-left: 26px;
+    }
+    .dropdown-menu::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 20px;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid white;
+      filter: drop-shadow(0 -2px 5px rgba(0,0,0,.04));
+    }
+    @media (max-width: 950px) {
+      .nav-dropdown { width: 100%; }
+      .dropdown-trigger { padding: 13px 20px; justify-content: space-between; width: 100%; }
+      .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
+        background: #f8f6fc;
+        opacity: 1;
+        transform: none;
+        display: none;
+        border: none;
+        pointer-events: auto;
+      }
+      .dropdown-menu::before { display: none; }
+      .dropdown-menu a { padding: 10px 20px 10px 40px; font-size: 13px; }
+      .dropdown-menu a:hover { padding-left: 46px; }
+      .nav-dropdown.active .dropdown-menu { display: block; }
+    }
+
+    /* =========================================
+       SECTION HEADING
+       ========================================= */
+    .section-heading-watershed {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .section-heading-watershed .tag {
+      display: inline-block;
+      background: var(--mint-green);
+      color: var(--forest);
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .section-heading-watershed h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--forest);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .section-heading-watershed h2 .highlight-water {
+      color: var(--water-blue);
+    }
+
+    .section-heading-watershed h2 .highlight-earth {
+      color: var(--earth-brown);
+    }
+
+    .section-heading-watershed p {
+      color: var(--text-soft);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* =========================================
+       HERO - WATERSHED THEME
+       ========================================= */
+    .hero-watershed {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 80px 20px 60px;
+      background: linear-gradient(180deg, #87CEEB 0%, #B5D8A8 25%, #8BAA7A 45%, #6B8F5A 65%, #4A7C43 85%, #2D5A27 100%);
+    }
+
+    /* Water Ripples Animation */
+    .water-ripples {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 30%;
+      background: radial-gradient(ellipse at 20% 80%, rgba(74, 144, 181, 0.15), transparent 50%),
+                  radial-gradient(ellipse at 60% 70%, rgba(126, 200, 227, 0.12), transparent 40%),
+                  radial-gradient(ellipse at 85% 85%, rgba(74, 144, 181, 0.1), transparent 50%);
+      z-index: 1;
+      animation: rippleWater 6s ease-in-out infinite;
+    }
+
+    @keyframes rippleWater {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.02); }
+    }
+
+    /* Floating Water Drops */
+    .water-drops-ws {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 2;
+    }
+
+    .water-drops-ws .drop {
+      position: absolute;
+      font-size: 28px;
+      opacity: 0.12;
+      animation: dropFallWS 10s infinite linear;
+    }
+
+    .water-drops-ws .drop:nth-child(1) { left: 5%; animation-delay: 0s; font-size: 32px; }
+    .water-drops-ws .drop:nth-child(2) { left: 18%; animation-delay: 2.5s; font-size: 24px; }
+    .water-drops-ws .drop:nth-child(3) { left: 32%; animation-delay: 5s; font-size: 38px; }
+    .water-drops-ws .drop:nth-child(4) { left: 48%; animation-delay: 1.5s; font-size: 26px; }
+    .water-drops-ws .drop:nth-child(5) { left: 62%; animation-delay: 4s; font-size: 34px; }
+    .water-drops-ws .drop:nth-child(6) { left: 78%; animation-delay: 6.5s; font-size: 22px; }
+    .water-drops-ws .drop:nth-child(7) { left: 90%; animation-delay: 3s; font-size: 36px; }
+
+    @keyframes dropFallWS {
+      0% { transform: translateY(-100px) scale(0.5); opacity: 0.1; }
+      50% { opacity: 0.3; }
+      100% { transform: translateY(calc(100vh + 100px)) scale(1.2); opacity: 0; }
+    }
+
+    /* Flying Emojis */
+    .flying-emojis-ws {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 3;
+    }
+
+    .flying-emojis-ws .emoji {
+      position: absolute;
+      font-size: 30px;
+      opacity: 0.2;
+      animation: floatEmojiWS 15s infinite linear;
+    }
+
+    .flying-emojis-ws .emoji:nth-child(1) { left: 8%; animation-delay: 0s; font-size: 35px; }
+    .flying-emojis-ws .emoji:nth-child(2) { left: 22%; animation-delay: 3s; font-size: 25px; }
+    .flying-emojis-ws .emoji:nth-child(3) { left: 38%; animation-delay: 6s; font-size: 40px; }
+    .flying-emojis-ws .emoji:nth-child(4) { left: 55%; animation-delay: 1.5s; font-size: 28px; }
+    .flying-emojis-ws .emoji:nth-child(5) { left: 70%; animation-delay: 4.5s; font-size: 35px; }
+    .flying-emojis-ws .emoji:nth-child(6) { left: 85%; animation-delay: 7.5s; font-size: 30px; }
+
+    @keyframes floatEmojiWS {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0.1; }
+      25% { opacity: 0.3; }
+      50% { transform: translateY(-200px) rotate(180deg); opacity: 0.2; }
+      75% { opacity: 0.3; }
+      100% { transform: translateY(-400px) rotate(360deg); opacity: 0; }
+    }
+
+    .hero-grid-watershed {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+      position: relative;
+      z-index: 5;
+    }
+
+    .hero-content-watershed {
+      color: white;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+
+    .hero-content-watershed .badge-ws {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .hero-content-watershed h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 56px;
+      font-weight: 800;
+      line-height: 1.08;
+      margin-bottom: 15px;
+      color: #fff;
+      text-shadow: 0 2px 30px rgba(0,0,0,0.15);
+    }
+
+    .hero-content-watershed h1 .highlight-water {
+      color: #B3E5FC;
+    }
+
+    .hero-content-watershed h1 .highlight-earth {
+      color: var(--earth-light);
+    }
+
+    .hero-content-watershed .subtitle {
+      font-size: 20px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      text-shadow: 0 1px 15px rgba(0,0,0,0.1);
+    }
+
+    .hero-content-watershed .subtitle .ws-badge {
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      padding: 4px 16px;
+      border-radius: 50px;
+      font-size: 14px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .hero-content-watershed p {
+      font-size: 17px;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.9);
+      max-width: 520px;
+      margin-bottom: 25px;
+      text-shadow: 0 1px 15px rgba(0,0,0,0.08);
+    }
+
+    .hero-stats-ws {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 2px solid rgba(255,255,255,0.1);
+    }
+
+    .hero-stats-ws .stat-item .number {
+      font-size: 28px;
+      font-weight: 800;
+      color: #B3E5FC;
+      display: block;
+      line-height: 1.2;
+      text-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+
+    .hero-stats-ws .stat-item .label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.7);
+      font-weight: 500;
+    }
+
+    .hero-image-ws {
+      position: relative;
+    }
+
+    .hero-image-ws .image-frame {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(10px);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+      border: 3px solid rgba(255,255,255,0.08);
+    }
+
+    .hero-image-ws .image-frame img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .hero-image-ws .sticker {
+      position: absolute;
+      bottom: -15px;
+      right: -15px;
+      background: var(--mint-green);
+      color: var(--forest);
+      padding: 12px 20px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 8px 25px rgba(143, 188, 143, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: bounceSticker 3s infinite;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    @keyframes bounceSticker {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .hero-image-ws .sticker i {
+      font-size: 20px;
+    }
+
+    @media(max-width: 992px) {
+      .hero-grid-watershed {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .hero-content-watershed h1 {
+        font-size: 40px;
+      }
+      .hero-image-ws .image-frame img {
+        height: 280px;
+      }
+      .water-drops-ws .drop { display: none; }
+      .flying-emojis-ws .emoji { display: none; }
+    }
+
+    @media(max-width: 600px) {
+      .hero-content-watershed h1 {
+        font-size: 32px;
+      }
+      .hero-content-watershed .subtitle {
+        font-size: 17px;
+      }
+      .hero-stats-ws {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .hero-stats-ws .stat-item .number {
+        font-size: 22px;
+      }
+    }
+
+    /* =========================================
+       ABOUT SECTION
+       ========================================= */
+    .about-ws {
+      padding: 80px 0;
+      background: var(--cream);
+    }
+
+    .about-grid-ws {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-content-ws h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: var(--forest);
+      margin-bottom: 12px;
+    }
+
+    .about-content-ws h3 .highlight-water {
+      color: var(--water-blue);
+    }
+
+    .about-content-ws p {
+      color: var(--text-soft);
+      line-height: 1.9;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .about-image-ws img {
+      width: 100%;
+      border-radius: var(--border-radius);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+      border: 2px solid var(--mint-green);
+    }
+
+    .about-image-ws {
+      position: relative;
+    }
+
+    .about-image-ws .about-sticker {
+      position: absolute;
+      bottom: -15px;
+      left: -15px;
+      background: var(--water-blue);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 8px 25px rgba(74, 144, 181, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: bounceSticker 3s infinite 1s;
+    }
+
+    @media(max-width: 768px) {
+      .about-grid-ws {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .about-content-ws h3 {
+        font-size: 26px;
+      }
+      .about-image-ws .about-sticker {
+        position: static;
+        margin-top: 15px;
+        display: inline-flex;
+      }
+    }
+
+    /* =========================================
+       PAST WORK - DROUGHT 2015-16
+       ========================================= */
+    .past-work-ws {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .past-grid-ws {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .past-content-ws h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: var(--forest);
+      margin-bottom: 12px;
+    }
+
+    .past-content-ws h3 .highlight-earth {
+      color: var(--earth-brown);
+    }
+
+    .past-content-ws p {
+      color: var(--text-soft);
+      line-height: 1.9;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .past-content-ws .past-highlight {
+      background: var(--cream);
+      padding: 18px 20px;
+      border-radius: var(--border-radius);
+      border-left: 4px solid var(--water-blue);
+      margin-top: 15px;
+    }
+
+    .past-content-ws .past-highlight p {
+      margin-bottom: 0;
+      font-size: 14px;
+    }
+
+    .past-content-ws .past-highlight i {
+      color: var(--water-blue);
+      margin-right: 8px;
+    }
+
+    .past-image-ws img {
+      width: 100%;
+      border-radius: var(--border-radius);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+      border: 2px solid var(--earth-light);
+    }
+
+    @media(max-width: 768px) {
+      .past-grid-ws {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .past-content-ws h3 {
+        font-size: 26px;
+      }
+    }
+
+    /* =========================================
+       GALLERY - WATERSHED (4 images)
+       ========================================= */
+    .gallery-ws {
+      padding: 80px 0;
+      background: var(--cream);
+    }
+
+    .gallery-grid-ws {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .gallery-item-ws {
+      background: white;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      transition: .4s;
+      border: 3px solid rgba(255,255,255,0.5);
+      cursor: pointer;
+      position: relative;
+      aspect-ratio: 1 / 1;
+    }
+
+    .gallery-item-ws:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--water-blue);
+    }
+
+    .gallery-item-ws img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item-ws:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-item-ws .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(45, 90, 39, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .gallery-item-ws:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-item-ws .gallery-overlay i {
+      color: white;
+      font-size: 30px;
+      background: rgba(0,0,0,0.2);
+      backdrop-filter: blur(4px);
+      padding: 14px;
+      border-radius: 50%;
+      transform: scale(0.8);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item-ws:hover .gallery-overlay i {
+      transform: scale(1);
+    }
+
+    .gallery-item-ws .gallery-emoji {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      font-size: 28px;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(4px);
+      padding: 4px 12px;
+      border-radius: 12px;
+      line-height: 1.4;
+    }
+
+    @media(max-width: 600px) {
+      .gallery-grid-ws {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+      }
+    }
+
+    /* =========================================
+       FUTURE PLAN - WATER CONSERVATION
+       ========================================= */
+    .future-ws {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .future-grid-ws {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .future-content-ws h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: var(--forest);
+      margin-bottom: 12px;
+    }
+
+    .future-content-ws h3 .highlight-water {
+      color: var(--water-blue);
+    }
+
+    .future-content-ws p {
+      color: var(--text-soft);
+      line-height: 1.9;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .future-list-ws {
+      list-style: none;
+      padding: 0;
+      margin-top: 15px;
+    }
+
+    .future-list-ws li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      font-size: 15px;
+      color: var(--text-soft);
+    }
+
+    .future-list-ws li:last-child {
+      border-bottom: none;
+    }
+
+    .future-list-ws li .li-icon {
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .future-list-ws li strong {
+      color: var(--forest);
+    }
+
+    .future-badge-ws {
+      display: inline-block;
+      background: var(--water-blue);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 15px;
+    }
+
+    .future-image-ws img {
+      width: 100%;
+      border-radius: var(--border-radius);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+      border: 2px solid var(--mint-green);
+    }
+
+    @media(max-width: 768px) {
+      .future-grid-ws {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .future-content-ws h3 {
+        font-size: 26px;
+      }
+    }
+
+    /* =========================================
+       SOCIAL GALLERY - SOCIAL WORK (4 images)
+       ========================================= */
+    .social-gallery-ws {
+      padding: 80px 0;
+      background: var(--cream);
+    }
+
+    .social-gallery-ws .gallery-grid-ws {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media(max-width: 600px) {
+      .social-gallery-ws .gallery-grid-ws {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* =========================================
+       PARTNERS
+       ========================================= */
+    .partners-ws {
+      padding: 60px 0;
+      background: white;
+    }
+
+    .partners-grid-ws {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      max-width: 450px;
+      margin: 30px auto 0;
+    }
+
+    .partner-card-ws {
+      background: var(--cream);
+      padding: 30px 20px;
+      border-radius: var(--border-radius);
+      text-align: center;
+      transition: .4s;
+      border: 2px solid transparent;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 130px;
+    }
+
+    .partner-card-ws:hover {
+      transform: translateY(-6px);
+      border-color: var(--water-blue);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .partner-card-ws img {
+      max-width: 120px;
+      max-height: 55px;
+      object-fit: contain;
+      margin-bottom: 8px;
+    }
+
+    .partner-card-ws p {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .partner-card-ws .partner-role {
+      font-size: 11px;
+      color: var(--text-soft);
+      font-weight: 400;
+    }
+
+    @media(max-width: 600px) {
+      .partners-grid-ws {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+      }
+      .partner-card-ws {
+        min-height: 100px;
+        padding: 18px 12px;
+      }
+      .partner-card-ws img {
+        max-width: 80px;
+        max-height: 35px;
+      }
+      .partner-card-ws p {
+        font-size: 12px;
+      }
+    }
+
+    /* =========================================
+       LIGHTBOX
+       ========================================= */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.92);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      padding: 20px;
+      backdrop-filter: blur(8px);
+    }
+    #lightbox.active {
+      display: flex;
+    }
+    #lightbox img {
+      max-width: 92%;
+      max-height: 85vh;
+      border-radius: 20px;
+      box-shadow: 0 30px 60px rgba(0,0,0,.6);
+      animation: zoomIn 0.4s cubic-bezier(0.23,1,0.32,1);
+    }
+    @keyframes zoomIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    #lightbox .close-lightbox {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      color: white;
+      font-size: 36px;
+      cursor: pointer;
+      transition: .3s;
+      background: rgba(0,0,0,0.3);
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+      border: 2px solid rgba(255,255,255,.1);
+    }
+    #lightbox .close-lightbox:hover {
+      background: var(--water-blue);
+      transform: rotate(90deg) scale(1.05);
+      border-color: var(--water-blue);
+    }
+    #lightbox .lightbox-info {
+      position: absolute;
+      bottom: 40px;
+      color: rgba(255,255,255,.6);
+      font-size: 14px;
+      text-align: center;
+      max-width: 80%;
+    }
+    @media(max-width:600px) {
+      #lightbox .close-lightbox { top: 20px; right: 20px; font-size: 28px; width: 44px; height: 44px; }
+      #lightbox .lightbox-info { font-size: 12px; bottom: 20px; }
+    }
+
+    /* =========================================
+       FOOTER
+       ========================================= */
+    .site-footer {
+      background: #eef7fc;
+      color: #063b67;
+      padding: 65px 20px 0;
+    }
+    .footer-content {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 50px;
+      padding-bottom: 45px;
+    }
+    .footer-brand h3 { font-size: 18px; margin-bottom: 5px; color: #063b67; }
+    .footer-brand img { width: 58px; height: 58px; object-fit: contain; }
+    .footer-brand p { color: #e85b88; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; }
+    .footer-links { display: flex; flex-direction: column; gap: 9px; }
+    .footer-links h4 { color: #063b67; font-size: 16px; margin-bottom: 8px; }
+    .footer-links a { color: #526b7a; text-decoration: none; font-size: 13px; transition: .3s; }
+    .footer-links a:hover { color: #e85b88; transform: translateX(3px); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.15); padding: 20px 10px; text-align: center; }
+    .footer-bottom p { color: #667985; font-size: 12px; }
+    @media(max-width:768px) {
+      .site-footer { padding: 50px 20px 0; }
+      .footer-content { width: 100%; grid-template-columns: 1fr; gap: 35px; padding-bottom: 35px; }
+      .footer-brand { align-items: center; }
+      .footer-brand img { width: 52px; height: 52px; }
+      .footer-links h4 { font-size: 15px; }
+    }
+
+    /* Scroll to top */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--water-blue);
+      color: white;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(74, 144, 181, 0.35);
+      transition: .4s cubic-bezier(0.23,1,0.32,1);
+      opacity: 0;
+      transform: translateY(20px);
+      z-index: 999;
+    }
+    .scroll-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .scroll-top:hover {
+      background: var(--mint-green);
+      color: var(--forest);
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 12px 35px rgba(143, 188, 143, 0.35);
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container navbar">
+    <div class="logo-area">
+      <img src="logo.png" alt="Wadmavli Lok Vikas Manch Logo" class="logo-image">
+      <div class="logo-text">
+        <h2>Wadmavli Lok Vikas Manch</h2>
+        <span>TOWARDS EMPOWERMENT</span>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <div class="nav-dropdown">
+        <a href="programs.html" class="dropdown-trigger">Programs <i class="fas fa-chevron-down"></i></a>
+        <div class="dropdown-menu">
+          <a href="program-education.html">📚 Mission Education</a>
+          <a href="program-driving.html">🚗 Motor Driving School</a>
+          <a href="program-skill.html">💼 Skill Development</a>
+          <a href="program-women.html">👩 Women SHGs</a>
+          <a href="program-organic.html">🌾 Organic Farming</a>
+          <a href="program-water.html">💧 Clean Drinking Water</a>
+          <a href="program-tree.html">🌳 Tree Plantation</a>
+          <a href="program-watershed.html">🏞️ Watershed Development</a>
+          <a href="program-disaster.html">🚑 Disaster Relief</a>
+        </div>
+      </div>
+      <a href="gallery.html">Gallery</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="partner.html">Partner</a>
+      <a href="contact.html">Contact</a>
+      <a href="donate.html" class="nav-donate">Donate</a>
+    </nav>
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open navigation menu" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</header>
+
+<!-- =========================================
+     HERO SECTION - WATERSHED THEME
+========================================= -->
+<section class="hero-watershed">
+  <div class="water-ripples"></div>
+
+  <div class="water-drops-ws">
+    <span class="drop">💧</span>
+    <span class="drop">💧</span>
+    <span class="drop">💧</span>
+    <span class="drop">💧</span>
+    <span class="drop">💧</span>
+    <span class="drop">💧</span>
+    <span class="drop">💧</span>
+  </div>
+
+  <div class="flying-emojis-ws">
+    <span class="emoji">🌊</span>
+    <span class="emoji">💧</span>
+    <span class="emoji">🌿</span>
+    <span class="emoji">🌱</span>
+    <span class="emoji">💧</span>
+    <span class="emoji">🌾</span>
+  </div>
+
+  <div class="container hero-grid-watershed">
+    <div class="hero-content-watershed" data-aos="fade-up">
+      <div class="badge-ws">
+        <i class="fas fa-water" style="color:#B3E5FC;"></i>
+        Watershed Development
+      </div>
+
+      <h1>
+        Conserving <span class="highlight-water">Water</span>,<br>
+        Protecting <span class="highlight-earth">Land</span>
+      </h1>
+
+      <div class="subtitle">
+        Sustainable Water Conservation for Communities
+        <span class="ws-badge">💧 20+ Farmers</span>
+      </div>
+
+      <p>
+        Wadmavli Lok Vikas Manch is committed to water conservation through 
+        watershed development. From band bandasti, farm ponds, chaur khodne, 
+        to dagdi band — we are working with communities to secure water 
+        for agriculture and livelihoods.
+      </p>
+
+      <div class="hero-stats-ws">
+        <div class="stat-item">
+          <span class="number">20</span>
+          <span class="label">Farmers Supported</span>
+        </div>
+        <div class="stat-item">
+          <span class="number">7</span>
+          <span class="label">Villages - Dagdi Band</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-image-ws" data-aos="fade-left">
+      <div class="image-frame">
+        <img src="watershed-hero.jpeg" alt="Watershed Development" onerror="this.src='https://placehold.co/600x400/4A90B5/FFF8F0?text=Watershed+Development'">
+      </div>
+      <div class="sticker">
+        <i class="fas fa-water"></i> Water Conservation
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     ABOUT SECTION
+========================================= -->
+<section class="about-ws">
+  <div class="container">
+    <div class="section-heading-watershed" data-aos="fade-up">
+      <span class="tag">🌊 Our Mission</span>
+      <h2>Protecting <span class="highlight-water">Water</span> Resources for <span class="highlight-earth">Future</span></h2>
+      <p>We work with communities to conserve water and protect land through sustainable watershed practices.</p>
+    </div>
+
+    <div class="about-grid-ws">
+      <div class="about-content-ws" data-aos="fade-right">
+        <h3>Building a <span class="highlight-water">Water-Secure</span> Future</h3>
+        <p>
+          Watershed development is at the heart of our water conservation efforts. 
+          Through scientific and community-led approaches, we are helping farmers 
+          and communities secure water for agriculture and daily needs.
+        </p>
+        <p>
+          From constructing farm ponds and band bandasti to implementing dagdi band 
+          and chaur khodne, we are creating sustainable water solutions that benefit 
+          both people and the environment.
+        </p>
+      </div>
+
+      <div class="about-image-ws" data-aos="fade-left">
+        <img src="watershed-hero.jpeg" alt="Watershed Development" onerror="this.src='https://placehold.co/500x400/4A90B5/FFF8F0?text=Watershed+Development'">
+        <div class="about-sticker">
+          <i class="fas fa-water"></i> Sustainable Solutions
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     PAST WORK - DROUGHT 2015-16
+========================================= -->
+<section class="past-work-ws">
+  <div class="container">
+    <div class="section-heading-watershed" data-aos="fade-up">
+      <span class="tag">⏳ Past Work</span>
+      <h2>Supporting Farmers During <span class="highlight-earth">Drought</span> <span class="highlight-water">2015-16</span></h2>
+      <p>During the severe drought, we provided labour and water conservation support to 20 farmers.</p>
+    </div>
+
+    <div class="past-grid-ws">
+      <div class="past-content-ws" data-aos="fade-right">
+        <h3>Standing with <span class="highlight-earth">Farmers</span> in Crisis</h3>
+        <p>
+          During the devastating drought of 2015-16, we worked with 20 farmers 
+          to provide labour support and water conservation measures. We dug wells 
+          and implemented water-saving techniques to help farmers sustain their 
+          livelihoods during the crisis.
+        </p>
+
+        <div class="past-highlight">
+          <p>
+            <i class="fas fa-trowel"></i> <strong>20 Farmers</strong> received 
+            labour support and water conservation assistance during the drought.
+          </p>
+        </div>
+
+        <div class="past-highlight" style="border-left-color: var(--earth-brown); margin-top:10px;">
+          <p>
+            <i class="fas fa-water"></i> <strong>Water Conservation</strong> 
+            measures implemented to support sustainable farming.
+          </p>
+        </div>
+      </div>
+
+      <div class="past-image-ws" data-aos="fade-left">
+        <img src="watershed-hero.jpeg" alt="Drought Support" onerror="this.src='https://placehold.co/500x400/8B7355/FFF8F0?text=Drought+Support'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     GALLERY - WATERSHED (4 images)
+========================================= -->
+<section class="gallery-ws">
+  <div class="container">
+    <div class="section-heading-watershed" data-aos="fade-up">
+      <span class="tag">📸 In Action</span>
+      <h2>Watershed <span class="highlight-water">Conservation</span> <span class="highlight-earth">Moments</span></h2>
+      <p>Glimpses from our watershed development and water conservation activities.</p>
+    </div>
+
+    <div class="gallery-grid-ws">
+      <div class="gallery-item-ws" onclick="openLightbox('watershed1.jpeg', '🏞️')">
+        <img src="watershed1.jpeg" alt="Watershed" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🏞️</span>
+      </div>
+
+      <div class="gallery-item-ws" onclick="openLightbox('watershed2.jpeg', '💧')">
+        <img src="watershed2.jpeg" alt="Watershed" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">💧</span>
+      </div>
+
+      <div class="gallery-item-ws" onclick="openLightbox('watershed3.jpeg', '🌾')">
+        <img src="watershed3.jpeg" alt="Watershed" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌾</span>
+      </div>
+
+      <div class="gallery-item-ws" onclick="openLightbox('watershed4.jpeg', '🌱')">
+        <img src="watershed4.jpeg" alt="Watershed" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌱</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     FUTURE PLAN - WATER CONSERVATION
+========================================= -->
+<section class="future-ws">
+  <div class="container">
+    <div class="section-heading-watershed" data-aos="fade-up">
+      <span class="tag">🔮 Future Plan</span>
+      <h2>Expanding <span class="highlight-water">Water</span> Conservation</h2>
+      <p>Our upcoming initiatives to secure water for communities and agriculture.</p>
+    </div>
+
+    <div class="future-grid-ws">
+      <div class="future-content-ws" data-aos="fade-right">
+        <h3>Building a <span class="highlight-water">Water-Secure</span> Future</h3>
+        <p>
+          We are planning to expand our watershed development work to more villages 
+          with a focus on sustainable water conservation techniques.
+        </p>
+
+        <ul class="future-list-ws">
+          <li>
+            <span class="li-icon">🌊</span>
+            <strong>10 Villages</strong> — Band Bandasti, Farm Ponds, Chaur Khodne
+          </li>
+          <li>
+            <span class="li-icon">🏞️</span>
+            <strong>7 Villages</strong> — Dagdi Band (stone bunding) for water retention
+          </li>
+          <li>
+            <span class="li-icon">💧</span>
+            <strong>Water Conservation</strong> — Pani Adva, Pani Jirwa techniques
+          </li>
+        </ul>
+
+        <div class="future-badge-ws">📅 Next 2-3 Years</div>
+      </div>
+
+      <div class="future-image-ws" data-aos="fade-left">
+        <img src="watershed-hero.jpeg" alt="Future Plan" onerror="this.src='https://placehold.co/500x400/4A90B5/FFF8F0?text=Future+Plan'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     SOCIAL GALLERY - SOCIAL WORK (4 images)
+========================================= -->
+<section class="social-gallery-ws">
+  <div class="container">
+    <div class="section-heading-watershed" data-aos="fade-up">
+      <span class="tag">🤝 Community Work</span>
+      <h2>Social <span class="highlight-water">Engagement</span></h2>
+      <p>Working together with communities for sustainable water solutions.</p>
+    </div>
+
+    <div class="gallery-grid-ws">
+      <div class="gallery-item-ws" onclick="openLightbox('social1.jpeg', '🤝')">
+        <img src="social1.jpeg" alt="Social Work" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🤝</span>
+      </div>
+
+      <div class="gallery-item-ws" onclick="openLightbox('social2.jpeg', '🌊')">
+        <img src="social2.jpeg" alt="Social Work" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌊</span>
+      </div>
+
+      <div class="gallery-item-ws" onclick="openLightbox('social3.jpeg', '💪')">
+        <img src="social3.jpeg" alt="Social Work" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">💪</span>
+      </div>
+
+      <div class="gallery-item-ws" onclick="openLightbox('social4.jpeg', '🌿')">
+        <img src="social4.jpeg" alt="Social Work" onerror="this.style.display='none'">
+        <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        <span class="gallery-emoji">🌿</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     PARTNERS
+========================================= -->
+<section class="partners-ws">
+  <div class="container">
+    <div class="section-heading-watershed" data-aos="fade-up">
+      <span class="tag">🤝 Our Partners</span>
+      <h2>Collaborating for <span class="highlight-water">Water</span> <span class="highlight-earth">Security</span></h2>
+      <p>Together with our partners, we are building a water-secure future for communities.</p>
+    </div>
+
+    <div class="partners-grid-ws">
+      <div class="partner-card-ws" data-aos="fade-up" data-aos-delay="50">
+        <img src="dilasa.jpeg" alt="Dilasa Sanstha" onerror="this.style.display='none'">
+        <p>Dilasa Sanstha</p>
+        <span class="partner-role">Watershed Partner</span>
+      </div>
+
+      <div class="partner-card-ws" data-aos="fade-up" data-aos-delay="100">
+        <img src="tdss.jpeg" alt="TDSS" onerror="this.style.display='none'">
+        <p>TDSS</p>
+        <span class="partner-role">Watershed Partner</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     LIGHTBOX
+========================================= -->
+<div id="lightbox" onclick="closeLightbox(event)">
+  <span class="close-lightbox" onclick="closeLightbox(event)"><i class="fas fa-times"></i></span>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+  <div class="lightbox-info" id="lightboxInfo"></div>
+</div>
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Wadmavli Lok Vikas Manch Logo">
+      <div>
+        <h3>Wadmavli Lok Vikas Manch</h3>
+        <p>Towards Empowerment</p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="gallery.html">Gallery</a>
+    </div>
+    <div class="footer-links">
+      <h4>Get Involved</h4>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="partner.html">Partner With Us</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="donate.html">Donate</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Wadmavli Lok Vikas Manch. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  // AOS Animation
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 50
+  });
+
+  // Mobile Menu
+  function toggleMobileMenu() {
+    const navbar = document.querySelector(".navbar");
+    const button = document.querySelector(".mobile-menu-btn");
+    if (!navbar || !button) return;
+    navbar.classList.toggle("mobile-open");
+    const isOpen = navbar.classList.contains("mobile-open");
+    button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  }
+
+  // Close mobile menu on link click
+  document.querySelectorAll('.navbar nav a, .navbar .dropdown-menu a').forEach(link => {
+    link.addEventListener('click', function() {
+      const navbar = document.querySelector(".navbar");
+      if (navbar && navbar.classList.contains('mobile-open')) {
+        navbar.classList.remove('mobile-open');
+        const button = document.querySelector(".mobile-menu-btn");
+        if (button) button.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
+
+  // =========================================
+  // LIGHTBOX
+  // =========================================
+  function openLightbox(src, caption) {
+    const lb = document.getElementById('lightbox');
+    const img = document.getElementById('lightboxImg');
+    const info = document.getElementById('lightboxInfo');
+    img.src = src;
+    info.innerHTML = caption;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(e) {
+    const lb = document.getElementById('lightbox');
+    if (e.target === lb || e.target.closest('.close-lightbox')) {
+      lb.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const lb = document.getElementById('lightbox');
+      lb.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  });
+
+  window.openLightbox = openLightbox;
+  window.closeLightbox = closeLightbox;
+
+  // =========================================
+  // SCROLL TO TOP
+  // =========================================
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 400) {
+      scrollBtn.classList.add('visible');
+    } else {
+      scrollBtn.classList.remove('visible');
+    }
+  });
+</script>
+</body>
+</html>

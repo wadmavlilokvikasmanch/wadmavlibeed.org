@@ -309,10 +309,10 @@
     }
 
     /* =========================================
-       HERO - WATERSHED THEME
+       HERO - WATERSHED THEME (NO IMAGE)
        ========================================= */
     .hero-watershed {
-      min-height: 100vh;
+      min-height: 85vh;
       display: flex;
       align-items: center;
       position: relative;
@@ -327,7 +327,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      height: 30%;
+      height: 35%;
       background: radial-gradient(ellipse at 20% 80%, rgba(74, 144, 181, 0.15), transparent 50%),
                   radial-gradient(ellipse at 60% 70%, rgba(126, 200, 227, 0.12), transparent 40%),
                   radial-gradient(ellipse at 85% 85%, rgba(74, 144, 181, 0.1), transparent 50%);
@@ -405,6 +405,59 @@
       50% { transform: translateY(-200px) rotate(180deg); opacity: 0.2; }
       75% { opacity: 0.3; }
       100% { transform: translateY(-400px) rotate(360deg); opacity: 0; }
+    }
+
+    /* Soil Textured Pattern */
+    .soil-pattern {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 20%;
+      background: repeating-linear-gradient(
+        45deg,
+        rgba(139, 115, 85, 0.05) 0px,
+        rgba(139, 115, 85, 0.05) 20px,
+        rgba(196, 168, 130, 0.05) 20px,
+        rgba(196, 168, 130, 0.05) 40px
+      );
+      z-index: 1;
+    }
+
+    /* Animated Waves SVG at Bottom */
+    .waves-ws {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      z-index: 4;
+      overflow: hidden;
+    }
+
+    .waves-ws svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .waves-ws .wave-path {
+      animation: waveMoveWS 8s ease-in-out infinite;
+    }
+
+    .waves-ws .wave-path:nth-child(2) {
+      animation-duration: 10s;
+      animation-delay: -2s;
+    }
+
+    .waves-ws .wave-path:nth-child(3) {
+      animation-duration: 12s;
+      animation-delay: -4s;
+    }
+
+    @keyframes waveMoveWS {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(-50px); }
     }
 
     .hero-grid-watershed {
@@ -520,12 +573,19 @@
       overflow: hidden;
       box-shadow: 0 30px 60px rgba(0,0,0,0.15);
       border: 3px solid rgba(255,255,255,0.08);
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .hero-image-ws .image-frame img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
+    .hero-image-ws .image-frame .placeholder-text {
+      color: rgba(255,255,255,0.3);
+      font-size: 80px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.2;
     }
 
     .hero-image-ws .sticker {
@@ -563,11 +623,12 @@
       .hero-content-watershed h1 {
         font-size: 40px;
       }
-      .hero-image-ws .image-frame img {
-        height: 280px;
+      .hero-image-ws .image-frame {
+        min-height: 200px;
       }
       .water-drops-ws .drop { display: none; }
       .flying-emojis-ws .emoji { display: none; }
+      .waves-ws { height: 60px; }
     }
 
     @media(max-width: 600px) {
@@ -583,6 +644,9 @@
       }
       .hero-stats-ws .stat-item .number {
         font-size: 22px;
+      }
+      .hero-image-ws .image-frame .placeholder-text {
+        font-size: 40px;
       }
     }
 
@@ -619,15 +683,23 @@
       margin-bottom: 15px;
     }
 
-    .about-image-ws img {
-      width: 100%;
-      border-radius: var(--border-radius);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-      border: 2px solid var(--mint-green);
-    }
-
     .about-image-ws {
       position: relative;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--mint-green);
+      border-radius: var(--border-radius);
+      padding: 40px;
+      text-align: center;
+    }
+
+    .about-image-ws .placeholder-text {
+      color: rgba(255,255,255,0.5);
+      font-size: 60px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
     }
 
     .about-image-ws .about-sticker {
@@ -647,6 +719,11 @@
       animation: bounceSticker 3s infinite 1s;
     }
 
+    @keyframes bounceSticker {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
     @media(max-width: 768px) {
       .about-grid-ws {
         grid-template-columns: 1fr;
@@ -659,6 +736,9 @@
         position: static;
         margin-top: 15px;
         display: inline-flex;
+      }
+      .about-image-ws .placeholder-text {
+        font-size: 40px;
       }
     }
 
@@ -713,11 +793,23 @@
       margin-right: 8px;
     }
 
-    .past-image-ws img {
-      width: 100%;
+    .past-image-ws {
+      position: relative;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--earth-light);
       border-radius: var(--border-radius);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-      border: 2px solid var(--earth-light);
+      padding: 40px;
+      text-align: center;
+    }
+
+    .past-image-ws .placeholder-text {
+      color: rgba(255,255,255,0.4);
+      font-size: 60px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
     }
 
     @media(max-width: 768px) {
@@ -727,6 +819,9 @@
       }
       .past-content-ws h3 {
         font-size: 26px;
+      }
+      .past-image-ws .placeholder-text {
+        font-size: 40px;
       }
     }
 
@@ -885,6 +980,15 @@
     .future-list-ws li .li-icon {
       font-size: 24px;
       flex-shrink: 0;
+      animation: bounceIcon 3s infinite;
+    }
+
+    .future-list-ws li:nth-child(2) .li-icon { animation-delay: 0.5s; }
+    .future-list-ws li:nth-child(3) .li-icon { animation-delay: 1s; }
+
+    @keyframes bounceIcon {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
     }
 
     .future-list-ws li strong {
@@ -902,11 +1006,23 @@
       margin-top: 15px;
     }
 
-    .future-image-ws img {
-      width: 100%;
+    .future-image-ws {
+      position: relative;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--mint-green);
       border-radius: var(--border-radius);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-      border: 2px solid var(--mint-green);
+      padding: 40px;
+      text-align: center;
+    }
+
+    .future-image-ws .placeholder-text {
+      color: rgba(255,255,255,0.5);
+      font-size: 60px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
     }
 
     @media(max-width: 768px) {
@@ -916,6 +1032,9 @@
       }
       .future-content-ws h3 {
         font-size: 26px;
+      }
+      .future-image-ws .placeholder-text {
+        font-size: 40px;
       }
     }
 
@@ -947,15 +1066,15 @@
 
     .partners-grid-ws {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-      max-width: 450px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      max-width: 650px;
       margin: 30px auto 0;
     }
 
     .partner-card-ws {
       background: var(--cream);
-      padding: 30px 20px;
+      padding: 25px 15px;
       border-radius: var(--border-radius);
       text-align: center;
       transition: .4s;
@@ -965,7 +1084,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 130px;
+      min-height: 120px;
     }
 
     .partner-card-ws:hover {
@@ -975,39 +1094,39 @@
     }
 
     .partner-card-ws img {
-      max-width: 120px;
-      max-height: 55px;
+      max-width: 100px;
+      max-height: 45px;
       object-fit: contain;
       margin-bottom: 8px;
     }
 
     .partner-card-ws p {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
       color: var(--text-dark);
     }
 
     .partner-card-ws .partner-role {
-      font-size: 11px;
+      font-size: 10px;
       color: var(--text-soft);
       font-weight: 400;
     }
 
     @media(max-width: 600px) {
       .partners-grid-ws {
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 12px;
       }
       .partner-card-ws {
-        min-height: 100px;
-        padding: 18px 12px;
+        min-height: 90px;
+        padding: 15px 10px;
       }
       .partner-card-ws img {
-        max-width: 80px;
-        max-height: 35px;
+        max-width: 70px;
+        max-height: 32px;
       }
       .partner-card-ws p {
-        font-size: 12px;
+        font-size: 11px;
       }
     }
 
@@ -1182,10 +1301,11 @@
 </header>
 
 <!-- =========================================
-     HERO SECTION - WATERSHED THEME
+     HERO SECTION - WATERSHED THEME (NO IMAGE)
 ========================================= -->
 <section class="hero-watershed">
   <div class="water-ripples"></div>
+  <div class="soil-pattern"></div>
 
   <div class="water-drops-ws">
     <span class="drop">💧</span>
@@ -1204,6 +1324,14 @@
     <span class="emoji">🌱</span>
     <span class="emoji">💧</span>
     <span class="emoji">🌾</span>
+  </div>
+
+  <div class="waves-ws">
+    <svg viewBox="0 0 1200 100" preserveAspectRatio="none">
+      <path class="wave-path" d="M0,50 C300,100 600,0 900,50 C1050,75 1150,60 1200,50 L1200,100 L0,100 Z" fill="rgba(255,255,255,0.12)"/>
+      <path class="wave-path" d="M0,70 C300,30 600,100 900,70 C1050,50 1150,80 1200,70 L1200,100 L0,100 Z" fill="rgba(255,255,255,0.07)"/>
+      <path class="wave-path" d="M0,85 C200,60 400,110 600,85 C800,60 1000,110 1200,85 L1200,100 L0,100 Z" fill="rgba(255,255,255,0.04)"/>
+    </svg>
   </div>
 
   <div class="container hero-grid-watershed">
@@ -1244,7 +1372,7 @@
 
     <div class="hero-image-ws" data-aos="fade-left">
       <div class="image-frame">
-        <img src="watershed-hero.jpeg" alt="Watershed Development" onerror="this.src='https://placehold.co/600x400/4A90B5/FFF8F0?text=Watershed+Development'">
+        <span class="placeholder-text">🌊<br>Watershed</span>
       </div>
       <div class="sticker">
         <i class="fas fa-water"></i> Water Conservation
@@ -1280,7 +1408,7 @@
       </div>
 
       <div class="about-image-ws" data-aos="fade-left">
-        <img src="watershed-hero.jpeg" alt="Watershed Development" onerror="this.src='https://placehold.co/500x400/4A90B5/FFF8F0?text=Watershed+Development'">
+        <span class="placeholder-text">💧<br>Clean Water</span>
         <div class="about-sticker">
           <i class="fas fa-water"></i> Sustainable Solutions
         </div>
@@ -1326,7 +1454,7 @@
       </div>
 
       <div class="past-image-ws" data-aos="fade-left">
-        <img src="watershed-hero.jpeg" alt="Drought Support" onerror="this.src='https://placehold.co/500x400/8B7355/FFF8F0?text=Drought+Support'">
+        <span class="placeholder-text">🌾<br>Drought Support</span>
       </div>
     </div>
   </div>
@@ -1409,7 +1537,7 @@
       </div>
 
       <div class="future-image-ws" data-aos="fade-left">
-        <img src="watershed-hero.jpeg" alt="Future Plan" onerror="this.src='https://placehold.co/500x400/4A90B5/FFF8F0?text=Future+Plan'">
+        <span class="placeholder-text">🏞️<br>Future Plan</span>
       </div>
     </div>
   </div>
@@ -1475,6 +1603,12 @@
       <div class="partner-card-ws" data-aos="fade-up" data-aos-delay="100">
         <img src="tdss.jpeg" alt="TDSS" onerror="this.style.display='none'">
         <p>TDSS</p>
+        <span class="partner-role">Watershed Partner</span>
+      </div>
+
+      <div class="partner-card-ws" data-aos="fade-up" data-aos-delay="150">
+        <img src="social-center.jpg" alt="Social Centre Ahilya Nagar" onerror="this.style.display='none'">
+        <p>Social Centre Ahilya Nagar</p>
         <span class="partner-role">Watershed Partner</span>
       </div>
     </div>

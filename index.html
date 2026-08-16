@@ -1998,195 +1998,222 @@ skills, livelihoods and stronger communities.
 
 
 
-<!-- =================================
-     GALLERY
-================================= -->
-
-<section class="section gallery" id="gallery">
-
-<div class="container">
-
-
-<div class="section-heading">
-
-<span class="eyebrow">
-OUR WORK IN PICTURES
-</span>
-
-<h2>
-Gallery
-</h2>
-
-<div class="deco-line"></div>
-
-<p>
-A glimpse of our programs and community initiatives.
-</p>
-
-</div>
-
-
-<div class="gallery-grid">
-
-
-<!-- MISSION EDUCATION -->
-
-<div class="gallery-card">
-
-<img
-src="mission-education.jpeg"
-alt="Mission Education">
-
-<h3>
-Mission Education
-</h3>
-
-</div>
-
-
-<!-- ORGANIC FARMING -->
-
-<div class="gallery-card">
-
-<img
-src="organic-farming.jpeg"
-alt="Organic Farming">
-
-<h3>
-Organic Farming
-</h3>
-
-</div>
-
-
-<!-- SKILL DEVELOPMENT -->
-
-<div class="gallery-card">
-
-<img
-src="skill-development.jpeg"
-alt="Skill Development">
-
-<h3>
-Skill Development
-</h3>
-
-</div>
-
-
-<!-- TREE PLANTATION -->
-
-<div class="gallery-card">
-
-<img
-src="tree-plantation.jpeg"
-alt="Tree Plantation">
-
-<h3>
-Tree Plantation
-</h3>
-
-</div>
-
-
-<!-- WATERSHED -->
-
-<div class="gallery-card">
-
-<img
-src="watershed.jpeg"
-alt="Watershed Development">
-
-<h3>
-Watershed Development
-</h3>
-
-</div>
-
-
-<!-- WOMEN SHG -->
-
-<div class="gallery-card">
-
-<img
-src="women-shg.jpeg"
-alt="Women Self Help Groups">
-
-<h3>
-Women SHG
-</h3>
-
-</div>
-
-
-<!-- DRIVING SCHOOL -->
-
-<div class="gallery-card">
-
-<img
-src="driving-school.jpeg"
-alt="Motor Driving School">
-
-<h3>
-Driving School
-</h3>
-
-</div>
-<div class="gallery-card">
-
-<img
-src="drought-relief.jpeg"
-alt="Drought Relief">
-
-<h3>
-Drought Relief (2015–16)
-</h3>
-
-</div>
-
-<div class="gallery-card">
-
-<img
-src="covid-relief.jpeg"
-alt="COVID-19 Relief">
-
-<h3>
-COVID-19 Relief (2020–22)
-</h3>
-
-</div>
-
-</div>
-
-
-<div class="gallery-more">
-
-<a href="gallery.html" class="btn btn-blue">
-<i class="fas fa-images"></i> Open Full Gallery
-</a>
-
-</div>
-
-
-</div>
-
-</section>
-
-<!-- =================================
-     GALLERY SLIDER (NEW)
-================================= -->
-
-<section class="section" style="background: #f6faf8; padding-top: 0;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wadmavli Lok Vikas Manch | Gallery Slider</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <style>
+    /* ----- reset & base (kept minimal) ----- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, Helvetica, sans-serif; background: #f6faf8; color: #263746; }
+    .container { width: min(1120px, 92%); margin: auto; }
+    section { padding: 60px 0; }
+    .section-heading { text-align: center; max-width: 760px; margin: 0 auto 38px; }
+    .eyebrow { color: #e85b88; font-size: 11px; font-weight: bold; letter-spacing: 2px; }
+    .section-heading h2 { color: #063b67; font-size: 35px; line-height: 1.2; margin: 7px 0 10px; }
+    .section-heading p { color: #667985; }
+    .deco-line { width: 60px; height: 3px; background: #e85b88; margin: 10px auto; border-radius: 10px; }
+
+    /* ----- GALLERY SLIDER (horizontal scroll like partners) ----- */
+    .gallery-slider-wrap {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      margin-top: 30px;
+    }
+    .gallery-track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      animation: scrollGallery 40s linear infinite;
+    }
+    .gallery-track:hover {
+      animation-play-state: paused;
+    }
+    .gallery-slide {
+      flex: 0 0 auto;
+      width: 280px;
+      margin: 0 15px;
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: 0.3s;
+      border: 1px solid #e4ecef;
+    }
+    .gallery-slide:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(7,91,154,0.15);
+    }
+    .gallery-slide img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      transition: 0.4s;
+    }
+    .gallery-slide:hover img {
+      transform: scale(1.04);
+    }
+    .gallery-slide .caption {
+      padding: 14px 18px 18px;
+      font-weight: 600;
+      color: #063b67;
+      font-size: 15px;
+      background: white;
+    }
+    /* duplicate items for infinite loop effect */
+    @keyframes scrollGallery {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ----- responsive ----- */
+    @media (max-width: 650px) {
+      .gallery-slide { width: 220px; margin: 0 10px; }
+      .gallery-slide img { height: 160px; }
+      .section-heading h2 { font-size: 28px; }
+    }
+
+    /* small extra: back to home link (optional) */
+    .back-link { display: inline-block; margin-top: 20px; color: #075b9a; font-weight: bold; }
+    .back-link i { margin-right: 6px; }
+  </style>
+</head>
+<body>
+
+<section style="background: white;">
   <div class="container">
     <div class="section-heading">
-      <span class="eyebrow">MOMENTS</span>
-      <h2>Gallery Slideshow</h2>
+      <span class="eyebrow">OUR WORK IN PICTURES</span>
+      <h2>Gallery</h2>
       <div class="deco-line"></div>
-      <p>Scroll through our community initiatives.</p>
+      <p>Scroll through our community initiatives — education, farming, watershed, and more.</p>
     </div>
-    <!-- slider code here -->
+
+    <!-- GALLERY SLIDER (horizontal infinite scroll) -->
+    <div class="gallery-slider-wrap">
+      <div class="gallery-track">
+
+        <!-- ITEM 1 -->
+        <div class="gallery-slide">
+          <img src="mission-education.jpeg" alt="Mission Education">
+          <div class="caption">📚 Mission Education</div>
+        </div>
+        <!-- ITEM 2 -->
+        <div class="gallery-slide">
+          <img src="organic-farming.jpeg" alt="Organic Farming">
+          <div class="caption">🌾 Organic Farming</div>
+        </div>
+        <!-- ITEM 3 -->
+        <div class="gallery-slide">
+          <img src="skill-development.jpeg" alt="Skill Development">
+          <div class="caption">💼 Skill Development</div>
+        </div>
+        <!-- ITEM 4 -->
+        <div class="gallery-slide">
+          <img src="tree-plantation.jpeg" alt="Tree Plantation">
+          <div class="caption">🌳 Tree Plantation</div>
+        </div>
+        <!-- ITEM 5 -->
+        <div class="gallery-slide">
+          <img src="watershed.jpeg" alt="Watershed Development">
+          <div class="caption">🏞️ Watershed Development</div>
+        </div>
+        <!-- ITEM 6 -->
+        <div class="gallery-slide">
+          <img src="women-shg.jpeg" alt="Women SHG">
+          <div class="caption">👩 Women SHG</div>
+        </div>
+        <!-- ITEM 7 -->
+        <div class="gallery-slide">
+          <img src="driving-school.jpeg" alt="Motor Driving School">
+          <div class="caption">🚗 Driving School</div>
+        </div>
+        <!-- ITEM 8 -->
+        <div class="gallery-slide">
+          <img src="drought-relief.jpeg" alt="Drought Relief">
+          <div class="caption">💧 Drought Relief (2015–16)</div>
+        </div>
+        <!-- ITEM 9 -->
+        <div class="gallery-slide">
+          <img src="covid-relief.jpeg" alt="COVID-19 Relief">
+          <div class="caption">🦠 COVID-19 Relief (2020–22)</div>
+        </div>
+
+        <!-- DUPLICATE items for seamless loop (same order) -->
+        <div class="gallery-slide">
+          <img src="mission-education.jpeg" alt="Mission Education">
+          <div class="caption">📚 Mission Education</div>
+        </div>
+        <div class="gallery-slide">
+          <img src="organic-farming.jpeg" alt="Organic Farming">
+          <div class="caption">🌾 Organic Farming</div>
+        </div>
+        <div class="gallery-slide">
+          <img src="skill-development.jpeg" alt="Skill Development">
+          <div class="caption">💼 Skill Development</div>
+        </div>
+        <div class="gallery-slide">
+          <img src="tree-plantation.jpeg" alt="Tree Plantation">
+          <div class="caption">🌳 Tree Plantation</div>
+        </div>
+        <div class="gallery-slide">
+          <img src="watershed.jpeg" alt="Watershed Development">
+          <div class="caption">🏞️ Watershed Development</div>
+        </div>
+        <div class="gallery-slide">
+          <img src="women-shg.jpeg" alt="Women SHG">
+          <div class="caption">👩 Women SHG</div>
+        </div>
+        <div class="gallery-slide">
+          <img src="driving-school.jpeg" alt="Motor Driving School">
+          <div class="caption">🚗 Driving School</div>
+        </div>
+        <div class="gallery-slide">
+          <img src="drought-relief.jpeg" alt="Drought Relief">
+          <div class="caption">💧 Drought Relief (2015–16)</div>
+        </div>
+        <div class="gallery-slide">
+          <img src="covid-relief.jpeg" alt="COVID-19 Relief">
+          <div class="caption">🦠 COVID-19 Relief (2020–22)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- optional link back to original page (or full gallery) -->
+    <div style="text-align: center; margin-top: 30px;">
+      <a href="gallery.html" class="btn btn-blue" style="display:inline-block; background:#075b9a; color:white; padding:12px 28px; border-radius:30px; font-weight:bold; text-decoration:none;">
+        <i class="fas fa-images"></i> View Full Gallery
+      </a>
+      <br><br>
+     
+    </div>
   </div>
 </section>
+
+<script>
+  // Show/hide scroll button
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 400) {
+      scrollBtn.classList.add('visible');
+      scrollBtn.style.opacity = '1';
+      scrollBtn.style.transform = 'translateY(0)';
+    } else {
+      scrollBtn.classList.remove('visible');
+      scrollBtn.style.opacity = '0';
+      scrollBtn.style.transform = 'translateY(20px)';
+    }
+  });
+</script>
+
+</body>
+</html>
 
 <!-- =================================
      WATERSHED HIGHLIGHT

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -529,349 +530,160 @@ nav a:hover{
 
 
 /* =========================
-   HERO - with Background Slider
+   HERO - with gentle animations
 ========================= */
 
-.hero {
-    position: relative;
-    padding: 85px 0 75px;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    background: #063b67;
+.hero{
+    padding:85px 0 75px;
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 8% 15%, rgba(232,91,136,.15), transparent 25%),
+        radial-gradient(circle at 92% 75%, rgba(7,91,154,.14), transparent 30%),
+        linear-gradient(135deg, #f8fcff, #fff5f8);
 }
 
-/* Hero Slider Container */
-.hero-slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+/* Floating decorative elements - gentle */
+.hero-float{
+    position:absolute;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    background:rgba(232,91,136,.06);
+    top:-100px;
+    right:-100px;
+    animation: floatSlow 20s ease-in-out infinite;
 }
 
-/* Hero Slider Images */
-.hero-slider .slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+.hero-float2{
+    position:absolute;
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    background:rgba(7,91,154,.05);
+    bottom:-80px;
+    left:-80px;
+    animation: floatSlow 25s ease-in-out infinite reverse;
 }
 
-.hero-slider .slide.active {
-    opacity: 1;
+@keyframes floatSlow{
+    0%,100%{transform:translate(0,0);}
+    50%{transform:translate(-30px,20px);}
 }
 
-/* Dark Overlay for Text Readability */
-.hero-slider::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(6, 59, 103, 0.65);
-    z-index: 2;
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    align-items:center;
+    gap:55px;
+    position:relative;
+    z-index:2;
 }
 
-/* Hero Text - Above Slider */
-.hero .container {
-    position: relative;
-    z-index: 5;
-}
-
-.hero-grid {
-    display: grid;
-    grid-template-columns: 1.15fr .85fr;
-    align-items: center;
-    gap: 55px;
-    position: relative;
-}
-
-/* Hero Content - White Text for Visibility */
-.hero-label {
-    color: #ffabc4;
-    font-size: 11px;
-    font-weight: bold;
-    letter-spacing: 2.5px;
-    display: inline-block;
-    background: rgba(232, 91, 136, 0.2);
-    padding: 6px 16px;
-    border-radius: 20px;
+/* Fade-in animations for hero */
+.hero-label{
+    color:var(--pink);
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:2.5px;
+    display:inline-block;
+    background:rgba(232,91,136,.1);
+    padding:6px 16px;
+    border-radius:20px;
     animation: fadeSlideUp .8s ease;
 }
 
-.hero h1 {
-    color: #ffffff;
-    font-size: clamp(42px, 6vw, 68px);
-    line-height: 1.05;
-    margin: 14px 0;
+.hero h1{
+    color:var(--dark-blue);
+    font-size:clamp(42px,6vw,68px);
+    line-height:1.05;
+    margin:14px 0;
     animation: fadeSlideUp .8s ease .2s both;
-    text-shadow: 0 2px 30px rgba(0,0,0,0.15);
 }
 
-.hero h1 span {
-    color: #ffabc4;
-    position: relative;
-    display: inline-block;
+.hero h1 span{
+    color:var(--pink);
+    position:relative;
+    display:inline-block;
 }
 
-.hero h1 span::after {
-    content: '';
-    position: absolute;
-    bottom: 2px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: #ffabc4;
-    border-radius: 2px;
+.hero h1 span::after{
+    content:'';
+    position:absolute;
+    bottom:2px;
+    left:0;
+    width:100%;
+    height:3px;
+    background:var(--pink);
+    border-radius:2px;
     animation: underlineGrow 1s ease .6s both;
 }
 
-@keyframes underlineGrow {
-    from { width: 0; }
-    to { width: 100%; }
+@keyframes underlineGrow{
+    from{width:0;}
+    to{width:100%;}
 }
 
-.tagline {
-    color: #ffd1df;
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 15px;
+.tagline{
+    color:var(--blue);
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:15px;
     animation: fadeSlideUp .8s ease .4s both;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.1);
 }
 
-.hero-description {
-    color: rgba(255,255,255,0.85);
-    font-size: 17px;
-    max-width: 650px;
+.hero-description{
+    color:var(--muted);
+    font-size:17px;
+    max-width:650px;
     animation: fadeSlideUp .8s ease .6s both;
-    text-shadow: 0 1px 15px rgba(0,0,0,0.08);
 }
 
-.buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 27px;
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:27px;
     animation: fadeSlideUp .8s ease .8s both;
 }
 
-@keyframes fadeSlideUp {
-    from { opacity: 0; transform: translateY(25px); }
-    to { opacity: 1; transform: translateY(0); }
+@keyframes fadeSlideUp{
+    from{opacity:0;transform:translateY(25px);}
+    to{opacity:1;transform:translateY(0);}
 }
 
-/* Buttons - Updated for visibility */
-.btn {
-    display: inline-block;
-    padding: 12px 22px;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: bold;
-    transition: .3s;
-    border: none;
-    cursor: pointer;
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0,0,0,.15);
-}
-
-.btn-blue {
-    background: #075b9a;
-    color: white;
-}
-
-.btn-pink {
-    background: #e85b88;
-    color: white;
-}
-
-.btn-white {
-    background: white;
-    color: #075b9a;
-    border: 1px solid rgba(255,255,255,0.3);
-}
-
-/* Slider Controls */
-.slider-controls {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    background: rgba(0,0,0,0.3);
-    backdrop-filter: blur(10px);
-    padding: 8px 15px;
-    border-radius: 50px;
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-.slider-controls .btn-prev,
-.slider-controls .btn-next {
-    background: rgba(255,255,255,0.15);
-    color: white;
-    border: none;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    font-size: 16px;
-    cursor: pointer;
-    transition: .3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.slider-controls .btn-prev:hover,
-.slider-controls .btn-next:hover {
-    background: var(--pink);
-    transform: scale(1.1);
-}
-
-.slider-controls .dots {
-    display: flex;
-    gap: 6px;
-}
-
-.slider-controls .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.3);
-    transition: .3s;
-    cursor: pointer;
-}
-
-.slider-controls .dot.active {
-    background: white;
-    width: 20px;
-    border-radius: 10px;
-}
-
-.hero-card {
-    background: rgba(255,255,255,.92);
-    backdrop-filter: blur(10px);
-    padding: 28px;
-    border-radius: 25px;
-    box-shadow: 0 18px 45px rgba(6,59,103,.13);
-    border: 1px solid rgba(255,255,255,.3);
-    transition:.4s cubic-bezier(0.23,1,0.32,1);
-    animation: fadeSlideUp .8s ease .4s both;
-}
-
-.hero-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 25px 60px rgba(6,59,103,.2);
-}
-
-.hero-card-top {
-    display: flex;
-    align-items: center;
-    gap: 13px;
-    padding-bottom: 18px;
-    border-bottom: 1px solid #edf1f3;
-    margin-bottom: 18px;
-}
-
-.hero-logo {
-    width: 65px;
-    height: 65px;
-    object-fit: contain;
-}
-
-.hero-card h3 {
-    color: var(--dark-blue);
-}
-
-.hero-card p {
-    color: var(--muted);
-    font-size: 13px;
-}
-
-.hero-points {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-}
-
-.hero-point {
-    background: #f7fafb;
-    padding: 15px;
-    border-radius: 14px;
+.btn{
+    display:inline-block;
+    padding:12px 22px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:bold;
     transition:.3s;
+    border:none;
+    cursor:pointer;
 }
 
-.hero-point:hover {
-    background: var(--light-pink);
-    transform: scale(1.02);
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
 }
 
-.hero-point strong {
-    display: block;
-    color: var(--blue);
-    font-size: 20px;
+.btn-blue{
+    background:var(--blue);
+    color:white;
 }
 
-.hero-point span {
-    color: var(--muted);
-    font-size: 12px;
+.btn-pink{
+    background:var(--pink);
+    color:white;
 }
 
-@media (max-width:950px) {
-    .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    .slider-controls {
-        bottom: 15px;
-        padding: 6px 12px;
-        gap: 10px;
-    }
-    .slider-controls .btn-prev,
-    .slider-controls .btn-next {
-        width: 30px;
-        height: 30px;
-        font-size: 13px;
-    }
-    .slider-controls .dot {
-        width: 6px;
-        height: 6px;
-    }
+.btn-white{
+    background:white;
+    color:var(--blue);
+    border:1px solid #d5e2e9;
 }
 
-@media (max-width:650px) {
-    .hero {
-        padding: 50px 0;
-    }
-    .hero h1 {
-        font-size: 32px;
-    }
-    .slider-controls {
-        bottom: 10px;
-        padding: 5px 10px;
-        gap: 8px;
-    }
-    .slider-controls .btn-prev,
-    .slider-controls .btn-next {
-        width: 26px;
-        height: 26px;
-        font-size: 11px;
-    }
-}
 
 /* =========================
    HERO CARD
@@ -1873,17 +1685,16 @@ class="logo-image">
 
 
 <!-- =================================
-     HERO WITH BACKGROUND SLIDER
+     HERO
 ================================= -->
 
 <section class="hero" id="home">
 
-<!-- Background Slider -->
-<div class="hero-slider" id="heroSlider">
-    <!-- Images will be injected by JavaScript -->
-</div>
+<div class="hero-float"></div>
+<div class="hero-float2"></div>
 
 <div class="container hero-grid">
+
 
 <div>
 
@@ -1975,14 +1786,8 @@ class="hero-logo">
 
 </div>
 
-<!-- Slider Controls -->
-<div class="slider-controls">
-    <button class="btn-prev" id="sliderPrev"><i class="fas fa-chevron-left"></i></button>
-    <div class="dots" id="sliderDots"></div>
-    <button class="btn-next" id="sliderNext"><i class="fas fa-chevron-right"></i></button>
-</div>
-
 </section>
+
 
 
 <!-- =================================
@@ -3295,209 +3100,8 @@ document.querySelectorAll('.navbar nav a').forEach(link => {
         }
     });
 });
-  
 </script>
-<script>
-<script>
-// =========================================
-// HERO BACKGROUND SLIDER - ALL IMAGES
-// =========================================
-document.addEventListener('DOMContentLoaded', function() {
 
-    // =========================================
-    // COMPLETE LIST OF ALL IMAGES FROM WEBSITE
-    // =========================================
-    const heroImages = [
-        // 1. Logo (1)
-        'logo.png',
-        
-        // 2. Index/Homepage (11)
-        'mission-education.jpeg',
-        'organic-farming.jpeg',
-        'skill-development.jpeg',
-        'tree-plantation.jpeg',
-        'watershed.jpeg',
-        'women-shg.jpeg',
-        'driving-school.jpeg',
-        'drought-relief.jpeg',
-        'covid-relief.jpeg',
-        'founder.jpeg',
-        
-        // 3. Women SHG Page (19)
-        'women-hero.png',
-        'women1.jpeg', 'women2.jpeg', 'women3.jpeg', 'women4.jpeg',
-        'women5.jpeg', 'women6.jpeg', 'women7.jpeg', 'women8.jpeg',
-        'women9.jpeg', 'women10.jpeg', 'women11.jpeg', 'women12.jpeg',
-        'women13.jpeg', 'women14.jpeg', 'women15.jpeg', 'women16.jpeg',
-        'women17.jpeg', 'women18.jpeg',
-        
-        // 4. Organic Farming Page (30)
-        'organic-hero.jpeg',
-        'organic1.jpeg', 'organic2.jpeg', 'organic3.jpeg', 'organic4.jpeg',
-        'organic5.jpeg', 'organic6.jpeg', 'organic7.jpeg', 'organic8.jpeg',
-        'organic9.jpeg', 'organic10.jpeg', 'organic11.jpeg', 'organic12.jpeg',
-        'organic13.jpeg', 'organic14.jpeg',
-        'ee1.jpeg', 'ee2.jpeg', 'ee3.jpeg', 'ee4.jpeg', 'ee5.jpeg',
-        'ee6.jpeg', 'ee7.jpeg', 'ee8.jpeg', 'ee9.jpeg', 'ee10.jpeg',
-        'ee11.jpeg', 'ee12.jpeg', 'ee13.jpeg', 'ee14.jpeg', 'ee15.jpeg',
-        
-        // 5. Clean Water Page (21)
-        'water-hero.jpeg',
-        'well1.jpeg', 'well2.jpeg', 'well3.jpeg', 'well4.jpeg',
-        'tank1.jpeg', 'tank2.jpeg', 'tank3.jpeg', 'tank4.jpeg',
-        'tank5.jpeg', 'tank6.jpeg',
-        'tanker1.jpeg', 'tanker2.jpeg', 'tanker3.jpeg', 'tanker4.jpeg',
-        'azim1.jpeg', 'azim2.jpeg', 'azim3.jpeg', 'azim4.jpeg',
-        'azim5.jpeg', 'azim6.jpeg',
-        
-        // 6. Tree Plantation Page (5)
-        'tree-hero.png',
-        'tree1.jpeg', 'tree2.jpeg', 'tree3.jpeg', 'tree4.jpeg',
-        
-        // 7. Watershed Page (8)
-        'watershed1.jpeg', 'watershed2.jpeg', 'watershed3.jpeg', 'watershed4.jpeg',
-        'social1.jpeg', 'social2.jpeg', 'social3.jpeg', 'social4.jpeg',
-        
-        // 8. Driving School Page (4)
-        'driving1.png', 'driving2.jpeg', 'driving3.jpeg', 'driving4.jpeg',
-        
-        // 9. Disaster Relief Page (20)
-        'covid-hero.png',
-        'covid-awareness1.jpeg', 'covid-awareness2.jpeg', 'covid-awareness3.jpeg',
-        'covid-ration1.jpeg', 'covid-ration2.jpeg', 'covid-ration3.jpeg',
-        'covid-mask1.jpeg', 'covid-mask2.jpeg',
-        'covid-sanitizer1.jpeg', 'covid-sanitizer2.jpeg',
-        'covid-o2machine1.jpeg', 'covid-o2machine2.jpeg', 'covid-o2machine3.jpeg',
-        'covid-hospital1.jpeg', 'covid-hospital2.jpeg',
-        'covid-team1.jpeg', 'covid-team2.jpeg',
-        'covid-distribution1.jpeg', 'covid-distribution2.jpeg',
-        
-        // 10. Drought Relief Page (10)
-        'drought1.jpeg', 'drought2.jpeg', 'drought3.jpeg', 'drought4.jpeg',
-        'drought5.jpeg', 'drought6.jpeg', 'drought7.jpeg', 'drought8.jpeg',
-        'drought9.jpeg', 'drought10.jpeg',
-        
-        // 11. Education Page (4)
-        'mission1.jpeg', 'mission2.jpeg', 'mission3.jpeg', 'mission4.jpeg'
-    ];
-
-    const sliderContainer = document.getElementById('heroSlider');
-    const dotsContainer = document.getElementById('sliderDots');
-    let currentIndex = 0;
-    let slideInterval;
-    let availableImages = [];
-
-    // Check if image exists
-    function checkImageExists(url, callback) {
-        const img = new Image();
-        img.onload = function() { callback(true); };
-        img.onerror = function() { callback(false); };
-        img.src = url;
-    }
-
-    function renderSlider(images) {
-        availableImages = images;
-        
-        // Clear existing slides and dots
-        sliderContainer.innerHTML = '';
-        dotsContainer.innerHTML = '';
-        
-        images.forEach(function(imgSrc, index) {
-            const slide = document.createElement('div');
-            slide.className = 'slide' + (index === 0 ? ' active' : '');
-            slide.style.backgroundImage = 'url(' + imgSrc + ')';
-            sliderContainer.appendChild(slide);
-            
-            const dot = document.createElement('span');
-            dot.className = 'dot' + (index === 0 ? ' active' : '');
-            dot.dataset.index = index;
-            dot.addEventListener('click', function() {
-                stopSlideShow();
-                goToSlide(parseInt(this.dataset.index));
-                startSlideShow();
-            });
-            dotsContainer.appendChild(dot);
-        });
-
-        startSlideShow();
-    }
-
-    function goToSlide(index) {
-        const slides = sliderContainer.querySelectorAll('.slide');
-        const dots = dotsContainer.querySelectorAll('.dot');
-        
-        slides.forEach(function(slide, i) {
-            slide.classList.toggle('active', i === index);
-        });
-        dots.forEach(function(dot, i) {
-            dot.classList.toggle('active', i === index);
-        });
-        currentIndex = index;
-    }
-
-    function nextSlide() {
-        const nextIndex = (currentIndex + 1) % availableImages.length;
-        goToSlide(nextIndex);
-    }
-
-    function prevSlide() {
-        const prevIndex = (currentIndex - 1 + availableImages.length) % availableImages.length;
-        goToSlide(prevIndex);
-    }
-
-    function startSlideShow() {
-        if (slideInterval) clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide, 3000);
-    }
-
-    function stopSlideShow() {
-        if (slideInterval) {
-            clearInterval(slideInterval);
-            slideInterval = null;
-        }
-    }
-
-    // Controls
-    document.getElementById('sliderPrev').addEventListener('click', function() {
-        stopSlideShow();
-        prevSlide();
-        startSlideShow();
-    });
-
-    document.getElementById('sliderNext').addEventListener('click', function() {
-        stopSlideShow();
-        nextSlide();
-        startSlideShow();
-    });
-
-    // Pause on hover
-    const heroSection = document.querySelector('.hero');
-    heroSection.addEventListener('mouseenter', stopSlideShow);
-    heroSection.addEventListener('mouseleave', startSlideShow);
-
-    // Load images - check which ones exist
-    let loadedCount = 0;
-    const validImages = [];
-
-    heroImages.forEach(function(imgSrc) {
-        checkImageExists(imgSrc, function(exists) {
-            if (exists) {
-                validImages.push(imgSrc);
-            }
-            loadedCount++;
-            if (loadedCount === heroImages.length) {
-                // If no images exist, use fallback
-                if (validImages.length === 0) {
-                    validImages.push('logo.png');
-                }
-                renderSlider(validImages);
-                console.log('✅ Hero Slider Loaded: ' + validImages.length + ' images');
-            }
-        });
-    });
-
-});
-</script>
 </body>
 
 </html>

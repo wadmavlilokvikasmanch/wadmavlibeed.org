@@ -3298,13 +3298,20 @@ document.querySelectorAll('.navbar nav a').forEach(link => {
   
 </script>
 <script>
+<script>
 // =========================================
-// HERO BACKGROUND SLIDER
+// HERO BACKGROUND SLIDER - ALL IMAGES
 // =========================================
 document.addEventListener('DOMContentLoaded', function() {
 
-    // List of images for hero slider (most impactful)
+    // =========================================
+    // COMPLETE LIST OF ALL IMAGES FROM WEBSITE
+    // =========================================
     const heroImages = [
+        // 1. Logo (1)
+        'logo.png',
+        
+        // 2. Index/Homepage (11)
         'mission-education.jpeg',
         'organic-farming.jpeg',
         'skill-development.jpeg',
@@ -3314,7 +3321,64 @@ document.addEventListener('DOMContentLoaded', function() {
         'driving-school.jpeg',
         'drought-relief.jpeg',
         'covid-relief.jpeg',
-        'founder.jpeg'
+        'founder.jpeg',
+        
+        // 3. Women SHG Page (19)
+        'women-hero.png',
+        'women1.jpeg', 'women2.jpeg', 'women3.jpeg', 'women4.jpeg',
+        'women5.jpeg', 'women6.jpeg', 'women7.jpeg', 'women8.jpeg',
+        'women9.jpeg', 'women10.jpeg', 'women11.jpeg', 'women12.jpeg',
+        'women13.jpeg', 'women14.jpeg', 'women15.jpeg', 'women16.jpeg',
+        'women17.jpeg', 'women18.jpeg',
+        
+        // 4. Organic Farming Page (30)
+        'organic-hero.jpeg',
+        'organic1.jpeg', 'organic2.jpeg', 'organic3.jpeg', 'organic4.jpeg',
+        'organic5.jpeg', 'organic6.jpeg', 'organic7.jpeg', 'organic8.jpeg',
+        'organic9.jpeg', 'organic10.jpeg', 'organic11.jpeg', 'organic12.jpeg',
+        'organic13.jpeg', 'organic14.jpeg',
+        'ee1.jpeg', 'ee2.jpeg', 'ee3.jpeg', 'ee4.jpeg', 'ee5.jpeg',
+        'ee6.jpeg', 'ee7.jpeg', 'ee8.jpeg', 'ee9.jpeg', 'ee10.jpeg',
+        'ee11.jpeg', 'ee12.jpeg', 'ee13.jpeg', 'ee14.jpeg', 'ee15.jpeg',
+        
+        // 5. Clean Water Page (21)
+        'water-hero.jpeg',
+        'well1.jpeg', 'well2.jpeg', 'well3.jpeg', 'well4.jpeg',
+        'tank1.jpeg', 'tank2.jpeg', 'tank3.jpeg', 'tank4.jpeg',
+        'tank5.jpeg', 'tank6.jpeg',
+        'tanker1.jpeg', 'tanker2.jpeg', 'tanker3.jpeg', 'tanker4.jpeg',
+        'azim1.jpeg', 'azim2.jpeg', 'azim3.jpeg', 'azim4.jpeg',
+        'azim5.jpeg', 'azim6.jpeg',
+        
+        // 6. Tree Plantation Page (5)
+        'tree-hero.png',
+        'tree1.jpeg', 'tree2.jpeg', 'tree3.jpeg', 'tree4.jpeg',
+        
+        // 7. Watershed Page (8)
+        'watershed1.jpeg', 'watershed2.jpeg', 'watershed3.jpeg', 'watershed4.jpeg',
+        'social1.jpeg', 'social2.jpeg', 'social3.jpeg', 'social4.jpeg',
+        
+        // 8. Driving School Page (4)
+        'driving1.png', 'driving2.jpeg', 'driving3.jpeg', 'driving4.jpeg',
+        
+        // 9. Disaster Relief Page (20)
+        'covid-hero.png',
+        'covid-awareness1.jpeg', 'covid-awareness2.jpeg', 'covid-awareness3.jpeg',
+        'covid-ration1.jpeg', 'covid-ration2.jpeg', 'covid-ration3.jpeg',
+        'covid-mask1.jpeg', 'covid-mask2.jpeg',
+        'covid-sanitizer1.jpeg', 'covid-sanitizer2.jpeg',
+        'covid-o2machine1.jpeg', 'covid-o2machine2.jpeg', 'covid-o2machine3.jpeg',
+        'covid-hospital1.jpeg', 'covid-hospital2.jpeg',
+        'covid-team1.jpeg', 'covid-team2.jpeg',
+        'covid-distribution1.jpeg', 'covid-distribution2.jpeg',
+        
+        // 10. Drought Relief Page (10)
+        'drought1.jpeg', 'drought2.jpeg', 'drought3.jpeg', 'drought4.jpeg',
+        'drought5.jpeg', 'drought6.jpeg', 'drought7.jpeg', 'drought8.jpeg',
+        'drought9.jpeg', 'drought10.jpeg',
+        
+        // 11. Education Page (4)
+        'mission1.jpeg', 'mission2.jpeg', 'mission3.jpeg', 'mission4.jpeg'
     ];
 
     const sliderContainer = document.getElementById('heroSlider');
@@ -3333,6 +3397,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function renderSlider(images) {
         availableImages = images;
+        
+        // Clear existing slides and dots
+        sliderContainer.innerHTML = '';
+        dotsContainer.innerHTML = '';
         
         images.forEach(function(imgSrc, index) {
             const slide = document.createElement('div');
@@ -3407,7 +3475,7 @@ document.addEventListener('DOMContentLoaded', function() {
     heroSection.addEventListener('mouseenter', stopSlideShow);
     heroSection.addEventListener('mouseleave', startSlideShow);
 
-    // Load images
+    // Load images - check which ones exist
     let loadedCount = 0;
     const validImages = [];
 
@@ -3418,10 +3486,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             loadedCount++;
             if (loadedCount === heroImages.length) {
+                // If no images exist, use fallback
                 if (validImages.length === 0) {
                     validImages.push('logo.png');
                 }
                 renderSlider(validImages);
+                console.log('✅ Hero Slider Loaded: ' + validImages.length + ' images');
             }
         });
     });

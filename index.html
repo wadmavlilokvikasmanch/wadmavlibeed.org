@@ -1610,6 +1610,39 @@ footer p{
   
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  /* =========================
+   SCROLL TOP BUTTON
+========================= */
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--pink);
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(232,91,136,.35);
+    transition: .4s cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 0;
+    transform: translateY(20px);
+    z-index: 999;
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-top:hover {
+    background: var(--blue);
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(7,91,154,.35);
+}  
   
 </head>
 
@@ -3019,7 +3052,7 @@ All Rights Reserved.
 <button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
     <i class="fas fa-arrow-up"></i>
 </button>
-   
+  
 <script>
 function showQR() {
     const qr = document.getElementById("qrCode");
@@ -3102,6 +3135,18 @@ document.querySelectorAll('.navbar nav a').forEach(link => {
 });
 </script>
 
+ <script>
+    // Scroll to Top Button
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 400) {
+            scrollBtn.classList.add('visible');
+        } else {
+            scrollBtn.classList.remove('visible');
+        }
+    });
+</script> 
+  
 </body>
 
 </html>

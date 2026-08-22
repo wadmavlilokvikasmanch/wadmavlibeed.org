@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Volunteer With Us | Wadmavli Lok Vikas Manch</title>
     <meta name="description" content="Volunteer with Wadmavli Lok Vikas Manch and contribute your time, skills and support towards meaningful community development.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,13 +41,12 @@
         }
 
         .container {
-            width: 90%;
-            max-width: 1200px;
+            width: min(1200px, 92%);
             margin: auto;
         }
 
         /* =========================
-           HEADER - FIXED STICKY (WORKS ON MOBILE)
+           HEADER - SAME AS INDEX.HTML
         ========================= */
         header {
             background: white;
@@ -55,7 +54,6 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(0,0,0,.06);
-            width: 100%;
         }
 
         .navbar {
@@ -65,16 +63,12 @@
             justify-content: space-between;
             gap: 25px;
             padding: 0 15px;
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
         }
 
         .logo-area {
             display: flex;
             align-items: center;
             gap: 12px;
-            flex-shrink: 0;
         }
 
         .logo-image {
@@ -82,63 +76,89 @@
             height: 58px;
             object-fit: contain;
             border-radius: 50%;
-            flex-shrink: 0;
+            transition: transform .3s;
+        }
+
+        .logo-image:hover {
+            transform: scale(1.05);
         }
 
         .logo-text h2 {
-            font-size: 18px;
             color: var(--dark);
+            font-size: 17px;
             line-height: 1.2;
         }
 
         .logo-text span {
-            display: block;
             color: var(--pink);
-            font-size: 9px;
-            letter-spacing: 2px;
-            font-weight: 600;
-            margin-top: 4px;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
         }
 
         nav {
             display: flex;
             align-items: center;
-            gap: 22px;
-            flex-wrap: wrap;
+            gap: 17px;
         }
 
         nav a {
-            color: var(--dark);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
+            color: #344b5b;
+            font-size: 13px;
+            font-weight: bold;
             transition: .3s;
-            white-space: nowrap;
+            position: relative;
+            text-decoration: none;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--pink);
+            transition: .3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
         }
 
         nav a:hover {
-            color: var(--blue);
+            color: var(--pink);
         }
 
         .nav-donate {
-            background: var(--blue);
+            background: var(--pink);
             color: white !important;
-            padding: 10px 18px;
+            padding: 9px 17px;
             border-radius: 25px;
+        }
+
+        .nav-donate::after {
+            display: none;
+        }
+
+        .nav-donate:hover {
+            background: var(--dark-blue);
+            transform: translateY(-2px);
         }
 
         .mobile-menu-btn {
             display: none;
             border: 0;
             background: none;
-            color: var(--dark);
+            color: #063b67;
             font-size: 24px;
             cursor: pointer;
             padding: 8px;
-            flex-shrink: 0;
         }
 
-        /* DROPDOWN */
+        /* =========================
+           DROPDOWN - SAME AS INDEX.HTML
+        ========================= */
         .nav-dropdown {
             position: relative;
             display: inline-block;
@@ -226,21 +246,15 @@
         }
 
         /* =========================
-           MOBILE NAV - FIXED
+           MOBILE MENU - SAME AS INDEX.HTML
         ========================= */
-        @media(max-width:950px) {
-            nav { 
-                display: none; 
-            }
-            .mobile-menu-btn { 
-                display: flex; 
-                flex-shrink: 0; 
-            }
+        @media (max-width:950px) {
+            nav { display: none; }
+            .mobile-menu-btn { display: flex; flex-shrink: 0; }
             .navbar { 
                 position: relative; 
                 padding: 0 10px;
                 min-height: 72px;
-                width: 100%;
             }
             .navbar.mobile-open nav {
                 display: flex;
@@ -263,7 +277,6 @@
                 padding: 13px 20px;
                 text-align: left;
                 box-sizing: border-box;
-                white-space: normal;
             }
             .navbar.mobile-open nav a:hover {
                 background: #f1f7fb;
@@ -273,16 +286,18 @@
                 width: auto;
                 text-align: center;
             }
+
+            /* Mobile dropdown */
+            .nav-dropdown {
+                width: 100%;
+            }
             
-            /* Dropdown in mobile */
-            .nav-dropdown { 
-                width: 100%; 
+            .dropdown-trigger {
+                padding: 13px 20px;
+                justify-content: space-between;
+                width: 100%;
             }
-            .dropdown-trigger { 
-                padding: 13px 20px; 
-                justify-content: space-between; 
-                width: 100%; 
-            }
+            
             .dropdown-menu {
                 position: static;
                 box-shadow: none;
@@ -295,18 +310,34 @@
                 border: none;
                 pointer-events: auto;
             }
-            .dropdown-menu::before { 
-                display: none; 
+            
+            .dropdown-menu::before {
+                display: none;
             }
-            .dropdown-menu a { 
-                padding: 10px 20px 10px 40px; 
-                font-size: 13px; 
+            
+            .dropdown-menu a {
+                padding: 10px 20px 10px 40px;
+                font-size: 13px;
             }
-            .dropdown-menu a:hover { 
-                padding-left: 46px; 
+            
+            .dropdown-menu a:hover {
+                padding-left: 46px;
             }
-            .nav-dropdown.active .dropdown-menu { 
-                display: block; 
+            
+            .nav-dropdown.active .dropdown-menu {
+                display: block;
+            }
+        }
+
+        @media (max-width:768px) {
+            .mobile-menu-btn {
+                display: flex;
+            }
+        }
+
+        @media (min-width:769px) {
+            .mobile-menu-btn {
+                display: none !important;
             }
         }
 
@@ -934,7 +965,7 @@
         }
 
         /* =========================
-           FOOTER
+           FOOTER - SAME AS OTHER PAGES
         ========================= */
         .site-footer {
             background: #eef7fc;
@@ -1006,127 +1037,56 @@
             font-size: 12px;
         }
 
+        @media(max-width:768px) {
+            .site-footer { padding: 50px 20px 0; }
+            .footer-content {
+                width: 100%;
+                grid-template-columns: 1fr;
+                gap: 35px;
+                padding-bottom: 35px;
+            }
+            .footer-brand { align-items: center; }
+            .footer-brand img { width: 52px; height: 52px; }
+            .footer-brand h3 { font-size: 17px; }
+            .footer-links { gap: 10px; }
+            .footer-links h4 { font-size: 15px; }
+            .footer-links a { font-size: 13px; }
+            .footer-bottom { padding: 18px 5px; }
+            .footer-bottom p { font-size: 11px; line-height: 1.6; }
+        }
+
         /* =========================
-           MOBILE RESPONSIVE
+           MOBILE CLEANUP - SAME AS OTHER PAGES
         ========================= */
         @media(max-width:768px) {
-            html, body { 
-                width: 100%; 
-                max-width: 100%; 
-                overflow-x: hidden; 
-            }
-            
-            section { 
-                width: 100%; 
-                max-width: 100%; 
-                box-sizing: border-box; 
-            }
-            
-            img { 
-                max-width: 100%; 
-            }
-            
-            h1, h2, h3, h4, p { 
-                max-width: 100%; 
-                overflow-wrap: break-word; 
-            }
-            
-            /* HEADER FIX - STAYS VISIBLE ON MOBILE */
-            header {
-                position: sticky;
-                top: 0;
-                z-index: 1000;
-            }
+            html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+            section { width: 100%; max-width: 100%; box-sizing: border-box; }
+            img { max-width: 100%; }
+            h1, h2, h3, h4, p { max-width: 100%; overflow-wrap: break-word; }
             
             .navbar {
                 min-height: 72px;
                 padding: 0 10px;
-                width: 100%;
             }
+            .logo-area { min-width: 0; gap: 8px; }
+            .logo-image { width: 48px; height: 48px; flex-shrink: 0; }
+            .logo-text { min-width: 0; }
+            .logo-text h2 { font-size: 14px; line-height: 1.25; }
+            .logo-text span { font-size: 7px; letter-spacing: 1.3px; }
+            .mobile-menu-btn { flex-shrink: 0; }
             
-            .logo-area { 
-                min-width: 0; 
-                gap: 8px; 
-            }
-            
-            .logo-image { 
-                width: 48px; 
-                height: 48px; 
-                flex-shrink: 0; 
-            }
-            
-            .logo-text { 
-                min-width: 0; 
-            }
-            
-            .logo-text h2 { 
-                font-size: 14px; 
-                line-height: 1.25; 
-            }
-            
-            .logo-text span { 
-                font-size: 7px; 
-                letter-spacing: 1.3px; 
-            }
-            
-            .mobile-menu-btn { 
-                flex-shrink: 0; 
-            }
-            
-            .volunteer-hero { 
-                width: 100%; 
-                min-height: 470px; 
-                padding: 65px 18px; 
-            }
-            
-            .hero-content { 
-                width: 100%; 
-            }
-            
-            .hero-content h1 { 
-                font-size: 32px; 
-            }
-            
-            .hero-content p { 
-                width: 100%; 
-                font-size: 14px; 
-            }
-            
-            .section-heading { 
-                width: 100%; 
-            }
-            
-            .section-heading h2 { 
-                font-size: 27px; 
-            }
-            
-            .benefit-card, .contribute-card { 
-                width: 100%; 
-                box-sizing: border-box; 
-            }
-            
-            .volunteer-cta { 
-                width: 100%; 
-                padding-left: 18px; 
-                padding-right: 18px; 
-            }
-            
-            .cta-content { 
-                width: 100%; 
-            }
-            
-            .volunteer-cta h2 { 
-                font-size: 29px; 
-            }
-            
-            .site-footer { 
-                width: 100%; 
-                box-sizing: border-box; 
-            }
-            
-            .footer-content { 
-                width: 100%; 
-            }
+            .volunteer-hero { width: 100%; min-height: 470px; padding: 65px 18px; }
+            .hero-content { width: 100%; }
+            .hero-content h1 { font-size: 32px; }
+            .hero-content p { width: 100%; font-size: 14px; }
+            .section-heading { width: 100%; }
+            .section-heading h2 { font-size: 27px; }
+            .benefit-card, .contribute-card { width: 100%; box-sizing: border-box; }
+            .volunteer-cta { width: 100%; padding-left: 18px; padding-right: 18px; }
+            .cta-content { width: 100%; }
+            .volunteer-cta h2 { font-size: 29px; }
+            .site-footer { width: 100%; box-sizing: border-box; }
+            .footer-content { width: 100%; }
         }
     </style>
 </head>

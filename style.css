@@ -58,6 +58,11 @@
     transform: translateX(-5px);
 }
 
+@keyframes pulse-whatsapp {
+    0%, 100% { box-shadow: 0 5px 30px rgba(37, 211, 102, 0.4); }
+    50% { box-shadow: 0 5px 45px rgba(37, 211, 102, 0.7); }
+}
+
 /* =========================
    SCROLL TO TOP BUTTON
 ========================= */
@@ -86,7 +91,7 @@
 }
 
 .scroll-top:hover {
-    background: var(--dark, #063b67);
+    background: var(--dark-blue, #063b67);
     transform: translateY(-3px);
     box-shadow: 0 12px 30px rgba(6, 59, 103, 0.35);
 }
@@ -108,7 +113,7 @@
     }
     
     .scroll-top {
-        bottom: 20px;  /* ✅ CORRECT - At the very bottom */
+        bottom: 20px;
         right: 20px;
         width: 40px;
         height: 40px;
@@ -235,6 +240,7 @@
         padding: 0 8px;
     }
 }
+
 /* =========================
    DROPDOWN MENU
 ========================= */

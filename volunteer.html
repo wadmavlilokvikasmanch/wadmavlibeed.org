@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-<script src="script.js" defer></script>
+    <script src="script.js" defer></script>
     <style>
         :root {
             --blue: #075b9a;
@@ -47,7 +47,7 @@
         }
 
         /* =========================
-           HEADER
+           HEADER - FIXED STICKY
         ========================= */
         header {
             background: white;
@@ -55,6 +55,7 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(0,0,0,.06);
+            width: 100%;
         }
 
         .navbar {
@@ -63,12 +64,16 @@
             align-items: center;
             justify-content: space-between;
             gap: 25px;
+            padding: 0 15px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .logo-area {
             display: flex;
             align-items: center;
             gap: 12px;
+            flex-shrink: 0;
         }
 
         .logo-image {
@@ -76,6 +81,7 @@
             height: 58px;
             object-fit: contain;
             border-radius: 50%;
+            flex-shrink: 0;
         }
 
         .logo-text h2 {
@@ -97,6 +103,7 @@
             display: flex;
             align-items: center;
             gap: 22px;
+            flex-wrap: wrap;
         }
 
         nav a {
@@ -105,6 +112,7 @@
             font-size: 14px;
             font-weight: 500;
             transition: .3s;
+            white-space: nowrap;
         }
 
         nav a:hover {
@@ -126,12 +134,125 @@
             font-size: 24px;
             cursor: pointer;
             padding: 8px;
+            flex-shrink: 0;
+        }
+
+        /* DROPDOWN */
+        .nav-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-trigger {
+            color: var(--dark);
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: .3s;
+            cursor: pointer;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .dropdown-trigger i {
+            font-size: 11px;
+            transition: .3s;
+        }
+
+        .nav-dropdown:hover .dropdown-trigger i {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-trigger:hover {
+            color: var(--blue);
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 220px;
+            background: white;
+            padding: 8px 0;
+            border-radius: 12px;
+            box-shadow: 0 12px 35px rgba(0,0,0,.12);
+            z-index: 999;
+            border: 1px solid rgba(0,0,0,.06);
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .nav-dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--dark);
+            text-decoration: none;
+            transition: .3s;
+            white-space: nowrap;
+        }
+
+        .dropdown-menu a:hover {
+            background: #f5f0ff;
+            color: var(--blue);
+            padding-left: 26px;
+        }
+
+        .dropdown-menu::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 20px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid white;
+            filter: drop-shadow(0 -2px 5px rgba(0,0,0,.04));
+        }
+
+        @media (max-width: 950px) {
+            .nav-dropdown { width: 100%; }
+            .dropdown-trigger { padding: 13px 20px; justify-content: space-between; width: 100%; }
+            .dropdown-menu {
+                position: static;
+                box-shadow: none;
+                border-radius: 0;
+                padding: 0;
+                background: #f8f6fc;
+                opacity: 1;
+                transform: none;
+                display: none;
+                border: none;
+                pointer-events: auto;
+            }
+            .dropdown-menu::before { display: none; }
+            .dropdown-menu a { padding: 10px 20px 10px 40px; font-size: 13px; }
+            .dropdown-menu a:hover { padding-left: 46px; }
+            .nav-dropdown.active .dropdown-menu { display: block; }
         }
 
         @media(max-width:950px) {
             nav { display: none; }
             .mobile-menu-btn { display: flex; flex-shrink: 0; }
-            .navbar { position: relative; }
+            .navbar { 
+                position: relative; 
+                padding: 0 10px;
+                min-height: 72px;
+            }
             .navbar.mobile-open nav {
                 display: flex;
                 position: absolute;
@@ -885,9 +1006,8 @@
             img { max-width: 100%; }
             h1, h2, h3, h4, p { max-width: 100%; overflow-wrap: break-word; }
             .navbar {
-                width: calc(100% - 30px);
                 min-height: 72px;
-                margin: auto;
+                padding: 0 10px;
             }
             .logo-area { min-width: 0; gap: 8px; }
             .logo-image { width: 48px; height: 48px; flex-shrink: 0; }
@@ -924,22 +1044,20 @@
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
-              <!-- Programs Dropdown -->
-    <div class="nav-dropdown">
-        <a href="programs.html" class="dropdown-trigger">Programs <i class="fas fa-chevron-down"></i></a>
-        <div class="dropdown-menu">
-            <a href="program-education.html">📚 Mission Education</a>
-            <a href="program-driving.html">🚗 Motor Driving School</a>
-            <a href="program-skill.html">💼 Skill Development</a>
-            <a href="program-women.html">👩 Women SHGs</a>
-            <a href="program-organic.html">🌾 Organic Farming</a>
-            <a href="program-water.html">💧 Clean Drinking Water</a>
-            <a href="program-tree.html">🌳 Tree Plantation</a>
-            <a href="program-watershed.html">🏞️ Watershed Development</a>
-            <a href="program-disaster.html">🚑 Disaster Relief</a>
-        
-        </div>
-    </div>
+            <div class="nav-dropdown">
+                <a href="programs.html" class="dropdown-trigger">Programs <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-menu">
+                    <a href="program-education.html">📚 Mission Education</a>
+                    <a href="program-driving.html">🚗 Motor Driving School</a>
+                    <a href="program-skill.html">💼 Skill Development</a>
+                    <a href="program-women.html">👩 Women SHGs</a>
+                    <a href="program-organic.html">🌾 Organic Farming</a>
+                    <a href="program-water.html">💧 Clean Drinking Water</a>
+                    <a href="program-tree.html">🌳 Tree Plantation</a>
+                    <a href="program-watershed.html">🏞️ Watershed Development</a>
+                    <a href="program-disaster.html">🚑 Disaster Relief</a>
+                </div>
+            </div>
             <a href="gallery.html">Gallery</a>
             <a href="volunteer.html">Volunteer</a>
             <a href="partner.html">Partner</a>

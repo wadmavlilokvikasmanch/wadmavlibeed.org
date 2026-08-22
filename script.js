@@ -28,36 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // =========================
-// 2. SCROLL TO TOP BUTTON (if needed)
-// =========================
-document.addEventListener('DOMContentLoaded', function() {
-    // Check if scroll button already exists
-    if (document.querySelector('.scroll-top')) {
-        return;
-    }
-    
-    // Create scroll to top button
-    const scrollBtn = document.createElement('button');
-    scrollBtn.className = 'scroll-top';
-    scrollBtn.id = 'scrollTopBtn';
-    scrollBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
-    scrollBtn.onclick = function() {
-        window.scrollTo({top: 0, behavior: 'smooth'});
-    };
-    document.body.appendChild(scrollBtn);
-    
-    // Show/hide on scroll
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 400) {
-            scrollBtn.classList.add('visible');
-        } else {
-            scrollBtn.classList.remove('visible');
-        }
-    });
-});
-
-// =========================
-// 3. MOBILE MENU TOGGLE (if not already in page)
+// 2. MOBILE MENU TOGGLE
 // =========================
 function toggleMobileMenu() {
     const navbar = document.querySelector(".navbar");
@@ -71,7 +42,7 @@ function toggleMobileMenu() {
 window.toggleMobileMenu = toggleMobileMenu;
 
 // =========================
-// 4. COPY TO CLIPBOARD (for donate page)
+// 3. COPY TO CLIPBOARD (for donate page)
 // =========================
 function copyText(text) {
     navigator.clipboard.writeText(text).then(() => {
@@ -88,7 +59,7 @@ function copyText(text) {
 window.copyText = copyText;
 
 // =========================
-// 5. QR LIGHTBOX (for donate page)
+// 4. QR LIGHTBOX (for donate page)
 // =========================
 function openQRLightbox() {
     const lightbox = document.getElementById('qrLightbox');
@@ -119,8 +90,9 @@ document.addEventListener('keydown', function(e) {
         }
     }
 });
+
 // =========================
-// DROPDOWN TOGGLE FOR MOBILE
+// 5. DROPDOWN TOGGLE FOR MOBILE
 // =========================
 document.addEventListener('DOMContentLoaded', function() {
     const dropdowns = document.querySelectorAll('.nav-dropdown');

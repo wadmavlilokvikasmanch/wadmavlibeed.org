@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Volunteer With Us | Wadmavli Lok Vikas Manch</title>
     <meta name="description" content="Volunteer with Wadmavli Lok Vikas Manch and contribute your time, skills and support towards meaningful community development.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +47,7 @@
         }
 
         /* =========================
-           HEADER - FIXED STICKY
+           HEADER - FIXED STICKY (WORKS ON MOBILE)
         ========================= */
         header {
             background: white;
@@ -67,6 +67,7 @@
             padding: 0 15px;
             max-width: 1200px;
             margin: 0 auto;
+            width: 100%;
         }
 
         .logo-area {
@@ -224,34 +225,22 @@
             filter: drop-shadow(0 -2px 5px rgba(0,0,0,.04));
         }
 
-        @media (max-width: 950px) {
-            .nav-dropdown { width: 100%; }
-            .dropdown-trigger { padding: 13px 20px; justify-content: space-between; width: 100%; }
-            .dropdown-menu {
-                position: static;
-                box-shadow: none;
-                border-radius: 0;
-                padding: 0;
-                background: #f8f6fc;
-                opacity: 1;
-                transform: none;
-                display: none;
-                border: none;
-                pointer-events: auto;
-            }
-            .dropdown-menu::before { display: none; }
-            .dropdown-menu a { padding: 10px 20px 10px 40px; font-size: 13px; }
-            .dropdown-menu a:hover { padding-left: 46px; }
-            .nav-dropdown.active .dropdown-menu { display: block; }
-        }
-
+        /* =========================
+           MOBILE NAV - FIXED
+        ========================= */
         @media(max-width:950px) {
-            nav { display: none; }
-            .mobile-menu-btn { display: flex; flex-shrink: 0; }
+            nav { 
+                display: none; 
+            }
+            .mobile-menu-btn { 
+                display: flex; 
+                flex-shrink: 0; 
+            }
             .navbar { 
                 position: relative; 
                 padding: 0 10px;
                 min-height: 72px;
+                width: 100%;
             }
             .navbar.mobile-open nav {
                 display: flex;
@@ -274,6 +263,7 @@
                 padding: 13px 20px;
                 text-align: left;
                 box-sizing: border-box;
+                white-space: normal;
             }
             .navbar.mobile-open nav a:hover {
                 background: #f1f7fb;
@@ -282,6 +272,41 @@
                 margin: 8px 12px;
                 width: auto;
                 text-align: center;
+            }
+            
+            /* Dropdown in mobile */
+            .nav-dropdown { 
+                width: 100%; 
+            }
+            .dropdown-trigger { 
+                padding: 13px 20px; 
+                justify-content: space-between; 
+                width: 100%; 
+            }
+            .dropdown-menu {
+                position: static;
+                box-shadow: none;
+                border-radius: 0;
+                padding: 0;
+                background: #f8f6fc;
+                opacity: 1;
+                transform: none;
+                display: none;
+                border: none;
+                pointer-events: auto;
+            }
+            .dropdown-menu::before { 
+                display: none; 
+            }
+            .dropdown-menu a { 
+                padding: 10px 20px 10px 40px; 
+                font-size: 13px; 
+            }
+            .dropdown-menu a:hover { 
+                padding-left: 46px; 
+            }
+            .nav-dropdown.active .dropdown-menu { 
+                display: block; 
             }
         }
 
@@ -981,52 +1006,127 @@
             font-size: 12px;
         }
 
+        /* =========================
+           MOBILE RESPONSIVE
+        ========================= */
         @media(max-width:768px) {
-            .site-footer { padding: 50px 20px 0; }
-            .footer-content {
-                width: 100%;
-                grid-template-columns: 1fr;
-                gap: 35px;
-                padding-bottom: 35px;
+            html, body { 
+                width: 100%; 
+                max-width: 100%; 
+                overflow-x: hidden; 
             }
-            .footer-brand { align-items: center; }
-            .footer-brand img { width: 52px; height: 52px; }
-            .footer-brand h3 { font-size: 17px; }
-            .footer-links { gap: 10px; }
-            .footer-links h4 { font-size: 15px; }
-            .footer-links a { font-size: 13px; }
-            .footer-bottom { padding: 18px 5px; }
-            .footer-bottom p { font-size: 11px; line-height: 1.6; }
-        }
-
-        /* Mobile cleanup */
-        @media(max-width:768px) {
-            html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
-            section { width: 100%; max-width: 100%; box-sizing: border-box; }
-            img { max-width: 100%; }
-            h1, h2, h3, h4, p { max-width: 100%; overflow-wrap: break-word; }
+            
+            section { 
+                width: 100%; 
+                max-width: 100%; 
+                box-sizing: border-box; 
+            }
+            
+            img { 
+                max-width: 100%; 
+            }
+            
+            h1, h2, h3, h4, p { 
+                max-width: 100%; 
+                overflow-wrap: break-word; 
+            }
+            
+            /* HEADER FIX - STAYS VISIBLE ON MOBILE */
+            header {
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+            }
+            
             .navbar {
                 min-height: 72px;
                 padding: 0 10px;
+                width: 100%;
             }
-            .logo-area { min-width: 0; gap: 8px; }
-            .logo-image { width: 48px; height: 48px; flex-shrink: 0; }
-            .logo-text { min-width: 0; }
-            .logo-text h2 { font-size: 14px; line-height: 1.25; }
-            .logo-text span { font-size: 7px; letter-spacing: 1.3px; }
-            .mobile-menu-btn { flex-shrink: 0; }
-            .volunteer-hero { width: 100%; min-height: 470px; padding: 65px 18px; }
-            .hero-content { width: 100%; }
-            .hero-content h1 { font-size: 32px; }
-            .hero-content p { width: 100%; font-size: 14px; }
-            .section-heading { width: 100%; }
-            .section-heading h2 { font-size: 27px; }
-            .benefit-card, .contribute-card { width: 100%; box-sizing: border-box; }
-            .volunteer-cta { width: 100%; padding-left: 18px; padding-right: 18px; }
-            .cta-content { width: 100%; }
-            .volunteer-cta h2 { font-size: 29px; }
-            .site-footer { width: 100%; box-sizing: border-box; }
-            .footer-content { width: 100%; }
+            
+            .logo-area { 
+                min-width: 0; 
+                gap: 8px; 
+            }
+            
+            .logo-image { 
+                width: 48px; 
+                height: 48px; 
+                flex-shrink: 0; 
+            }
+            
+            .logo-text { 
+                min-width: 0; 
+            }
+            
+            .logo-text h2 { 
+                font-size: 14px; 
+                line-height: 1.25; 
+            }
+            
+            .logo-text span { 
+                font-size: 7px; 
+                letter-spacing: 1.3px; 
+            }
+            
+            .mobile-menu-btn { 
+                flex-shrink: 0; 
+            }
+            
+            .volunteer-hero { 
+                width: 100%; 
+                min-height: 470px; 
+                padding: 65px 18px; 
+            }
+            
+            .hero-content { 
+                width: 100%; 
+            }
+            
+            .hero-content h1 { 
+                font-size: 32px; 
+            }
+            
+            .hero-content p { 
+                width: 100%; 
+                font-size: 14px; 
+            }
+            
+            .section-heading { 
+                width: 100%; 
+            }
+            
+            .section-heading h2 { 
+                font-size: 27px; 
+            }
+            
+            .benefit-card, .contribute-card { 
+                width: 100%; 
+                box-sizing: border-box; 
+            }
+            
+            .volunteer-cta { 
+                width: 100%; 
+                padding-left: 18px; 
+                padding-right: 18px; 
+            }
+            
+            .cta-content { 
+                width: 100%; 
+            }
+            
+            .volunteer-cta h2 { 
+                font-size: 29px; 
+            }
+            
+            .site-footer { 
+                width: 100%; 
+                box-sizing: border-box; 
+            }
+            
+            .footer-content { 
+                width: 100%; 
+            }
         }
     </style>
 </head>

@@ -122,3 +122,51 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+// =========================
+// MOBILE MENU TOGGLE - IMPROVED
+// =========================
+function toggleMobileMenu() {
+    const navbar = document.querySelector(".navbar");
+    const button = document.querySelector(".mobile-menu-btn");
+    const overlay = document.querySelector(".mobile-overlay");
+    
+    if (!navbar || !button) return;
+    
+    navbar.classList.toggle("mobile-open");
+    const isOpen = navbar.classList.contains("mobile-open");
+    button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    
+    // Show/hide overlay
+    if (overlay) {
+        overlay.classList.toggle("active");
+    }
+    
+    // Prevent body scroll when menu is open
+    document.body.style.overflow = isOpen ? "hidden" : "";
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(e) {
+    const navbar = document.querySelector(".navbar");
+    const menu = document.querySelector("nav");
+    const button = document.querySelector(".mobile-menu-btn");
+    
+    if (window.innerWidth <= 950 && navbar && navbar.classList.contains("mobile-open")) {
+        if (!navbar.contains(e.target)) {
+            navbar.classList.remove("mobile-open");
+            document.body.style.overflow = "";
+            if (button) button.setAttribute("aria-expanded", "false");
+            const overlay = document.querySelector(".mobile-overlay");
+            if (overlay) overlay.classList.remove("active");
+        }
+    }
+});
+
+// Add overlay to body
+document.addEventListener('DOMContentLoaded', function() {
+    if (!document.querySelector('.mobile-overlay')) {
+        const overlay = document.createElement('div');
+        overlay.className = 'mobile-overlay';
+        document.body.appendChild(overlay);
+    }
+});

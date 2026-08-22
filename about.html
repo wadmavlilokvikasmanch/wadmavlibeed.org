@@ -3449,7 +3449,16 @@ img {
 </head>
 
 <body>
-
+<script>
+function toggleMobileMenu() {
+    const navbar = document.querySelector(".navbar");
+    const button = document.querySelector(".mobile-menu-btn");
+    if (!navbar || !button) return;
+    navbar.classList.toggle("mobile-open");
+    const isOpen = navbar.classList.contains("mobile-open");
+    button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+}
+</script>
 <!-- =================================
      HEADER
 ================================= -->

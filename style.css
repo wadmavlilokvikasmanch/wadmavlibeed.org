@@ -3,6 +3,72 @@
    ========================================= */
 
 /* =========================
+   MOBILE SAFETY - PREVENT WHITE SCREEN
+========================= */
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+/* Fix for iOS Safari */
+@supports (-webkit-touch-callout: none) {
+    body {
+        min-height: -webkit-fill-available;
+    }
+}
+
+/* Fix for all containers */
+.container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Fix for sections */
+section {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Fix for images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix for tables */
+table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    display: block;
+}
+
+/* Fix for code/pre blocks */
+pre, code {
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* =========================
    WHATSAPP FLOATING BUTTON
 ========================= */
 .whatsapp-float {

@@ -470,7 +470,7 @@
       background: rgba(255,255,255,.2);
     }
 
-    /* Gallery Grid - Masonry Style */
+    /* Gallery Grid - FIXED MOBILE */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -493,20 +493,12 @@
       min-height: 200px;
     }
 
-    /* Show a loading/placeholder state */
     .gallery-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
       background: #f0f4f8;
-    }
-
-    /* If image fails to load, show category name as fallback */
-    .gallery-item img:not([src]), 
-    .gallery-item img[src=""],
-    .gallery-item img.error {
-      display: none;
     }
 
     .gallery-item .fallback-text {
@@ -573,7 +565,6 @@
       transform: scale(1.10);
     }
 
-    /* Overlay with info */
     .gallery-item .overlay {
       position: absolute;
       bottom: 0;
@@ -635,7 +626,7 @@
       transform: scale(1.1);
     }
 
-    /* Delete button - HIDDEN by default, shown ONLY in admin mode */
+    /* Delete button */
     .gallery-item .delete-btn {
       position: absolute;
       top: 12px;
@@ -774,7 +765,7 @@
       #lightbox .lightbox-info { font-size: 12px; bottom: 20px; }
     }
 
-    /* Admin Panel - HIDDEN by default */
+    /* Admin Panel */
     .admin-panel {
       display: none;
       background: white;
@@ -901,7 +892,63 @@
       color: var(--dark);
     }
 
-    @media(max-width:768px) {
+    /* =========================
+       MOBILE FIXES - GALLERY GRID & FILTER TABS
+    ========================= */
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 0 5px;
+      }
+      
+      .gallery-item {
+        aspect-ratio: 4 / 3;
+        min-height: 140px;
+        border-radius: 12px;
+      }
+      
+      .gallery-item .overlay {
+        padding: 15px 12px 10px;
+      }
+      
+      .gallery-item .overlay .caption {
+        font-size: 11px;
+      }
+      
+      .gallery-item .overlay .category-tag {
+        font-size: 9px;
+        padding: 2px 8px;
+        margin-top: 3px;
+      }
+      
+      .gallery-item .expand-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 11px;
+        top: 8px;
+        right: 8px;
+      }
+      
+      /* Filter tabs mobile */
+      .filter-tabs {
+        gap: 6px;
+        margin-bottom: 25px;
+        padding: 0 5px;
+      }
+      
+      .filter-tab {
+        padding: 6px 12px;
+        font-size: 11px;
+        border-radius: 20px;
+        border-width: 1.5px;
+      }
+      
+      .filter-tab .count {
+        font-size: 9px;
+        padding: 0 5px;
+      }
+      
       .admin-panel .form-row {
         grid-template-columns: 1fr;
         gap: 12px;
@@ -910,20 +957,67 @@
         width: 100%;
         justify-content: center;
       }
-      .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-        gap: 12px;
-      }
-      .filter-tab {
-        padding: 6px 14px;
-        font-size: 12px;
-      }
       .admin-panel {
         padding: 24px 16px;
       }
       .admin-panel .panel-header {
         flex-direction: column;
         align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        padding: 0 2px;
+      }
+      
+      .gallery-item {
+        aspect-ratio: 4 / 3;
+        min-height: 110px;
+        border-radius: 10px;
+      }
+      
+      .gallery-item .overlay {
+        padding: 10px 8px 6px;
+      }
+      
+      .gallery-item .overlay .caption {
+        font-size: 9px;
+      }
+      
+      .gallery-item .overlay .category-tag {
+        font-size: 7px;
+        padding: 1px 6px;
+        margin-top: 3px;
+      }
+      
+      .gallery-item .expand-icon {
+        width: 22px;
+        height: 22px;
+        font-size: 9px;
+        top: 5px;
+        right: 5px;
+      }
+      
+      /* Filter tabs */
+      .filter-tabs {
+        gap: 4px;
+        margin-bottom: 18px;
+        padding: 0 2px;
+      }
+      
+      .filter-tab {
+        padding: 4px 8px;
+        font-size: 9px;
+        border-radius: 15px;
+        border-width: 1px;
+      }
+      
+      .filter-tab .count {
+        font-size: 8px;
+        padding: 0 4px;
       }
     }
 
@@ -1099,7 +1193,7 @@
         <p>Add your first photo using the admin panel (Ctrl+Shift+G).</p>
       </div>
 
-      <!-- ADMIN PANEL - HIDDEN by default -->
+      <!-- ADMIN PANEL -->
       <div class="admin-panel" id="adminPanel">
         <div class="panel-header">
           <h3><i class="fas fa-lock"></i> 📸 Admin Panel</h3>
@@ -1198,8 +1292,7 @@
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   // =========================================
-  // GALLERY DATA - Edit this to manage photos
-  // Images are in the ROOT directory (same folder as this page)
+  // GALLERY DATA
   // =========================================
   const galleryData = {
     photos: [
@@ -1262,13 +1355,11 @@
   };
 
   // =========================================
-  // ADMIN MODE - SECURE ACCESS
+  // ADMIN MODE
   // =========================================
-  // 🔐 CHANGE THIS PASSWORD TO YOUR OWN
   const ADMIN_PASSWORD = "wlvm2026";
   let adminMode = false;
 
-  // Secret key combination: Ctrl + Shift + G
   document.addEventListener('keydown', function(e) {
     if (e.ctrlKey && e.shiftKey && (e.key === 'g' || e.key === 'G')) {
       e.preventDefault();
@@ -1364,13 +1455,11 @@
       item.style.animationDelay = `${(index % 10) * 0.02}s`;
       const deleteVisible = adminMode ? 'visible' : '';
       
-      // Create image element with error handling
       const img = document.createElement('img');
       img.src = photo.file;
       img.alt = photo.caption || photo.category;
       img.loading = 'lazy';
       
-      // Handle image load error - show fallback text
       img.onerror = function() {
         this.style.display = 'none';
         const fallback = document.createElement('div');
@@ -1388,10 +1477,8 @@
         </div>
       `;
       
-      // Insert image at the beginning
       item.prepend(img);
       
-      // Lightbox click
       item.addEventListener('click', function(e) {
         if (e.target.closest('.delete-btn')) return;
         const imgEl = this.querySelector('img');
@@ -1434,7 +1521,7 @@
   });
 
   // =========================================
-  // DELETE PHOTO (Admin Only)
+  // DELETE PHOTO
   // =========================================
   function deletePhoto(filename) {
     if (!adminMode) {
@@ -1452,7 +1539,7 @@
   }
 
   // =========================================
-  // ADD PHOTO (Admin Only)
+  // ADD PHOTO
   // =========================================
   document.getElementById('addPhotoForm').addEventListener('submit', function(e) {
     e.preventDefault();

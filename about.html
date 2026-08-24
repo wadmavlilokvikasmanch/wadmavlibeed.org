@@ -208,14 +208,22 @@ nav a:hover {
   padding: 8px;
 }
 @media (max-width:950px) {
-  nav { display: none !important; }
-  .mobile-menu-btn { display: flex; flex-shrink: 0; }
-  .navbar { position: relative; }
+  nav { 
+    display: none !important; 
+  }
+  .mobile-menu-btn { 
+    display: flex; 
+    flex-shrink: 0; 
+  }
+  .navbar { 
+    position: relative; 
+  }
   .navbar.mobile-open nav {
     display: flex !important;
     position: absolute;
     top: 100%;
     right: 0;
+    left: auto;
     width: 220px;
     flex-direction: column;
     align-items: stretch;
@@ -4494,18 +4502,36 @@ once:true
 <script>
 
 // Mobile Menu
-function toggleMobileMenu() {
-  const navbar = document.querySelector(".navbar");
-  const button = document.querySelector(".mobile-menu-btn");
-  if (!navbar || !button) {
-    console.log("Navbar or button not found");
-    return;
+document.addEventListener('DOMContentLoaded', function() {
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  const navbar = document.querySelector('.navbar');
+  
+  if (menuBtn && navbar) {
+    menuBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      navbar.classList.toggle('mobile-open');
+      const isOpen = navbar.classList.contains('mobile-open');
+      menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      // Change icon
+      const icon = menuBtn.querySelector('i');
+      if (icon) {
+        icon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+      }
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!navbar.contains(e.target)) {
+        navbar.classList.remove('mobile-open');
+        const icon = menuBtn.querySelector('i');
+        if (icon) {
+          icon.className = 'fa-solid fa-bars';
+        }
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
   }
-  navbar.classList.toggle("mobile-open");
-  const isOpen = navbar.classList.contains("mobile-open");
-  button.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  console.log("Menu toggled:", isOpen);
-}
+});
 
 </script>
 

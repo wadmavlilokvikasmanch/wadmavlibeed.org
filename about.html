@@ -208,11 +208,11 @@ nav a:hover {
   padding: 8px;
 }
 @media (max-width:950px) {
-  nav { display: none; }
+  nav { display: none !important; }
   .mobile-menu-btn { display: flex; flex-shrink: 0; }
   .navbar { position: relative; }
   .navbar.mobile-open nav {
-    display: flex;
+    display: flex !important;
     position: absolute;
     top: 100%;
     right: 0;
@@ -4480,15 +4480,6 @@ update();
 
 });
 
-// Scroll to Top Button
-const scrollBtn = document.getElementById('scrollTopBtn');
-window.addEventListener('scroll', function() {
-    if (window.scrollY > 400) {
-        scrollBtn.classList.add('visible');
-    } else {
-        scrollBtn.classList.remove('visible');
-    }
-});
 </script>
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -4506,10 +4497,14 @@ once:true
 function toggleMobileMenu() {
   const navbar = document.querySelector(".navbar");
   const button = document.querySelector(".mobile-menu-btn");
-  if (!navbar || !button) return;
+  if (!navbar || !button) {
+    console.log("Navbar or button not found");
+    return;
+  }
   navbar.classList.toggle("mobile-open");
   const isOpen = navbar.classList.contains("mobile-open");
   button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  console.log("Menu toggled:", isOpen);
 }
 
 </script>

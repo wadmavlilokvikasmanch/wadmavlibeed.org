@@ -601,12 +601,12 @@
     backdrop-filter: blur(4px);
 }
 
-       @media (max-width:650px) {
-    /* Fix background images on mobile */
+     @media (max-width:650px) {
     .hero-slider .slide {
-        background-size: contain;
-        /* Shows full image without cropping */
-        background-position: center;
+        background-size: cover;
+        /* Cover the area but crop appropriately */
+        background-position: top center;
+        /* Show the top part of the image */
         background-repeat: no-repeat;
     }
     
@@ -614,7 +614,14 @@
         opacity: 0.5;
         filter: brightness(0.8);
     }
-} 
+    
+    /* Make the slider only take top portion */
+    .hero-slider {
+        height: 60%;
+        /* Only top 60% of hero */
+        top: 0;
+    }
+}
         /* Buttons for slider */
         .slider-btn {
             position: absolute;

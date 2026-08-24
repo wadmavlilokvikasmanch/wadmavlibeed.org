@@ -559,11 +559,17 @@
             pointer-events: none;
         }
 
-        .hero-slider .slide.active {
-            opacity: 0.15;
-            /* Low transparency */
-        }
+    .hero-slider .slide.active {
+    opacity: 0.5;
+    /* Medium transparency - images visible */
+}
 
+/* Fix image sizing - cover the hero box properly */
+.hero-slider .slide {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
         /* Buttons for slider */
         .slider-btn {
             position: absolute;
@@ -1930,163 +1936,161 @@
 
 
 
-    <!-- =================================
-         HERO with background slider
+ <!-- =================================
+     HERO with background slider
     ================================= -->
 
-    <section class="hero" id="home">
+<section class="hero" id="home">
 
-        <!-- Background Slider -->
-        <div class="hero-slider" id="heroSlider">
-            <div class="slide active" style="background-image: url('community1.jpeg');"></div>
-            <div class="slide" style="background-image: url('ee5.jpeg');"></div>
-            <div class="slide" style="background-image: url('driving2.jpeg');"></div>
-           <div class="slide" style="background-image: url('ee8.jpeg');"></div>
-              <div class="slide" style="background-image: url('farming.jpeg');"></div>
-              <div class="slide" style="background-image: url('gallery-livelihood6.jpeg');"></div>
-              <div class="slide" style="background-image: url('gallery-livelihood9.jpeg');"></div>
-              <div class="slide" style="background-image: url('gallery-livelihood8.jpeg');"></div>
-              <div class="slide" style="background-image: url('gallery-livelihood7.jpeg');"></div>
-              <div class="slide" style="background-image: url('journey-2023.jpeg');"></div>
-              <div class="slide" style="background-image: url('mission1.jpeg');"></div>
-              <div class="slide" style="background-image: url('mission3.jpeg');"></div>
-              <div class="slide" style="background-image: url('organic14.jpeg');"></div>
-              <div class="slide" style="background-image: url('organic4.jpeg');"></div>
-              <div class="slide" style="background-image: url('organic9.jpeg');"></div>
-              <div class="slide" style="background-image: url('relief1.jpeg');"></div>
-          <div class="slide active" style="background-image: url('relief2.jpeg');"></div>
-          <div class="slide active" style="background-image: url('relief3.jpeg');"></div>
-          <div class="slide active" style="background-image: url('relief4.jpeg');"></div>
-          <div class="slide active" style="background-image: url('skill.jpeg');"></div>
-          <div class="slide active" style="background-image: url('skill1.jpeg');"></div>
-          <div class="slide active" style="background-image: url('skill2.jpeg');"></div>
-          <div class="slide active" style="background-image: url('skill3.jpeg');"></div>
-          <div class="slide active" style="background-image: url('skill4.jpeg');"></div>
-          <div class="slide active" style="background-image: url('social1.jpeg');"></div>
-          <div class="slide active" style="background-image: url('social2.jpeg');"></div>
-          <div class="slide active" style="background-image: url('social3.jpeg');"></div>
-          <div class="slide active" style="background-image: url('social4.jpeg');"></div>
-          <div class="slide active" style="background-image: url('tank1.jpeg');"></div>
-          <div class="slide" style="background-image: url('tank2.jpeg');"></div>
-          <div class="slide" style="background-image: url('tank6.jpeg');"></div>
-          <div class="slide" style="background-image: url('tanker3.jpeg');"></div>
-          <div class="slide" style="background-image: url('testimonial1.jpeg');"></div>
-          <div class="slide" style="background-image: url('tree-plantation.jpeg');"></div>
-          <div class="slide" style="background-image: url('water1.jpeg');"></div>
-          <div class="slide" style="background-image: url('water4.jpeg');"></div>
-          <div class="slide" style="background-image: url('testimonial2.jpeg');"></div>
-          <div class="slide" style="background-image: url('watershed.jpeg');"></div>
-          <div class="slide" style="background-image: url('watershed2.jpeg');"></div>
-          <div class="slide" style="background-image: url('watershed3.jpeg');"></div>
-          <div class="slide" style="background-image: url('watershed4.jpeg');"></div>
-          <div class="slide" style="background-image: url('well1.jpeg');"></div>
-          <div class="slide" style="background-image: url('well3.jpeg');"></div>
-          <div class="slide" style="background-image: url('women.jpeg');"></div>
-          <div class="slide" style="background-image: url('women10.jpeg');"></div>
-          <div class="slide" style="background-image: url('women11.jpeg');"></div>
-          <div class="slide" style="background-image: url('women14.jpeg');"></div>
-          <div class="slide" style="background-image: url('women15.jpeg');"></div>
-          <div class="slide" style="background-image: url('women17.jpeg');"></div>
-          <div class="slide" style="background-image: url('women18.jpeg');"></div>
-          <div class="slide" style="background-image: url('women5.jpeg');"></div>
+    <!-- Background Slider -->
+    <div class="hero-slider" id="heroSlider">
+        <div class="slide active" style="background-image: url('community1.jpeg');"></div>
+        <div class="slide" style="background-image: url('ee5.jpeg');"></div>
+        <div class="slide" style="background-image: url('driving2.jpeg');"></div>
+        <div class="slide" style="background-image: url('ee8.jpeg');"></div>
+        <div class="slide" style="background-image: url('farming.jpeg');"></div>
+        <div class="slide" style="background-image: url('gallery-livelihood6.jpeg');"></div>
+        <div class="slide" style="background-image: url('gallery-livelihood9.jpeg');"></div>
+        <div class="slide" style="background-image: url('gallery-livelihood8.jpeg');"></div>
+        <div class="slide" style="background-image: url('gallery-livelihood7.jpeg');"></div>
+        <div class="slide" style="background-image: url('journey-2023.jpeg');"></div>
+        <div class="slide" style="background-image: url('mission1.jpeg');"></div>
+        <div class="slide" style="background-image: url('mission3.jpeg');"></div>
+        <div class="slide" style="background-image: url('organic14.jpeg');"></div>
+        <div class="slide" style="background-image: url('organic4.jpeg');"></div>
+        <div class="slide" style="background-image: url('organic9.jpeg');"></div>
+        <div class="slide" style="background-image: url('relief1.jpeg');"></div>
+        <div class="slide" style="background-image: url('relief2.jpeg');"></div>
+        <div class="slide" style="background-image: url('relief3.jpeg');"></div>
+        <div class="slide" style="background-image: url('relief4.jpeg');"></div>
+        <div class="slide" style="background-image: url('skill.jpeg');"></div>
+        <div class="slide" style="background-image: url('skill1.jpeg');"></div>
+        <div class="slide" style="background-image: url('skill2.jpeg');"></div>
+        <div class="slide" style="background-image: url('skill3.jpeg');"></div>
+        <div class="slide" style="background-image: url('skill4.jpeg');"></div>
+        <div class="slide" style="background-image: url('social1.jpeg');"></div>
+        <div class="slide" style="background-image: url('social2.jpeg');"></div>
+        <div class="slide" style="background-image: url('social3.jpeg');"></div>
+        <div class="slide" style="background-image: url('social4.jpeg');"></div>
+        <div class="slide" style="background-image: url('tank1.jpeg');"></div>
+        <div class="slide" style="background-image: url('tank2.jpeg');"></div>
+        <div class="slide" style="background-image: url('tank6.jpeg');"></div>
+        <div class="slide" style="background-image: url('tanker3.jpeg');"></div>
+        <div class="slide" style="background-image: url('testimonial1.jpeg');"></div>
+        <div class="slide" style="background-image: url('tree-plantation.jpeg');"></div>
+        <div class="slide" style="background-image: url('water1.jpeg');"></div>
+        <div class="slide" style="background-image: url('water4.jpeg');"></div>
+        <div class="slide" style="background-image: url('testimonial2.jpeg');"></div>
+        <div class="slide" style="background-image: url('watershed.jpeg');"></div>
+        <div class="slide" style="background-image: url('watershed2.jpeg');"></div>
+        <div class="slide" style="background-image: url('watershed3.jpeg');"></div>
+        <div class="slide" style="background-image: url('watershed4.jpeg');"></div>
+        <div class="slide" style="background-image: url('well1.jpeg');"></div>
+        <div class="slide" style="background-image: url('well3.jpeg');"></div>
+        <div class="slide" style="background-image: url('women.jpeg');"></div>
+        <div class="slide" style="background-image: url('women10.jpeg');"></div>
+        <div class="slide" style="background-image: url('women11.jpeg');"></div>
+        <div class="slide" style="background-image: url('women14.jpeg');"></div>
+        <div class="slide" style="background-image: url('women15.jpeg');"></div>
+        <div class="slide" style="background-image: url('women17.jpeg');"></div>
+        <div class="slide" style="background-image: url('women18.jpeg');"></div>
+        <div class="slide" style="background-image: url('women5.jpeg');"></div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <button class="slider-btn prev" id="prevSlide" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+    <button class="slider-btn next" id="nextSlide" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+
+    <div class="container hero-grid">
+
+        <div>
+
+            <span class="hero-label">
+                ESTABLISHED 19 JUNE 2000
+            </span>
+
+            <h1>
+                Wadmavli Lok Vikas <span>Manch</span>
+            </h1>
+
+            <div class="tagline">
+                Towards Empowerment
+            </div>
+
+            <p class="hero-description">
+                Working with communities to create opportunities
+                through education, skills, women's empowerment,
+                sustainable livelihoods, agriculture, water
+                conservation and environmental action.
+            </p>
+
+
+            <div class="buttons">
+
+                <a href="#about" class="btn btn-blue">
+                    <i class="fas fa-arrow-right"></i> Discover Our Work
+                </a>
+
+                <a href="#gallery" class="btn btn-pink">
+                    <i class="fas fa-images"></i> View Gallery
+                </a>
+
+                <a href="#donate" class="btn btn-white">
+                    <i class="fas fa-heart"></i> Support Our Work
+                </a>
+
+            </div>
+
         </div>
 
-        <!-- Navigation Buttons -->
-        <button class="slider-btn prev" id="prevSlide" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
-        <button class="slider-btn next" id="nextSlide" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
 
-        <div class="container hero-grid">
+        <div class="hero-card">
 
-            <div>
+            <div class="hero-card-top">
 
-                <span class="hero-label">
-                    ESTABLISHED 19 JUNE 2000
-                </span>
+                <img src="logo.png" alt="WLVM Logo" class="hero-logo">
 
-                <h1>
-                    Wadmavli Lok Vikas <span>Manch</span>
-                </h1>
+                <div>
 
-                <div class="tagline">
-                    Towards Empowerment
-                </div>
+                    <h3>Wadmavli Lok Vikas Manch</h3>
 
-                <p class="hero-description">
-                    Working with communities to create opportunities
-                    through education, skills, women's empowerment,
-                    sustainable livelihoods, agriculture, water
-                    conservation and environmental action.
-                </p>
-
-
-                <div class="buttons">
-
-                    <a href="#about" class="btn btn-blue">
-                        <i class="fas fa-arrow-right"></i> Discover Our Work
-                    </a>
-
-                    <a href="#gallery" class="btn btn-pink">
-                        <i class="fas fa-images"></i> View Gallery
-                    </a>
-
-                    <a href="#donate" class="btn btn-white">
-                        <i class="fas fa-heart"></i> Support Our Work
-                    </a>
+                    <p>Towards Empowerment</p>
 
                 </div>
 
             </div>
 
 
-            <div class="hero-card">
+            <div class="hero-points">
 
-                <div class="hero-card-top">
-
-                    <img src="logo.png" alt="WLVM Logo" class="hero-logo">
-
-                    <div>
-
-                        <h3>Wadmavli Lok Vikas Manch</h3>
-
-                        <p>Towards Empowerment</p>
-
-                    </div>
-
+                <div class="hero-point">
+                    <strong>2000</strong>
+                    <span>Established</span>
                 </div>
 
+                <div class="hero-point">
+                    <strong>50,000+</strong>
+                    <span>Families Supported</span>
+                </div>
 
-                <div class="hero-points">
+                <div class="hero-point">
+                    <strong>Beed</strong>
+                    <span>Core Area</span>
+                </div>
 
-                    <div class="hero-point">
-                        <strong>2000</strong>
-                        <span>Established</span>
-                    </div>
-
-                    <div class="hero-point">
-                        <strong>50,000+</strong>
-                        <span>Families Supported</span>
-                    </div>
-
-                    <div class="hero-point">
-                        <strong>Beed</strong>
-                        <span>Core Area</span>
-                    </div>
-
-                    <div class="hero-point">
-                        <strong>Pune</strong>
-                        <span>Training & Education</span>
-                    </div>
-
+                <div class="hero-point">
+                    <strong>Pune</strong>
+                    <span>Training & Education</span>
                 </div>
 
             </div>
 
-
         </div>
 
-    </section>
 
+    </div>
 
+</section>
 
     <!-- =================================
          ABOUT
@@ -3338,7 +3342,7 @@
 
             function startAuto() {
                 stopAuto();
-                interval = setInterval(nextSlide, 5000);
+                interval = setInterval(nextSlide, 2000);
             }
 
             function stopAuto() {

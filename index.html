@@ -566,12 +566,20 @@
     /* Slightly darken the image */
 }
 
-/* Fix image sizing - cover the hero box properly */
-.hero-slider .slide {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+/* Add a dark overlay to make text pop */
+.hero-slider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    /* Dark overlay - makes text readable */
+    z-index: 1;
+    pointer-events: none;
 }
+
         /* Buttons for slider */
         .slider-btn {
             position: absolute;

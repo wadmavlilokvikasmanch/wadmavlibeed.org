@@ -3239,6 +3239,23 @@ img {
 }
 </style>
 
+<style>
+/* FINAL MOBILE MENU FIX: keep the dropdown from being clipped */
+@media (max-width: 950px) {
+  header, header .navbar, header .container.navbar { overflow: visible !important; }
+  header { position: relative !important; z-index: 10000 !important; }
+  header .navbar { position: relative !important; z-index: 10001 !important; }
+  #mobileMenuBtn { position: relative !important; display: flex !important; z-index: 10003 !important; pointer-events: auto !important; }
+  #mainNav {
+    display: none !important; position: absolute !important; top: 100% !important; right: 0 !important; left: auto !important;
+    width: 220px !important; max-height: calc(100vh - 80px) !important; overflow-y: auto !important;
+    background: #fff !important; flex-direction: column !important; padding: 10px 0 !important;
+    border-radius: 0 0 16px 16px !important; box-shadow: 0 12px 30px rgba(0,0,0,.15) !important; z-index: 10002 !important;
+  }
+  header .navbar.mobile-open #mainNav { display: flex !important; }
+}
+</style>
+
 </head>
 
 <body>

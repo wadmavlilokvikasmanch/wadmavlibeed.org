@@ -601,6 +601,20 @@
     backdrop-filter: blur(4px);
 }
 
+       @media (max-width:650px) {
+    /* Fix background images on mobile */
+    .hero-slider .slide {
+        background-size: contain;
+        /* Shows full image without cropping */
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    .hero-slider .slide.active {
+        opacity: 0.5;
+        filter: brightness(0.8);
+    }
+} 
         /* Buttons for slider */
         .slider-btn {
             position: absolute;

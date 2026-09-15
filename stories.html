@@ -1,0 +1,2356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Stories of Transformation | Wadmavli Lok Vikas Manch</title>
+
+    <meta name="description" content="Real stories of change from Wadmavli Lok Vikas Manch — children, women, farmers and youth whose lives have been transformed through education, skills, empowerment and sustainable agriculture.">
+    <meta name="keywords" content="WLVM Stories, NGO Success Stories, Wadmavli Lok Vikas Manch Case Studies, NGO Beed Stories, Women Empowerment Stories">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://wadmavlibeed.org/stories.html">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+
+    <meta property="og:title" content="Stories of Transformation | Wadmavli Lok Vikas Manch">
+    <meta property="og:description" content="Real stories of change — from education and empowerment to sustainable livelihoods.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wadmavlibeed.org/stories.html">
+    <meta property="og:image" content="https://wadmavlibeed.org/logo.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        /* =========================
+           BASIC RESET
+        ========================= */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #263746;
+            background: #f6faf8;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; }
+        .container { width: min(1120px, 92%); margin: auto; }
+        section { scroll-margin-top: 85px; }
+
+        :root {
+            --blue: #075b9a;
+            --dark-blue: #063b67;
+            --pink: #e85b88;
+            --green: #3c8b62;
+            --light-pink: #fff0f5;
+            --light-green: #edf8f1;
+            --light-blue: #f2f8fc;
+            --muted: #667985;
+            --white: #ffffff;
+            --dark: #263746;
+        }
+
+        /* =========================
+           SCROLL PROGRESS BAR
+        ========================= */
+        .scroll-progress {
+            position: fixed; top: 0; left: 0;
+            height: 3px; width: 0%;
+            background: linear-gradient(90deg, var(--pink), var(--blue), var(--green));
+            z-index: 9999;
+            transition: width 0.1s linear;
+            box-shadow: 0 0 10px rgba(232,91,136,.5);
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+        header {
+            position: sticky; top: 0; z-index: 1000;
+            background: rgba(255,255,255,.97);
+            box-shadow: 0 2px 15px rgba(0,0,0,.08);
+            backdrop-filter: blur(8px);
+        }
+        .navbar {
+            min-height: 78px; display: flex;
+            justify-content: space-between; align-items: center; gap: 20px;
+        }
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+        .logo-image {
+            width: 58px; height: 58px; object-fit: contain;
+            border-radius: 50%; transition: transform .3s;
+        }
+        .logo-image:hover { transform: scale(1.08) rotate(3deg); }
+        .logo-text h2 { color: var(--dark-blue); font-size: 17px; line-height: 1.2; }
+        .logo-text span { color: var(--pink); font-size: 10px; font-weight: bold; letter-spacing: 1.5px; }
+
+        nav { display: flex; align-items: center; gap: 17px; }
+        nav a {
+            color: #344b5b; font-size: 13px; font-weight: bold;
+            transition: .3s; position: relative;
+        }
+        nav a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 0; height: 2px; background: var(--pink); transition: .3s;
+        }
+        nav a:hover::after { width: 100%; }
+        nav a:hover { color: var(--pink); }
+        nav a.active { color: var(--pink); }
+        nav a.active::after { width: 100%; }
+
+        .nav-donate {
+            background: var(--pink); color: white !important;
+            padding: 9px 17px; border-radius: 25px;
+        }
+        .nav-donate::after { display: none; }
+        .nav-donate:hover { background: var(--dark-blue); transform: translateY(-2px); }
+
+        .mobile-menu-btn {
+            display: none; border: 0; background: none;
+            color: #063b67; font-size: 24px; cursor: pointer; padding: 8px;
+        }
+
+        @media (max-width: 950px) {
+            nav { display: none; }
+            .navbar { position: relative; }
+            .mobile-menu-btn { display: flex; }
+            .navbar.mobile-open nav {
+                display: flex; position: absolute; top: 100%; right: 0;
+                width: 220px; flex-direction: column; align-items: stretch;
+                gap: 0; background: white; padding: 10px 0;
+                border-radius: 0 0 16px 16px;
+                box-shadow: 0 12px 30px rgba(0,0,0,.15); z-index: 2000;
+                animation: slideDown .3s ease;
+            }
+            @keyframes slideDown {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .navbar.mobile-open nav a {
+                display: block; width: 100%; padding: 13px 20px;
+                text-align: left; box-sizing: border-box;
+            }
+            .navbar.mobile-open nav a:hover { background: #f1f7fb; }
+            .navbar.mobile-open .nav-donate {
+                margin: 8px 12px; width: auto; text-align: center;
+            }
+        }
+
+        .nav-dropdown { position: relative; display: inline-block; }
+        .dropdown-trigger {
+            color: var(--dark); font-size: 14px; font-weight: 500;
+            text-decoration: none; transition: .3s; cursor: pointer;
+            padding: 10px 0; display: flex; align-items: center; gap: 6px;
+        }
+        .dropdown-trigger i { font-size: 11px; transition: .3s; }
+        .nav-dropdown:hover .dropdown-trigger i { transform: rotate(180deg); }
+        .dropdown-trigger:hover { color: var(--blue); }
+        .dropdown-menu {
+            display: none; position: absolute; top: 100%; left: 0;
+            min-width: 220px; background: white; padding: 8px 0;
+            border-radius: 12px; box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+            z-index: 999; border: 1px solid rgba(0,0,0,0.06);
+            opacity: 0; transform: translateY(10px);
+            transition: all 0.3s ease; pointer-events: none;
+        }
+        .nav-dropdown:hover .dropdown-menu {
+            display: block; opacity: 1; transform: translateY(0);
+            pointer-events: auto;
+        }
+        .dropdown-menu a {
+            display: block; padding: 10px 20px; font-size: 13px;
+            font-weight: 500; color: var(--dark); text-decoration: none;
+            transition: .3s; white-space: nowrap;
+        }
+        .dropdown-menu a:hover {
+            background: #f5f0ff; color: var(--blue); padding-left: 26px;
+        }
+        .dropdown-menu::before {
+            content: ''; position: absolute; top: -8px; left: 20px;
+            width: 0; height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid white;
+            filter: drop-shadow(0 -2px 5px rgba(0,0,0,0.04));
+        }
+        @media (max-width: 950px) {
+            .nav-dropdown { width: 100%; }
+            .dropdown-trigger {
+                padding: 13px 20px; justify-content: space-between; width: 100%;
+            }
+            .dropdown-menu {
+                position: static; box-shadow: none; border-radius: 0;
+                padding: 0; background: #f8f6fc; opacity: 1;
+                transform: none; display: none; border: none; pointer-events: auto;
+            }
+            .dropdown-menu::before { display: none; }
+            .dropdown-menu a { padding: 10px 20px 10px 40px; font-size: 13px; }
+            .dropdown-menu a:hover { padding-left: 46px; }
+            .nav-dropdown.active .dropdown-menu { display: block; }
+        }
+
+        /* =========================
+           SHARED STYLES
+        ========================= */
+        .section { padding: 70px 0; }
+        .section-heading {
+            text-align: center; max-width: 760px; margin: 0 auto 38px;
+        }
+        .eyebrow {
+            color: var(--pink); font-size: 11px; font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .section-heading h2 {
+            color: var(--dark-blue); font-size: 35px;
+            line-height: 1.2; margin: 7px 0 10px;
+        }
+        .section-heading p { color: var(--muted); }
+        .deco-line {
+            width: 60px; height: 3px; background: var(--pink);
+            margin: 10px auto; border-radius: 10px;
+            animation: pulseWidth 2s infinite;
+        }
+        @keyframes pulseWidth {
+            0%, 100% { width: 60px; }
+            50% { width: 100px; }
+        }
+
+        .btn {
+            display: inline-block; padding: 12px 22px;
+            border-radius: 30px; font-size: 14px; font-weight: bold;
+            transition: .3s; border: none; cursor: pointer;
+            position: relative; overflow: hidden;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,.15);
+        }
+        .btn-blue { background: var(--blue); color: white; }
+        .btn-pink { background: var(--pink); color: white; }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity .8s cubic-bezier(0.23, 1, 0.32, 1),
+                        transform .8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: .1s; }
+        .reveal-delay-2 { transition-delay: .2s; }
+        .reveal-delay-3 { transition-delay: .3s; }
+
+        /* =========================
+           PAGE HERO
+        ========================= */
+        .stories-hero {
+            padding: 80px 0 70px;
+            background: linear-gradient(135deg, var(--pink), #c93a6a, var(--dark-blue));
+            background-size: 200% 200%;
+            animation: gradientShift 12s ease infinite;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .stories-hero .float-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255,255,255,.05);
+            animation: floatMove 20s ease-in-out infinite;
+            pointer-events: none;
+        }
+        .stories-hero .fc-1 {
+            width: 400px; height: 400px;
+            top: -180px; right: -120px;
+            animation-duration: 22s;
+        }
+        .stories-hero .fc-2 {
+            width: 250px; height: 250px;
+            bottom: -100px; left: -80px;
+            background: rgba(255,255,255,.08);
+            animation-duration: 18s;
+            animation-delay: -5s;
+        }
+        @keyframes floatMove {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -20px) scale(1.05); }
+            66% { transform: translate(-20px, 25px) scale(.95); }
+        }
+
+        .stories-hero .float-icon {
+            position: absolute;
+            color: rgba(255,255,255,.07);
+            font-size: 80px;
+            animation: floatIcon 15s ease-in-out infinite;
+            pointer-events: none;
+        }
+        .stories-hero .fi-1 { top: 15%; left: 6%; font-size: 70px; }
+        .stories-hero .fi-2 { top: 70%; right: 8%; font-size: 90px; animation-delay: -3s; }
+        .stories-hero .fi-3 { top: 25%; right: 18%; font-size: 60px; animation-delay: -7s; }
+        @keyframes floatIcon {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-25px) rotate(10deg); }
+        }
+
+        .stories-hero .breadcrumb {
+            color: #ffd0dd; font-size: 12px; margin-bottom: 18px;
+            position: relative; z-index: 2; letter-spacing: 1px;
+        }
+        .stories-hero .breadcrumb a { color: #ffffff; opacity: .85; transition: .3s; }
+        .stories-hero .breadcrumb a:hover { opacity: 1; }
+
+        .stories-hero .eyebrow-light {
+            display: inline-block;
+            color: white;
+            background: rgba(255,255,255,.18);
+            backdrop-filter: blur(4px);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2.5px;
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 2;
+            animation: fadeSlideUp .8s ease;
+            border: 1px solid rgba(255,255,255,.2);
+        }
+
+        .stories-hero h1 {
+            font-size: clamp(38px, 5.5vw, 58px);
+            line-height: 1.1;
+            margin-bottom: 14px;
+            position: relative;
+            z-index: 2;
+            animation: fadeSlideUp .8s ease .15s both;
+        }
+        .stories-hero h1 span {
+            background: linear-gradient(90deg, #ffd0dd, #ffffff, #ffd0dd);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientText 3s linear infinite;
+        }
+        @keyframes gradientText {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .stories-hero p {
+            color: #ffe0e9;
+            font-size: 17px;
+            max-width: 680px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            animation: fadeSlideUp .8s ease .3s both;
+        }
+
+        .stories-hero .hero-buttons {
+            display: flex; gap: 12px; justify-content: center;
+            flex-wrap: wrap; margin-top: 30px;
+            position: relative; z-index: 2;
+            animation: fadeSlideUp .8s ease .45s both;
+        }
+        .stories-hero .btn-ghost {
+            background: rgba(255,255,255,.12);
+            color: white;
+            border: 1px solid rgba(255,255,255,.3);
+            backdrop-filter: blur(4px);
+        }
+        .stories-hero .btn-ghost:hover {
+            background: rgba(255,255,255,.22);
+        }
+
+        /* =========================
+           FILTER PILLS
+        ========================= */
+        .filter-section {
+            background: white;
+            padding: 30px 0 25px;
+            border-bottom: 1px solid #e5edf0;
+            position: sticky;
+            top: 78px;
+            z-index: 100;
+            background: rgba(255,255,255,.96);
+            backdrop-filter: blur(8px);
+        }
+        .filter-pills {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .filter-pill {
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            background: #f8fbfc;
+            color: var(--muted);
+            border: 1px solid #e5edf0;
+            cursor: pointer;
+            transition: .3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .filter-pill:hover {
+            background: var(--light-pink);
+            color: var(--pink);
+            border-color: var(--pink);
+            transform: translateY(-2px);
+        }
+        .filter-pill.active {
+            background: var(--pink);
+            color: white;
+            border-color: var(--pink);
+            box-shadow: 0 6px 18px rgba(232,91,136,.3);
+        }
+        .filter-pill i { font-size: 11px; }
+
+        /* =========================
+           FEATURED STORY
+        ========================= */
+        .featured-story {
+            padding: 60px 0;
+            background: linear-gradient(180deg, #ffffff 0%, #f6faf8 100%);
+        }
+        .featured-story-box {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(6,59,103,.12);
+            border: 1px solid #e5edf0;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            transition: .5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .featured-story-box:hover {
+            box-shadow: 0 25px 70px rgba(6,59,103,.18);
+            transform: translateY(-4px);
+        }
+        .featured-story-image {
+            position: relative;
+            min-height: 480px;
+            overflow: hidden;
+        }
+        .featured-story-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            inset: 0;
+            transition: transform .8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .featured-story-box:hover .featured-story-image img {
+            transform: scale(1.06);
+        }
+        .featured-story-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent 50%, rgba(6,59,103,.4));
+            pointer-events: none;
+        }
+        .featured-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, var(--pink), #ff6b9d);
+            color: white;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            z-index: 2;
+            box-shadow: 0 8px 20px rgba(232,91,136,.45);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .featured-badge i { font-size: 10px; }
+
+        .featured-story-content {
+            padding: 45px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .featured-story-tag {
+            color: var(--pink);
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+        .featured-story-content h2 {
+            color: var(--dark-blue);
+            font-size: 32px;
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+        .featured-story-name {
+            color: var(--blue);
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+        .featured-story-location {
+            color: var(--muted);
+            font-size: 13px;
+            margin-bottom: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .featured-story-location i { color: var(--pink); }
+
+        .featured-quote {
+            color: var(--dark);
+            font-size: 15px;
+            font-style: italic;
+            line-height: 1.7;
+            padding: 18px 22px;
+            background: var(--light-pink);
+            border-left: 4px solid var(--pink);
+            border-radius: 12px;
+            margin-bottom: 22px;
+            position: relative;
+        }
+        .featured-quote::before {
+            content: '"';
+            position: absolute;
+            top: 5px;
+            left: 8px;
+            font-size: 40px;
+            color: var(--pink);
+            opacity: .3;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .featured-story-content > p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 14px;
+        }
+
+        .featured-story-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8fbfc;
+            border-radius: 14px;
+            border: 1px solid #edf1f3;
+        }
+        .featured-story-stats .fs-stat {
+            text-align: center;
+        }
+        .featured-story-stats .fs-stat strong {
+            display: block;
+            color: var(--blue);
+            font-size: 18px;
+            line-height: 1.1;
+        }
+        .featured-story-stats .fs-stat span {
+            color: var(--muted);
+            font-size: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        /* =========================
+           STORY CARDS GRID
+        ========================= */
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .story-card {
+            background: white;
+            border-radius: 22px;
+            overflow: hidden;
+            border: 1px solid #e5edf0;
+            box-shadow: 0 5px 18px rgba(0,0,0,.04);
+            transition: .4s cubic-bezier(0.23, 1, 0.32, 1);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .story-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(7,91,154,.03), rgba(232,91,136,.03));
+            opacity: 0;
+            transition: .4s;
+            border-radius: 22px;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .story-card:hover::before { opacity: 1; }
+        .story-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 45px rgba(6,59,103,.15);
+            border-color: var(--pink);
+        }
+
+        .story-image {
+            position: relative;
+            height: 230px;
+            overflow: hidden;
+        }
+        .story-image img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: .6s cubic-bezier(0.23, 1, 0.32, 1);
+            filter: brightness(0.95) saturate(1.05);
+        }
+        .story-card:hover .story-image img {
+            transform: scale(1.08);
+            filter: brightness(1.05) saturate(1.15);
+        }
+        .story-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(6,59,103,.75), transparent 55%);
+            transition: .4s;
+        }
+        .story-card:hover .story-image::after {
+            background: linear-gradient(to top, rgba(6,59,103,.85), transparent 45%);
+        }
+
+        .story-tag-float {
+            position: absolute;
+            top: 16px; left: 16px;
+            background: var(--pink);
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            z-index: 2;
+            transition: .3s;
+            box-shadow: 0 4px 12px rgba(232,91,136,.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .story-card:hover .story-tag-float {
+            transform: scale(1.08);
+            box-shadow: 0 6px 18px rgba(232,91,136,.6);
+        }
+
+        .story-name-float {
+            position: absolute;
+            bottom: 14px; left: 16px; right: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 15px;
+            z-index: 2;
+            text-shadow: 0 2px 8px rgba(0,0,0,.5);
+            transition: .3s;
+        }
+        .story-card:hover .story-name-float {
+            transform: translateY(-4px);
+        }
+
+        .story-location-float {
+            position: absolute;
+            bottom: 38px; left: 16px; right: 16px;
+            color: #ffd0dd;
+            font-size: 11px;
+            z-index: 2;
+            text-shadow: 0 2px 6px rgba(0,0,0,.5);
+            transition: .3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .story-card:hover .story-location-float {
+            transform: translateY(-4px);
+        }
+
+        .story-content {
+            padding: 22px 24px 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+        }
+        .story-content .quote {
+            color: var(--pink);
+            font-size: 38px;
+            line-height: .6;
+            margin-bottom: 8px;
+            font-family: Georgia, serif;
+            transition: .3s;
+        }
+        .story-card:hover .story-content .quote {
+            transform: scale(1.15);
+            color: var(--blue);
+        }
+        .story-content p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.65;
+            flex: 1;
+            margin-bottom: 16px;
+        }
+        .story-content .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--blue);
+            font-weight: 600;
+            font-size: 13px;
+            transition: .4s;
+            width: fit-content;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+        .story-content .read-more i {
+            transition: .4s;
+            font-size: 12px;
+        }
+        .story-card:hover .read-more {
+            color: var(--pink);
+            gap: 14px;
+        }
+        .story-card:hover .read-more i {
+            transform: translateX(6px) scale(1.2);
+        }
+
+        /* =========================
+           STATS BANNER (middle)
+        ========================= */
+        .stories-stats-banner {
+            background: linear-gradient(135deg, var(--blue), var(--dark-blue), #042a4a);
+            background-size: 200% 200%;
+            animation: gradientShift 12s ease infinite;
+            color: white;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .stories-stats-banner::before {
+            content: '';
+            position: absolute;
+            width: 400px; height: 400px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.03);
+            top: -200px; right: -100px;
+            animation: floatMove 20s ease-in-out infinite;
+        }
+        .stories-stats-banner::after {
+            content: '';
+            position: absolute;
+            width: 250px; height: 250px;
+            border-radius: 50%;
+            background: rgba(232,91,136,.05);
+            bottom: -120px; left: -60px;
+            animation: floatMove 25s ease-in-out infinite reverse;
+        }
+        .stories-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        .stories-stats-grid .stat-block {
+            text-align: center;
+            padding: 25px 15px;
+            background: rgba(255,255,255,.06);
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 18px;
+            backdrop-filter: blur(6px);
+            transition: .4s;
+        }
+        .stories-stats-grid .stat-block:hover {
+            background: rgba(255,255,255,.12);
+            transform: translateY(-5px);
+            border-color: rgba(255,171,196,.4);
+        }
+        .stories-stats-grid .stat-icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+            transition: .3s;
+        }
+        .stories-stats-grid .stat-block:hover .stat-icon {
+            transform: scale(1.15) rotate(-8deg);
+        }
+        .stories-stats-grid strong {
+            display: block;
+            font-size: 34px;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 4px;
+        }
+        .stories-stats-grid span {
+            color: #d9e8f2;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+        .stories-cta {
+            background: linear-gradient(180deg, #f6faf8 0%, #ffffff 100%);
+            padding: 70px 0;
+            text-align: center;
+        }
+        .stories-cta h2 {
+            color: var(--dark-blue);
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+        .stories-cta h2 span {
+            color: var(--pink);
+            position: relative;
+            display: inline-block;
+        }
+        .stories-cta h2 span::after {
+            content: '';
+            position: absolute;
+            bottom: 2px; left: 0;
+            width: 100%; height: 3px;
+            background: var(--pink); border-radius: 2px;
+        }
+        .stories-cta p {
+            color: var(--muted);
+            max-width: 600px;
+            margin: 0 auto 26px;
+            font-size: 15px;
+        }
+        .stories-cta-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+        footer {
+            background: #062f50;
+            color: white;
+            text-align: center;
+            padding: 38px 20px 25px;
+        }
+        footer h2 { font-size: 21px; }
+        .footer-tagline {
+            color: #ffabc4;
+            font-weight: bold;
+            margin: 4px 0 12px;
+        }
+        footer p { color: #b9cedc; font-size: 12px; }
+
+        /* =========================
+           SCROLL TOP + WHATSAPP
+        ========================= */
+        .scroll-top {
+            position: fixed; bottom: 30px; right: 30px;
+            width: 50px; height: 50px; border-radius: 50%;
+            background: var(--pink); color: white;
+            border: none; font-size: 20px; cursor: pointer;
+            box-shadow: 0 8px 25px rgba(232,91,136,.35);
+            transition: .4s cubic-bezier(0.23, 1, 0.32, 1);
+            opacity: 0; transform: translateY(20px);
+            z-index: 999;
+        }
+        .scroll-top.visible { opacity: 1; transform: translateY(0); }
+        .scroll-top:hover {
+            background: var(--blue);
+            transform: translateY(-4px) scale(1.05);
+        }
+
+        .whatsapp-float {
+            position: fixed; bottom: 100px; right: 30px;
+            width: 60px; height: 60px;
+            background: #25D366; color: white !important;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 5px 30px rgba(37,211,102,.4);
+            z-index: 999; transition: .3s;
+            text-decoration: none;
+            animation: pulse-whatsapp 2s infinite;
+        }
+        .whatsapp-float .whatsapp-tooltip {
+            position: absolute; right: 72px;
+            background: rgba(0,0,0,.8); color: white;
+            padding: 6px 14px; border-radius: 20px;
+            font-size: 13px; font-weight: 500; white-space: nowrap;
+            opacity: 0; pointer-events: none; transition: .3s;
+        }
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1; transform: translateX(-5px);
+        }
+        @keyframes pulse-whatsapp {
+            0%, 100% { box-shadow: 0 5px 30px rgba(37,211,102,.4); }
+            50% { box-shadow: 0 5px 45px rgba(37,211,102,.7); }
+        }
+
+        /* =========================
+           MODAL (full story view)
+        ========================= */
+        .story-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(6, 47, 80, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 5000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: fadeIn .3s ease;
+        }
+        .story-modal.open {
+            display: flex;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .story-modal-content {
+            background: white;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 24px;
+            position: relative;
+            animation: modalUp .4s cubic-bezier(0.23, 1, 0.32, 1);
+            box-shadow: 0 30px 80px rgba(0,0,0,.4);
+        }
+        @keyframes modalUp {
+            from { opacity: 0; transform: translateY(40px) scale(.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .story-modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.95);
+            border: none;
+            color: var(--dark-blue);
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0,0,0,.15);
+            transition: .3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .story-modal-close:hover {
+            background: var(--pink);
+            color: white;
+            transform: rotate(90deg) scale(1.1);
+        }
+        .story-modal-image {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+        }
+        .story-modal-body {
+            padding: 40px 45px 45px;
+        }
+        .story-modal-tag {
+            display: inline-block;
+            background: var(--light-pink);
+            color: var(--pink);
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 14px;
+        }
+        .story-modal-body h2 {
+            color: var(--dark-blue);
+            font-size: 28px;
+            line-height: 1.25;
+            margin-bottom: 8px;
+        }
+        .story-modal-name {
+            color: var(--blue);
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+        .story-modal-location {
+            color: var(--muted);
+            font-size: 13px;
+            margin-bottom: 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .story-modal-location i { color: var(--pink); }
+
+        .story-modal-body h3 {
+            color: var(--dark-blue);
+            font-size: 18px;
+            margin: 25px 0 10px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid var(--light-pink);
+            display: inline-block;
+        }
+        .story-modal-body p {
+            color: var(--dark);
+            font-size: 14px;
+            line-height: 1.75;
+            margin-bottom: 14px;
+        }
+        .story-modal-body ul {
+            list-style: none;
+            margin-bottom: 18px;
+        }
+        .story-modal-body ul li {
+            color: var(--dark);
+            font-size: 14px;
+            line-height: 1.7;
+            padding: 6px 0 6px 28px;
+            position: relative;
+        }
+        .story-modal-body ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 6px;
+            width: 20px;
+            height: 20px;
+            background: var(--light-green);
+            color: var(--green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        .story-modal-quote {
+            background: var(--light-pink);
+            border-left: 4px solid var(--pink);
+            padding: 18px 22px;
+            border-radius: 12px;
+            font-style: italic;
+            color: var(--dark);
+            font-size: 15px;
+            line-height: 1.7;
+            margin: 18px 0;
+            position: relative;
+        }
+        .story-modal-quote::before {
+            content: '"';
+            position: absolute;
+            top: 8px;
+            left: 10px;
+            font-size: 40px;
+            color: var(--pink);
+            opacity: .3;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        .story-modal-quote-attr {
+            display: block;
+            margin-top: 10px;
+            font-style: normal;
+            font-weight: bold;
+            color: var(--blue);
+            font-size: 13px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+        @media (max-width: 950px) {
+            .stories-grid { grid-template-columns: repeat(2, 1fr); }
+            .featured-story-box { grid-template-columns: 1fr; }
+            .featured-story-image { min-height: 300px; }
+            .stories-stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .story-modal-body { padding: 30px 25px 35px; }
+            .story-modal-body h2 { font-size: 22px; }
+        }
+        @media (max-width: 650px) {
+            .navbar { min-height: 68px; }
+            .logo-image { width: 46px; height: 46px; }
+            .logo-text h2 { font-size: 14px; }
+            .section { padding: 55px 0; }
+            .section-heading h2 { font-size: 29px; }
+            .stories-hero { padding: 55px 0 45px; }
+            .stories-hero h1 { font-size: 36px; }
+            .stories-grid { grid-template-columns: 1fr; }
+            .stories-stats-grid { grid-template-columns: 1fr; }
+            .filter-section { top: 68px; }
+            .featured-story-content { padding: 30px 25px; }
+            .featured-story-content h2 { font-size: 24px; }
+            .featured-story-stats { grid-template-columns: 1fr; }
+            .whatsapp-float {
+                width: 55px; height: 55px; font-size: 28px;
+                bottom: 85px; right: 20px;
+            }
+            .whatsapp-float .whatsapp-tooltip { display: none; }
+            .scroll-top {
+                bottom: 20px; right: 20px;
+                width: 40px; height: 40px; font-size: 16px;
+            }
+            .stories-hero .float-icon { display: none; }
+            .story-modal-image { height: 220px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .01ms !important;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+
+    <!-- =================================
+         HEADER
+    ================================= -->
+    <header>
+        <div class="container navbar">
+            <div class="logo-area">
+                <img src="logo.png" alt="Wadmavli Lok Vikas Manch Logo" class="logo-image">
+                <div class="logo-text">
+                    <h2>Wadmavli Lok Vikas Manch</h2>
+                    <span>TOWARDS EMPOWERMENT</span>
+                </div>
+            </div>
+
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+
+                <div class="nav-dropdown">
+                    <a href="programs.html" class="dropdown-trigger">Programs <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="program-education.html">📚 Mission Education</a>
+                        <a href="program-driving.html">🚗 Motor Driving School</a>
+                        <a href="program-skill.html">💼 Skill Development</a>
+                        <a href="program-women.html">👩 Women SHGs</a>
+                        <a href="program-organic.html">🌾 Organic Farming</a>
+                        <a href="program-water.html">💧 Clean Drinking Water</a>
+                        <a href="program-tree.html">🌳 Tree Plantation</a>
+                        <a href="program-watershed.html">🏞️ Watershed Development</a>
+                        <a href="program-disaster.html">🚑 Disaster Relief</a>
+                    </div>
+                </div>
+
+                <a href="gallery.html">Gallery</a>
+                <a href="reports.html" class="active">Reports</a>
+                <a href="volunteer.html">Volunteer</a>
+                <a href="partner.html">Partner</a>
+                <a href="contact.html">Contact</a>
+                <a href="donate.html" class="nav-donate">Donate</a>
+            </nav>
+
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open navigation menu" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+
+    <!-- =================================
+         PAGE HERO
+    ================================= -->
+    <section class="stories-hero">
+        <div class="float-circle fc-1"></div>
+        <div class="float-circle fc-2"></div>
+
+        <i class="fas fa-book-open float-icon fi-1"></i>
+        <i class="fas fa-heart float-icon fi-2"></i>
+        <i class="fas fa-star float-icon fi-3"></i>
+
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> &nbsp;/&nbsp;
+                <a href="reports.html">Reports</a> &nbsp;/&nbsp;
+                <span>Stories of Transformation</span>
+            </div>
+
+            <span class="eyebrow-light">
+                📖 REAL CHANGE
+            </span>
+
+            <h1>
+                Stories of <span>Transformation</span>
+            </h1>
+
+            <p>
+                Behind every number is a life changed. Meet the children, women,
+                farmers and youth whose lives have been transformed through
+                education, skills, empowerment and sustainable agriculture.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#stories-grid" class="btn btn-pink">
+                    <i class="fas fa-book-open"></i> Explore All Stories
+                </a>
+                <a href="reports.html" class="btn btn-ghost">
+                    <i class="fas fa-arrow-left"></i> Back to Reports
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =================================
+         FILTER PILLS
+    ================================= -->
+    <div class="filter-section">
+        <div class="container">
+            <div class="filter-pills">
+                <button class="filter-pill active" data-filter="all">
+                    <i class="fas fa-star"></i> All Stories
+                </button>
+                <button class="filter-pill" data-filter="education">
+                    <i class="fas fa-book"></i> Education
+                </button>
+                <button class="filter-pill" data-filter="women">
+                    <i class="fas fa-female"></i> Women
+                </button>
+                <button class="filter-pill" data-filter="skill">
+                    <i class="fas fa-briefcase"></i> Skill
+                </button>
+                <button class="filter-pill" data-filter="farming">
+                    <i class="fas fa-seedling"></i> Farming
+                </button>
+                <button class="filter-pill" data-filter="driving">
+                    <i class="fas fa-car"></i> Driving
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- =================================
+         FEATURED STORY
+    ================================= -->
+    <section class="featured-story">
+        <div class="container">
+            <div class="featured-story-box reveal">
+
+                <div class="featured-story-image">
+                    <div class="featured-badge">
+                        <i class="fas fa-star"></i> FEATURED STORY
+                    </div>
+                    <img src="case-parvati.jpg" alt="Mrs. Parvati Dashrath Mane">
+                </div>
+
+                <div class="featured-story-content">
+                    <div class="featured-story-tag">FROM WIDOW TO SELF-RELIANT FARMER</div>
+                    <h2>A Farm Transformed by Water</h2>
+                    <div class="featured-story-name">Mrs. Parvati Dashrath Mane</div>
+                    <div class="featured-story-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Chandegaon, District Beed, Maharashtra
+                    </div>
+
+                    <div class="featured-quote">
+                        A widow with two children, Parvati depended entirely on
+                        3 acres of rain-fed land. Through the ESP Project, she
+                        received an irrigation well and a 5 HP solar pump —
+                        transforming her farm completely.
+                    </div>
+
+                    <p>
+                        For years, her farm produced very little and left
+                        the family struggling to meet basic needs. Today,
+                        with regular irrigation, she grows multiple crops,
+                        meets her children's needs with dignity, and has
+                        become an example for other women in her village.
+                    </p>
+
+                    <div class="featured-story-stats">
+                        <div class="fs-stat">
+                            <strong>3 Acres</strong>
+                            <span>LAND</span>
+                        </div>
+                        <div class="fs-stat">
+                            <strong>Irrigation</strong>
+                            <span>WELL + SOLAR</span>
+                        </div>
+                        <div class="fs-stat">
+                            <strong>Reliable</strong>
+                            <span>INCOME</span>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-pink open-story" data-story="parvati">
+                        <i class="fas fa-book-open"></i> Read Full Story
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =================================
+         STORIES GRID
+    ================================= -->
+    <section class="section" style="background: #f6faf8;" id="stories-grid">
+        <div class="container">
+
+            <div class="section-heading reveal">
+                <span class="eyebrow">MEET THE CHANGE-MAKERS</span>
+                <h2>More Stories of Hope</h2>
+                <div class="deco-line"></div>
+                <p>
+                    Every story here represents a life changed — and a
+                    community made stronger.
+                </p>
+            </div>
+
+            <div class="stories-grid" id="storiesList">
+
+                <!-- ===== 1. Ganesh Balaji Hasure (Education) ===== -->
+                <div class="story-card reveal" data-category="education">
+                    <div class="story-image">
+                        <span class="story-tag-float"><i class="fas fa-book"></i> EDUCATION</span>
+                        <img src="case-ganesh.jpg" alt="Ganesh Balaji Hasure">
+                        <div class="story-location-float">
+                            <i class="fas fa-map-marker-alt"></i> Hadapsar, Pune
+                        </div>
+                        <div class="story-name-float">Ganesh Balaji Hasure</div>
+                    </div>
+                    <div class="story-content">
+                        <div class="quote">"</div>
+                        <p>
+                            Ganesh, 6, used to stay alone at home while his
+                            parents worked as daily wage labourers. Today he
+                            attends the learning centre daily, has friends,
+                            studies regularly and has gained confidence.
+                        </p>
+                        <button class="read-more open-story" data-story="ganesh">
+                            Read Full Story <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ===== 2. Swaraj Anil Khedekar (Education) ===== -->
+                <div class="story-card reveal reveal-delay-1" data-category="education">
+                    <div class="story-image">
+                        <span class="story-tag-float"><i class="fas fa-book"></i> EDUCATION</span>
+                        <img src="case-swaraj.jpg" alt="Swaraj Anil Khedekar">
+                        <div class="story-location-float">
+                            <i class="fas fa-map-marker-alt"></i> Hadapsar, Pune
+                        </div>
+                        <div class="story-name-float">Swaraj Anil Khedekar</div>
+                    </div>
+                    <div class="story-content">
+                        <div class="quote">"</div>
+                        <p>
+                            Swaraj's parents are contract-based workers who
+                            couldn't afford private school fees. Today, he
+                            reads and writes confidently and is a happy
+                            learner at the centre.
+                        </p>
+                        <button class="read-more open-story" data-story="swaraj">
+                            Read Full Story <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ===== 3. Parvati Dashrath Mane (Women) ===== -->
+                <div class="story-card reveal reveal-delay-2" data-category="women">
+                    <div class="story-image">
+                        <span class="story-tag-float"><i class="fas fa-female"></i> WOMEN</span>
+                        <img src="case-parvati.jpg" alt="Mrs. Parvati Dashrath Mane">
+                        <div class="story-location-float">
+                            <i class="fas fa-map-marker-alt"></i> Chandegaon, Beed
+                        </div>
+                        <div class="story-name-float">Mrs. Parvati Dashrath Mane</div>
+                    </div>
+                    <div class="story-content">
+                        <div class="quote">"</div>
+                        <p>
+                            A widow with two children, Parvati turned her
+                            3-acre rain-fed farm into a productive, irrigated
+                            land with an irrigation well and a 5 HP solar
+                            pump through the ESP Project.
+                        </p>
+                        <button class="read-more open-story" data-story="parvati">
+                            Read Full Story <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ===== 4. Kalpana Sahebrao Payal (Women) ===== -->
+                <div class="story-card reveal" data-category="women">
+                    <div class="story-image">
+                        <span class="story-tag-float"><i class="fas fa-female"></i> WOMEN</span>
+                        <img src="case-kalpana.jpg" alt="Mrs. Kalpana Sahebrao Payal">
+                        <div class="story-location-float">
+                            <i class="fas fa-map-marker-alt"></i> Rolasgaon, Beed
+                        </div>
+                        <div class="story-name-float">Mrs. Kalpana Sahebrao Payal</div>
+                    </div>
+                    <div class="story-content">
+                        <div class="quote">"</div>
+                        <p>
+                            Left completely alone with no family support,
+                            Kalpana now receives ₹1,500/month from the
+                            Shravanbal Pension Scheme — a monthly lifeline
+                            secured with WLVM's help.
+                        </p>
+                        <button class="read-more open-story" data-story="kalpana">
+                            Read Full Story <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ===== 5. Ashabai Navnath Giri (Women) ===== -->
+                <div class="story-card reveal reveal-delay-1" data-category="women">
+                    <div class="story-image">
+                        <span class="story-tag-float"><i class="fas fa-female"></i> WOMEN</span>
+                        <img src="case-ashabai.jpg" alt="Mrs. Ashabai Navnath Giri">
+                        <div class="story-location-float">
+                            <i class="fas fa-map-marker-alt"></i> Beed District
+                        </div>
+                        <div class="story-name-float">Mrs. Ashabai Navnath Giri</div>
+                    </div>
+                    <div class="story-content">
+                        <div class="quote">"</div>
+                        <p>
+                            "The support I received through our Self Help
+                            Group gave my family a new beginning. Today, our
+                            dairy farming provides a steady income and hope."
+                        </p>
+                        <button class="read-more open-story" data-story="ashabai">
+                            Read Full Story <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ===== 6. Lankabai Sonaji Humbe (Women) ===== -->
+                <div class="story-card reveal reveal-delay-2" data-category="women">
+                    <div class="story-image">
+                        <span class="story-tag-float"><i class="fas fa-female"></i> WOMEN</span>
+                        <img src="case-lankabai.jpg" alt="Mrs. Lankabai Sonaji Humbe">
+                        <div class="story-location-float">
+                            <i class="fas fa-map-marker-alt"></i> Beed District
+                        </div>
+                        <div class="story-name-float">Mrs. Lankabai Sonaji Humbe</div>
+                    </div>
+                    <div class="story-content">
+                        <div class="quote">"</div>
+                        <p>
+                            "With the support of Wadmavli Lok Vikas Manch and
+                            our Self Help Group, I started goat farming and
+                            transformed my family's livelihood."
+                        </p>
+                        <button class="read-more open-story" data-story="lankabai">
+                            Read Full Story <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ===== 7. Akanksha Sagar Hegade (Skill) ===== -->
+                <div class="story-card reveal" data-category="skill">
+                    <div class="story-image">
+                        <span class="story-tag-float"><i class="fas fa-briefcase"></i> SKILL</span>
+                        <img src="case-akanksha.jpg" alt="Akanksha Sagar Hegade">
+                        <div class="story-location-float">
+                            <i class="fas fa-map-marker-alt"></i> Pune
+                        </div>
+                        <div class="story-name-float">Akanksha Sagar Hegade</div>
+                    </div>
+                    <div class="story-content">
+                        <div class="quote">"</div>
+                        <p>
+                            Akanksha now works as an Apprentice at Quess
+                            Company in Pune with a salary of ₹17,350.
+                            The skills she learned made her job-ready.
+                        </p>
+                        <button class="read-more open-story" data-story="akanksha">
+                            Read Full Story <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ===== 8. Amruta Deepak Bavur (Skill) ===== -->
+                <div class="story-card reveal reveal-delay-1" data-category="skill">
+                    <div class="story-image">
+                        <span class="story-tag-float"><i class="fas fa-briefcase"></i> SKILL</span>
+                        <img src="case-amruta.jpg" alt="Amruta Deepak Bavur">
+                        <div class="story-location-float">
+                            <i class="fas fa-map-marker-alt"></i> Pune
+                        </div>
+                        <div class="story-name-float">Amruta Deepak Bavur</div>
+                    </div>
+                    <div class="story-content">
+                        <div class="quote">"</div>
+                        <p>
+                            "I never thought I could work in a corporate
+                            environment. Today, I'm a Client Advisor at
+                            DigiEarth Business Solutions earning ₹8,000."
+                        </p>
+                        <button class="read-more open-story" data-story="amruta">
+                            Read Full Story <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ===== 9. Gaurav Shinde (Skill) ===== -->
+                <div class="story-card reveal reveal-delay-2" data-category="skill">
+                    <div class="story-image">
+                        <span class="story-tag-float"><i class="fas fa-briefcase"></i> SKILL</span>
+                        <img src="case-gaurav.jpg" alt="Gaurav Shinde">
+                        <div class="story-location-float">
+                            <i class="fas fa-map-marker-alt"></i> Pune
+                        </div>
+                        <div class="story-name-float">Gaurav Shinde</div>
+                    </div>
+                    <div class="story-content">
+                        <div class="quote">"</div>
+                        <p>
+                            "I secured a position as Trainee Apprentice at
+                            Mahindra & Mahindra with ₹17,500 + DBT ₹1,500.
+                            This program gave me a new direction in life."
+                        </p>
+                        <button class="read-more open-story" data-story="gaurav">
+                            Read Full Story <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ===== 10. Rajendra Shelke (Farming) ===== -->
+                <div class="story-card reveal" data-category="farming">
+                    <div class="story-image">
+                        <span class="story-tag-float"><i class="fas fa-seedling"></i> FARMING</span>
+                        <img src="case-rajendra.jpg" alt="Mr. Rajendra Shelke">
+                        <div class="story-location-float">
+                            <i class="fas fa-map-marker-alt"></i> Devibabulgaon, Beed
+                        </div>
+                        <div class="story-name-float">Mr. Rajendra Shelke</div>
+                    </div>
+                    <div class="story-content">
+                        <div class="quote">"</div>
+                        <p>
+                            By using resources available on his own farm,
+                            Rajendra reduced farming costs, avoided chemical
+                            inputs and continues sustainable cultivation of
+                            chickpea and groundnut.
+                        </p>
+                        <button class="read-more open-story" data-story="rajendra">
+                            Read Full Story <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ===== 11. Ganesh Shreeram Gadekar (Farming) ===== -->
+                <div class="story-card reveal reveal-delay-1" data-category="farming">
+                    <div class="story-image">
+                        <span class="story-tag-float"><i class="fas fa-seedling"></i> FARMING</span>
+                        <img src="case-ganesh-gadekar.jpg" alt="Mr. Ganesh Shreeram Gadekar">
+                        <div class="story-location-float">
+                            <i class="fas fa-map-marker-alt"></i> Sultanpur, Beed
+                        </div>
+                        <div class="story-name-float">Mr. Ganesh Shreeram Gadekar</div>
+                    </div>
+                    <div class="story-content">
+                        <div class="quote">"</div>
+                        <p>
+                            With a government-subsidised sprinkler system
+                            on his 2-acre farm, Ganesh improved water use
+                            and crop productivity — making every drop count.
+                        </p>
+                        <button class="read-more open-story" data-story="ganesh-gadekar">
+                            Read Full Story <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ===== 12. Atharva Sanjay Hiwale (Driving) ===== -->
+                <div class="story-card reveal reveal-delay-2" data-category="driving">
+                    <div class="story-image">
+                        <span class="story-tag-float"><i class="fas fa-car"></i> DRIVING</span>
+                        <img src="case-atharva.jpg" alt="Atharva Sanjay Hiwale">
+                        <div class="story-location-float">
+                            <i class="fas fa-map-marker-alt"></i> Patoda, Beed
+                        </div>
+                        <div class="story-name-float">Atharva Sanjay Hiwale</div>
+                    </div>
+                    <div class="story-content">
+                        <div class="quote">"</div>
+                        <p>
+                            Atharva completed a one-month driving programme,
+                            obtained his licence, bought a car and now earns
+                            ₹15,000–₹20,000 monthly as a commercial driver.
+                        </p>
+                        <button class="read-more open-story" data-story="atharva">
+                            Read Full Story <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- =================================
+         STATS BANNER
+    ================================= -->
+    <section class="stories-stats-banner">
+        <div class="container">
+            <div class="stories-stats-grid">
+                <div class="stat-block reveal">
+                    <div class="stat-icon">📚</div>
+                    <strong>150</strong>
+                    <span>Children in Education</span>
+                </div>
+                <div class="stat-block reveal reveal-delay-1">
+                    <div class="stat-icon">💼</div>
+                    <strong>500+</strong>
+                    <span>Youth Trained</span>
+                </div>
+                <div class="stat-block reveal reveal-delay-2">
+                    <div class="stat-icon">👩</div>
+                    <strong>370+</strong>
+                    <span>Women Empowered</span>
+                </div>
+                <div class="stat-block reveal reveal-delay-3">
+                    <div class="stat-icon">🌾</div>
+                    <strong>350+</strong>
+                    <span>Farmers Supported</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =================================
+         CTA
+    ================================= -->
+    <section class="stories-cta">
+        <div class="container reveal">
+            <h2>Be Part of <span>the Next Story</span></h2>
+            <p>
+                Your support helps us write more stories of hope, dignity
+                and self-reliance for communities across Maharashtra.
+            </p>
+            <div class="stories-cta-buttons">
+                <a href="donate.html" class="btn btn-pink">
+                    <i class="fas fa-heart"></i> Donate Now
+                </a>
+                <a href="volunteer.html" class="btn btn-blue">
+                    <i class="fas fa-hands-helping"></i> Volunteer With Us
+                </a>
+                <a href="reports.html" class="btn btn-blue" style="background:#063b67;">
+                    <i class="fas fa-arrow-left"></i> Back to Reports
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =================================
+         FOOTER
+    ================================= -->
+    <footer>
+        <div class="container">
+            <h2>Wadmavli Lok Vikas Manch</h2>
+            <div class="footer-tagline">Towards Empowerment</div>
+            <p>Established 19 June 2000</p>
+            <p>© 2026 Wadmavli Lok Vikas Manch. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- =================================
+         STORY MODAL
+    ================================= -->
+    <div class="story-modal" id="storyModal">
+        <div class="story-modal-content">
+            <button class="story-modal-close" onclick="closeStory()" aria-label="Close story">
+                <i class="fas fa-times"></i>
+            </button>
+            <img class="story-modal-image" id="modalImage" src="" alt="">
+            <div class="story-modal-body" id="modalBody">
+                <!-- Filled dynamically by JS -->
+            </div>
+        </div>
+    </div>
+
+
+    <button class="scroll-top" id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <a href="https://wa.me/919011352549" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Chat with us</span>
+    </a>
+
+
+    <script>
+        // =========================
+        // MOBILE MENU
+        // =========================
+        function toggleMobileMenu() {
+            const navbar = document.querySelector(".navbar");
+            const button = document.querySelector(".mobile-menu-btn");
+            if (!navbar || !button) return;
+            navbar.classList.toggle("mobile-open");
+            button.setAttribute("aria-expanded", navbar.classList.contains("mobile-open") ? "true" : "false");
+        }
+        document.querySelectorAll('.navbar nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                const navbar = document.querySelector(".navbar");
+                if (navbar && navbar.classList.contains('mobile-open')) {
+                    navbar.classList.remove('mobile-open');
+                }
+            });
+        });
+
+        // =========================
+        // SCROLL TOP + PROGRESS
+        // =========================
+        const scrollBtn = document.getElementById('scrollTopBtn');
+        const scrollProgress = document.getElementById('scrollProgress');
+        window.addEventListener('scroll', function() {
+            const scrollY = window.scrollY;
+            scrollBtn.classList.toggle('visible', scrollY > 400);
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollY / docHeight) * 100;
+            scrollProgress.style.width = progress + '%';
+        });
+
+        // =========================
+        // SCROLL REVEAL
+        // =========================
+        const revealElements = document.querySelectorAll(".reveal");
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: "0px 0px -50px 0px" });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // =========================
+        // DROPDOWN FOR MOBILE
+        // =========================
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.querySelectorAll('.nav-dropdown');
+            dropdowns.forEach(dropdown => {
+                const trigger = dropdown.querySelector('.dropdown-trigger');
+                if (trigger) {
+                    trigger.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 950) {
+                            e.preventDefault();
+                            dropdown.classList.toggle('active');
+                        }
+                    });
+                }
+            });
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 950) {
+                    dropdowns.forEach(dropdown => {
+                        if (!dropdown.contains(e.target)) {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+                }
+            });
+        });
+
+        // =========================
+        // STORY DATA (all 12 stories)
+        // =========================
+        const STORIES = {
+            ganesh: {
+                tag: '📚 MISSION EDUCATION',
+                title: 'A Confident Learner Emerges',
+                name: 'Ganesh Balaji Hasure',
+                location: 'Hadapsar, Pune',
+                image: 'case-ganesh.jpg',
+                body: `
+                    <h3>Background</h3>
+                    <p>Ganesh Balaji Hasure, age 6, comes from a family of daily wage workers. Both his parents leave early for work and would lock Ganesh alone at home. With no one to talk to or play with, he became extremely shy and had difficulty interacting with others.</p>
+
+                    <h3>Before Joining the Project</h3>
+                    <ul>
+                        <li>Stayed alone at home all day</li>
+                        <li>Extremely shy, no interaction with other children</li>
+                        <li>No exposure to structured learning</li>
+                        <li>Family constantly worried about his safety and future</li>
+                    </ul>
+
+                    <h3>The Intervention</h3>
+                    <p>Ganesh enrolled in the Mission Education program in June 2025 in the 1st standard at our Kalepadal centre. He began attending the after-school learning sessions focused on language, mathematics, environmental studies, storytelling, art & craft and life skills.</p>
+
+                    <h3>After Project Support</h3>
+                    <ul>
+                        <li>Attends the learning centre every day with enthusiasm</li>
+                        <li>Does his studies regularly</li>
+                        <li>Mixes with friends and plays freely</li>
+                        <li>Received educational materials and school support</li>
+                        <li>Has gained remarkable confidence</li>
+                    </ul>
+
+                    <div class="story-modal-quote">
+                        Before joining the project, the family was constantly worried about Ganesh being alone at home. Now, after school, Ganesh comes to the centre, studies, and plays with friends. The family is relieved and happy.
+                        <span class="story-modal-quote-attr">— Mission Education Team, WLVM</span>
+                    </div>
+
+                    <h3>Current Situation</h3>
+                    <p>Ganesh is now a happy, confident child who looks forward to attending the centre each day. His transformation reflects the impact that consistent, caring educational support can have on a child's life.</p>
+                `
+            },
+
+            swaraj: {
+                tag: '📚 MISSION EDUCATION',
+                title: 'From Silent to Confident',
+                name: 'Swaraj Anil Khedekar',
+                location: 'Hadapsar, Pune',
+                image: 'case-swaraj.jpg',
+                body: `
+                    <h3>Background</h3>
+                    <p>Swaraj Anil Khedekar, age 6, comes from a family of contract-based workers with limited income. His parents could not afford private school fees for Swaraj.</p>
+
+                    <h3>Before Joining the Project</h3>
+                    <ul>
+                        <li>Could not read or write</li>
+                        <li>Did not know how to sit properly in class</li>
+                        <li>Limited exposure to formal learning environment</li>
+                        <li>Family worried about his future education</li>
+                    </ul>
+
+                    <h3>The Intervention</h3>
+                    <p>Swaraj joined the Mission Education program in June 2025 as a 1st standard student. The structured 4-hour daily sessions focused on foundational literacy, numeracy and holistic development through activity-based learning.</p>
+
+                    <h3>After Project Support</h3>
+                    <ul>
+                        <li>Attends the centre every day regularly</li>
+                        <li>Studies daily and has learned to read and write</li>
+                        <li>Can now sit properly in class and focus on learning</li>
+                        <li>Mixes well with friends</li>
+                        <li>Received educational materials</li>
+                        <li>Has gained confidence</li>
+                    </ul>
+
+                    <div class="story-modal-quote">
+                        Swaraj is now a confident learner. His parents are happy that their son is getting quality education despite their financial limitations.
+                        <span class="story-modal-quote-attr">— Mission Education Team, WLVM</span>
+                    </div>
+
+                    <h3>Current Situation</h3>
+                    <p>Swaraj is now a bright, confident learner. His transformation shows how access to quality education can rewrite the future of children from economically weaker families.</p>
+                `
+            },
+
+            parvati: {
+                tag: '👩 WOMEN EMPOWERMENT',
+                title: 'From a Widow to a Self-Reliant Farmer',
+                name: 'Mrs. Parvati Dashrath Mane',
+                location: 'Chandegaon, District Beed',
+                image: 'case-parvati.jpg',
+                body: `
+                    <h3>Background</h3>
+                    <p>Mrs. Parvati Dashrath Mane, a widow living with her two children in Chandegaon, depended entirely on 3 acres of agricultural land. For years, her farm was rain-fed, producing very little and leaving the family struggling to meet basic needs.</p>
+
+                    <h3>Before the Intervention</h3>
+                    <ul>
+                        <li>Rain-fed farming with unpredictable yields</li>
+                        <li>Low production, constant economic struggle</li>
+                        <li>Uncertain income, unable to meet children's needs</li>
+                    </ul>
+
+                    <h3>The Intervention</h3>
+                    <p>Through the ESP Project, she learned about government schemes. With project team guidance, she applied for and received an Irrigation Well. However, without equipment to lift water, irrigation remained a challenge.</p>
+                    <p>The project team then helped her apply for a 5 HP Solar Pump, which was sanctioned. This installation transformed her land entirely.</p>
+
+                    <h3>After the Intervention</h3>
+                    <ul>
+                        <li>Regular irrigation available year-round</li>
+                        <li>Significantly higher crop yields</li>
+                        <li>Economic stability and reliable income</li>
+                        <li>Able to meet her children's needs with dignity</li>
+                    </ul>
+
+                    <div class="story-modal-quote">
+                        Her story is a powerful example of how timely information, proper guidance, and access to government schemes can transform the life of a small farmer.
+                        <span class="story-modal-quote-attr">— ESP Project Team, WLVM</span>
+                    </div>
+
+                    <h3>Current Situation</h3>
+                    <p>Today, Mrs. Parvati Mane cultivates multiple crops on her irrigated land and has become a source of inspiration for other women in her village.</p>
+                `
+            },
+
+            kalpana: {
+                tag: '👩 WOMEN EMPOWERMENT',
+                title: 'From Destitution to Dignity',
+                name: 'Mrs. Kalpana Sahebrao Payal',
+                location: 'Rolasgaon, District Beed',
+                image: 'case-kalpana.jpg',
+                body: `
+                    <h3>Background</h3>
+                    <p>Mrs. Kalpana Sahebrao Payal lives an extremely challenging life with no family members to support her. Without land or regular wage work, she faced severe hardship and uncertainty about her survival.</p>
+
+                    <h3>Before the Intervention</h3>
+                    <ul>
+                        <li>No reliable income</li>
+                        <li>Extreme hardship and daily struggle for basic needs</li>
+                        <li>No security or social protection</li>
+                    </ul>
+
+                    <h3>The Intervention</h3>
+                    <p>Through the ESP Project, the team informed her about the Shravanbal Pension Scheme. The team helped her gather documents, prepared her application, and submitted it to the Tehsil Office in Beed. After consistent follow-up, her application was approved.</p>
+
+                    <h3>After the Intervention</h3>
+                    <ul>
+                        <li>Receives ₹1,500 monthly pension</li>
+                        <li>Essential needs now met with regularity</li>
+                        <li>Sense of security and stability</li>
+                        <li>No longer forced to worry about survival</li>
+                    </ul>
+
+                    <div class="story-modal-quote">
+                        Kalpana's journey reflects how simply connecting a person to the right government scheme can restore dignity and stability to a life in crisis.
+                        <span class="story-modal-quote-attr">— ESP Project Team, WLVM</span>
+                    </div>
+
+                    <h3>Current Situation</h3>
+                    <p>Today, Kalpana lives with a sense of security she hadn't experienced in years. Her monthly pension ensures her essential needs are met, allowing her to live with dignity.</p>
+                `
+            },
+
+            ashabai: {
+                tag: '👩 WOMEN EMPOWERMENT',
+                title: 'A New Beginning Through Dairy Farming',
+                name: 'Mrs. Ashabai Navnath Giri',
+                location: 'Beed District, Maharashtra',
+                image: 'case-ashabai.jpg',
+                body: `
+                    <h3>Background</h3>
+                    <p>Mrs. Ashabai Navnath Giri is an active member of a Self Help Group formed under WLVM's Women Empowerment Program in Beed district.</p>
+
+                    <h3>The Intervention</h3>
+                    <p>Through the SHG, Ashabai received financial literacy training, access to credit, and support to start a small livelihood activity. She chose dairy farming — a stable, recurring source of income well-suited to rural households.</p>
+
+                    <h3>After the Intervention</h3>
+                    <ul>
+                        <li>Started dairy farming with financial support from her SHG</li>
+                        <li>Generates steady monthly income</li>
+                        <li>Financial independence and stability for the family</li>
+                        <li>Actively participates in SHG meetings and savings</li>
+                    </ul>
+
+                    <div class="story-modal-quote">
+                        The support I received through our Self Help Group gave my family a new beginning. Today, our dairy farming provides a steady income and hope for a better future. I am grateful to Wadmavli Lok Vikas Manch.
+                        <span class="story-modal-quote-attr">— Mrs. Ashabai Navnath Giri, SHG Member</span>
+                    </div>
+
+                    <h3>Current Situation</h3>
+                    <p>Ashabai's dairy farming now provides her family with steady income and hope for a better future. She stands as a role model for other women in her community.</p>
+                `
+            },
+
+            lankabai: {
+                tag: '👩 WOMEN EMPOWERMENT',
+                title: 'Goat Farming Changed Everything',
+                name: 'Mrs. Lankabai Sonaji Humbe',
+                location: 'Beed District, Maharashtra',
+                image: 'case-lankabai.jpg',
+                body: `
+                    <h3>Background</h3>
+                    <p>Mrs. Lankabai Sonaji Humbe, a rural woman from Beed district, was part of WLVM's Self Help Group initiative. Like many women in her village, she had limited opportunities for independent income.</p>
+
+                    <h3>The Intervention</h3>
+                    <p>With support from her Self Help Group and guidance from WLVM's team, Lankabai started goat farming. Goat rearing offered a low-cost, sustainable livelihood that aligned with her rural household's resources.</p>
+
+                    <h3>After the Intervention</h3>
+                    <ul>
+                        <li>Started goat farming with SHG support</li>
+                        <li>Transformed her family's livelihood</li>
+                        <li>Gained financial independence</li>
+                        <li>Built confidence and decision-making power</li>
+                    </ul>
+
+                    <div class="story-modal-quote">
+                        With the support of Wadmavli Lok Vikas Manch and our Self Help Group, I started goat farming and transformed my family's livelihood. I now have financial independence and confidence.
+                        <span class="story-modal-quote-attr">— Mrs. Lankabai Sonaji Humbe, Beneficiary</span>
+                    </div>
+
+                    <h3>Current Situation</h3>
+                    <p>Lankabai now runs a sustainable goat farming enterprise that provides steady income for her family — and she has become a source of inspiration for other women in her village.</p>
+                `
+            },
+
+            akanksha: {
+                tag: '💼 SKILL DEVELOPMENT',
+                title: 'From Trainee to Apprentice at Quess',
+                name: 'Akanksha Sagar Hegade',
+                location: 'Pune, Maharashtra',
+                image: 'case-akanksha.jpg',
+                body: `
+                    <h3>Background</h3>
+                    <p>Akanksha Sagar Hegade enrolled in WLVM's Skill Development program — a 3-month Office Executive course offered in partnership with Smile Foundation at the Fugewadi centre in Pune.</p>
+
+                    <h3>The Training</h3>
+                    <ul>
+                        <li>Computer basics, MS Office and Tally</li>
+                        <li>Data entry and office management</li>
+                        <li>Communication and personality development</li>
+                        <li>English speaking and financial literacy</li>
+                    </ul>
+
+                    <h3>After the Training</h3>
+                    <ul>
+                        <li>Placed as an Apprentice at Quess Company in Pune</li>
+                        <li>Monthly salary of ₹17,350</li>
+                        <li>Became financially independent</li>
+                        <li>Confident in a professional work environment</li>
+                    </ul>
+
+                    <div class="story-modal-quote">
+                        This training changed my life. I now work as an Apprentice at Quess Company in Pune with a salary of ₹17,350. The skills I learned made me job-ready.
+                        <span class="story-modal-quote-attr">— Akanksha Sagar Hegade</span>
+                    </div>
+
+                    <h3>Current Situation</h3>
+                    <p>Akanksha is now a job-ready young professional, contributing to her family's income and building a career with confidence.</p>
+                `
+            },
+
+            amruta: {
+                tag: '💼 SKILL DEVELOPMENT',
+                title: 'A Corporate Career Begins',
+                name: 'Amruta Deepak Bavur',
+                location: 'Pune, Maharashtra',
+                image: 'case-amruta.jpg',
+                body: `
+                    <h3>Background</h3>
+                    <p>Amruta Deepak Bavur was looking for opportunities to build a corporate career. She enrolled in WLVM's Skill Development program, training in Retail Management — a 3-month course in partnership with Smile Foundation.</p>
+
+                    <h3>The Training</h3>
+                    <ul>
+                        <li>Retail operations and customer service</li>
+                        <li>Inventory management basics</li>
+                        <li>English speaking and personality development</li>
+                        <li>Financial literacy and workplace communication</li>
+                    </ul>
+
+                    <h3>After the Training</h3>
+                    <ul>
+                        <li>Placed as Client Advisor at DigiEarth Business Solutions</li>
+                        <li>Monthly salary of ₹8,000</li>
+                        <li>First corporate job in her family</li>
+                        <li>Gained confidence and professional skills</li>
+                    </ul>
+
+                    <div class="story-modal-quote">
+                        I never thought I could work in a corporate environment. Today, I'm a Client Advisor at DigiEarth Business Solutions earning ₹8,000.
+                        <span class="story-modal-quote-attr">— Amruta Deepak Bavur</span>
+                    </div>
+
+                    <h3>Current Situation</h3>
+                    <p>Amruta now works in a professional corporate role — a milestone that has changed not just her career path but her family's outlook on what's possible.</p>
+                `
+            },
+
+            gaurav: {
+                tag: '💼 SKILL DEVELOPMENT',
+                title: 'A New Direction at Mahindra & Mahindra',
+                name: 'Gaurav Shinde',
+                location: 'Pune, Maharashtra',
+                image: 'case-gaurav.jpg',
+                body: `
+                    <h3>Background</h3>
+                    <p>Gaurav Shinde enrolled in WLVM's Skill Development program to gain practical, market-ready skills. He completed the BFSI (Banking, Financial Services, Insurance) course in partnership with Smile Foundation.</p>
+
+                    <h3>The Training</h3>
+                    <ul>
+                        <li>Banking, financial services and insurance fundamentals</li>
+                        <li>Computer skills and digital tools</li>
+                        <li>Communication, teamwork and problem-solving</li>
+                        <li>Personality development and interview preparation</li>
+                    </ul>
+
+                    <h3>After the Training</h3>
+                    <ul>
+                        <li>Placed as Trainee Apprentice at Mahindra & Mahindra</li>
+                        <li>Salary of ₹17,500 + DBT ₹1,500</li>
+                        <li>Financially independent with a clear career path</li>
+                        <li>New direction and purpose in life</li>
+                    </ul>
+
+                    <div class="story-modal-quote">
+                        I secured a position as Trainee Apprentice at Mahindra & Mahindra with ₹17,500 + DBT ₹1,500. This program gave me a new direction in life.
+                        <span class="story-modal-quote-attr">— Gaurav Shinde</span>
+                    </div>
+
+                    <h3>Current Situation</h3>
+                    <p>Gaurav now works with one of India's largest companies, building a bright career and supporting his family with dignity and pride.</p>
+                `
+            },
+
+            rajendra: {
+                tag: '🌾 ORGANIC FARMING',
+                title: 'From Natural Farming to a Better Livelihood',
+                name: 'Mr. Rajendra Shelke',
+                location: 'Devibabulgaon, Taluka & District Beed',
+                image: 'case-rajendra.jpg',
+                body: `
+                    <h3>Background</h3>
+                    <p>For the past several years, Mr. Rajendra Shelke has been practicing organic farming and cultivating a variety of crops using natural and sustainable methods in Devibabulgaon village.</p>
+
+                    <h3>The Approach</h3>
+                    <p>During 2025-26, he cultivated chickpea (harbhara) and groundnut (bhuimug) on his farm — choosing not to use chemical fertilizers or chemical pesticides.</p>
+                    <ul>
+                        <li>Prepares compost manure from agricultural and farm waste</li>
+                        <li>Uses Dashparni Ark — a natural formulation for pest management</li>
+                        <li>Relies on locally available plant materials</li>
+                        <li>Reduces dependence on costly chemical inputs</li>
+                    </ul>
+
+                    <h3>The Results</h3>
+                    <ul>
+                        <li>Reduced farming costs significantly</li>
+                        <li>Maintained good crop production</li>
+                        <li>Made farming more sustainable and economical</li>
+                        <li>Demonstrated the viability of natural farming</li>
+                    </ul>
+
+                    <div class="story-modal-quote">
+                        By using resources available on my own farm, I can reduce my farming expenses and continue cultivation in a more sustainable way.
+                        <span class="story-modal-quote-attr">— Mr. Rajendra Shelke</span>
+                    </div>
+
+                    <h3>Current Situation</h3>
+                    <p>Mr. Shelke's experience demonstrates how natural farming practices can reduce input costs, support healthier agricultural practices and contribute to improved livelihoods.</p>
+                `
+            },
+
+            'ganesh-gadekar': {
+                tag: '🌾 ORGANIC FARMING',
+                title: 'Making Every Drop Count',
+                name: 'Mr. Ganesh Shreeram Gadekar',
+                location: 'Sultanpur Village, Beed District',
+                image: 'case-ganesh-gadekar.jpg',
+                body: `
+                    <h3>Background</h3>
+                    <p>Ganesh Shreeram Gadekar, 35, farms 2 acres in Sultanpur village. For years, he faced the challenges of irregular rainfall and inefficient water use, which affected crop productivity and farm income.</p>
+
+                    <h3>The Challenge</h3>
+                    <ul>
+                        <li>Irregular rainfall patterns</li>
+                        <li>Limited and unpredictable water availability</li>
+                        <li>Low crop productivity</li>
+                        <li>Unstable farm income</li>
+                    </ul>
+
+                    <h3>The Intervention</h3>
+                    <p>With support through the Krushivibhag (Agriculture Department) government scheme, Ganesh installed a sprinkler irrigation system on his farm. The total cost of ₹34,500 was largely covered by government subsidy, making it affordable with only a small out-of-pocket contribution.</p>
+
+                    <h3>The Change</h3>
+                    <ul>
+                        <li>Improved water use efficiency on the farm</li>
+                        <li>Better water management practices</li>
+                        <li>Increased crop productivity</li>
+                        <li>More practical and sustainable farming</li>
+                    </ul>
+
+                    <div class="story-modal-quote">
+                        For a small farmer, access to appropriate irrigation technology can make a meaningful difference — not only in how water is used, but also in the potential productivity and economic sustainability of the farm.
+                        <span class="story-modal-quote-attr">— WLVM Agriculture Team</span>
+                    </div>
+
+                    <h3>Current Situation</h3>
+                    <p>Ganesh now uses water more efficiently and has seen improvement in both his crop yield and farm income — making every drop count on his 2-acre farm.</p>
+                `
+            },
+
+            atharva: {
+                tag: '🚗 MOTOR DRIVING SCHOOL',
+                title: 'Driving Towards Dignity',
+                name: 'Atharva Sanjay Hiwale',
+                location: 'Patoda, District Beed',
+                image: 'case-atharva.jpg',
+                body: `
+                    <h3>Background</h3>
+                    <p>Atharva Sanjay Hiwale is a resident of Patoda, Taluka Patoda, District Beed. He comes from a financially disadvantaged family that struggled to meet basic household needs. Due to his family's difficult economic condition, he had limited opportunities to acquire employable skills or secure a stable source of income.</p>
+
+                    <h3>The Intervention</h3>
+                    <p>Wadmavli Lok Vikas Manch, in collaboration with Vatsalya Trust, Mumbai, organized a one-month driving skill development program through Dnyaneshwar Motor Driving School, Patoda.</p>
+                    <ul>
+                        <li>Completed one month of professional driving training</li>
+                        <li>Successfully obtained a valid driving licence</li>
+                        <li>Gained skills and confidence to pursue driving as a profession</li>
+                    </ul>
+
+                    <h3>The Outcome</h3>
+                    <p>After completing the training and receiving his driving licence, Atharva purchased a second-hand Maruti Suzuki Swift Dzire and started working as a commercial driver providing taxi services.</p>
+                    <ul>
+                        <li>Average monthly income of ₹15,000–₹20,000</li>
+                        <li>Strengthened his family's financial stability</li>
+                        <li>Established a sustainable self-employment opportunity</li>
+                        <li>Became financially independent</li>
+                    </ul>
+
+                    <div class="story-modal-quote">
+                        Atharva's journey demonstrates how skill development and timely support can transform the lives of economically disadvantaged youth.
+                        <span class="story-modal-quote-attr">— WLVM Driving School Team</span>
+                    </div>
+
+                    <h3>Impact</h3>
+                    <ul>
+                        <li>Sustainable self-employment established</li>
+                        <li>Financial independence achieved</li>
+                        <li>Family's economic condition improved</li>
+                        <li>A life of dignity, confidence and self-reliance</li>
+                    </ul>
+                `
+            }
+        };
+
+        // =========================
+        // OPEN / CLOSE STORY MODAL
+        // =========================
+        const modal = document.getElementById('storyModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalBody = document.getElementById('modalBody');
+
+        function openStory(storyKey) {
+            const story = STORIES[storyKey];
+            if (!story) return;
+
+            modalImage.src = story.image;
+            modalImage.alt = story.name;
+
+            modalBody.innerHTML = `
+                <span class="story-modal-tag">${story.tag}</span>
+                <h2>${story.title}</h2>
+                <div class="story-modal-name">${story.name}</div>
+                <div class="story-modal-location">
+                    <i class="fas fa-map-marker-alt"></i> ${story.location}
+                </div>
+                ${story.body}
+            `;
+
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeStory() {
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        // Attach click handlers to all buttons with class "open-story"
+        document.querySelectorAll('.open-story').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const key = this.dataset.story;
+                if (key) openStory(key);
+            });
+        });
+
+        // Close modal on background click
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) closeStory();
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('open')) {
+                closeStory();
+            }
+        });
+
+        // =========================
+        // FILTER PILLS
+        // =========================
+        const pills = document.querySelectorAll('.filter-pill');
+        const cards = document.querySelectorAll('#storiesList .story-card');
+
+        pills.forEach(pill => {
+            pill.addEventListener('click', function() {
+                pills.forEach(p => p.classList.remove('active'));
+                this.classList.add('active');
+
+                const filter = this.dataset.filter;
+
+                cards.forEach(card => {
+                    const cat = card.dataset.category;
+                    if (filter === 'all' || cat === filter) {
+                        card.style.display = '';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 200);
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

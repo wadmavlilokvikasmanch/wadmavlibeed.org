@@ -19,6 +19,9 @@
     <link rel="canonical" href="https://wadmavlibeed.org/">
 
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Space+Mono:wght@700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
 
@@ -2174,6 +2177,220 @@
 
 <body>
 
+    <!-- ============ DROUGHT 2026 FRONT-PAGE BANNER ============ -->
+<section class="drought-alert">
+  <div class="drought-alert-bg"></div>
+  <div class="drought-alert-overlay"></div>
+
+  <div class="drought-alert-inner">
+    <div class="drought-alert-container">
+
+      <div class="drought-alert-tag">
+        <span class="drought-alert-dot"></span>
+        Drought Declared · Marathwada 2026
+      </div>
+
+      <h2 class="drought-alert-title">
+        25&nbsp;mm of rain. <em>That's it.</em>
+      </h2>
+
+      <p class="drought-alert-sub">
+        Beed's Kharif crop is gone. <strong>1,750 families</strong> need
+        urgent relief — food, water, and fodder. Diwali is weeks away.
+      </p>
+
+      <div class="drought-alert-cta">
+        <a href="drought-2026.html" class="drought-alert-btn-primary">
+          <i class="fas fa-heart"></i> Donate Now
+        </a>
+        <a href="drought-2026.html" class="drought-alert-btn-ghost">
+          See Response Plan <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.drought-alert{
+  position:relative;
+  padding:80px 0;
+  overflow:hidden;
+  background:#1a1410;
+  color:#fff;
+  font-family:'Inter',system-ui,sans-serif;
+  border-bottom:1px solid rgba(232,176,75,.25);
+  z-index:5;
+  min-height:440px;
+  display:flex;align-items:center;
+}
+.drought-alert-bg{
+  position:absolute;inset:0;
+  background:url('drought-hero.jpg') center/cover no-repeat;
+  animation:droughtZoom 24s ease-in-out infinite alternate;
+  filter:contrast(1.1) saturate(1.05) brightness(.9);
+  z-index:0;
+}
+@keyframes droughtZoom{
+  0%{transform:scale(1.05)}
+  100%{transform:scale(1.15)}
+}
+.drought-alert-overlay{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,
+      rgba(26,20,16,.88) 0%,
+      rgba(26,20,16,.7) 45%,
+      rgba(26,20,16,.35) 100%
+    ),
+    linear-gradient(180deg,
+      rgba(26,20,16,.3) 0%,
+      rgba(26,20,16,.15) 50%,
+      rgba(26,20,16,.7) 100%
+    );
+  z-index:1;
+}
+.drought-alert-inner{position:relative;z-index:2;width:100%}
+.drought-alert-container{
+  width:min(1240px,92%);margin:0 auto;
+  max-width:720px;
+}
+.drought-alert-tag{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Space Mono','Courier New',monospace;
+  font-size:10.5px;font-weight:700;
+  letter-spacing:2.6px;color:#e8b04b;
+  text-transform:uppercase;
+  padding:8px 16px;
+  border:1.5px solid #e8b04b;
+  border-radius:30px;
+  margin-bottom:22px;
+  background:rgba(26,20,16,.5);
+  backdrop-filter:blur(6px);
+}
+.drought-alert-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:#a82a1f;
+  box-shadow:0 0 10px #a82a1f;
+  animation:droughtPulse 1.4s infinite;
+}
+@keyframes droughtPulse{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:.4;transform:scale(.6)}
+}
+.drought-alert-title{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(34px,5vw,64px);
+  font-weight:900;
+  line-height:1.02;
+  letter-spacing:-1.8px;
+  color:#fff;
+  margin-bottom:20px;
+  text-shadow:0 4px 40px rgba(0,0,0,.7);
+}
+.drought-alert-title em{
+  font-style:italic;
+  color:#e8b04b;
+  position:relative;
+  display:inline-block;
+  white-space:nowrap;
+}
+.drought-alert-title em::after{
+  content:'';
+  position:absolute;
+  left:0;bottom:6px;
+  height:5px;width:100%;
+  background:#e8b04b;
+  border-radius:3px;
+  opacity:.45;
+  animation:droughtLineGrow 1.2s ease .8s both;
+}
+@keyframes droughtLineGrow{
+  from{width:0}
+  to{width:100%}
+}
+.drought-alert-sub{
+  font-size:clamp(15px,1.6vw,18px);
+  color:#e6dcc8;
+  line-height:1.55;
+  max-width:560px;
+  margin-bottom:30px;
+  text-shadow:0 2px 20px rgba(0,0,0,.6);
+}
+.drought-alert-sub strong{color:#e8b04b;font-weight:700}
+.drought-alert-cta{
+  display:flex;gap:12px;flex-wrap:wrap;
+}
+.drought-alert-btn-primary,
+.drought-alert-btn-ghost{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:15px 28px;
+  font-family:'Space Mono','Courier New',monospace;
+  font-size:12px;font-weight:800;
+  letter-spacing:1.5px;text-transform:uppercase;
+  border-radius:2px;
+  transition:.35s cubic-bezier(.23,1,.32,1);
+  position:relative;overflow:hidden;
+}
+.drought-alert-btn-primary{
+  background:linear-gradient(135deg,#c65d3b,#8a3a1f);
+  color:#fff;
+  box-shadow:0 10px 30px rgba(198,93,59,.55);
+  animation:droughtHeartbeat 2.2s ease-in-out infinite;
+}
+.drought-alert-btn-primary::after{
+  content:'';
+  position:absolute;inset:0;
+  box-shadow:0 0 0 0 rgba(198,93,59,.6);
+  animation:droughtGlow 2.4s ease-out infinite;
+}
+@keyframes droughtHeartbeat{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.045)}
+}
+@keyframes droughtGlow{
+  0%{box-shadow:0 0 0 0 rgba(198,93,59,.6)}
+  70%{box-shadow:0 0 0 18px rgba(198,93,59,0)}
+  100%{box-shadow:0 0 0 0 rgba(198,93,59,0)}
+}
+.drought-alert-btn-primary:hover{
+  transform:translateY(-3px) scale(1.03);
+  box-shadow:0 15px 40px rgba(198,93,59,.75);
+}
+.drought-alert-btn-ghost{
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  border:1.5px solid rgba(255,255,255,.55);
+  backdrop-filter:blur(6px);
+}
+.drought-alert-btn-ghost:hover{
+  background:rgba(255,255,255,.18);
+  border-color:#e8b04b;
+  color:#e8b04b;
+  transform:translateY(-3px);
+}
+@media (max-width:700px){
+  .drought-alert{padding:56px 0;min-height:auto}
+  .drought-alert-overlay{
+    background:
+      linear-gradient(180deg,
+        rgba(26,20,16,.7) 0%,
+        rgba(26,20,16,.6) 50%,
+        rgba(26,20,16,.9) 100%
+      );
+  }
+  .drought-alert-cta{flex-direction:column}
+  .drought-alert-btn-primary,
+  .drought-alert-btn-ghost{width:100%}
+  .drought-alert-title{letter-spacing:-1px}
+}
+@media (prefers-reduced-motion:reduce){
+  .drought-alert *{animation:none !important;transition:none !important}
+}
+</style>
+<!-- ============ END DROUGHT FRONT-PAGE BANNER ============ -->
+    
 
     <!-- =================================
          HEADER

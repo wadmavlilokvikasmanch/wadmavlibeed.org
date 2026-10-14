@@ -2311,11 +2311,30 @@ body > section.drought-alert::after{
 
 /* Mobile image — overrides desktop on small screens */
 @media (max-width:700px){
+  .drought-alert{
+    min-height:auto;
+    aspect-ratio:2 / 3;  /* change this to match your image ratio */
+    padding:40px 20px;
+  }
   .drought-alert-bg{
     background-image:url('drought-hero-mobile.jpeg') !important;
     background-position:center center;
-    background-size:cover;
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-color:#1a1410;
   }
+  .drought-alert-overlay{
+    background:
+      linear-gradient(180deg,
+        rgba(26,20,16,.35) 0%,
+        rgba(26,20,16,.15) 50%,
+        rgba(26,20,16,.75) 100%
+      );
+  }
+  .drought-alert-cta{flex-direction:column}
+  .drought-alert-btn-primary,
+  .drought-alert-btn-ghost{width:100%}
+  .drought-alert-title{letter-spacing:-1px}
 }
 }
 

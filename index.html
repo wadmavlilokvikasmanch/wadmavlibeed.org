@@ -22,6 +22,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Space+Mono:wght@700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
 
@@ -2174,6 +2175,291 @@ body > section.drought-alert::after{
             background-size: cover;
             background-position: center;
         }
+/* ============================================
+   ARCHANA TEASER — Right after drought banner
+============================================ */
+
+.archana-teaser{
+  background:var(--dark-blue, #063b67);
+  padding:0;
+  position:relative;
+  z-index:5;
+  overflow:hidden;
+  color:#fff;
+  margin:0;
+}
+
+.archana-teaser-inner{
+  display:grid;
+  grid-template-columns:340px 1fr;
+  gap:0;
+  align-items:stretch;
+  min-height:300px;
+  position:relative;
+}
+
+/* LEFT — Photo */
+.archana-teaser-photo{
+  position:relative;
+  overflow:hidden;
+  background:#0a1e30;
+}
+.archana-teaser-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 30%;
+  display:block;
+  filter:contrast(1.02) saturate(1.05);
+  transition:transform .8s cubic-bezier(.23,1,.32,1);
+}
+.archana-teaser:hover .archana-teaser-photo img{
+  transform:scale(1.06);
+}
+.archana-teaser-photo::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    90deg,
+    transparent 60%,
+    rgba(6,59,103,.85) 100%
+  );
+  pointer-events:none;
+}
+
+/* Pulsing "Real Story" tag */
+.archana-teaser-tag{
+  position:absolute;
+  top:20px;
+  left:20px;
+  z-index:2;
+  background:var(--pink, #e85b88);
+  color:#fff;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+  padding:6px 12px;
+  border-radius:20px;
+  box-shadow:0 6px 18px rgba(232,91,136,.5);
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  animation:archanaTagPulse 2.4s ease-in-out infinite;
+}
+.archana-teaser-tag .dot{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#fff;
+  animation:archanaDot 1.4s infinite;
+}
+@keyframes archanaTagPulse{
+  0%,100%{box-shadow:0 6px 18px rgba(232,91,136,.5)}
+  50%{box-shadow:0 6px 26px rgba(232,91,136,.8)}
+}
+@keyframes archanaDot{
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:.4;transform:scale(.6)}
+}
+
+/* RIGHT — Text */
+.archana-teaser-text{
+  padding:44px 48px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+}
+.archana-teaser-text::before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:22%;
+  bottom:22%;
+  width:3px;
+  background:var(--pink, #e85b88);
+  border-radius:3px;
+}
+
+.archana-teaser-kicker{
+  font-family:'Tiro Devanagari Marathi','Inter',sans-serif;
+  font-size:12.5px;
+  letter-spacing:.5px;
+  color:var(--pink, #e85b88);
+  font-weight:600;
+  margin-bottom:10px;
+}
+.archana-teaser-kicker .en{
+  display:block;
+  font-family:'Inter',sans-serif;
+  font-size:10px;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.5);
+  margin-top:3px;
+  font-weight:700;
+}
+
+.archana-teaser h3{
+  font-family:'Tiro Devanagari Marathi','Playfair Display',serif;
+  font-size:clamp(22px,2.6vw,32px);
+  font-weight:700;
+  line-height:1.25;
+  color:#fff;
+  margin-bottom:14px;
+  letter-spacing:-.3px;
+}
+.archana-teaser h3 em{
+  font-style:italic;
+  color:var(--pink, #e85b88);
+}
+.archana-teaser h3 .en{
+  display:block;
+  font-family:'Playfair Display',serif;
+  font-size:clamp(14px,1.5vw,17px);
+  font-weight:400;
+  font-style:italic;
+  color:rgba(255,255,255,.65);
+  margin-top:8px;
+  letter-spacing:0;
+}
+
+.archana-teaser-body{
+  font-family:'Inter',sans-serif;
+  font-size:14.5px;
+  color:rgba(255,255,255,.85);
+  line-height:1.65;
+  max-width:620px;
+  margin-bottom:22px;
+}
+.archana-teaser-body .mr{
+  font-family:'Tiro Devanagari Marathi',sans-serif;
+  font-size:15px;
+  color:rgba(255,255,255,.9);
+}
+.archana-teaser-body .en{
+  display:block;
+  font-size:12.5px;
+  color:rgba(255,255,255,.6);
+  margin-top:8px;
+  font-style:italic;
+}
+
+.archana-teaser-stats{
+  display:flex;
+  gap:22px;
+  flex-wrap:wrap;
+  margin-bottom:24px;
+  padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+.archana-teaser-stat{
+  display:flex;
+  flex-direction:column;
+}
+.archana-teaser-stat .n{
+  font-family:'Tiro Devanagari Marathi','Playfair Display',serif;
+  font-size:26px;
+  font-weight:700;
+  color:var(--pink, #e85b88);
+  line-height:1;
+}
+.archana-teaser-stat .l{
+  font-family:'Inter',sans-serif;
+  font-size:10.5px;
+  color:rgba(255,255,255,.55);
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-top:5px;
+}
+
+.archana-teaser-cta{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:var(--pink, #e85b88);
+  color:#fff !important;
+  font-family:'Inter',sans-serif;
+  font-size:12.5px;
+  font-weight:800;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  padding:14px 26px;
+  border-radius:30px;
+  text-decoration:none;
+  transition:.35s cubic-bezier(.23,1,.32,1);
+  box-shadow:0 10px 26px rgba(232,91,136,.4);
+  align-self:flex-start;
+  position:relative;
+  overflow:hidden;
+}
+.archana-teaser-cta::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);
+  animation:archanaShine 3s ease-in-out infinite;
+}
+@keyframes archanaShine{
+  0%{left:-100%}
+  60%,100%{left:100%}
+}
+.archana-teaser-cta:hover{
+  background:#d4466f;
+  transform:translateY(-3px);
+  box-shadow:0 15px 38px rgba(232,91,136,.6);
+}
+.archana-teaser-cta i{
+  transition:transform .3s;
+}
+.archana-teaser-cta:hover i{
+  transform:translateX(5px);
+}
+
+/* Mobile */
+@media (max-width:850px){
+  .archana-teaser-inner{
+    grid-template-columns:1fr;
+    min-height:auto;
+  }
+  .archana-teaser-photo{
+    height:250px;
+  }
+  .archana-teaser-photo::after{
+    background:linear-gradient(
+      180deg,
+      transparent 60%,
+      rgba(6,59,103,.85) 100%
+    );
+  }
+  .archana-teaser-text{
+    padding:32px 24px 38px;
+  }
+  .archana-teaser-text::before{
+    left:24px;
+    right:24px;
+    top:0;
+    bottom:auto;
+    width:auto;
+    height:3px;
+  }
+  .archana-teaser-stats{
+    gap:16px;
+  }
+  .archana-teaser-stat .n{
+    font-size:22px;
+  }
+  .archana-teaser-cta{
+    width:100%;
+    justify-content:center;
+  }
+}
+        
         
     </style>
 
@@ -2574,6 +2860,69 @@ body > section.drought-alert::after{
 }
 </style>
 <!-- ============ END DROUGHT FRONT-PAGE BANNER ============ -->
+
+    <!-- ============================================
+     ARCHANA TEASER — links to full story
+============================================ -->
+<section class="archana-teaser">
+  <div style="width:100%; max-width:none; padding:0; margin:0;">
+    <div class="archana-teaser-inner">
+
+      <!-- LEFT: Photo -->
+      <div class="archana-teaser-photo">
+        <span class="archana-teaser-tag">
+          <span class="dot"></span>
+          Real Story · Pokhri, Beed
+        </span>
+        <img src="archana-family.jpeg" alt="अर्चना रवी भोसले आणि त्यांची पाच मुलं, पोखरी, बीड">
+      </div>
+
+      <!-- RIGHT: Text -->
+      <div class="archana-teaser-text">
+
+        <div class="archana-teaser-kicker">
+          एक कुटुंब · पोखरी, बीड
+          <span class="en">One Family · Pokhri, Beed</span>
+        </div>
+
+        <h3>
+          अर्चना यांचं कुटुंब — <em>एक आई. पाच मुलं.</em>
+          <span class="en">Archana's Family — A mother. Five children.</span>
+        </h3>
+
+        <p class="archana-teaser-body">
+          <span class="mr">पती गेले. पीक गेलं. आता मुलींचं शिक्षण धोक्यात आहे.</span>
+          <span class="en">Husband gone. Crop gone. Now her daughters' schooling hangs in the balance.</span>
+        </p>
+
+        <div class="archana-teaser-stats">
+          <div class="archana-teaser-stat">
+            <span class="n">५</span>
+            <span class="l">Children</span>
+          </div>
+          <div class="archana-teaser-stat">
+            <span class="n">४</span>
+            <span class="l">Daughters</span>
+          </div>
+          <div class="archana-teaser-stat">
+            <span class="n">०</span>
+            <span class="l">Income</span>
+          </div>
+        </div>
+
+        <a href="drought-2026.html#archana" class="archana-teaser-cta">
+          त्यांची कथा वाचा
+          <i class="fas fa-arrow-right"></i>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ============ END ARCHANA TEASER ============ -->
+
+
 
  <!-- =================================
      HERO with background slider

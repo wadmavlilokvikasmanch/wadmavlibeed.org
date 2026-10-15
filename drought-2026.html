@@ -1242,7 +1242,7 @@ footer a:hover{color:var(--wheat)}
     <div class="progress-box" id="progressBox">
       <div class="progress-top">
         <div>
-          <div class="raised-num">₹0</div>
+          <div class="raised-num">₹9,250</div>
           <div class="raised-lbl">Raised So Far</div>
         </div>
         <div>
@@ -1254,7 +1254,7 @@ footer a:hover{color:var(--wheat)}
       <div class="progress-bar">
         <div class="progress-fill" id="progressFill"></div>
       </div>
-      <div class="progress-pct">0% of Goal</div>
+      <div class="progress-pct">2% of Goal</div>
 
       <div class="progress-cta">
         <button class="btn btn-donate" id="campaignDonate">
@@ -1521,7 +1521,7 @@ const progressBox  = document.getElementById('progressBox');
 const progressIo = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting){
-      progressFill.style.width = '0%';
+      progressFill.style.width = '2%';
       progressIo.unobserve(e.target);
     }
   });

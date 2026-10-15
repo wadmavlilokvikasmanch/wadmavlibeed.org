@@ -10,7 +10,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Space+Mono:wght@400;700&family=Caveat:wght@500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi:ital@0;1&display=swap" rel="stylesheet">
+   
 <style>
 /* ============================================
    MARATHWADA DROUGHT 2026 — "EARTH & EMBER"
@@ -978,6 +979,494 @@ footer a:hover{color:var(--wheat)}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none !important;transition:none !important}
 }
+
+/* ============================================
+   ARCHANA'S FAMILY — अर्चना यांचं कुटुंब
+============================================ */
+
+.family-story{
+  background:var(--ink);
+  color:#e8dcc4;
+  padding:120px 0;
+  position:relative;
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(198,93,59,.08), transparent 50%),
+    radial-gradient(circle at 80% 90%, rgba(232,176,75,.06), transparent 50%);
+}
+.family-story::before{
+  content:'';
+  position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  opacity:.05;pointer-events:none;
+}
+
+/* Bilingual text — Marathi primary, English secondary */
+.mr{
+  display:block;
+  font-family:'Tiro Devanagari Marathi','Playfair Display',serif;
+  color:inherit;
+  line-height:1.5;
+  letter-spacing:0;
+}
+.en{
+  display:block;
+  font-family:'Inter',sans-serif;
+  font-style:italic;
+  font-size:.72em;
+  color:#a89880;
+  margin-top:8px;
+  line-height:1.55;
+  font-weight:400;
+}
+
+/* Grid — photo + text */
+.family-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:60px;
+  align-items:start;
+  position:relative;
+  z-index:2;
+}
+.family-photo-wrap{
+  position:sticky;
+  top:100px;
+  transform:rotate(-1.5deg);
+}
+.family-photo{
+  border:10px solid #fff;
+  overflow:hidden;
+  box-shadow:0 30px 70px rgba(0,0,0,.5),
+             0 0 0 1px rgba(232,176,75,.15);
+}
+.family-photo img{
+  width:100%;
+  display:block;
+  filter:contrast(1.02) saturate(1.05);
+}
+.family-caption{
+  font-family:'Tiro Devanagari Marathi','Caveat',cursive;
+  font-size:18px;
+  color:var(--wheat);
+  text-align:center;
+  margin-top:14px;
+  line-height:1.5;
+  transform:rotate(-1deg);
+}
+.family-caption .en{
+  font-family:'Caveat',cursive;
+  font-size:15px;
+  color:#a89880;
+  margin-top:4px;
+}
+
+/* Kicker */
+.family-text .kicker{
+  color:var(--wheat);
+  border-color:var(--wheat);
+  font-family:'Tiro Devanagari Marathi','Space Mono',monospace;
+  font-size:12px;
+  letter-spacing:.5px;
+  text-transform:none;
+  margin-bottom:22px;
+}
+.family-text .kicker .en{
+  font-family:'Space Mono',monospace;
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#a89880;
+  margin-top:4px;
+}
+
+/* Headline */
+.family-text h2{
+  font-family:'Playfair Display',serif;
+  font-weight:900;
+  line-height:1.1;
+  margin-bottom:24px;
+  letter-spacing:-.5px;
+}
+.family-text h2 .mr{
+  font-family:'Tiro Devanagari Marathi','Playfair Display',serif;
+  font-size:clamp(30px,4.2vw,54px);
+  font-weight:900;
+  color:#fff;
+  line-height:1.15;
+}
+.family-text h2 .mr em{
+  font-style:italic;
+  color:var(--wheat);
+}
+.family-text h2 .en{
+  font-size:clamp(13px,1.2vw,15px);
+  margin-top:16px;
+  color:#a89880;
+}
+
+/* Body paragraphs */
+.family-text p{
+  margin-bottom:22px;
+}
+.family-text p .mr{
+  font-family:'Tiro Devanagari Marathi','Inter',sans-serif;
+  font-size:17.5px;
+  color:#e8dcc4;
+  line-height:1.65;
+}
+.family-text p .en{
+  margin-top:10px;
+}
+.family-text p .mr strong,
+.family-text p strong{
+  color:var(--wheat);
+  font-weight:700;
+}
+
+/* Pull quote */
+.family-quote{
+  border-left:4px solid var(--terracotta);
+  padding:14px 0 14px 26px;
+  margin:34px 0;
+}
+.family-quote .mr{
+  font-family:'Tiro Devanagari Marathi','Caveat',cursive;
+  font-size:26px;
+  color:#fff;
+  line-height:1.4;
+}
+.family-quote .en{
+  font-family:'Caveat',cursive;
+  font-size:19px;
+  color:var(--wheat);
+  margin-top:10px;
+  opacity:.85;
+}
+.family-quote cite{
+  display:block;
+  font-family:'Space Mono',monospace;
+  font-size:10.5px;
+  letter-spacing:2px;
+  color:var(--wheat);
+  font-style:normal;
+  text-transform:uppercase;
+  margin-top:14px;
+}
+.family-quote cite .mr{
+  font-family:'Tiro Devanagari Marathi','Space Mono',monospace;
+  font-size:11px;
+  letter-spacing:.5px;
+  text-transform:none;
+}
+.family-quote cite .en{
+  font-family:'Space Mono',monospace;
+  font-size:10px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-top:4px;
+}
+
+/* Stats */
+.family-stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin:34px 0;
+  padding:26px 0;
+  border-top:1px solid rgba(232,176,75,.2);
+  border-bottom:1px solid rgba(232,176,75,.2);
+}
+.family-stats .n{
+  display:block;
+  font-family:'Tiro Devanagari Marathi','Playfair Display',serif;
+  font-size:44px;
+  font-weight:700;
+  color:var(--wheat);
+  line-height:1;
+}
+.family-stats .l{
+  display:block;
+  margin-top:8px;
+  line-height:1.5;
+}
+.family-stats .l .mr{
+  font-family:'Tiro Devanagari Marathi',sans-serif;
+  font-size:12px;
+  color:#c9bca8;
+}
+.family-stats .l .en{
+  font-family:'Space Mono',monospace;
+  font-size:10px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:#a89880;
+  margin-top:4px;
+  font-style:normal;
+}
+
+/* Needs box */
+.family-needs{
+  background:rgba(232,176,75,.08);
+  border:1px dashed rgba(232,176,75,.35);
+  padding:22px 24px;
+  border-radius:6px;
+  margin:26px 0;
+}
+.needs-title{
+  margin-bottom:14px;
+  line-height:1.5;
+}
+.needs-title .mr{
+  font-family:'Tiro Devanagari Marathi','Space Mono',monospace;
+  font-size:14px;
+  color:var(--wheat);
+  font-weight:700;
+}
+.needs-title .en{
+  font-family:'Space Mono',monospace;
+  font-size:10.5px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#a89880;
+  margin-top:4px;
+  font-style:normal;
+}
+.family-needs ul{list-style:none;padding:0}
+.family-needs li{
+  padding:8px 0 8px 22px;
+  position:relative;
+  line-height:1.5;
+}
+.family-needs li::before{
+  content:'→';
+  position:absolute;
+  left:0;
+  color:var(--terracotta);
+  font-weight:700;
+}
+.family-needs li .mr{
+  font-family:'Tiro Devanagari Marathi',sans-serif;
+  font-size:15px;
+  color:#e8dcc4;
+}
+.family-needs li .en{
+  font-family:'Inter',sans-serif;
+  font-size:12.5px;
+  margin-top:4px;
+}
+
+/* CTA */
+.family-cta{
+  width:100%;
+  margin-top:20px;
+  animation:heartbeat 2.2s ease-in-out infinite;
+  flex-direction:column;
+  gap:2px;
+  padding:20px 34px;
+}
+.family-cta .mr{
+  font-family:'Tiro Devanagari Marathi','Space Mono',monospace;
+  font-size:15px;
+  letter-spacing:.5px;
+  color:#fff;
+  line-height:1.2;
+}
+.family-cta .en{
+  font-family:'Space Mono',monospace;
+  font-size:10px;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.8);
+  margin-top:2px;
+  font-style:normal;
+}
+.family-note{
+  text-align:center;
+  margin-top:14px;
+  line-height:1.6;
+}
+.family-note .mr{
+  font-family:'Tiro Devanagari Marathi',sans-serif;
+  font-size:13px;
+  color:#a89880;
+}
+.family-note .en{
+  font-family:'Inter',sans-serif;
+  font-size:11.5px;
+  color:#8a7a64;
+  margin-top:6px;
+  font-style:italic;
+}
+
+/* ============================================
+   FAMILY VIDEOS — Two video layout
+============================================ */
+.family-videos{
+  margin-top:70px;
+  position:relative;
+  z-index:2;
+  max-width:1000px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.video-label{
+  text-align:center;
+  margin-bottom:22px;
+  line-height:1.5;
+}
+.video-label .mr{
+  font-family:'Tiro Devanagari Marathi','Space Mono',monospace;
+  font-size:14px;
+  color:var(--wheat);
+  font-weight:700;
+}
+.video-label .en{
+  font-family:'Space Mono',monospace;
+  font-size:10px;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  color:#a89880;
+  margin-top:6px;
+  font-style:normal;
+}
+
+.video-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:26px;
+}
+.video-card{display:flex;flex-direction:column}
+.video-embed{
+  position:relative;
+  padding-bottom:56.25%;
+  height:0;
+  border:6px solid #fff;
+  overflow:hidden;
+  background:#000;
+  box-shadow:0 24px 60px rgba(0,0,0,.5),
+             0 0 0 1px rgba(232,176,75,.15);
+  transition:.4s cubic-bezier(.23,1,.32,1);
+}
+.video-card:hover .video-embed{
+  transform:translateY(-6px);
+  box-shadow:0 32px 70px rgba(0,0,0,.6),
+             0 0 0 1px rgba(232,176,75,.35);
+}
+.video-embed video{
+  position:absolute;
+  top:0;left:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  background:#000;
+  display:block;
+}
+.video-card-caption{
+  text-align:center;
+  margin-top:14px;
+  line-height:1.4;
+}
+.video-card-caption .mr{
+  font-family:'Tiro Devanagari Marathi','Caveat',cursive;
+  font-size:17px;
+  color:var(--wheat);
+}
+.video-card-caption .en{
+  font-family:'Caveat',cursive;
+  font-size:15px;
+  color:#a89880;
+  margin-top:2px;
+}
+.video-caption{
+  text-align:center;
+  margin-top:26px;
+  line-height:1.4;
+}
+.video-caption .mr{
+  font-family:'Tiro Devanagari Marathi','Caveat',cursive;
+  font-size:16px;
+  color:#a89880;
+}
+.video-caption .en{
+  font-family:'Caveat',cursive;
+  font-size:14px;
+  color:#7a6a56;
+  margin-top:2px;
+}
+
+/* Timeline */
+.family-timeline{
+  margin-top:70px;
+  position:relative;
+  z-index:2;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.timeline-title{
+  text-align:center;
+  margin-bottom:26px;
+  line-height:1.4;
+}
+.timeline-title .mr{
+  font-family:'Tiro Devanagari Marathi','Playfair Display',serif;
+  font-size:26px;
+  color:#fff;
+  font-weight:700;
+}
+.timeline-title .en{
+  font-family:'Space Mono',monospace;
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#a89880;
+  margin-top:6px;
+  font-style:normal;
+}
+.timeline-item{
+  display:flex;
+  gap:18px;
+  padding:14px 0;
+  border-bottom:1px dashed rgba(232,176,75,.15);
+  align-items:baseline;
+}
+.timeline-item:last-child{border-bottom:none}
+.timeline-item .t-date{
+  font-family:'Space Mono',monospace;
+  font-size:11px;
+  letter-spacing:1.5px;
+  color:var(--wheat);
+  text-transform:uppercase;
+  flex-shrink:0;
+  min-width:80px;
+  font-weight:700;
+}
+.timeline-item .t-note{
+  font-size:14.5px;
+  color:#d9cbb4;
+  line-height:1.5;
+}
+.timeline-item.done .t-date::before{
+  content:'✓ ';
+  color:#8fbf9b;
+}
+.timeline-item.pending .t-note em{
+  color:var(--terracotta);
+  font-style:normal;
+}
+
+/* Mobile */
+@media (max-width:960px){
+  .family-grid{grid-template-columns:1fr;gap:40px}
+  .family-photo-wrap{position:relative;top:0}
+  .family-stats{grid-template-columns:1fr;gap:14px}
+  .family-quote .mr{font-size:22px}
+}
+@media (max-width:780px){
+  .video-grid{grid-template-columns:1fr;gap:32px}
+  .family-videos{margin-top:50px}
+  .video-embed{border-width:4px}
+}
+   
 </style>
 </head>
 <body>
@@ -1136,6 +1625,205 @@ footer a:hover{color:var(--wheat)}
   </div>
 </section>
 
+<!-- ============================================
+     ARCHANA'S FAMILY — अर्चना यांचं कुटुंब
+============================================ -->
+<section class="family-story" id="archana">
+  <div class="container">
+
+    <!-- TOP: Photo + Story -->
+    <div class="family-grid">
+
+      <!-- LEFT: Photo -->
+      <div class="family-photo-wrap">
+        <div class="family-photo">
+          <img src="archana-family.jpeg" alt="अर्चना रवी भोसले आणि त्यांची पाच मुलं, पोखरी, बीड">
+        </div>
+        <div class="family-caption">
+          <span class="mr">अर्चना (डावीकडून दुसरी) आणि त्यांची पाच मुलं · पोखरी, बीड · ऑक्टोबर २०२६</span>
+          <span class="en">Archana (second from left) with her five children · Pokhri, Beed · October 2026</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: Story -->
+      <div class="family-text">
+
+        <span class="kicker">
+          <span class="mr">एक कुटुंब · पोखरी, बीड</span>
+          <span class="en">One Family · Pokhri, Beed</span>
+        </span>
+
+        <h2>
+          <span class="mr">अर्चना यांचं कुटुंब<br>
+            <em>एक आई. पाच मुलं. आणि एक ऋतू ज्याने सगळं घेऊन गेलं.</em>
+          </span>
+          <span class="en">Archana's Family. A mother. Five children. And a season that took everything.</span>
+        </h2>
+
+        <p>
+          <span class="mr">अर्चना रवी भोसले पोखरी, बीड येथे राहतात. २०२६ मध्ये पाऊस आला नाही. पतीने बियाणं आणि खतांसाठी कर्ज घेतलं होतं — जसं मराठवाड्यातल्या हजारो शेतकऱ्यांनी घेतलं. पीक आलं नाही. उत्पन्न आलं नाही.</span>
+          <span class="en">Archana Ravi Bhosale lives in Pokhri, Beed. In 2026, the monsoon failed. Her husband had borrowed money for seeds and inputs — like thousands of farmers across Marathwada. There was no harvest. There was no income.</span>
+        </p>
+
+        <p>
+          <span class="mr"><strong>तो भार त्यांना पेलवला नाही.</strong> त्यांनी आत्महत्या केली. अर्चना आता चार मुली आणि एक मुलगा — एकटीने सांभाळत आहेत.</span>
+          <span class="en"><strong>He could not carry the weight of it.</strong> He died by suicide. Archana is now raising four daughters and one son — alone.</span>
+        </p>
+
+        <p>
+          <span class="mr">दुष्काळाने पीक घेतलं. पती घेतले. आता <strong>मुलांचं शिक्षण आणि भविष्य</strong> धोक्यात आहे.</span>
+          <span class="en">The drought took the crop. It took her husband. Now it threatens <strong>her children's education — and their future.</strong></span>
+        </p>
+
+        <blockquote class="family-quote">
+          <span class="mr">"माझ्या मुलींना या वर्षी शाळेत कसं पाठवायचं, मला माहीत नाही."</span>
+          <span class="en">"I don't know how I will send my daughters to school this year."</span>
+          <cite>
+            <span class="mr">— अर्चना रवी भोसले, पोखरी, बीड</span>
+            <span class="en">— Archana Ravi Bhosale, Pokhri, Beed</span>
+          </cite>
+        </blockquote>
+
+        <div class="family-stats">
+          <div>
+            <span class="n">५</span>
+            <span class="l">
+              <span class="mr">एकटीने सांभाळायची मुलं</span>
+              <span class="en">children to raise alone</span>
+            </span>
+          </div>
+          <div>
+            <span class="n">४</span>
+            <span class="l">
+              <span class="mr">मुलींचं शिक्षण धोक्यात</span>
+              <span class="en">daughters' schooling at risk</span>
+            </span>
+          </div>
+          <div>
+            <span class="n">०</span>
+            <span class="l">
+              <span class="mr">२०२६ च्या हंगामातून उत्पन्न</span>
+              <span class="en">income from 2026 harvest</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="family-needs">
+          <div class="needs-title">
+            <span class="mr">या कुटुंबाला आत्ता काय हवं आहे:</span>
+            <span class="en">What this family needs right now:</span>
+          </div>
+          <ul>
+            <li>
+              <span class="mr">सहा जणांसाठी अन्न आणि किराणा</span>
+              <span class="en">Food and groceries for six people</span>
+            </li>
+            <li>
+              <span class="mr">चार मुली आणि एका मुलासाठी शाळेची फी, पुस्तकं आणि गणवेश</span>
+              <span class="en">School fees, books and uniforms for four daughters and one son</span>
+            </li>
+            <li>
+              <span class="mr">उरलेल्या जनावरांसाठी चारा आणि काळजी</span>
+              <span class="en">Fodder and care for remaining livestock</span>
+            </li>
+            <li>
+              <span class="mr">पतीने सोडलेलं कर्ज सांभाळण्यासाठी आधार</span>
+              <span class="en">Support to manage the debt left behind</span>
+            </li>
+          </ul>
+        </div>
+
+        <button class="btn btn-donate family-cta" onclick="openPayModal(2500)">
+          <i class="fas fa-heart"></i>
+          <span class="mr">अर्चना यांच्या कुटुंबाला मदत करा</span>
+          <span class="en">Help Archana's Family</span>
+        </button>
+
+        <p class="family-note">
+          <span class="mr">"अर्चना यांचं कुटुंब" असं लिहिलेल्या देणग्या थेट त्यांच्या घरापर्यंत पोहोचतील. आम्ही देणगीदारांना अपडेट्स पाठवू.</span>
+          <span class="en">100% of donations tagged "Archana's Family" go directly to her household. We will share updates with donors.</span>
+        </p>
+
+      </div>
+    </div>
+
+    <!-- VIDEOS: Two side by side -->
+    <div class="family-videos">
+      <div class="video-label">
+        <span class="mr">अर्चना स्वतः मदतीचं आवाहन करत आहेत</span>
+        <span class="en">Archana is appealing for help herself</span>
+      </div>
+
+      <div class="video-grid">
+
+        <!-- Video 1 — Archana's appeal -->
+        <div class="video-card">
+          <div class="video-embed">
+            <video
+              controls
+              preload="metadata"
+              playsinline
+              poster="archana-family.jpeg">
+              <source src="archana-appeal.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="video-card-caption">
+            <span class="mr">अर्चना यांचं आवाहन</span>
+            <span class="en">Archana's appeal</span>
+          </p>
+        </div>
+
+        <!-- Video 2 — Family / home / field -->
+        <div class="video-card">
+          <div class="video-embed">
+            <video
+              controls
+              preload="metadata"
+              playsinline
+              poster="archana-home-poster.jpg">
+              <source src="archana-family.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <p class="video-card-caption">
+            <span class="mr">पोखरीतील त्यांचं घर आणि शेत</span>
+            <span class="en">Their home and field in Pokhri</span>
+          </p>
+        </div>
+
+      </div>
+
+      <p class="video-caption">
+        <span class="mr">पोखरी, बीड · ऑक्टोबर २०२६</span>
+        <span class="en">Pokhri, Beed · October 2026</span>
+      </p>
+    </div>
+
+    <!-- TIMELINE -->
+    <div class="family-timeline">
+      <div class="timeline-title">
+        <span class="mr">त्यांचा प्रवास पाहत राहा</span>
+        <span class="en">Follow their journey</span>
+      </div>
+
+      <div class="timeline-item done">
+        <span class="t-date">Oct 2026</span>
+        <span class="t-note">आम्ही अर्चना आणि त्यांच्या मुलांना पोखरी येथे भेटलो. <em>We met Archana and her children in Pokhri.</em></span>
+      </div>
+      <div class="timeline-item pending">
+        <span class="t-date">Nov 2026</span>
+        <span class="t-note">पहिला किराणा किट वितरण — <em>awaiting</em></span>
+      </div>
+      <div class="timeline-item pending">
+        <span class="t-date">Dec 2026</span>
+        <span class="t-note">मुलांच्या शाळेची फी — <em>awaiting</em></span>
+      </div>
+    </div>
+
+  </div>
+</section>
+   
 <section class="interventions" id="response">
   <div class="container">
     <div class="interventions-head">
@@ -1875,6 +2563,17 @@ function sharePage(e){
   }
 }
 </script>
-
+   
+<script>
+// Only one family video plays at a time
+document.querySelectorAll('.family-videos video').forEach(v => {
+  v.addEventListener('play', () => {
+    document.querySelectorAll('.family-videos video').forEach(other => {
+      if (other !== v) other.pause();
+    });
+  });
+});
+</script>
+   
 </body>
 </html>
